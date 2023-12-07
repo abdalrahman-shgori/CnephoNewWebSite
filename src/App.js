@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import Navbar from './components/navbar/navbar';
+import Test from './components/navbar/test';
+import ThemeSettings from './pagedirection/ThemeSettings';
+import ThemeLocalization from './locals/ThemeLocalization';
+import { useTranslation } from 'react-i18next';
 
 function App() {
+   const { t, i18n } = useTranslation();
+  // moment().locale("en_us");
+  // window.document.body.style.zoom = 1;
+  document.body.dir = i18n.dir();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+
+    <ThemeSettings>
+<ThemeLocalization> 
+   <Routes>
+    <Route path='/' element={<Navbar/>}/>
+    <Route path='test' element={<Test/>}/>
+
+   </Routes>
+   </ThemeLocalization>
+   </ThemeSettings>
+
+
+
+   </>
   );
 }
 
