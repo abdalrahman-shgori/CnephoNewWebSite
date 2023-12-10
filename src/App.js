@@ -18,8 +18,8 @@ function App() {
     <ThemeSettings>
 <ThemeLocalization> 
    <Routes>
-    <Route path='/' element={<Navbar/>}/>
-    <Route path='test' element={<Test/>}/>
+    <Route path='about' element={<Navbar/>}/>
+    <Route path='/' element={<Test/>}/>
 
    </Routes>
    </ThemeLocalization>

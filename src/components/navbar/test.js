@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import NavBar from "./navbar";
 
-const Test = ({ children, headerShow }) => {
+const Test = () => {
     const { t, i18n } = useTranslation();
     function handelClick(event) {
         i18n.changeLanguage(event.target.value);
@@ -13,7 +14,9 @@ const Test = ({ children, headerShow }) => {
 
     return (
         <>
-            <select
+        <NavBar/>
+        
+            {/* <select
                 className="selectpicker form-control"
                 name=""
                 id=""
@@ -54,7 +57,7 @@ const Test = ({ children, headerShow }) => {
 
             <div>
                 {t('firstPage.abd1')}
-            </div>
+            </div> */}
 
             {/* <Link to="test1">click</Link> */}
 

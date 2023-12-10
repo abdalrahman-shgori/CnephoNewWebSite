@@ -5,6 +5,14 @@
             "english":"en",
             "arabic":"ar",
             "abd1":"the lang in en"
+        },
+        "navBar":{
+            "ABOUTUS":"ABOUT US",
+            "SERVICES":"SERVICES",
+            "PORTFOLIO":"PORTFOLIO",
+            "BLOG":"BLOG",
+            "CAREER":"CAREER",
+            "CONTACTUS":"CONTACT US"
         }
     }
 }

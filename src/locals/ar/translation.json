@@ -7,6 +7,16 @@
             "english":"الانكليزية"
         
 
-        }
+        },
+        "navBar": {
+            "ABOUTUS": "عنا",
+            "SERVICES": "خدمات",
+            "PORTFOLIO": "السير الذاتية",
+            "BLOG": "المدونة",
+            "CAREER": "وظائف",
+            "CONTACTUS":"تواصل معنا"
+
+          }
+          
     }
 }

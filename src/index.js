@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
 import { SettingsProvider } from './pagedirection';
-
+import './assets/styles/variables.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const dir=document.body
