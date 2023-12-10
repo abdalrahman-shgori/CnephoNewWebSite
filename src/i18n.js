@@ -35,5 +35,9 @@ i18n
             useSuspense: false, //   <---- this will do the magic
         },
     });
+    const storedLang = localStorage.getItem("i18nextLng");
+if (typeof window !== "undefined" && storedLang === 'en-US') {
+  i18n.changeLanguage('en');
+}
 
 export default i18n;
