@@ -1,0 +1,12 @@
+.logoGap{
+    gap: 100px;
+}
+
+@media screen and (max-width:1304px) {
+    .logoGap{
+        gap: 20px;
+    }
+    .navText{
+        width: 100px;
+    }
+}

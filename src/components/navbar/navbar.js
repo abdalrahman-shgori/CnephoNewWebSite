@@ -17,7 +17,7 @@ import Logo from "../../assets/images/Logo.svg"
 import "../../assets/styles/variables.css";
 import arrowRight from "../../assets/images/arrowRight.svg"
 import LanguageSwitcher from './LanguageSwitcher';
-
+import "./navbar.css"
 const drawerWidth = "100%";
 function NavBar(props) {
     const { t, i18n } = useTranslation();
@@ -88,20 +88,24 @@ function NavBar(props) {
                     justifyContent: "space-between",
                     padding: "0px 0px"
                 }}>
-                    <Box sx={{ display: "flex", alignItems: "center", gap: "100px" }}>
+                    <Box className="logoGap" sx={{ display: "flex", alignItems: "center" }}>
 
                         <img src={Logo} ></img>
 
-                        <Box sx={{ display: { lg: "block", xs: 'none', sm: 'none' } }}>
+                        <Box sx={{ display: { lg: "flex", xs: 'none', sm: 'none' } }}>
                             {navItems.slice(0, 5).map((items, index) => (
-                                <Button
+                                <Typography
+                                className='navText'
                                     key={index}
                                     // component={Link}
                                     // to={items.path}
                                     sx={{
+                                        display:"flex",
                                         color: index === selectedLink ? '#21D6D6' : '#fff',
                                         marginRight: '8px',
-                                        width: "115px",
+                                        width:"115px",
+                                        textAlign:"center",
+                                        justifyContent:"center",
                                         fontSize: "16px",
                                         fontWeight: "400",
                                         lineHeight: "36px",
@@ -110,7 +114,7 @@ function NavBar(props) {
                                     onClick={() => handleLinkClick(index)}
                                 >
                                     {items.title}
-                                </Button>
+                                </Typography>
                             ))}
                         </Box>
                     </Box>
@@ -136,7 +140,8 @@ function NavBar(props) {
                                 <Button
                                     sx={{
                                         color: "#ffffff",
-                                        padding: "6px 0px"
+                                        padding: "6px 0px",
+                                        whiteSpace:"nowrap"
                                     }}
 
                                 >
