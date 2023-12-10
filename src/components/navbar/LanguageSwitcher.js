@@ -61,7 +61,7 @@ const LanguageSwitcher = () => {
                         }}
                         disableRipple
                     >
-                        {selectLanguage === 'en' ? 'English' : selectLanguage==="ar" ? "عربي" : "English"}
+                        {selectLanguage === 'en' ? 'English' : 'عربي'}
                     </Button>
                     <Button
                         sx={{
@@ -75,7 +75,7 @@ const LanguageSwitcher = () => {
                         }}
                         disableRipple
                     >
-                        {selectLanguage === 'en' ? 'English' : selectLanguage==="ar" ? "عربي" : "English"}
+                        {selectLanguage === 'en' ? 'Eng' : 'عربي'}
                     </Button>
                     <img
                         src={arrowDown}
@@ -104,17 +104,11 @@ const LanguageSwitcher = () => {
                         }}
 
                     >
-                        {selectLanguage === "en" &&
+                        {selectLanguage === "en" ?
                             <MenuItem sx={{ minHeight: "0px" }} onClick={() => handleMenuItemClick('ar')}>AR</MenuItem>
-                    }
-                    {selectLanguage === "ar" ?
-                                                <MenuItem sx={{ minHeight: "0px" }} onClick={() => handleMenuItemClick('en')}>EN</MenuItem>
-
-                    :   
-                                                                  <MenuItem sx={{ minHeight: "0px" }} onClick={() => handleMenuItemClick('ar')}>AR</MenuItem>
-                }
-                    
-                        
+                            :
+                            <MenuItem sx={{ minHeight: "0px" }} onClick={() => handleMenuItemClick('en')}>EN</MenuItem>
+                        }
                     </Menu>
                 </Box>
             </Box>
