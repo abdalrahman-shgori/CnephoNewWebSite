@@ -95,21 +95,23 @@ function NavBar(props) {
                         <Box sx={{ display: { lg: "flex", xs: 'none', sm: 'none' } }}>
                             {navItems.slice(0, 5).map((items, index) => (
                                 <Typography
-                                className='navText'
+                                    className='navText'
                                     key={index}
                                     // component={Link}
                                     // to={items.path}
                                     sx={{
-                                        display:"flex",
+                                        display: "flex",
                                         color: index === selectedLink ? '#21D6D6' : '#fff',
+                                        transition: 'color 0.3s ease', 
                                         marginRight: '8px',
-                                        width:"115px",
-                                        textAlign:"center",
-                                        justifyContent:"center",
+                                        width: "115px",
+                                        textAlign: "center",
+                                        justifyContent: "center",
                                         fontSize: "16px",
                                         fontWeight: "400",
                                         lineHeight: "36px",
                                         fontFamily: "Source Sans Pro",
+                                        cursor: "pointer"
                                     }}
                                     onClick={() => handleLinkClick(index)}
                                 >
@@ -141,9 +143,12 @@ function NavBar(props) {
                                     sx={{
                                         color: "#ffffff",
                                         padding: "6px 0px",
-                                        whiteSpace:"nowrap"
+                                        whiteSpace: "nowrap",
+                                        '&:hover': {
+                                            backgroundColor: 'transparent', // Set the background color to transparent or any value you want
+                                        },
                                     }}
-
+                                    disableRipple
                                 >
                                     {t("navBar.CONTACTUS")}
 

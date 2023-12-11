@@ -58,6 +58,9 @@ const LanguageSwitcher = () => {
                             color: "#FFFFFF",
                             padding: "6px 0px",
                             display: { lg: "block", sm: "none", xs: "none" },
+                            '&:hover': {
+                                backgroundColor: 'transparent',
+                              },
                         }}
                         disableRipple
                     >
