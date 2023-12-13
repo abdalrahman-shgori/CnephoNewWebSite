@@ -43,7 +43,7 @@ function NavBar(props) {
     
     const drawer = (
         <Box  onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-            <List sx={{ marginTop: "97px" }}>
+            <List sx={{ marginTop: "60px" }}>
                 {navItems.map((item, index) => (
                     <Box
                         key={index}
@@ -91,6 +91,7 @@ function NavBar(props) {
                     paddingRight: selectLanguage === "en" ? { lg: "56px", sm: "29px", xs: "29px" } : { lg: "96px", sm: "6px", xs: "6px" },
                     boxShadow: "none",
                     paddingTop: { lg: "26px", sm: "36px", xs: "36px" },
+                    paddingBottom: "20px",
                     backgroundColor: "var(--website-bg-color)",
                     fontFamily:"var(--English-font)"
 
