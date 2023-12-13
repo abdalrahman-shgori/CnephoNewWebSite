@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import NavBar from "./navbar";
+import Footer from "../footer/footer";
 
 const Test = () => {
     const { t, i18n } = useTranslation();
@@ -14,7 +15,12 @@ const Test = () => {
 
     return (
         <>
+        <div>
         <NavBar/>
+        <Footer/>
+        </div>
+       
+        
         
             {/* <select
                 className="selectpicker form-control"

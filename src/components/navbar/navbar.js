@@ -40,8 +40,9 @@ function NavBar(props) {
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
     };
+    
     const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+        <Box  onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
             <List sx={{ marginTop: "97px" }}>
                 {navItems.map((item, index) => (
                     <Box
@@ -55,12 +56,23 @@ function NavBar(props) {
                             padding: "10px",
                             cursor: "pointer",
                             textDecoration: "none",
-                            color: "#FFFFFF"
                         }}
-                        component={Link}
-                        to={item.path}
+                        // component={Link}
+                        // to={item.path}
+
                     >
-                        <Typography>
+                        <Typography
+                        sx={{
+                            
+                            fontSize:"24px",
+                            fontWeight:"400",
+                            fontFamily: "var(--English-font)",
+                            color: index === selectedLink ? '#21D6D6' : '#fff',
+
+                        }}
+                        onClick={() => handleLinkClick(index)}
+
+                        >
                             {item.title}
                         </Typography>
                     </Box>
@@ -73,24 +85,25 @@ function NavBar(props) {
     return (
         <Box>
             <CssBaseline />
-            <AppBar component="nav" color="transparent"
+            <AppBar component="nav"
                 sx={{
                     paddingLeft: selectLanguage === "en" ? { lg: "96px", sm: "6px", xs: "6px" } : { lg: "56px", sm: "29px", xs: "29px" },
                     paddingRight: selectLanguage === "en" ? { lg: "56px", sm: "29px", xs: "29px" } : { lg: "96px", sm: "6px", xs: "6px" },
                     boxShadow: "none",
                     paddingTop: { lg: "26px", sm: "36px", xs: "36px" },
-                    paddingBottom: "40px",
+                    backgroundColor: "var(--website-bg-color)",
+                    fontFamily:"var(--English-font)"
 
                 }}
             >
-                <Toolbar sx={{
+                <Toolbar className='root-container' sx={{
                     display: "flex",
                     justifyContent: "space-between",
                     padding: "0px 0px"
                 }}>
                     <Box className="logoGap" sx={{ display: "flex", alignItems: "center" }}>
 
-                        <img src={Logo} ></img>
+                        <img src={Logo}></img>
 
                         <Box sx={{ display: { lg: "flex", xs: 'none', sm: 'none' } }}>
                             {navItems.slice(0, 5).map((items, index) => (
@@ -110,8 +123,9 @@ function NavBar(props) {
                                         fontSize: "16px",
                                         fontWeight: "400",
                                         lineHeight: "36px",
-                                        fontFamily: "Source Sans Pro",
-                                        cursor: "pointer"
+                                        fontFamily: "var(--English-font)",
+                                        cursor: "pointer",
+                                        
                                     }}
                                     onClick={() => handleLinkClick(index)}
                                 >
@@ -132,7 +146,7 @@ function NavBar(props) {
                                 sx={{
                                     borderRadius: '36px',
                                     border: '1px solid #FFF',
-                                    color: '#FFFFFF',
+                                    color: 'var(--white-color)',
                                     padding: '8px 24px',
                                     display: 'flex',
                                     gap: "16px"
@@ -141,9 +155,11 @@ function NavBar(props) {
 
                                 <Button
                                     sx={{
-                                        color: "#ffffff",
+                                        color: "var(--white-color)",
                                         padding: "6px 0px",
                                         whiteSpace: "nowrap",
+                                        fontWeight:"600",
+                                        fontFamily:"var(--English-font)",
                                         '&:hover': {
                                             backgroundColor: 'transparent', // Set the background color to transparent or any value you want
                                         },
@@ -199,7 +215,7 @@ function NavBar(props) {
                     {drawer}
                 </Drawer>
             </nav>
-            <Box component="main" sx={{ paddingBottom: "60px" }}>
+            <Box component="main" sx={{ }}>
 
                 <Toolbar />
 

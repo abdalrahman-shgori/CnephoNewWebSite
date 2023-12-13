@@ -13,6 +13,37 @@
             "BLOG":"BLOG",
             "CAREER":"CAREER",
             "CONTACTUS":"CONTACT US"
+        },
+        "footer":{
+            "UsefulLinks":"Useful Links",
+            "Services":"Services",
+            "Information":"Information",
+            "ABOUTUS":"ABOUT US",
+            "News":"News",
+            "CONTACTUS":"CONTACT US",
+            "CaseStudy":"Case Study",
+            "Link1":"Link 1",
+            "Link2":"Link 2",
+            "UIUX":"UI/UX",
+            "Branding":"Branding",
+            "WebDevelopment":"Web development",
+            "ApplicationDevelopment":"Application development",
+            "Service1":"Service 1",
+            "Service2":"Service 2",
+            "Phone":"+962222222",
+            "Location":"Lebanone, Beirut",
+            "Description":"Lorem ipsum dolor sit amet consectetur. Lectus nisi at non urna id adipiscing accumsan sollicitudin. Imperdiet egestas rutrum eget euismod vitae ipsum porttitor nulla. Enim elit convallis consectetur donec faucibus.",
+            "copyrightNotice": "© 2023 cNepho IT services company, All Right Reserved.",
+            "PrivacyPolicy":"Privacy Policy",
+            "Term":"Term and conditions"
+        },
+        "landingPageSection1":{
+            "BetterSolution1":"Better",
+            "BetterSolution2":"solution at",
+            "BetterSolution3":"your fingertips",
+            "WeHaveMission":"We haveone mission to be the best it software company in the world"
         }
+
+        
     }
 }

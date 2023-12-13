@@ -1,0 +1,15 @@
+.footerLogo{
+    width:160px;
+
+}
+body{
+    cursor: url("../../assets/images/cursor.png") auto;
+
+}
+
+@media screen and (max-width:600px) {
+    .footerLogo{
+        width: 120px;
+        height: 67px;
+    }
+}

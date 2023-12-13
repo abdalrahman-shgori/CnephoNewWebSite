@@ -5,6 +5,7 @@ import Test from './components/navbar/test';
 import ThemeSettings from './pagedirection/ThemeSettings';
 import ThemeLocalization from './locals/ThemeLocalization';
 import { useTranslation } from 'react-i18next';
+import LandingPage from './components/landingPage/landingPage';
 
 function App() {
    const { t, i18n } = useTranslation();
@@ -18,8 +19,7 @@ function App() {
     <ThemeSettings>
 <ThemeLocalization> 
    <Routes>
-    <Route path='about' element={<Navbar/>}/>
-    <Route path='/' element={<Test/>}/>
+    <Route path='/' element={<LandingPage/>}/>
 
    </Routes>
    </ThemeLocalization>

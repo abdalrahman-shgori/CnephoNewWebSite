@@ -1,3 +1,24 @@
+
+@font-face {
+    font-family: "English";
+    src: url(../../FontFamily/English/EnglishFont.otf);
+}
+@font-face {
+    font-family: "EnglishLight";
+    src: url(../../FontFamily/English/SourceSansLight.otf);
+}
 :root{
-    --website-bg-color:#303C73
+    --website-bg-color:#303C73;
+    --white-color:#FFFFFF;
+    --English-font:'English';
+    --English-font-Light:'EnglishLight';
+    --btn-text-color:#313D72
+}
+
+body {
+    font-family: var(--English-font);
+}
+
+h1 {
+    font-family: var(--English-font-Light);
 }

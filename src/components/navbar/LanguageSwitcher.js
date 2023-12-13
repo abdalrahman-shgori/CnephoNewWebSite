@@ -58,6 +58,9 @@ const LanguageSwitcher = () => {
                             color: "#FFFFFF",
                             padding: "6px 0px",
                             display: { lg: "block", sm: "none", xs: "none" },
+                            fontFamily:"var(--English-font)",
+                            fontWeight:"600",
+
                             '&:hover': {
                                 backgroundColor: 'transparent',
                               },
@@ -74,7 +77,9 @@ const LanguageSwitcher = () => {
                             width: "100%",
                             minWidth: "40px",
                             height: { lg: "", xs: "0px" },
-                            textTransform: "unset"
+                            textTransform: "unset",
+                            fontFamily:"var(--English-font)",
+
                         }}
                         disableRipple
                     >
@@ -105,12 +110,23 @@ const LanguageSwitcher = () => {
                             vertical: 'bottom',
                             horizontal: 'center',
                         }}
+                       
 
                     >
                         {selectLanguage === "en" ?
-                            <MenuItem sx={{ minHeight: "0px" }} onClick={() => handleMenuItemClick('ar')}>AR</MenuItem>
+                            <MenuItem sx={{ minHeight: "0px",fontFamily:"var(--English-font)",
+                            '&.Mui-focusVisible': {
+                              backgroundColor: 'transparent', // Specify focus background color
+                            },
+                        }} onClick={() => handleMenuItemClick('ar')}
+                        disableRipple
+
+                        >AR</MenuItem>
                             :
-                            <MenuItem sx={{ minHeight: "0px" }} onClick={() => handleMenuItemClick('en')}>EN</MenuItem>
+                            <MenuItem sx={{ minHeight: "0px" ,                                        fontFamily:"var(--English-font)",
+                        }} onClick={() => handleMenuItemClick('en')}
+                        disableRipple
+                        >EN</MenuItem>
                         }
                     </Menu>
                 </Box>

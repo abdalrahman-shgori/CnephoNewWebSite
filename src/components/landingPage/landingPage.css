@@ -1,0 +1,88 @@
+.we {
+    background-image: url("../../assets/images/dots1.png");
+    background-size:  cover;
+    background-position: 0 -90px;
+    
+  }
+  .frame {
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 36px;
+    display: inline-flex;
+    gap: 16px;
+    justify-content: center;
+    padding: 8px 24px;
+    position: relative;
+    margin-top: 24px;
+  }
+  
+  .frame .text-wrapper {
+    color: #313D72;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 36px;
+    margin-top: -0.5px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .frame .typcn-arrow-up {
+    height: 24px;
+    position: relative;
+    width: 24px;
+  }
+  
+  .computerImg{
+
+  }
+  @media screen and (max-width:1199px) {
+    .computerImg{
+        width: 523px;
+        height: 641px;
+    }
+    .we{
+        background-image: url("");
+
+    }
+   
+  }
+  @media screen and (max-width:600px) {
+    .computerImg{
+        width: 323px;
+        height: 341px;
+    }
+    .we{
+        background-image: url("");
+
+    }
+    .CImg{
+        width: 53px;
+        height: 49px;
+    }
+    .frame .text-wrapper{
+        font-size: 16px;
+    }
+    .frame .typcn-arrow-up{
+        width: 18px;
+        height: 18px;
+    }
+   
+  }
+  @media screen and (max-width:282px) {
+    .computerImg{
+        width: 223px;
+        height: 241px;
+    }
+    .we{
+        background-image: url("");
+
+    }
+    .BetterSolutionText{
+        width: 100% !important;
+        font-size: 24px !important;
+        line-height: 28px !important;
+    }
+   
+  }
