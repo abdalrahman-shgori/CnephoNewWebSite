@@ -87,6 +87,7 @@ function NavBar(props) {
             <CssBaseline />
             <AppBar component="nav"
                 sx={{
+                    overflowY:"hidden",
                     position:"static",
                     paddingLeft: selectLanguage === "en" ? { lg: "96px", sm: "6px", xs: "6px" } : { lg: "56px", sm: "29px", xs: "29px" },
                     paddingRight: selectLanguage === "en" ? { lg: "56px", sm: "29px", xs: "29px" } : { lg: "96px", sm: "6px", xs: "6px" },
@@ -217,6 +218,9 @@ function NavBar(props) {
                     {drawer}
                 </Drawer>
             </nav>
+            <Box component="main"  sx={{paddingBottom:"20px",display:"none"}}>
+                <Toolbar/>
+            </Box>
            
         </Box>
     );
