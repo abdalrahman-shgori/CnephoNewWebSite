@@ -234,13 +234,15 @@ const Footer = () => {
       <Typography
         variant="body2"
         align="center"
-        sx={{ display: 'flex', justifyContent: { lg: 'space-between', sm: "space-between", xs: 'center' }, flexWrap: 'wrap' }}
+        sx={{ display: 'flex',justifyContent: { lg: 'space-between',md:"space-between", sm: "space-between", xs: 'center' }, flexWrap: 'wrap' }}
       >
         <Typography
           sx={{
             ...CopyrightandPolicy,
             fontSize: { lg: "16px", md: "14px", xs: "12px" },
             marginBottom: { lg: "0px", xs: "20px" },
+            display:"flex",
+            alignItems:"center"
           }}
         >{t("footer.copyrightNotice")}</Typography>
         <Typography
@@ -249,15 +251,14 @@ const Footer = () => {
             fontSize: { lg: "16px", md: "14px", xs: "12px" },
             marginBottom: "22px",
             display: "flex",
-            gap: "36px"
-
-
+            gap: {lg:"36px",md:"36px",sm:"24px",xs:"24px"},
+            alignItems:"center"
           }}
         >
           <Link sx={{ textDecoration: "none" }} color="inherit" href="#">
             {t("footer.PrivacyPolicy")}
           </Link>{' '}
-          |{' '}
+           <Typography sx={{display:{lg:"flex",md:"flex",sm:"flex",xs:"none"}}}>|</Typography>{' '}
           <Link sx={{ textDecoration: "none" }} color="inherit" href="#">
             {t("footer.Term")}
           </Link>
