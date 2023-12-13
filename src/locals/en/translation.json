@@ -7,12 +7,12 @@
             "abd1":"the lang in en"
         },
         "navBar":{
-            "ABOUTUS":"ABOUT US",
-            "SERVICES":"SERVICES",
-            "PORTFOLIO":"PORTFOLIO",
-            "BLOG":"BLOG",
-            "CAREER":"CAREER",
-            "CONTACTUS":"CONTACT US"
+            "ABOUTUS":"About Us",
+            "SERVICES":"Services",
+            "PORTFOLIO":"Portfolio",
+            "BLOG":"Blog",
+            "CAREER":"Career",
+            "CONTACTUS":"Contact Us"
         },
         "footer":{
             "UsefulLinks":"Useful Links",
