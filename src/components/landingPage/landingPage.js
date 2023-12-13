@@ -22,9 +22,9 @@ function LandingPage() {
             <NavBar />
             {/* <LottieAnimation animationData={animationDataHome2} /> */}
             <Grid container className="we root-container" sx={{ overflowX: "hidden" }}>
-                <Grid lg={5.9} sm={5.9} xs={12}
+                <Grid lg={6.1} sm={6.1} xs={12}
                     sx={{
-                        marginTop: "60px",
+                        marginTop: "40px",
                         height: "100%",
 
                     }}>
@@ -37,8 +37,8 @@ function LandingPage() {
                             fontSize: { lg: "64px", md: "64px", sm: "40px", xs: "40px", xxs: "10px" },
                             textTransform: "uppercase",
                             fontWeight: "900",
-                            lineHeight: { lg: "85px", md: "85px", xs: "50px" },
-                            fontVariantCaps: "all-small-caps",
+                            lineHeight: { lg: "76px", md: "76px", xs: "50px" },
+                            fontVariant: "all-small-caps",
                             letterSpacing: "2.56px",
                             fontStyle: "normal",
                             whiteSpace: "nowrap",
@@ -97,15 +97,15 @@ function LandingPage() {
                         </div>
                     </Box>
                 </Grid>
-                <Grid lg={6.1} sm={5.9} xs={12}
+                <Grid lg={5.9}  sm={5} xs={12}
                     sx={{
                         display: "flex",
                         justifyContent: { lg: "start", md: "center", xs: "center" },
                         position: "relative",
-                        bottom: { lg: "50px", md: "0px" }
+                        bottom: { lg: "60px", md: "0px" }
                     }}
                 >
-                    <img className="computerImg" src={selectLanguage === "en" ? com : comAr}></img>
+                    <img className="computerImg" height="755px" src={selectLanguage === "en" ? com : comAr}></img>
                     <Box
                         sx={{
                             position: "absolute",

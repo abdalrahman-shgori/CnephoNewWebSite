@@ -87,13 +87,14 @@ function NavBar(props) {
             <CssBaseline />
             <AppBar component="nav"
                 sx={{
+                    position:"static",
                     paddingLeft: selectLanguage === "en" ? { lg: "96px", sm: "6px", xs: "6px" } : { lg: "56px", sm: "29px", xs: "29px" },
                     paddingRight: selectLanguage === "en" ? { lg: "56px", sm: "29px", xs: "29px" } : { lg: "96px", sm: "6px", xs: "6px" },
                     boxShadow: "none",
                     paddingTop: { lg: "26px", sm: "36px", xs: "36px" },
-                    paddingBottom: "20px",
-                    backgroundColor: "var(--website-bg-color)",
-                    fontFamily:"var(--English-font)"
+                    paddingBottom: "0px",
+                    backgroundColor: "transparent",
+                    fontFamily:"var(--English-font)",
 
                 }}
             >
@@ -216,11 +217,7 @@ function NavBar(props) {
                     {drawer}
                 </Drawer>
             </nav>
-            <Box component="main" sx={{ }}>
-
-                <Toolbar />
-
-            </Box>
+           
         </Box>
     );
 }

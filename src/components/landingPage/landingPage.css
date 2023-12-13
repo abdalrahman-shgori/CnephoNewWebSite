@@ -1,3 +1,9 @@
+@import '../../assets/styles/variables.css';
+
+@font-face {
+    font-family: "English";
+    src: url(../../FontFamily/English/EnglishFont.otf);
+}
 .we {
     background-image: url("../../assets/images/dots1.png");
     background-size:  cover;
