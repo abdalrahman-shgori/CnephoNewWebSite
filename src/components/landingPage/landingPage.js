@@ -21,8 +21,8 @@ function LandingPage() {
         <>
             <NavBar />
             {/* <LottieAnimation animationData={animationDataHome2} /> */}
-            <Grid container className="we root-container" sx={{ overflowX: "hidden" }}>
-                <Grid lg={6.1} sm={6.1} xs={12}
+            <Grid  container className="we root-container" sx={{ overflowX: "hidden" }}>
+                <Grid item lg={6.1} sm={6.1} xs={12}
                     sx={{
                         marginTop: "40px",
                         height: "100%",
@@ -97,7 +97,7 @@ function LandingPage() {
                         </div>
                     </Box>
                 </Grid>
-                <Grid lg={5.9}  sm={5} xs={12}
+                <Grid item lg={5.9}  sm={5.9} xs={12}
                     sx={{
                         display: "flex",
                         justifyContent: { lg: "start", md: "center", xs: "center" },
