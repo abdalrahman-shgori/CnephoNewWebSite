@@ -1,11 +1,6 @@
 import * as React from 'react';
 import { useTranslation } from "react-i18next";
 import { useState } from 'react';
-import Fab from '@mui/material/Fab';
-import Fade from '@mui/material/Fade';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
@@ -24,47 +19,7 @@ import arrowRight from "../../assets/images/arrowRight.svg"
 import LanguageSwitcher from './LanguageSwitcher';
 import "./navbar.css"
 const drawerWidth = "100%";
-
-function ScrollTop(props) {
-    const { children, window } = props;
-    const trigger = useScrollTrigger({
-        target: window ? window() : undefined,
-        disableHysteresis: true,
-        threshold: 100,
-      });
-      const handleClick = (event) => {
-        const anchor = (event.target.ownerDocument || document).querySelector(
-          '#back-to-top-anchor',
-        );
-      
-        if (anchor) {
-          anchor.scrollIntoView({
-            block: 'center',
-          });
-        }
-      };
-  
-    return (
-        <Box
-          onClick={handleClick}
-          role="presentation"
-          sx={{
-            position:"relative",
-            top:"2px"
-          }}
-        >
-          {children}
-        </Box>
-    );
-  }
-  
-  ScrollTop.propTypes = {
-    children: PropTypes.element.isRequired,
-  
-    window: PropTypes.func,
-  };
 function NavBar(props) {
-    
     const { t, i18n } = useTranslation();
     const navItems = [
         { title: t("navBar.ABOUTUS"), path: "/About_us" },
@@ -86,8 +41,14 @@ function NavBar(props) {
 
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
-        // window.scrollTo({ top: 0 });
-    };
+        window.scroll({
+          top: 0,
+          left: 0,
+          behavior: 'smooth',
+        });
+      };
+    
+   
     
     const drawer = (
         <Box  onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
@@ -116,6 +77,8 @@ function NavBar(props) {
                             fontWeight:"400",
                             fontFamily: "var(--English-font)",
                             color: index === selectedLink ? '#21D6D6' : '#fff',
+                            width:"100%",
+                            height:"100%"
 
                         }}
                         onClick={() => handleLinkClick(index)}
@@ -241,15 +204,8 @@ function NavBar(props) {
                             }}
                             disableRipple
                         >
-                                  <Box id="back-to-top-anchor" />
-
-                                                    <ScrollTop> 
-
-                            
                             <MenuIcon />
-                            </ScrollTop>
                         </IconButton>
-                        
                     </Box>
                 </Toolbar>
             </AppBar>
@@ -277,10 +233,8 @@ function NavBar(props) {
             <Box component="main"  sx={{paddingBottom:"20px",display:"none"}}>
                 <Toolbar/>
             </Box>
-          
-
+           
         </Box>
-        
     );
 }
 
