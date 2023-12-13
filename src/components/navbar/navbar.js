@@ -43,7 +43,7 @@ function NavBar(props) {
     
     const drawer = (
         <Box  onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-            <List sx={{ marginTop: "60px" }}>
+            <List sx={{ marginTop: "50px" }}>
                 {navItems.map((item, index) => (
                     <Box
                         key={index}
@@ -210,7 +210,7 @@ function NavBar(props) {
                     sx={{
 
                         display: { xs: 'block', sm: 'block' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, marginTop: "100px", backgroundColor: "var(--website-bg-color)", boxShadow: "none", color: "#fff", },
+                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, marginTop: "90px", backgroundColor: "var(--website-bg-color)", boxShadow: "none", color: "#fff", },
                     }}
                 >
                     {drawer}
