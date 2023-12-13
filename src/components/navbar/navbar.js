@@ -31,7 +31,9 @@ function NavBar(props) {
     ];
     const [selectedLink, setSelectedLink] = useState(null);
     const [mobileOpen, setMobileOpen] = React.useState(false);
-    const { window } = props;
+    const [isVisible, setIsVisible] = useState(false);
+
+    const { windowMenu } = props;
     const selectLanguage = i18n.language;
     const handleLinkClick = (index) => {
         setSelectedLink(index)
@@ -39,6 +41,7 @@ function NavBar(props) {
 
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
+        window.scrollTo({ top: 0 });
     };
     
     const drawer = (
@@ -81,7 +84,7 @@ function NavBar(props) {
             </List>
         </Box>
     );
-    const container = window !== undefined ? () => window().document.body : undefined;
+    const container = windowMenu !== undefined ? () => window().document.body : undefined;
     return (
         <Box>
             <CssBaseline />
@@ -181,6 +184,7 @@ function NavBar(props) {
 
                         </Box>
                         <IconButton
+                         className={`scroll-to-top-button ${isVisible ? 'visible' : ''}`}
                             aria-label="open drawer"
                             onClick={handleDrawerToggle}
                             sx={{
@@ -227,7 +231,7 @@ function NavBar(props) {
 }
 
 NavBar.propTypes = {
-    window: PropTypes.func,
+    windowMenu: PropTypes.func,
 };
 
 export default NavBar;
