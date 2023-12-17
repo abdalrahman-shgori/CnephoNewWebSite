@@ -5,7 +5,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--website-bg-color) !important;
-  overflow: hidden;
+  /* overflow: hidden; */
+
 
 }
 .root-container{
@@ -19,13 +20,13 @@ body {
     monospace;
 } */
 
-#root {
+/* #root {
   overflow: auto;
   height: 100vh;
-}
+} */
 
 /* Style the custom scrollbar */
-#root::-webkit-scrollbar {
+/* #root::-webkit-scrollbar {
   width: 0px;
 }
 
@@ -40,5 +41,5 @@ body {
 
 #root::-webkit-scrollbar-thumb:hover {
   background-color: #555;
-}
+} */
 
