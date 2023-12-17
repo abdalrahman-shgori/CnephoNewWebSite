@@ -61,6 +61,7 @@ const LanguageSwitcher = () => {
                             fontFamily:"var(--English-font)",
                             fontWeight:"600",
 
+
                             '&:hover': {
                                 backgroundColor: 'transparent',
                               },
@@ -97,7 +98,8 @@ const LanguageSwitcher = () => {
                     />
                     <Menu
                         sx={{
-                            cursor: "pointer"
+                            cursor: "pointer",
+                           
                         }}
                         anchorEl={anchorEl}
                         open={Boolean(anchorEl)}

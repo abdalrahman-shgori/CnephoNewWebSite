@@ -12,7 +12,8 @@
     --white-color:#FFFFFF;
     --English-font:'English';
     --English-font-Light:'EnglishLight';
-    --btn-text-color:#313D72
+    --btn-text-color:#313D72;
+    --header-color:#21D6D6
 }
 
 body {

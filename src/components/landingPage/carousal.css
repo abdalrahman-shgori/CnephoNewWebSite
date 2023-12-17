@@ -1,0 +1,24 @@
+.carousel-container {
+    position: relative;
+  
+
+  }
+  
+  .progress-bar-container {
+    /* position: absolute;
+    bottom: -20px;
+    left: 0; */
+    
+  }
+  
+  .progress-bar {
+    height: 5px;
+    background-color: #21D6D6; /* Change the color as needed */
+    transition: width 0.3s ease-in-out;
+    border-radius: 8px;
+  }
+  .slick-list{
+overflow-x: clip !important;
+overflow: initial;
+  }
+  

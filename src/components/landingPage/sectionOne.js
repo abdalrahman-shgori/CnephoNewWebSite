@@ -9,6 +9,7 @@ import { useTranslation } from "react-i18next";
 // import LottieAnimation from './lottie'; // Adjust the path as needed
 // import animationDataHome2 from '../../assets/images/HomePart1/HomePart1.json';
 import "./landingPage.css"
+import OurSolution from "./ourSolution";
 
 
 function SectionOne() {
@@ -36,7 +37,7 @@ function SectionOne() {
                             fontWeight: "900",
                             lineHeight: { lg: "76px", md: "76px", xs: "50px" },
                             fontVariant: "all-small-caps",
-                            letterSpacing: "2.56px",
+                            letterSpacing: selectLanguage === "en" && "2.56px",
                             fontStyle: "normal",
                             whiteSpace: "nowrap",
                             fontFamily: "var(--English-font)",
@@ -104,7 +105,9 @@ function SectionOne() {
                 >
                     <Box
                     sx={{
-                        marginLeft:{lg:"-36px",md:"36px",sm:"200px"}
+                        marginLeft:selectLanguage === "en" && {lg:"-36px",md:"36px",sm:"200px"}, 
+                        marginRight:selectLanguage === "ar" && {lg:"-36px",md:"36px",sm:"200px"} 
+
                     }}
                     >
 
@@ -128,6 +131,8 @@ function SectionOne() {
 
                 </Grid>
             </Grid>
+
+
 
         </>
     )

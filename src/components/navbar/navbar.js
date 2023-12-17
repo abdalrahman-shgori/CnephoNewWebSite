@@ -113,7 +113,9 @@ function NavBar(props) {
                 <Toolbar className='root-container' sx={{
                     display: "flex",
                     justifyContent: "space-between",
-                    padding: "0px 0px"
+                    padding: "0px 0px",
+                    width:"100%",
+
                 }}>
                     <Box className="logoGap" sx={{ display: "flex", alignItems: "center" }}>
 
@@ -150,7 +152,9 @@ function NavBar(props) {
                     </Box>
                     <Box sx={{
                         display: "flex",
-                        gap: { lg: "24px", xs: "0px" }
+                        gap: { lg: "24px", xs: "0px" },
+                        width:"auto"
+                     
                     }}>
                         <LanguageSwitcher />
                         <Box sx={{

@@ -8,6 +8,10 @@ import { useTranslation } from "react-i18next";
 import "./landingPage.css"
 import SectionOne from "./sectionOne";
 import OurSolution from "./ourSolution";
+import CaseStudy from "./caseStudy";
+import OurClients from "./ourClients";
+import Help from "./needHelp";
+import OurAward from "./ourAward";
 
 
 function LandingPage() {
@@ -19,7 +23,8 @@ function LandingPage() {
         <NavBar/>
            <SectionOne/>
            <OurSolution/>
-           <Footer/>
+
+           
         </>
     )
 }

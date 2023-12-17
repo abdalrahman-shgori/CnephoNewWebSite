@@ -1,0 +1,32 @@
+.help-bg {
+    position: relative;
+    height: 780px;
+    overflow: hidden; /* Ensures the overlay doesn't extend beyond the container */
+  }
+  
+  .help-bg::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("../../assets/images/HelpBG.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #313D72; /* Background color with reduced opacity */
+    opacity: 0.478; /* Opacity value (adjust as needed) */
+    z-index: 1; /* Place the overlay above the background image */
+  }
+  
+  .text-content {
+    position: relative;
+    z-index: 2; /* Place the text above the background overlay */
+   
+  }
+  
+  @media screen and (max-width:600px) {
+    .help-bg::before{
+      background-image: url("../../assets/images/HelpBG-SM.png");
+    }
+  }

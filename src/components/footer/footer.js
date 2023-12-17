@@ -85,10 +85,9 @@ const Footer = () => {
   return (
     <Grid className='root-container' sx={{
       padding: selectLanguage === "en" ? { lg: "0px 120px 0px 120px", xs: "20px 21px 0px 16px" } : { lg: "20px 120px 0px 120px", xs: "20px 16px 0px 21px" },
-      cursor: "url(../../assets/images/cursor.svg) auto"
 
     }}>
-      <Grid container spacing={{ lg: "92px", sm: "0px" }}>
+      <Grid container spacing={{ lg: "0px", sm: "0px" }}>
         {/* Logo and Description Section */}
         <Grid item xs={12} sm={8} md={4.6}>
           <Box
