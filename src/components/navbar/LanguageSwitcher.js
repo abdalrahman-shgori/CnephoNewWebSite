@@ -49,7 +49,8 @@ const LanguageSwitcher = () => {
                         justifyContent: "center",
                         width: "100%",
                         position: 'relative',
-                        cursor: "pointer"
+                        cursor: "pointer",
+
                     }}
                     onClick={handleBoxClick}
                 >
@@ -60,7 +61,6 @@ const LanguageSwitcher = () => {
                             display: { lg: "block", sm: "none", xs: "none" },
                             fontFamily:"var(--English-font)",
                             fontWeight:"600",
-
 
                             '&:hover': {
                                 backgroundColor: 'transparent',
@@ -81,6 +81,7 @@ const LanguageSwitcher = () => {
                             textTransform: "unset",
                             fontFamily:"var(--English-font)",
 
+
                         }}
                         disableRipple
                     >
@@ -99,8 +100,8 @@ const LanguageSwitcher = () => {
                     <Menu
                         sx={{
                             cursor: "pointer",
-                           
                         }}
+                        // disableScrollLock={true}
                         anchorEl={anchorEl}
                         open={Boolean(anchorEl)}
                         onClose={handleClose}
@@ -125,9 +126,13 @@ const LanguageSwitcher = () => {
 
                         >AR</MenuItem>
                             :
-                            <MenuItem sx={{ minHeight: "0px" ,                                        fontFamily:"var(--English-font)",
+                            <MenuItem sx={{ minHeight: "0px",fontFamily:"var(--English-font)",
+                            '&.Mui-focusVisible': {
+                              backgroundColor: 'transparent', // Specify focus background color
+                            },
                         }} onClick={() => handleMenuItemClick('en')}
                         disableRipple
+
                         >EN</MenuItem>
                         }
                     </Menu>

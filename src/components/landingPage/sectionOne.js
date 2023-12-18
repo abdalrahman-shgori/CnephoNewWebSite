@@ -19,7 +19,8 @@ function SectionOne() {
     return (
         <>
             {/* <LottieAnimation animationData={animationDataHome2} /> */}
-            <Grid  container className="we root-container" sx={{ overflowX: "hidden" }}>
+
+            <Grid container className="we root-container" sx={{ overflowX: "hidden" }}>
                 <Grid item lg={6.1} sm={6.1} xs={12}
                     sx={{
                         marginTop: "40px",
@@ -95,7 +96,7 @@ function SectionOne() {
                         </div>
                     </Box>
                 </Grid>
-                <Grid item lg={5.9}  sm={5.9} xs={12}
+                <Grid item lg={5.9} sm={5.9} xs={12}
                     sx={{
                         display: "flex",
                         justifyContent: { lg: "start", md: "center", xs: "center" },
@@ -104,14 +105,14 @@ function SectionOne() {
                     }}
                 >
                     <Box
-                    sx={{
-                        marginLeft:selectLanguage === "en" && {lg:"-36px",md:"36px",sm:"200px"}, 
-                        marginRight:selectLanguage === "ar" && {lg:"-36px",md:"36px",sm:"200px"} 
+                        sx={{
+                            marginLeft: selectLanguage === "en" && { lg: "-36px", md: "36px", sm: "200px" },
+                            marginRight: selectLanguage === "ar" && { lg: "-36px", md: "36px", sm: "200px" }
 
-                    }}
+                        }}
                     >
 
-                    <img className="computerImg" height="755px" src={selectLanguage === "en" ? com : comAr}></img>
+                        <img className="computerImg" height="755px" src={selectLanguage === "en" ? com : comAr}></img>
                     </Box>
 
                     <Box

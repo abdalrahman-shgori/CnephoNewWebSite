@@ -41,6 +41,8 @@ function NavBar(props) {
 
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
+        // document.body.style.overflow = isVisible ?'hidden' : "sroll";
+
         window.scroll({
           top: 0,
           left: 0,
@@ -196,6 +198,7 @@ function NavBar(props) {
 
                         </Box>
                         <IconButton
+                        // disableScrollLock
                          className={`scroll-to-top-button ${isVisible ? 'visible' : ''}`}
                             aria-label="open drawer"
                             onClick={handleDrawerToggle}
@@ -207,6 +210,7 @@ function NavBar(props) {
                                 paddingRight: selectLanguage === "ar" ? "19px" : "0px",
                             }}
                             disableRipple
+                            
                         >
                             <MenuIcon />
                         </IconButton>

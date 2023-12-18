@@ -128,7 +128,7 @@ function OurSolution() {
                             <CarouselComponent />
                             <CaseStudy />
 
-                            
+
                         </Grid>
                     </Grid>
                 </Grid>

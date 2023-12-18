@@ -5,6 +5,7 @@ import "./blogs.css"
 import { Box, Button, Grid, Typography } from "@mui/material";
 import blogImg1 from "../../assets/images/blogImg.svg";
 import ArrowWhite from "../../assets/images/BlueArrow.svg"
+import WhoTrust from "./whoTrust";
 
 function Blog(){
     const { t, i18n } = useTranslation();
@@ -61,7 +62,7 @@ function Blog(){
                
                 >
         {Blogs.map((item, index) => (
-  <Grid container xl={3} lg={4} md={4} sm={5} xs={12} key={index} justifyContent="center" >
+  <Grid container item xl={4} lg={4} md={4} sm={5} xs={12} key={index} justifyContent="center" >
     <Box
       sx={{
         position: "relative",
@@ -208,8 +209,8 @@ sx={{
             </Box>
 
         </Grid>
+        <WhoTrust/>
 
-        <Footer />
 
         </>
     )

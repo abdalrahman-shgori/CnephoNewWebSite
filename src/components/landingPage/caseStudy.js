@@ -56,7 +56,7 @@ function CaseStudy() {
                     </Typography>
 
                     <Grid item container>
-                        <Grid lg={6} md={6} sm={6} xs={12}>
+                        <Grid item lg={6} md={6} sm={6} xs={12}>
                             <Typography
                                 sx={{
                                     color: "var(--white-color)",
@@ -74,7 +74,7 @@ function CaseStudy() {
                             </Typography>
 
                         </Grid>
-                        <Grid lg={6} md={6} sm={6} xs={12}>
+                        <Grid item lg={6} md={6} sm={6} xs={12}>
                             <Typography
                                 sx={{
                                     color: "var(--white-color)",
@@ -92,9 +92,9 @@ function CaseStudy() {
                         </Grid>
                     </Grid>
 
-                    {cases.map((item) => (
+                    {cases.map((item, index) => (
 
-                        <Grid item container
+                        <Grid item key={index} container
                             sx={{
                                 marginTop: { lg: "20px", md: "20px", sm: "20px", xs: "0px" }
                             }}
@@ -108,7 +108,7 @@ function CaseStudy() {
                                     }}
                                 >
                                     {item.id === 0 || item.id % 2 === 0 ?
-                                        <img style={{maxWidth:"100%"}} src={item.img}></img>
+                                        <img style={{ maxWidth: "100%" }} src={item.img}></img>
                                         :
                                         <>
                                             <Box>
@@ -118,7 +118,7 @@ function CaseStudy() {
                                                         display: "flex",
                                                         flexDirection: "column",
                                                         gap: { lg: "24px", md: "24px", sm: "16px", xs: "16px" },
-                                                        marginTop:"20px"
+                                                        marginTop: "20px"
                                                     }}
                                                 >
                                                     <Typography
@@ -185,7 +185,7 @@ function CaseStudy() {
                                     }}
                                 >
                                     {item.id % 2 !== 0 ?
-                                        <img style={{maxWidth:"100%"}} src={item.img}></img>
+                                        <img style={{ maxWidth: "100%" }} src={item.img}></img>
                                         :
                                         <>
                                             <Box>
@@ -275,7 +275,7 @@ function CaseStudy() {
                                 color: "var(--white-color)",
                                 fontSize: { lg: "24px", md: "24px", sm: "16px", xs: "16px" },
                                 lineHeight: "36px",
-                                fontVariant:"small-caps",
+                                fontVariant: "small-caps",
                                 fontWeight: "600",
                                 fontFamily: "var(--English-font)",
                                 border: "1px solid var(--white-color)",
@@ -302,7 +302,7 @@ function CaseStudy() {
 
             </Grid>
             <OurClients />
-           
+
         </>
     )
 }

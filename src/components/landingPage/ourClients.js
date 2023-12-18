@@ -89,7 +89,7 @@ function OurClients(props) {
                     backgroundColor: "#F1F4FF",
                 }}
             >
-                <Grid xl={4} lg={6} md={12} sm={12} xs={12}
+                <Grid item xl={5} lg={6} md={12} sm={12} xs={12}
                     sx={{
                         backgroundColor: "#F1F4FF",
                         position: "relative"
@@ -97,14 +97,14 @@ function OurClients(props) {
                     }}
                 >
                     <Box>
-                        <img style={{ width: "100%"}} src={ourClients}></img>
+                        <img style={{ width: "100%" }} src={ourClients}></img>
                     </Box>
                     <Box
                         sx={{
                             position: "absolute",
                             top: { lg: "50%", md: "99%", sm: "99%", xs: "97%" },
-                            left: selectLanguage === "en" &&{ lg: "99.4%", md: "50%", sm: "50%", xs: "50%" },
-                            right: selectLanguage === "ar" &&{ lg: "91.6%", md: "50%", sm: "50%", xs: "50%" },
+                            left: selectLanguage === "en" && { lg: "99.4%", md: "50%", sm: "50%", xs: "50%" },
+                            right: selectLanguage === "ar" && { lg: "91.6%", md: "50%", sm: "50%", xs: "50%" },
                             transform: "translate(-44%, -50%)",
                             textAlign: "center",
                             width: { lg: "68px", md: "68px", sm: "68px", xs: "44px" },
@@ -115,7 +115,7 @@ function OurClients(props) {
                         <img style={{ maxWidth: "100%" }} src={quetos}></img>
                     </Box>
                 </Grid>
-                <Grid xl={8} lg={6} md={12} sm={12} xs={12}
+                <Grid item xl={6} lg={6} md={12} sm={12} xs={12}
                     sx={{
                         backgroundColor: "#F1F4FF",
                         paddingLeft: { lg: "118px", md: "16px", sm: "16px", xs: "16px" },
@@ -174,11 +174,12 @@ function OurClients(props) {
                         }}
                     >
 
-                        <Slider  ref={sliderRef} {...settings}>
-                            {Clients.map((item) => (
+                        <Slider ref={sliderRef} {...settings}>
+                            {Clients.map((item, index) => (
                                 <Box
+                                    key={index}
                                     sx={{
-                                        marginTop: { lg: "36px", md: "36px", sm: "36px", xs: "30px" }
+                                        marginTop: { lg: "36px", md: "36px", sm: "36px", xs: "30px" },
                                     }}
                                 >
                                     <Typography
@@ -189,7 +190,8 @@ function OurClients(props) {
                                             letterSpacing: selectLanguage === "en" && { lg: "0.64px", md: "0.64px", sm: "0.48px", xs: "0.48px" },
                                             color: "var(--btn-text-color)",
                                             fontFamily: "var(--English-font)",
-                                            textAlign: "justify"
+                                            textAlign: "justify",
+                                            marginRight: "6px"
 
                                         }}
                                     >
@@ -199,7 +201,8 @@ function OurClients(props) {
                                         sx={{
                                             display: "flex",
                                             gap: { lg: "24px", md: "24px", sm: "24px", xs: "24px" },
-                                            marginTop: { lg: "48px", md: "48px", sm: "48px", xs: "38px" }
+                                            marginTop: { lg: "48px", md: "48px", sm: "48px", xs: "38px" },
+                                            direction: selectLanguage === "en" ? "ltr" : "rtl"
                                         }}
                                     >
                                         <img src={item.clientImg}></img>
@@ -252,11 +255,11 @@ function OurClients(props) {
                                 alignItems: "center",
                                 justifyContent: "center",
                                 marginTop: { lg: "36px", md: "36px", sm: "36px", xs: "36px" },
-                                paddingBottom: {lg:"48px",md:"48px",sm:"22px",xs:"22px"},
-                                direction:"ltr"
+                                paddingBottom: { lg: "48px", md: "48px", sm: "22px", xs: "22px" },
+                                direction: "ltr"
                             }}
                         >
-                            <Grid lg={6} md={6} xs={6}
+                            <Grid item lg={6} md={6} xs={6}
                                 sx={{
 
                                     textAlign: selectLanguage === "en" ? "left" : "left",
@@ -270,10 +273,10 @@ function OurClients(props) {
                             </Grid>
 
 
-                            <Grid lg={6} md={6} xs={6}
+                            <Grid item lg={6} md={6} xs={6}
                                 sx={{
                                     textAlign: selectLanguage === "en" ? "right" : "right",
-                                    cursor: {lg:"pointer",md:"pointer",sm:"unset",xs:"unset"}
+                                    cursor: { lg: "pointer", md: "pointer", sm: "unset", xs: "unset" }
                                 }}
 
 
@@ -296,8 +299,8 @@ function OurClients(props) {
                 </Grid>
 
             </Grid>
-            <Help/>
-           
+            <Help />
+
         </>
     )
 }

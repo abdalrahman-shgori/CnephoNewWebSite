@@ -128,14 +128,23 @@ function Help() {
           >
 
             <Slider ref={sliderRef} {...settings}
+            
 
             >
-              {items.map((item) => (
+           
+
+              {items.map((item,index) => (
                 <>
                   <Grid
+                  key={index}
                     sx={{
                       marginRight: { lg: "10px", md: "10px", sm: "10px", xs: "10px" },
                       marginLeft: { lg: "10px", md: "10px", sm: "10px", xs: "10px" },
+                      display:"flex",
+                      flexDirection:"column",
+                      justifyContent:"center",
+                      alignItems:"center"
+                   
 
 
                     }}
@@ -145,6 +154,7 @@ function Help() {
                         backgroundColor: item.id === 1 ? "var(--btn-text-color)" : "var(--header-color)",
                         height: "97px",
                         width: "100%",
+                        maxWidth:"386px",
                         position: "relative",
                         borderRadius: "16px 16px 0px 0px",
                       }}
@@ -168,6 +178,8 @@ function Help() {
                         backgroundColor: "var(--white-color)",
                         height: "100%",
                         width: "100%",
+                        maxWidth:"386px",
+
                         borderRadius: "0px 0px 16px 16px",
                         paddingLeft: "24px",
                         paddingRight: "24px",
@@ -249,6 +261,7 @@ function Help() {
                   </Grid>
                 </>
               ))}
+
             </Slider>
           </Box>
 

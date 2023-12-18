@@ -78,6 +78,21 @@
             "ourBlogs":"Our Blogs",
             "latestNews":"Latest News",
             "seeAllNews":"see all news"
+        },
+        "WhoTrust":{
+            "Ourclients":"Our clients",
+            "theyTrust":"They trust us",
+            "WeAreCommitted":"We are committed o providing our customers with exceptional service while offering our employees the best training"
+        },
+        "Appointement":{
+            "Makeanappointement":"Make an appointement",
+            "talkToUs":"Talk to us and get your project moving",
+            "desc":"Lorem ipsum dolor sit amet consectetur. Lectus nisi at non urna id adipiscing accumsan sollicitudin. Imperdiet egestas rutrum eget euismod vitae ipsum porttitor nulla. Enim elit convallis consectetur donec faucibus convallis consectetur donec faucibus.",
+            "fullName":"your full name",
+            "Email":"Email",
+            "Subject":"Subject",
+            "Message":"Message",
+            "sendrequest":"send request"
         }
         
         

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from "react-i18next";
 
 import Slider from 'react-slick';
@@ -14,6 +14,7 @@ import ui from "../../assets/images/ui.svg"
 
 
 const Carousel = (props) => {
+    const [progressBarWidth, setProgressBarWidth] = useState(0);
 
     const { t, i18n } = useTranslation();
 
@@ -97,7 +98,24 @@ const Carousel = (props) => {
             sliderRef.current.slickPrev();
         }
     };
+    useEffect(() => {
+        // Function to recalculate currentSlide based on window width
+        const calculateCurrentSlide = () => {
+            const newCurrentSlide = 0
+            setCurrentSlide(newCurrentSlide);
+        };
 
+        // Initial calculation when the component mounts
+        calculateCurrentSlide();
+
+        // Add event listener for window resize
+        window.addEventListener('resize', calculateCurrentSlide);
+
+        // Remove event listener when the component unmounts
+        return () => {
+            window.removeEventListener('resize', calculateCurrentSlide);
+        };
+    }, []);
 
 
     return (
@@ -105,8 +123,8 @@ const Carousel = (props) => {
             sx={{
                 paddingLeft: { lg: "107px", xs: "0px" },
                 paddingRight: { lg: "107px", xs: "0px" },
-                paddingTop:{lg:"80px",md:"0px",sm:"0px",xs:"0px"},
-                
+                paddingTop: { lg: "80px", md: "0px", sm: "0px", xs: "0px" },
+
 
             }}
         >
@@ -125,7 +143,7 @@ const Carousel = (props) => {
                                 width: "285px",
                                 borderRadius: "66px 8px 8px 8px",
                                 position: "relative",
-margin:"0 auto"
+                                margin: "0 auto"
 
                             }}
                         >
@@ -214,24 +232,24 @@ margin:"0 auto"
                     paddingLeft: { lg: "20px", xs: "19px" },
                     paddingRight: { lg: "20px", xs: "29px" },
                     marginTop: { lg: "24px", md: "24px", sm: "24px", xs: "40px" },
-                    direction:"ltr"
+                    direction: "ltr"
                 }}
             >
-                <Grid lg={1} md={1} sm={1} xs={3}
+                <Grid item lg={1} md={1} sm={1} xs={3}
                     sx={{
 
-                        textAlign:"left",
-                        cursor: {lg:"pointer",md:"pointer",sm:"unset",xs:"unset"}
+                        textAlign: "left",
+                        cursor: { lg: "pointer", md: "pointer", sm: "unset", xs: "unset" }
                     }}
                     onClick={handlePrev}
 
                 >
 
-<img src={selectedLanguage === "en" ? ArrowRight : ArrowRight}></img>
+                    <img src={selectedLanguage === "en" ? ArrowRight : ArrowRight}></img>
                 </Grid>
 
 
-                <Grid lg={10} md={10} sm={10} xs={6} className="progress-bar-container"
+                <Grid item lg={10} md={10} sm={10} xs={6} className="progress-bar-container"
 
                 >
                     <Box
@@ -243,15 +261,23 @@ margin:"0 auto"
                     >
                         <Box
                             className="progress-bar"
-                            sx={{ width: { lg: `${((currentSlide + 4) / settings.slidesToShow) * 100}%`, md: `${((currentSlide + 3) / settings.slidesToShow) * 100}%`, sm: `${((currentSlide + 2) / settings.slidesToShow) * 100}%`, xs: `${((currentSlide + 1) / settings.slidesToShow) * 100}%` } }}
+                            sx={{
+                                width:
+                                {
+                                    lg: `${((currentSlide + 4) / settings.slidesToShow) * 100}%`,
+                                    md: `${((currentSlide + 3) / settings.slidesToShow) * 100}%`,
+                                    sm: `${((currentSlide + 2) / settings.slidesToShow) * 100}%`,
+                                    xs: `${((currentSlide + 1) / settings.slidesToShow) * 100}%`
+                                }
+                            }}
                         />
                     </Box>
                 </Grid>
 
-                <Grid lg={1} md={1} sm={1} xs={3}
+                <Grid item lg={1} md={1} sm={1} xs={3}
                     sx={{
-                        textAlign:"right",
-                        cursor: {lg:"pointer",md:"pointer",sm:"unset",xs:"unset"}
+                        textAlign: "right",
+                        cursor: { lg: "pointer", md: "pointer", sm: "unset", xs: "unset" }
                     }}
                     onClick={handleNext}
 
@@ -267,11 +293,11 @@ margin:"0 auto"
     );
 };
 
-const Card = ({ title, content }) => (
-    <div style={{ border: '1px solid #ccc', padding: '20px', borderRadius: '8px', textAlign: 'center' }}>
-        <h3>{title}</h3>
-        <p>{content}</p>
-    </div>
-);
+// const Card = ({ title, content }) => (
+//     <div style={{ border: '1px solid #ccc', padding: '20px', borderRadius: '8px', textAlign: 'center' }}>
+//         <h3>{title}</h3>
+//         <p>{content}</p>
+//     </div>
+// );
 
 export default Carousel;
