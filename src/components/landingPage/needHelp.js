@@ -221,7 +221,7 @@ function Help() {
                             color: "var(--btn-text-color)",
                             fontSize: "24px",
                             lineHeight: "36px",
-                            fontVariant: "all-small-caps",
+                            fontVariant: "small-caps",
                             fontWeight: "600",
                             fontFamily: "var(--English-font)",
                             border: "1px solid var(--btn-text-color)",

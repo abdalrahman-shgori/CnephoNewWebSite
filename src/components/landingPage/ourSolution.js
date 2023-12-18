@@ -36,7 +36,7 @@ function OurSolution() {
                             fontFamily: "var(--English-font)",
                             fontSize: { lg: "40px", md: "40px", sm: "26px", xs: "26px" },
                             fontWeight: "600",
-                            fontVariant: "all-small-caps",
+                            fontVariant: "small-caps",
                             letterSpacing: selectedLanguage === "en" && { lg: "1.6px", md: "1.6px", xs: "1.04px" },
                             padding: 0,
                         }}
@@ -49,7 +49,7 @@ function OurSolution() {
                             fontFamily: "var(--English-font)",
                             fontSize: { lg: "48px", md: "48px", sm: "26px", xs: "26px" },
                             fontWeight: "700",
-                            fontVariant: "all-small-caps",
+                            fontVariant: "small-caps",
                             letterSpacing: selectedLanguage === "en" && { lg: "1.92px", md: "1.92px", xs: "1.04px" },
                             padding: "0 0"
                         }}
@@ -61,7 +61,7 @@ function OurSolution() {
                             fontFamily: "var(--English-font)",
                             fontSize: { lg: "36px", md: "36px", sm: "26px", xs: "23px" },
                             fontWeight: "400",
-                            fontVariant: "all-small-caps",
+                            fontVariant: "small-caps",
                             letterSpacing: selectedLanguage === "en" && { lg: "1.44px", md: "1.44px", xs: "0.92px" },
                             paddingLeft: { lg: "0px", md: "0px", xs: "55px" },
                             paddingRight: { lg: "0px", md: "0px", xs: "55px" },
@@ -89,7 +89,7 @@ function OurSolution() {
                                         fontFamily: "var(--English-font)",
                                         fontSize: { lg: "40px", md: "40px", sm: "26px", xs: "26px" },
                                         fontWeight: "600",
-                                        fontVariant: "all-small-caps",
+                                        fontVariant: "small-caps",
                                         letterSpacing: selectedLanguage === "en" && { lg: "1.6px", md: "1.6px", xs: "1.04px" },
                                         padding: 0,
                                     }}
@@ -102,7 +102,7 @@ function OurSolution() {
                                         fontFamily: "var(--English-font)",
                                         fontSize: { lg: "48px", md: "48px", sm: "26px", xs: "26px" },
                                         fontWeight: "700",
-                                        fontVariant: "all-small-caps",
+                                        fontVariant: "small-caps",
                                         letterSpacing: selectedLanguage === "en" && { lg: "1.6px", md: "1.6px", xs: "1.04px" },
                                         padding: "0 0"
                                     }}
@@ -114,7 +114,7 @@ function OurSolution() {
                                         fontFamily: "var(--English-font)",
                                         fontSize: { lg: "36px", md: "36px", sm: "26px", xs: "23px" },
                                         fontWeight: "400",
-                                        fontVariant: "all-small-caps",
+                                        fontVariant: "small-caps",
                                         letterSpacing: selectedLanguage === "en" && { lg: "1.44px", md: "1.44px", xs: "0.92pxpx" },
                                         paddingLeft: { lg: "0px", md: "0px", xs: "45px" },
                                         paddingRight: { lg: "0px", md: "0px", xs: "55px" },

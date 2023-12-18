@@ -150,7 +150,7 @@ margin:"0 auto"
                                     fontWeight: "700",
                                     fontFamily: "var(--English-font)",
                                     lineHeight: "40px",
-                                    fontVariant: "all-small-caps",
+                                    fontVariant: "small-caps",
                                     whiteSpace: "nowrap",
                                     position: "absolute",
                                     left: "50%", // Center horizontally
@@ -184,7 +184,7 @@ margin:"0 auto"
                                     fontWeight: "400",
                                     fontFamily: "var(--English-font)",
                                     lineHeight: "40px",
-                                    fontVariant: "all-small-caps",
+                                    fontVariant: "small-caps",
                                     position: "absolute",
                                     left: "50%", // Center horizontally
                                     transform: "translateX(-50%)",

@@ -275,7 +275,7 @@ function CaseStudy() {
                                 color: "var(--white-color)",
                                 fontSize: { lg: "24px", md: "24px", sm: "16px", xs: "16px" },
                                 lineHeight: "36px",
-                                fontVariant: "all-small-caps",
+                                fontVariant:"small-caps",
                                 fontWeight: "600",
                                 fontFamily: "var(--English-font)",
                                 border: "1px solid var(--white-color)",
@@ -283,7 +283,6 @@ function CaseStudy() {
                                 padding: "16px 24px",
                                 height: "52px",
                                 gap: "16px",
-
 
                             }}
                         >

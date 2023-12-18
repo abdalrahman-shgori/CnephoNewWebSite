@@ -36,7 +36,7 @@ function SectionOne() {
                             textTransform: "uppercase",
                             fontWeight: "900",
                             lineHeight: { lg: "76px", md: "76px", xs: "50px" },
-                            fontVariant: "all-small-caps",
+                            fontVariant: "small-caps",
                             letterSpacing: selectLanguage === "en" && "2.56px",
                             fontStyle: "normal",
                             whiteSpace: "nowrap",

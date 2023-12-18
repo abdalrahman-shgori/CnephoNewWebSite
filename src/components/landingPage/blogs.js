@@ -166,21 +166,19 @@ sx={{
                           paddingTop:"36px",
                           display:"flex",
                           justifyContent:"flex-end",
-                          alignItems:"flex-end",
                           width: "auto",
                           paddingLeft: selectLanguage === "ar" && "16px",
                           paddingRight:selectLanguage === "en" && "16px"
 
                         }}
                       >
-
                         <Button
                           sx={{
                             backgroundColor: "transparent",
                             color: "var(--btn-text-color)",
                             fontSize: "24px",
                             lineHeight: "36px",
-                            fontVariant: "all-small-caps",
+                            fontVariant: "small-caps",
                             fontWeight: "600",
                             fontFamily: "var(--English-font)",
                             border: "1px solid var(--btn-text-color)",
@@ -189,19 +187,22 @@ sx={{
                             height: "52px",
                             gap: "16px",
                             display: "inline-flex",
-                            
-
+                            alignItems:"center"
                           }}
                         >
                           {t("blogs.seeAllNews")}
                           <img className="typcn-arrow-up" alt="Typcn arrow up" src={ArrowWhite}
                             style={{
                               transform: selectLanguage === "ar" ? "rotate(180deg)" : "",
+                              display:"flex",
+                             
 
                             }}
                           />
                         </Button>
                       </Box>
+
+                    
  
 
             </Box>
