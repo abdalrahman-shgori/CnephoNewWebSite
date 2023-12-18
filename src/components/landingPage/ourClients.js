@@ -103,8 +103,7 @@ function OurClients(props) {
                         sx={{
                             position: "absolute",
                             top: { lg: "50%", md: "99%", sm: "99%", xs: "97%" },
-                            left: selectLanguage === "en" && { lg: "99.4%", md: "50%", sm: "50%", xs: "50%" },
-                            right: selectLanguage === "ar" && { lg: "91.6%", md: "50%", sm: "50%", xs: "50%" },
+                            left:selectLanguage === "en" ?  { lg: "99.4%", md: "50%", sm: "50%", xs: "50%" } :{ lg: "-1%", md: "50%", sm: "50%", xs: "50%" } ,
                             transform: "translate(-44%, -50%)",
                             textAlign: "center",
                             width: { lg: "68px", md: "68px", sm: "68px", xs: "44px" },
