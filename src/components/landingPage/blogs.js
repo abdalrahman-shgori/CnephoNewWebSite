@@ -166,7 +166,7 @@ sx={{
                           paddingBottom: {lg:"36px",md:"36px",sm:"36px",xs:"31px"},
                           paddingTop:"36px",
                           display:"flex",
-                          justifyContent:"flex-end",
+                          justifyContent:{lg:"flex-end",md:"flex-end",sm:"flex-end",xs:"center"},
                           width: "auto",
                           paddingLeft: selectLanguage === "ar" && "16px",
                           paddingRight:selectLanguage === "en" && "16px"
