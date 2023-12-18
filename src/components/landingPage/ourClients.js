@@ -21,22 +21,22 @@ function OurClients(props) {
         {
             id: 0,
             desc: "Lorem ipsum dolor sit amet consectetur. Fermentum auctor tincidunt tristique et leo sed quisque et. Gravida suscipit tincidunt elit ut quis in sed. Id donec sed quam tempus metus. Vel et nunc faucibus etiam sit adipiscing.",
-            clientName: "Abdalrahman",
-            clientPosition: "CEO",
+            clientName: "Jane Roe",
+            clientPosition: t("ourClients.CEOFounderat"),
             clientImg: ClientImg
         },
         {
             id: 1,
             desc: "Lorem ipsum dolor sit amet consectetur. Fermentum auctor tincidunt tristique et leo sed quisque et. Gravida suscipit tincidunt elit ut quis in sed. Id donec sed quam tempus metus. Vel et nunc faucibus etiam sit adipiscing.",
-            clientName: "Abdalrahman",
-            clientPosition: "CEO",
+            clientName: "Jane Roe",
+            clientPosition: t("ourClients.CEOFounderat"),
             clientImg: ClientImg
         },
         {
             id: 2,
             desc: "Lorem ipsum dolor sit amet consectetur. Fermentum auctor tincidunt tristique et leo sed quisque et. Gravida suscipit tincidunt elit ut quis in sed. Id donec sed quam tempus metus. Vel et nunc faucibus etiam sit adipiscing.",
-            clientName: "Abdalrahman",
-            clientPosition: "CEO",
+            clientName: "Jane Roe",
+            clientPosition: t("ourClients.CEOFounderat"),
             clientImg: ClientImg
         }
     ]
@@ -144,7 +144,7 @@ function OurClients(props) {
 
                             }}
                         >
-                            What our client’s says
+                            {t("ourClients.whatClientsSays")}
                         </Typography>
                         <Typography
                             sx={{
@@ -157,7 +157,7 @@ function OurClients(props) {
 
                             }}
                         >
-                            Satisfied client’s
+                            {t("ourClients.satisfiedClient")}
                         </Typography>
                         <div
                             style={{

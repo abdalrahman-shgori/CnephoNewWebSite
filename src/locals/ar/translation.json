@@ -54,8 +54,36 @@
             "SafeAnd":"آمنة و",
             "sustainable":"مستدامة",
             "somethingknows":"تعرف على بعض الأشياء من ميزاتنا"
+        },
+        "caseStudy":{
+            "LatestCase":"احدث دراسات الحالة",
+            "ourCreative":"عملنا الإبداعي ",
+            "seeCase":"رؤية حالة الاستخدام",
+            "allCases":"رؤية جميع حالات الاستخدام "
+        },
+        "ourClients":{
+            "whatClientsSays":"ماذا يقول عملائنا",
+            "satisfiedClient":"العميل الراضي",
+            "CEOFounderat":"مؤسس الرئيس التنفيذي"
+        },
+        "needHelp":{
+            "letUs":"دعنا نساعدك",
+            "needTeam":"هل تحتاج إلى فريق ؟",
+            "MVP":"بناء MVP؟",
+            "talkTech":"نقاش التقنية؟",
+            "sendMail":"أرسل بريد إلكتروني"
 
+        },
+        "ourAward":{
+            "OurAwards":"جائزتنا",
+            "weAreVoted":"لقد تم التصويت لنا كأفضل شركة من قبل رجال الأعمال وقادة الأعمال مثلك تمامًا."
+        },
+        "blogs":{
+            "ourBlogs":"مدوناتنا",
+            "latestNews":"آخر الأخبار",
+            "seeAllNews":"رؤية جميع الأخبار"
         }
+
 
           
     }

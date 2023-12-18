@@ -18,9 +18,9 @@ function Help() {
   const selectLanguage = i18n.language
 
   const items = [
-    { id: 0, name: "Need A Team?", img: img1, desc: "Lorem ipsum dolor sit amet consectetur. Dui nunc elit dui quis sit et non tristique. Quis pharetra sed accumsan non auctor arcu duis sagittis. Eu egestas enim nascetur convallis vulputate eu in. Massa scelerisque vulputate morbi urna scelerisque. Faucibus vel aenean aliquam lacus dictumst tellus sem. Et ac in vitae arcu leo ac mattis donec. Elementum tellus curabitur ." },
-    { id: 1, name: "Building An MVP?", img: img2, desc: "Lorem ipsum dolor sit amet consectetur. Dui nunc elit dui quis sit et non tristique. Quis pharetra sed accumsan non auctor arcu duis sagittis. Eu egestas enim nascetur convallis vulputate eu in. Massa scelerisque vulputate morbi urna scelerisque. Faucibus vel aenean aliquam lacus dictumst tellus sem. Et ac in vitae arcu leo ac mattis donec. Elementum tellus curabitur ." },
-    { id: 2, name: "Talk Tech ?", img: img3, desc: "Lorem ipsum dolor sit amet consectetur. Dui nunc elit dui quis sit et non tristique. Quis pharetra sed accumsan non auctor arcu duis sagittis. Eu egestas enim nascetur convallis vulputate eu in. Massa scelerisque vulputate morbi urna scelerisque. Faucibus vel aenean aliquam lacus dictumst tellus sem. Et ac in vitae arcu leo ac mattis donec. Elementum tellus curabitur ." },
+    { id: 0, name: t("needHelp.needTeam"), img: img1, desc: "Lorem ipsum dolor sit amet consectetur. Dui nunc elit dui quis sit et non tristique. Quis pharetra sed accumsan non auctor arcu duis sagittis. Eu egestas enim nascetur convallis vulputate eu in. Massa scelerisque vulputate morbi urna scelerisque. Faucibus vel aenean aliquam lacus dictumst tellus sem. Et ac in vitae arcu leo ac mattis donec. Elementum tellus curabitur ." },
+    { id: 1, name: t("needHelp.MVP"), img: img2, desc: "Lorem ipsum dolor sit amet consectetur. Dui nunc elit dui quis sit et non tristique. Quis pharetra sed accumsan non auctor arcu duis sagittis. Eu egestas enim nascetur convallis vulputate eu in. Massa scelerisque vulputate morbi urna scelerisque. Faucibus vel aenean aliquam lacus dictumst tellus sem. Et ac in vitae arcu leo ac mattis donec. Elementum tellus curabitur ." },
+    { id: 2, name: t("needHelp.talkTech"), img: img3, desc: "Lorem ipsum dolor sit amet consectetur. Dui nunc elit dui quis sit et non tristique. Quis pharetra sed accumsan non auctor arcu duis sagittis. Eu egestas enim nascetur convallis vulputate eu in. Massa scelerisque vulputate morbi urna scelerisque. Faucibus vel aenean aliquam lacus dictumst tellus sem. Et ac in vitae arcu leo ac mattis donec. Elementum tellus curabitur ." },
   ];
 
   const settings = {
@@ -117,7 +117,7 @@ function Help() {
               justifyContent: "center"
             }}
           >
-            Let us help you
+            {t("needHelp.letUs")}
           </Typography>
           <Box
             sx={{
@@ -210,7 +210,8 @@ function Help() {
                       <Box
                         sx={{
                           paddingBottom: "24px",
-                          width: "auto"
+                          width: "auto",
+                          display:"flex",
                         }}
                       >
 
@@ -232,7 +233,7 @@ function Help() {
 
                           }}
                         >
-                          SEND EMAIL
+                          {t("needHelp.sendMail")}
                           <img className="typcn-arrow-up" alt="Typcn arrow up" src={ArrowWhite}
                             style={{
                               transform: selectLanguage === "ar" ? "rotate(180deg)" : "",

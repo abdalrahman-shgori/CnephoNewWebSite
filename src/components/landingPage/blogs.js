@@ -42,7 +42,7 @@ function Blog(){
 
             }}
             >
-            Our Blogs
+            {t("blogs.ourBlogs")}
                 </Typography>
                 <Typography
                 sx={{
@@ -54,7 +54,7 @@ function Blog(){
                     letterSpacing:selectLanguage === "en" && {lg:"1.92px",md:"1.92px",sm:"1.28px",xs:"1.28px"}
                 }}
                 >
-                Latest News
+                {t("blogs.latestNews")}
                 </Typography>
                 <Grid container 
              
@@ -193,7 +193,7 @@ sx={{
 
                           }}
                         >
-                          SEND EMAIL
+                          {t("blogs.seeAllNews")}
                           <img className="typcn-arrow-up" alt="Typcn arrow up" src={ArrowWhite}
                             style={{
                               transform: selectLanguage === "ar" ? "rotate(180deg)" : "",

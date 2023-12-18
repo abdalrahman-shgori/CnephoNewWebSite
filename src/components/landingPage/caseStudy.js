@@ -52,7 +52,7 @@ function CaseStudy() {
 
                         }}
                     >
-                        Latest case studies
+                        {t("caseStudy.LatestCase")}
                     </Typography>
 
                     <Grid item container>
@@ -70,7 +70,7 @@ function CaseStudy() {
 
                                 }}
                             >
-                                Our creative work
+                                {t("caseStudy.ourCreative")}
                             </Typography>
 
                         </Grid>
@@ -161,7 +161,7 @@ function CaseStudy() {
                                                     }}
                                                 >
                                                     <div className="frame">
-                                                        <div className="text-wrapper">see case study</div>
+                                                        <div className="text-wrapper"> {t("caseStudy.seeCase")} </div>
                                                         <img className="typcn-arrow-up" alt="Typcn arrow up" src={Arrow}
                                                             style={{
                                                                 transform: selectLanguage === "ar" ? "rotate(180deg)" : "",
@@ -240,7 +240,7 @@ function CaseStudy() {
                                                     }}
                                                 >
                                                     <div className="frame">
-                                                        <div className="text-wrapper">see case study</div>
+                                                        <div className="text-wrapper">{t("caseStudy.seeCase")}</div>
                                                         <img className="typcn-arrow-up" alt="Typcn arrow up" src={Arrow}
                                                             style={{
                                                                 transform: selectLanguage === "ar" ? "rotate(180deg)" : "",
@@ -287,7 +287,7 @@ function CaseStudy() {
 
                             }}
                         >
-                            see all case study
+                            {t("caseStudy.allCases")}
                             <img className="typcn-arrow-up" alt="Typcn arrow up" src={ArrowWhite}
                                 style={{
                                     transform: selectLanguage === "ar" ? "rotate(180deg)" : "",

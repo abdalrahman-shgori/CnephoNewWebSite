@@ -156,7 +156,7 @@ margin:"0 auto"
                                     left: "50%", // Center horizontally
                                     transform: "translateX(-50%)",
                                     top: "84px",
-                                    letterSpacing: selectedLanguage === "en" && "0.96",
+                                    letterSpacing: selectedLanguage === "en" && "0.96px",
 
 
 

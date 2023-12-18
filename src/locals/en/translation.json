@@ -48,7 +48,36 @@
             "SafeAnd":"Safe and",
             "sustainable":"sustainable",
             "somethingknows":"something knows about our features"
+            
 
+        },
+        "caseStudy":{
+            "LatestCase":"Latest case studies",
+            "ourCreative":" Our creative work",
+            "seeCase":"SEE CASE STUDY",
+            "allCases":"SEE ALL CASE STUDY"
+        },
+        "ourClients":{
+            "whatClientsSays":"What our client’s says",
+            "satisfiedClient":"Satisfied client’s",
+            "CEOFounderat":"CEO Founder at"
+        },
+        "needHelp":{
+            "letUs":"Let us help you",
+            "needTeam":"Need A Team?",
+            "MVP":"Building An MVP?",
+            "talkTech":"Talk Tech ?",
+            "sendMail":"SEND EMAIL"
+
+        },
+        "ourAward":{
+            "OurAwards":"Our Award",
+            "weAreVoted":"We are voted a Top Firm by Entrepreneurs and Business Leaders just like you."
+        },
+        "blogs":{
+            "ourBlogs":"Our Blogs",
+            "latestNews":"Latest News",
+            "seeAllNews":"see all news"
         }
         
         

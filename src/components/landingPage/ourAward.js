@@ -49,7 +49,7 @@ return(
     letterSpacing:selectLanguage === "en" && "0.96px"
    }}
    >
-   Our Award
+   {t("ourAward.OurAwards")}
    </Typography>
    <Typography
    sx={{
@@ -63,7 +63,7 @@ return(
 
    }}
    >
-   We are voted a Top Firm by Entrepreneurs and Business Leaders just like you.
+{t("ourAward.weAreVoted")}
    </Typography>
 
    <Grid container
