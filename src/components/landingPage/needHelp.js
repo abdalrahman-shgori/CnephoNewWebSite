@@ -198,6 +198,8 @@ function Help() {
                           lineHeight: "normal",
                           letterSpacing: selectLanguage === "en" && "0.96px",
                           fontFamily: "var(--English-font)",
+                          direction:selectLanguage === "en" ? "ltr" : "rtl"
+
 
                         }}
                       >
@@ -224,6 +226,8 @@ function Help() {
                           paddingBottom: "24px",
                           width: "auto",
                           display:"flex",
+                          direction:selectLanguage === "en" ? "ltr" : "rtl"
+
                         }}
                       >
 
@@ -231,7 +235,7 @@ function Help() {
                           sx={{
                             backgroundColor: "transparent",
                             color: "var(--btn-text-color)",
-                            fontSize: "24px",
+                            fontSize: selectLanguage === "en" ? "24px" : "18px",
                             lineHeight: "36px",
                             fontVariant: "small-caps",
                             fontWeight: "600",
