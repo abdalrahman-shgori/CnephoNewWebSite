@@ -62,6 +62,7 @@ function SectionOne() {
                         }
 
                     </Typography>
+
                     <Typography
                         sx={{
                             color: "var(--white-color)",
@@ -70,8 +71,8 @@ function SectionOne() {
                             lineHeight: { lg: "36px", md: "36px", xs: "32px" },
                             fontWeight: "400",
                             fontVariant: "small-caps",
-                            marginTop: { lg: "24px", md: "24px", xs: "24px" },
-                            textTransform: "uppercase",
+                            letterSpacing:"0",
+                            marginTop: { lg: "24px", md: "24px", xs: "20px" },
                             padding: selectLanguage === "en" ? { lg: "0px 0px 0px 120px", xs: "0px 16px 0px 16px" } : { lg: "20px 120px 0px 120px", md: "0px 16px 0px 16px", xs: "0px 16px 0px 16px" },
                         }}
                     >

@@ -1,11 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
 import React, { useState, useEffect } from "react";
 import Navbar from './components/navbar/navbar';
-import Test from './components/navbar/test';
+
 import ThemeSettings from './pagedirection/ThemeSettings';
 import ThemeLocalization from './locals/ThemeLocalization';
 import { useTranslation } from 'react-i18next';
 import LandingPage from './components/landingPage/landingPage';
+import ContactUs from './components/contactUs/contactUs';
 
 function App() {
    const { t, i18n } = useTranslation();
@@ -20,6 +21,7 @@ function App() {
 <ThemeLocalization> 
    <Routes>
     <Route path='/' element={<LandingPage/>}/>
+    <Route path='/Contact-Us' element={<ContactUs/>} />
 
    </Routes>
    </ThemeLocalization>

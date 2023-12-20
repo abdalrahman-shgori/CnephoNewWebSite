@@ -1,0 +1,53 @@
+.contactUsBg{
+    background-image: url("../../assets/images/contactUsBg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.VectorBg {
+    background-image: url("../../assets/images/bgVector.svg");
+    background-size:  cover;
+    background-repeat: no-repeat;
+    background-position: 0 -360px;
+
+  }
+  .detailsBg{
+    background-image: url("../../assets/images/detailsBg.svg");
+  }
+
+  .bgContactForm{
+    background-image: url("../../assets/images/BG.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 160px;
+}
+.contactImg{
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 431px
+}
+
+@media screen and (max-width:600px) {
+    .bgContactForm{
+        background-image: url("");
+    }
+    .VectorBg{
+        background-image: url("");
+
+    }
+    .detailsBg{
+        background-image: url("");
+
+    }
+    
+}
+
+ 
+
+@media screen and (max-width:800px) {
+    .contactUsBg{
+        background-image: url("../../assets/images/contactUsBgSm.svg");
+
+    }
+}

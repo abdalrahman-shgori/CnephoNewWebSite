@@ -16,10 +16,10 @@ body {
   width: 100%;
 }
 
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+code {
+  font-family: var(--English-font),
     monospace;
-} */
+}
 
 /* #root {
   overflow: auto;

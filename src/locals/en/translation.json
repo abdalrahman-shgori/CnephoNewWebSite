@@ -12,7 +12,8 @@
             "PORTFOLIO":"Portfolio",
             "BLOG":"Blog",
             "CAREER":"Career",
-            "CONTACTUS":"Contact Us"
+            "CONTACTUS":"Contact Us",
+            "Home":"Home"
         },
         "footer":{
             "UsefulLinks":"Useful Links",
@@ -93,6 +94,24 @@
             "Subject":"Subject",
             "Message":"Message",
             "sendrequest":"send request"
+        },
+        "contactUs":{
+            "ContactUs":"CONTACT US",
+            "contactDesc":"Lorem ipsum dolor sit amet consectetur. Rhoncus proin eget parturient habitasse vel congue at etiam iaculis. Enim cras aliquet quis et fringilla pharetra amet morbi sit. A praesent nibh sagittis augue. ",
+            "contactDesc2":"Lorem ipsum dolor sit amet consectetur. Non massa congue nisi netus ornare tincidunt lorem scelerisque et. Volutpat quis adipiscing tristique a vulputate amet aliquet urna quis. Est penatibus pellentesque sed suspendisse nisl risus cursus tellus. Sed elit massa tincidunt fermentum.",
+            "HotLine":"HOTLINE",
+            "Location":"LOCATION",
+            "email":"EMAIL",
+            "num":"+9622222222",
+            "needSomthing":"Need something special",
+            "letUsKnow":"Please let us know",
+            "proDescription":"Project Description",
+            "budgetSize":"Budget Size",
+            "whatWeCanDo":"What We Can Do For You?",
+            "name":"Name",
+            "Email":"Email",
+            "PhoneNum":"Phone Number",
+            "SendRequest":"SEND REQUEST"
         }
         
         

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useTranslation } from "react-i18next";
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -22,21 +22,28 @@ const drawerWidth = "100%";
 function NavBar(props) {
     const { t, i18n } = useTranslation();
     const navItems = [
+        { title: t("navBar.Home"), path: "/" },
         { title: t("navBar.ABOUTUS"), path: "/About_us" },
         { title: t("navBar.SERVICES"), path: "/services" },
         { title: t("navBar.PORTFOLIO"), path: "/portfolio" },
         { title: t("navBar.BLOG"), path: "/blog" },
         { title: t("navBar.CAREER"), path: "/career" },
-        { title: t("navBar.CONTACTUS"), path: "/contact us" },
+        { title: t("navBar.CONTACTUS"), path: "/Contact-Us" },
     ];
-    const [selectedLink, setSelectedLink] = useState(null);
-    const [mobileOpen, setMobileOpen] = React.useState(false);
+    const [selectedLink, setSelectedLink] = useState(
+        localStorage.getItem("contact") || 0
+    );    const [mobileOpen, setMobileOpen] = React.useState(false);
     const [isVisible, setIsVisible] = useState(false);
 
     const { windowMenu } = props;
     const selectLanguage = i18n.language;
     const handleLinkClick = (index) => {
-        setSelectedLink(index)
+        localStorage.setItem("contact", index);
+        setSelectedLink(index); // Update the state with the selected link index
+        if(mobileOpen === true) {
+            handleDrawerToggle()
+        }
+
     };
 
     const handleDrawerToggle = () => {
@@ -50,49 +57,85 @@ function NavBar(props) {
         });
       };
     
+      const handleContactUsClick = () => {
+        // Navigate to the contact us page
+        window.location.href = '/Contact-Us'; // Replace '/contact-us' with the actual URL of your contact us page
+      };
+      const handleBackToHomePage = () => {
+        // Navigate to the home page
+        window.location.href = '/'; // Replace '/contact-us' with the actual URL of your contact us page
+      };
    
+      const location = useLocation();
+      const isContactUsPage = location.pathname === '/Contact-Us';
+
     
     const drawer = (
-        <Box  onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-            <List sx={{ marginTop: "50px" }}>
-                {navItems.map((item, index) => (
-                    <Box
-                        key={index}
-                        sx={{
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            marginTop: "24px",
-                            padding: "10px",
-                            cursor: "pointer",
-                            textDecoration: "none",
-                        }}
-                        // component={Link}
-                        // to={item.path}
+        <>
+        <Box
+        sx={{
+            display:"flex",
+            justifyContent:"end"
+        }}
+        >
 
-                    >
-                        <Typography
-                        sx={{
-                            
-                            fontSize:"24px",
-                            fontWeight:"400",
-                            fontFamily: "var(--English-font)",
-                            color: index === selectedLink ? '#21D6D6' : '#fff',
-                            width:"100%",
-                            height:"100%"
+          <Button
+            sx={{
+                color:"var(--white-color)",
+                fontSize:"24px",
+                paddingLeft: selectLanguage === "en" ? "0px" : "20px",
+                paddingRight: selectLanguage === "ar" ? "0px" : "20px",
+                position:"relative",
+                top:"38px",
+            }}
+            onClick={handleDrawerToggle}
+            >
+                X
+            </Button>
+            </Box>
 
-                        }}
-                        onClick={() => handleLinkClick(index)}
+            <Box sx={{ textAlign: 'center' ,position:"relative",top:"50px",zIndex:"2"}}>
+          <List sx={{ }}>
+              {navItems.map((item, index) => (
+                  <Box
+                      key={index}
+                      sx={{
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          marginTop: "24px",
+                          padding: "10px",
+                          cursor: "pointer",
+                          textDecoration: "none",
+                      }}
+                      component={Link}
+                      to={item.path}
 
-                        >
-                            {item.title}
-                        </Typography>
-                    </Box>
+                  >
+                      <Typography
+                      sx={{
+                          
+                          fontSize:"24px",
+                          fontWeight:"400",
+                          fontFamily: "var(--English-font)",
+                          color: index === parseInt(selectedLink, 10) ? '#21D6D6' : '#fff',
+                          width:"100%",
+                          height:"100%"
 
-                ))}
-            </List>
-        </Box>
+                      }}
+                      onClick={() => handleLinkClick(index)}
+
+                      >
+                          {item.title}
+                      </Typography>
+                  </Box>
+
+              ))}
+          </List>
+      </Box>
+        </>
+       
     );
     const container = windowMenu !== undefined ? () => window().document.body : undefined;
     return (
@@ -121,15 +164,15 @@ function NavBar(props) {
                 }}>
                     <Box className="logoGap" sx={{ display: "flex", alignItems: "center" }}>
 
-                        <img src={Logo}></img>
+                        <img style={{cursor:"pointer"}} onClick={handleBackToHomePage} src={Logo}></img>
 
                         <Box sx={{ display: { lg: "flex", xs: 'none', sm: 'none' } }}>
-                            {navItems.slice(0, 5).map((items, index) => (
+                            {navItems.slice(1, 6).map((items, index) => (
                                 <Typography
                                     className='navText'
                                     key={index}
-                                    // component={Link}
-                                    // to={items.path}
+                                    component={Link}
+                                    to={items.path}
                                     sx={{
                                         display: "flex",
                                         color: index === selectedLink ? '#21D6D6' : '#fff',
@@ -143,6 +186,8 @@ function NavBar(props) {
                                         lineHeight: "36px",
                                         fontFamily: "var(--English-font)",
                                         cursor: "pointer",
+                                        textTransform:"uppercase",
+                                        textDecoration:"none"
                                         
                                     }}
                                     onClick={() => handleLinkClick(index)}
@@ -161,11 +206,15 @@ function NavBar(props) {
                         <LanguageSwitcher />
                         <Box sx={{
                             display: { lg: "block", xs: 'none', sm: 'none' },
-                        }}>
+                            cursor:"pointer"
+                        }}
+                        onClick={handleContactUsClick}
+
+                        >
                             <Box
                                 sx={{
                                     borderRadius: '36px',
-                                    border: '1px solid #FFF',
+                                    border: isContactUsPage ? '1px solid var(--header-color)' : '1px solid #FFF',
                                     color: 'var(--white-color)',
                                     padding: '8px 24px',
                                     display: 'flex',
@@ -174,6 +223,7 @@ function NavBar(props) {
                             >
 
                                 <Button
+
                                     sx={{
                                         color: "var(--white-color)",
                                         padding: "6px 0px",
@@ -208,6 +258,7 @@ function NavBar(props) {
                                 padding: "0px",
                                 paddingLeft: selectLanguage === "en" ? "19px" : "0px",
                                 paddingRight: selectLanguage === "ar" ? "19px" : "0px",
+                                zIndex:"0"
                             }}
                             disableRipple
                             
@@ -229,14 +280,15 @@ function NavBar(props) {
                             invisible: true,
                         },
                     }}
-                    sx={{
+                    sx={{ 
 
                         display: { xs: 'block', sm: 'block' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, marginTop: "90px", backgroundColor: "var(--website-bg-color)", boxShadow: "none", color: "#fff", },
+                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, marginTop: "0px", backgroundColor: "var(--website-bg-color)", boxShadow: "none", color: "#fff", },
                     }}
                 >
                     {drawer}
                 </Drawer>
+                
             </nav>
             <Box component="main"  sx={{paddingBottom:"20px",display:"none"}}>
                 <Toolbar/>
