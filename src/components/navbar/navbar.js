@@ -94,7 +94,7 @@ function NavBar(props) {
             </Button>
             </Box>
 
-            <Box sx={{ textAlign: 'center' ,position:"relative",top:"50px",zIndex:"2"}}>
+            <Box sx={{ textAlign: 'center' ,position:"relative",top:"40px",zIndex:"2"}}>
           <List sx={{ }}>
               {navItems.map((item, index) => (
                   <Box
@@ -104,7 +104,7 @@ function NavBar(props) {
                           flexDirection: "column",
                           alignItems: "center",
                           justifyContent: "center",
-                          marginTop: "24px",
+                          marginTop: "18px",
                           padding: "10px",
                           cursor: "pointer",
                           textDecoration: "none",
