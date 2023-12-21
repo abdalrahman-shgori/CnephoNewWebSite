@@ -4,18 +4,19 @@ import NavBar from "../navbar/navbar";
 import Footer from "../footer/footer";
 import './contactUs.css'
 import { Box, Grid, Typography, TextField, Button } from "@mui/material";
-import detailsBg from "../../assets/images/detailsBg.svg"
 import phone from "../../assets/images/phoneUS.svg"
 import location from "../../assets/images/locationUs.svg"
-import email from "../../assets/images/emailUs.svg"
+import emailImg from "../../assets/images/emailUs.svg"
 import MenuItem from '@mui/material/MenuItem';
 import contactImg from "../../assets/images/contactUsImg.svg"
 import Arrow from "../../assets/images/BlueArrow.svg"
-import whiteBG from "../../assets/images/whitebG.svg"
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+
 
 function ContactUs() {
     const [description,setDescription]=useState("")
-    const [budget,setBudget]=useState("1000")
+    const [budget,setBudget]=useState("")
     const [name,setName]=useState("")
     const [email,setEmail]=useState("")
     const [phoneNum,setPhoneNum]=useState("")
@@ -26,7 +27,7 @@ function ContactUs() {
     const contactDetails = [
         { img: phone, type: t("contactUs.HotLine"), desc: "Lorem ipsum dolor sit amet consectetur.", moreDetails: t("contactUs.num") },
         { img: location, type: t("contactUs.Location"), desc: "Lorem ipsum dolor sit amet consectetur. A condimentum neque nisl posuere.", moreDetails: "" },
-        { img: email, type: t("contactUs.email"), desc: "Lorem ipsum dolor sit amet consectetur.", moreDetails: "cnepho@example.io" }
+        { img: emailImg, type: t("contactUs.email"), desc: "Lorem ipsum dolor sit amet consectetur.", moreDetails: "cnepho@example.io" }
     ]
 
     const currencies = [
@@ -75,10 +76,27 @@ function ContactUs() {
         textAlign: "center",
         fontFamily: "var(--English-font)",
     }
-
+    const showToast = () => {
+        toast('REQUEST WAS SENT', {
+            position: 'top-right',
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progressStyle: { background:"#21D6D6" }, // Use progressStyle to customize the progress bar color
+            theme: 'light',
+        });
+      };
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log("des",description,"budget",budget,"name",name,"email",email,"phone",phoneNum)
+        console.log("des",description,"budget",budget,"name",name,"email",email,"phone",phoneNum);
+        setEmail("");
+        setDescription("");
+        setBudget("1000");
+        setName("");
+        setPhoneNum("");
+       showToast()
         // Add your form submission logic here
     };
 
@@ -95,18 +113,28 @@ function ContactUs() {
         setEmail(event.target.value);
       };
       const handlePhoneChange = (event) => {
-        setPhoneNum(event.target.value);
+        const inputValue = event.target.value;
+        
+        const validInput = /^[0-9+]*$/.test(inputValue);
+        if (validInput || inputValue === "") {
+            setPhoneNum(inputValue);
+        }
+
       };
       
 
     return (
 
         <>
+                <div>
+      <ToastContainer />
+    </div>
+
             <Grid className="root-container"
             sx={{
             }}
             >
-
+          
                 <Grid className="contactUsBg">
                     <NavBar />
 
@@ -503,6 +531,7 @@ function ContactUs() {
                                                     name="description"
                                                     value={description}
                                                     onChange={handleDescriptionChange}
+                                                    required
                                                 ></TextField>
                                             </Box>
                                             <TextField
@@ -708,14 +737,12 @@ function ContactUs() {
                                                             WebkitBoxShadow: "0 0 0 1000px var(--white-color) inset",
                                                             transition: "background-color 5000s ease-in-out 0s",
                                                         },
-
-
                                                     }}
                                                     fullWidth
                                                     type="email"
-
                                                     name="email"
                                                     onChange={handleEmailChange}
+                                                    value={email}
                                                     required
                                                 ></TextField>
                                             </Box>
@@ -759,7 +786,7 @@ function ContactUs() {
                                                 }}
                                             >
                                                 <TextField
-                                                type="number"
+                                                type="text"
                                                     sx={{
                                                         backgroundColor: "var(--white-color)",
                                                         borderRadius: "16px",
@@ -800,7 +827,7 @@ function ContactUs() {
                                                 disableTouchRipple
                                                 sx={{
                                                     '&:hover': {
-      backgroundColor: 'inherit', // Set the background color to inherit to remove the hover effect
+      backgroundColor: 'inherit',
     },
                                                 }}
                                                 
