@@ -10,7 +10,7 @@ export default function useLocales() {
     const { i18n, t: translate } = useTranslation();
 
     const { onChangeDirectionByLang } = useSettingsContext();
-    if (i18n.language === undefined) {
+    if (i18n.language === "") {
         i18n.changeLanguage('en');
         onChangeDirectionByLang('en');
     }
