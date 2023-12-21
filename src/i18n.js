@@ -7,7 +7,8 @@ import en from "./locals/en/translation.json";
 import ar from "./locals/ar/translation.json";
 
 // const languages = ["en", "ar"];
-
+const storedLang = localStorage.getItem("i18nextLng");
+const defaultLanguage = storedLang || 'en';
 i18n
 
 
@@ -20,8 +21,8 @@ i18n
             en,
             ar,
         },
-        // lng: languages,
-        fallbackLng: "ar",
+        lng: defaultLanguage,
+        fallbackLng: "en",
         // debug: true,
 
         // whitelist: languages,
@@ -35,10 +36,12 @@ i18n
             useSuspense: false, //   <---- this will do the magic
         },
     });
-    const storedLang = localStorage.getItem("i18nextLng");
-if (typeof window !== "undefined" && storedLang === 'en-US' || !storedLang) {
-  i18n.changeLanguage('en');
-}
+   
+
+    if (typeof window !== "undefined" && !storedLang) {
+        localStorage.setItem("i18nextLng", defaultLanguage);
+    }
 console.log(storedLang)
+    localStorage.removeItem("i18nextLng")
 
 export default i18n;
