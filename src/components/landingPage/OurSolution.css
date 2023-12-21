@@ -1,48 +1,69 @@
-.bg1{
-  
-        background-image: url("../../assets/images/SolutionBG.svg");
-background-repeat: no-repeat;  
-height: 670px; /* Adjust as needed */
+.bg1 {
+
+    background-image: url("../../assets/images/SolutionBG.svg");
+    background-repeat: no-repeat;
+    height: 670px;
+    /* Adjust as needed */
 
 }
 
-.bg2{
+.bg2 {
 
     background-image: url("../../assets/images/SecSolutionBG.svg");
-background-repeat: no-repeat;  
-background-position: 200px;
-height: 670px; /* Adjust as needed */
+    background-repeat: no-repeat;
+    background-position: 200px;
+    height: 670px;
+    /* Adjust as needed */
 
 
 }
+
 .bg3 {
     background-image: url("../../assets/images/thirdSolutionBG.svg");
     background-repeat: no-repeat;
     background-position: right bottom;
-    height: 670px; /* Adjust as needed */
+    height: 670px;
+    /* Adjust as needed */
 
-  }
+}
 
-  @media screen and (max-width:1200px) {
-    .bg1{
+@media screen and (max-width:1200px) {
+    .bg1 {
         background-image: url("../../assets/images/SolutionBGSM.svg");
-        height: 450px; /* Adjust as needed */
+        height: 450px;
+        /* Adjust as needed */
 
 
     }
-    .bg2{
+
+    .bg2 {
         background-image: url("");
         visibility: visible;
 
     }
-    .bg3{
+
+    .bg3 {
         background-image: url("../../assets/images/SecSolutionBGSM.svg");
-        background-position: right; /* Adjust as needed */
-        height: 372px;
+        background-position: right -22px;
+        /* Adjust as needed */
+        height: 100%;
         width: 100%;
         float: right;
         position: relative;
-        
+
     }
-  }
-  
+}
+
+@media screen and (max-width:600px) {
+
+    .bg3 {
+        background-image: url("../../assets/images/SecSolutionBGSM.svg");
+        background-position: right 24px;
+        /* Adjust as needed */
+        height: 100%;
+        width: 100%;
+        float: right;
+        position: relative;
+
+    }
+}

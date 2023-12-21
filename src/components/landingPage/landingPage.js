@@ -20,11 +20,11 @@ function LandingPage() {
 
     return (
         <>
-        <NavBar/>
-           <SectionOne/>
-           <OurSolution/>
+            <NavBar />
+            <SectionOne />
+            <OurSolution />
 
-           
+
         </>
     )
 }

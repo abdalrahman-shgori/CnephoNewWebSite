@@ -31,7 +31,7 @@ function CaseStudy() {
                     paddingRight: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
                     backgroundPosition: { lg: " 0 -260px", md: " 0 -260px", sm: "0 -160px" },
                     paddingBottom: "100px",
-                    marginTop: { lg: "0px", md: "0px", sm: "20px", xs: "77px" }
+                    marginTop: { lg: "0px", md: "0px", sm: "20px", xs: "70px" }
                 }}
             >
 

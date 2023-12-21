@@ -26,6 +26,7 @@ const Carousel = (props) => {
     ];
     const [currentSlide, setCurrentSlide] = useState(0);
     const selectedLanguage = i18n.language;
+    const [forceRerender, setForceRerender] = useState(false);
 
     const settings = {
         dots: false, // Disable default dots
@@ -99,23 +100,27 @@ const Carousel = (props) => {
         }
     };
     useEffect(() => {
+        const handleResize = () => {
+            // Force a re-render to recalculate the current slide
+            setForceRerender(prev => !prev);
+        };
         // Function to recalculate currentSlide based on window width
         const calculateCurrentSlide = () => {
             const newCurrentSlide = sliderRef.current ? sliderRef.current.innerSlider.state.currentSlide : 0;
             setCurrentSlide(newCurrentSlide);
         };
-    
+
         // Initial calculation when the component mounts
         calculateCurrentSlide();
-    
+
         // Add event listener for window resize
-        window.addEventListener('resize', calculateCurrentSlide);
-    
+        window.addEventListener('resize', calculateCurrentSlide, handleResize);
+
         // Remove event listener when the component unmounts
         return () => {
-            window.removeEventListener('resize', calculateCurrentSlide);
+            window.removeEventListener('resize', calculateCurrentSlide, handleResize);
         };
-    }, [sliderRef]);
+    }, [sliderRef, forceRerender]);
 
 
     return (
@@ -123,27 +128,30 @@ const Carousel = (props) => {
             sx={{
                 paddingLeft: { lg: "107px", xs: "0px" },
                 paddingRight: { lg: "107px", xs: "0px" },
-                paddingTop: { lg: "80px", md: "0px", sm: "0px", xs: "0px" },
+                paddingTop: { lg: "80px", md: "0px", sm: "0px", xs: "30px" },
 
 
             }}
         >
-            <Slider ref={sliderRef} {...settings}
+            <Slider ref={sliderRef} {...settings} key={forceRerender}
                 centerPadding="0px" // Adjust the value for the desired gap
 
             >
 
 
                 {items.map((item, idx) => (
-                    <div key={idx} className="">
+                    <Grid key={idx} className=""
+
+                    >
                         <Box
                             sx={{
                                 backgroundColor: "#FFFFFF",
                                 height: "295px",
-                                width: "285px",
+                                width: "99%",
+                                maxWidth: "285px",
                                 borderRadius: "66px 8px 8px 8px",
                                 position: "relative",
-                                margin: "0 auto"
+                                margin: "0 auto",
 
                             }}
                         >
@@ -220,7 +228,7 @@ const Carousel = (props) => {
 
 
                         </Box>
-                    </div>
+                    </Grid>
                 ))}
                 {/* Add more cards as needed */}
             </Slider>
@@ -232,7 +240,8 @@ const Carousel = (props) => {
                     paddingLeft: { lg: "20px", xs: "19px" },
                     paddingRight: { lg: "20px", xs: "29px" },
                     marginTop: { lg: "24px", md: "24px", sm: "24px", xs: "40px" },
-                    direction: "ltr"
+                    direction: "ltr",
+
                 }}
             >
                 <Grid item lg={1} md={1} sm={1} xs={3}
@@ -262,7 +271,7 @@ const Carousel = (props) => {
                         <Box
                             className="progress-bar"
                             sx={{
-                                            transition: "width 0.5s ease-in-out",
+                                transition: "width 0.5s ease-in-out",
                                 width:
                                 {
                                     lg: `${Math.min(((currentSlide + 4) / settings.slidesToShow) * 100, 100)}%`,
