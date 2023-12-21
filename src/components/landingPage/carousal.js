@@ -113,7 +113,7 @@ const Carousel = (props) => {
 
         // Remove event listener when the component unmounts
         return () => {
-            window.addEventListener('resize', calculateCurrentSlide);
+            // window.removeEventListener('resize', calculateCurrentSlide);
         };
     }, []);
 
@@ -262,6 +262,7 @@ const Carousel = (props) => {
                         <Box
                             className="progress-bar"
                             sx={{
+                                            transition: "width 0.5s ease-in-out",
                                 width:
                                 {
                                     lg: `${((currentSlide + 4) / settings.slidesToShow) * 100}%`,
