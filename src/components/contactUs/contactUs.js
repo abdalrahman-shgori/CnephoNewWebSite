@@ -119,6 +119,19 @@ function ContactUs() {
         if (validInput || inputValue === "") {
             setPhoneNum(inputValue);
         }
+        if(!validInput){
+            toast.warn('This Field Only Can Include Numbers And + Symbol', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progressStyle: { background:"#21D6D6" }, // Use progressStyle to customize the progress bar color
+                theme: 'light',
+            });
+        }
+       
 
       };
       
@@ -189,9 +202,10 @@ function ContactUs() {
 
                 <Grid className="VectorBg"
                     sx={{
+                            backgroundPosition:{lg:"0 -360px",xl:"0 -700px",md:"0 -360px"},
                         paddingTop: {lg:"80px",md:"80px",sm:"60px",xs:"60px"},
                         paddingLeft: { lg: "112px", md: "16px", sm: "16px", xs: "16px" },
-                        paddingRight: { lg: "128px", md: "16px", sm: "16px", xs: "32px" },
+                        paddingRight: { lg: "128px", md: "32px", sm: "32px", xs: "32px" },
 
                     }}
                 >
@@ -456,7 +470,7 @@ function ContactUs() {
                                     fontSize: { lg: "48px", md: "48px", sm: "48px", xs: "24px" },
                                     lineHeight: "normal",
                                     fontWeight: "700",
-                                    letterSpacing: selectLanguage === "en" && { lg: "1.92pxpx", md: "1.92pxpx", sm: "1.92pxpx", xs: "0.96px" },
+                                    letterSpacing: selectLanguage === "en" && { lg: "1.92pxpx", md: "1.92px", sm: "1.92px", xs: "0.96px" },
                                     fontFamily: "var(--English-font)",
 
                                 }}
@@ -465,12 +479,18 @@ function ContactUs() {
                             </Typography>
                         </Box>
 
-                        <Grid item container
+                        <Grid item container 
                             sx={{
-                                marginTop: { lg: "50px", md: "50px", sm: "50px", xs: "22px" }
+                                marginTop: { lg: "50px", md: "50px", sm: "50px", xs: "22px" },
                             }}
                         >
-                            <Grid item lg={6.5} xs={12}>
+                            <Grid item lg={6.6} md={6.6} sm={6.6} xs={12}
+                            sx={{
+                                paddingRight:selectLanguage === "en" && {lg:"38.5px",md:"19px",sm:"10px",xs:"0px"},
+                                paddingLeft:selectLanguage === "ar" && {lg:"38.5px",md:"19px",sm:"10px",xs:"0px"}
+
+                            }}
+                            >
                                 <form onSubmit={handleSubmit}>
                                     <Box
                                         sx={{
@@ -847,9 +867,12 @@ function ContactUs() {
                                     </Box>
                                 </form>
                             </Grid>
-                            <Grid item lg={5.5} xs={12} justifyContent="center"
+                            <Grid item lg={5.4} md={5.4} sm={5.4} xs={12} justifyContent="center"
                                 sx={{
-                                    marginTop: { lg: "0px", md: "0px", sm: "50px", xs: "50px" }
+                                    marginTop: { lg: "0px", md: "0px", sm: "50px", xs: "50px" },
+                                    paddingLeft:selectLanguage === "en" && {lg:"38.5px",md:"19px",sm:"10px",xs:"0px"},
+                                    paddingRight:selectLanguage === "ar" && {lg:"38.5px",md:"19px",sm:"10px",xs:"0px"}
+
 
                                 }}
                             >
@@ -857,7 +880,7 @@ function ContactUs() {
                                     sx={{
                                         display: "flex",
                                         flexDirection: "column",
-                                        gap: { lg: "40px", md: "40px", sm: "40px", xs: "24px" }
+                                        gap: { lg: "40px", md: "40px", sm: "40px", xs: "24px" },
                                     }}
                                 >
 
@@ -870,7 +893,7 @@ function ContactUs() {
 
                                     <Typography
                                         sx={{
-                                            textAlign: { lg: "center", md: "center", sm: "justify", xs: "justify" },
+                                            textAlign: { lg: "justify", md: "justify", sm: "justify", xs: "justify" },
                                             color: "var(--white-color)",
                                             fontSize: { lg: "36px", md: "36px", sm: "36px", xs: "20px" },
                                             lineHeight: "normal",
@@ -883,9 +906,7 @@ function ContactUs() {
                                     </Typography>
                                     <Typography
                                         sx={{
-                                            textAlign: "justify",
-                                            margin: "0 auto",
-                                            maxWidth: "447px",
+                                            textAlign:"justify",
                                             color: "var(--white-color)",
                                             fontSize: { lg: "24px", md: "24px", sm: "24px", xs: "16px" },
                                             fontWeight: "400",

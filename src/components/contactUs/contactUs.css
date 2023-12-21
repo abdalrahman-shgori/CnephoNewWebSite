@@ -8,7 +8,6 @@
     background-image: url("../../assets/images/bgVector.svg");
     background-size:  cover;
     background-repeat: no-repeat;
-    background-position: 0 -360px;
 
   }
   .detailsBg{
@@ -22,13 +21,10 @@
     background-position: 0 160px;
 }
 .contactImg{
-    display: flex;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 431px
+   
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:860px) {
     .bgContactForm{
         background-image: url("");
     }
@@ -40,7 +36,15 @@
         background-image: url("");
 
     }
+   
     
+}
+@media screen and (max-width:800px) {
+    .contactImg{
+        display: flex;
+        margin: 0 auto;
+        width: 100%;
+    }
 }
 
  
