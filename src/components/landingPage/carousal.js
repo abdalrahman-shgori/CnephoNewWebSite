@@ -112,9 +112,9 @@ const Carousel = (props) => {
         window.addEventListener('resize', calculateCurrentSlide);
 
         // Remove event listener when the component unmounts
-        return () => {
-            window.removeEventListener('resize', calculateCurrentSlide);
-        };
+        // return () => {
+        //     window.removeEventListener('resize', calculateCurrentSlide);
+        // };
     }, []);
 
 
