@@ -101,7 +101,7 @@ const Carousel = (props) => {
     useEffect(() => {
         // Function to recalculate currentSlide based on window width
         const calculateCurrentSlide = () => {
-            const newCurrentSlide = 0
+            const newCurrentSlide = currentSlide
             setCurrentSlide(newCurrentSlide);
         };
 
