@@ -21,7 +21,7 @@ i18n
             ar,
         },
         // lng: languages,
-        fallbackLng: "ar",
+        fallbackLng: "en",
         // debug: true,
 
         // whitelist: languages,
