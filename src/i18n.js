@@ -21,7 +21,7 @@ i18n
             ar,
         },
         // lng: languages,
-        fallbackLng: "en",
+        fallbackLng: "ar",
         // debug: true,
 
         // whitelist: languages,
@@ -36,7 +36,7 @@ i18n
         },
     });
     const storedLang = localStorage.getItem("i18nextLng");
-if (typeof window !== "undefined" && storedLang === 'en-US') {
+if (typeof window !== "undefined" && storedLang === 'en-US' && !storedLang) {
   i18n.changeLanguage('en');
 }
 

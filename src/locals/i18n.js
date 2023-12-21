@@ -1,9 +1,13 @@
 import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
+//
 import { defaultLang } from "./config";
+//
 import enLocales from "./en/translation.json";
 import arLocales from "./ar/translation.json";
+
+// ----------------------------------------------------------------------
 
 let lng = defaultLang.value;
 
@@ -20,7 +24,7 @@ i18n
             arLocales,
         },
         lng,
-        fallbackLng: "en",  // Set the fallback language to English
+        fallbackLng: defaultLang.value,
         debug: false,
         ns: ["translations"],
         defaultNS: "translations",
