@@ -121,7 +121,7 @@ function ContactUs() {
         }
         if(!validInput){
             toast.warn('This Field Only Can Include Numbers And + Symbol', {
-                position: 'top-right',
+                position: 'bottom-right',
                 autoClose: 2000,
                 hideProgressBar: false,
                 closeOnClick: true,
