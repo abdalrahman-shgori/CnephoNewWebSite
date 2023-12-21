@@ -42,6 +42,5 @@ i18n
         localStorage.setItem("i18nextLng", defaultLanguage);
     }
 console.log(storedLang)
-    localStorage.removeItem("i18nextLng")
 
 export default i18n;
