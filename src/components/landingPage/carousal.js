@@ -105,13 +105,7 @@ const Carousel = (props) => {
             setForceRerender(prev => !prev);
         };
         // Function to recalculate currentSlide based on window width
-        const calculateCurrentSlide = () => {
-            const newCurrentSlide = sliderRef.current ? sliderRef.current.innerSlider.state.currentSlide : 0;
-            setCurrentSlide(newCurrentSlide);
-        };
-
-        // Initial calculation when the component mounts
-        calculateCurrentSlide();
+      
 
         // Add event listener for window resize
         window.addEventListener('resize', handleResize);
