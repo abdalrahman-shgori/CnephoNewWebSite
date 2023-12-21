@@ -14,7 +14,6 @@ import ui from "../../assets/images/ui.svg"
 
 
 const Carousel = (props) => {
-    const [progressBarWidth, setProgressBarWidth] = useState(0);
 
     const { t, i18n } = useTranslation();
 
@@ -25,6 +24,12 @@ const Carousel = (props) => {
         { id: "3", name: "business planning", img: greenShape, desc: "our customers get solutions and businesses opportunities instead of just project" }
     ];
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [forceRerender, setForceRerender] = useState(false);
+
+    const calculateCurrentSlide = () => {
+        const newCurrentSlide = 0;
+        setCurrentSlide(newCurrentSlide);
+    };
     const selectedLanguage = i18n.language;
 
     const settings = {
@@ -99,23 +104,22 @@ const Carousel = (props) => {
         }
     };
     useEffect(() => {
-        // Function to recalculate currentSlide based on window width
-        const calculateCurrentSlide = () => {
-            const newCurrentSlide = 0
-            setCurrentSlide(newCurrentSlide);
+        const handleResize = () => {
+            // Trigger a re-render by updating a state variable
+            setForceRerender(prev => !prev);
         };
-
+    
         // Initial calculation when the component mounts
         calculateCurrentSlide();
-
+    
         // Add event listener for window resize
-        window.addEventListener('resize', calculateCurrentSlide);
-
+        window.addEventListener('resize', handleResize);
+    
         // Remove event listener when the component unmounts
         return () => {
-            window.removeEventListener('resize', calculateCurrentSlide);
+            window.removeEventListener('resize', handleResize);
         };
-    }, []);
+    }, [forceRerender]);
 
 
     return (
@@ -264,10 +268,10 @@ const Carousel = (props) => {
                             sx={{
                                 width:
                                 {
-                                    lg: `${((currentSlide + 4) / settings.slidesToShow) * 100}%`,
-                                    md: `${((currentSlide + 3) / settings.slidesToShow) * 100}%`,
-                                    sm: `${((currentSlide + 2) / settings.slidesToShow) * 100}%`,
-                                    xs: `${((currentSlide + 1) / settings.slidesToShow) * 100}%`
+                                    lg: `${((currentSlide + 4) / items.length) * 100}%`,
+                                    md: `${((currentSlide + 3) / items.length) * 100}%`,
+                                    sm: `${((currentSlide + 2) / items.length) * 100}%`,
+                                    xs: `${((currentSlide + 1) / items.length) * 100}%`
                                 }
                             }}
                         />
