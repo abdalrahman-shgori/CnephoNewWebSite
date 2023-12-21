@@ -25,8 +25,6 @@ const Carousel = (props) => {
         { id: "3", name: "business planning", img: greenShape, desc: "our customers get solutions and businesses opportunities instead of just project" }
     ];
     const [currentSlide, setCurrentSlide] = useState(0);
-    const [dynamicSlide, setDynamicSlide] = useState(0);
-
     const selectedLanguage = i18n.language;
 
     const settings = {
@@ -101,31 +99,23 @@ const Carousel = (props) => {
         }
     };
     useEffect(() => {
+        // Function to recalculate currentSlide based on window width
         const calculateCurrentSlide = () => {
-          let newDynamicSlide;
-    
-          if (window.innerWidth >= 1380) {
-            newDynamicSlide = setCurrentSlide(0);
-          } else if (window.innerWidth >= 890) {
-            newDynamicSlide = Math.floor(settings.responsive[1].settings.slidesToShow + 1);
-          } else if (window.innerWidth >= 560) {
-            newDynamicSlide = Math.floor(settings.responsive[1].settings.slidesToShow );
-          } else {
-            newDynamicSlide = Math.floor(settings.responsive[2].settings.slidesToShow / 1);
-          }
-    
-          setDynamicSlide(newDynamicSlide);
+            const newCurrentSlide = 0
+            setCurrentSlide(newCurrentSlide);
         };
-    
+
+        // Initial calculation when the component mounts
         calculateCurrentSlide();
-    
+
+        // Add event listener for window resize
         window.addEventListener('resize', calculateCurrentSlide);
-    
+
+        // Remove event listener when the component unmounts
         return () => {
-          window.removeEventListener('resize', calculateCurrentSlide);
+            window.addEventListener('resize', calculateCurrentSlide);
         };
-      }, [currentSlide]);
-    
+    }, []);
 
 
     return (
@@ -272,9 +262,13 @@ const Carousel = (props) => {
                         <Box
                             className="progress-bar"
                             sx={{
-                                width: `${
-                                    ((dynamicSlide + currentSlide) / items.length) * 100
-                                  }%`,
+                                width:
+                                {
+                                    lg: `${((currentSlide + 4) / settings.slidesToShow) * 100}%`,
+                                    md: `${((currentSlide + 3) / settings.slidesToShow) * 100}%`,
+                                    sm: `${((currentSlide + 2) / settings.slidesToShow) * 100}%`,
+                                    xs: `${((currentSlide + 1) / settings.slidesToShow) * 100}%`
+                                }
                             }}
                         />
                     </Box>
