@@ -15,6 +15,10 @@ import OurSolution from "./ourSolution";
 function SectionOne() {
     const { t, i18n } = useTranslation();
     const selectLanguage = i18n.language;
+    const handleContactUsClick = () => {
+        // Navigate to the contact us page
+        window.location.href = '/Contact-Us';
+    };
 
     return (
         <>
@@ -80,10 +84,15 @@ function SectionOne() {
 
                     </Typography>
 
-                    <Box
+                    <Button
+                    onClick={handleContactUsClick}
+                     disableRipple
+                     disableTouchRipple
                         sx={{
                             padding: selectLanguage === "en" ? { lg: "0px 0px 0px 120px", xs: "0px 16px 0px 16px" } : { lg: "20px 120px 0px 120px", md: "0px 16px 0px 16px", xs: "0px 16px 0px 16px" },
-
+                            '&:hover': {
+                                backgroundColor: 'inherit',
+                            },
                         }}
                     >
                         <div className="frame">
@@ -95,7 +104,7 @@ function SectionOne() {
                                 }}
                             />
                         </div>
-                    </Box>
+                    </Button>
                 </Grid>
                 <Grid item lg={5.9} sm={5.9} xs={12}
                     sx={{

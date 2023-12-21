@@ -847,8 +847,8 @@ function ContactUs() {
                                                 disableTouchRipple
                                                 sx={{
                                                     '&:hover': {
-      backgroundColor: 'inherit',
-    },
+                                                        backgroundColor: 'inherit',
+                                                    },
                                                 }}
                                                 
                                             >
