@@ -114,12 +114,12 @@ const Carousel = (props) => {
         calculateCurrentSlide();
 
         // Add event listener for window resize
-        window.addEventListener('resize', calculateCurrentSlide, handleResize);
-
+        window.addEventListener('resize', calculateCurrentSlide);
+        window.addEventListener('resize', handleResize);
         // Remove event listener when the component unmounts
         return () => {
-            window.removeEventListener('resize', calculateCurrentSlide, handleResize);
-        };
+            window.removeEventListener('resize', calculateCurrentSlide);
+            window.removeEventListener('resize', handleResize);        };
     }, [sliderRef, forceRerender]);
 
 
@@ -141,14 +141,14 @@ const Carousel = (props) => {
 
                 {items.map((item, idx) => (
                     <Grid key={idx} className=""
-
+                   
                     >
                         <Box
                             sx={{
                                 backgroundColor: "#FFFFFF",
                                 height: "295px",
                                 width: "99%",
-                                maxWidth: "285px",
+                                maxWidth:"285px",
                                 borderRadius: "66px 8px 8px 8px",
                                 position: "relative",
                                 margin: "0 auto",
@@ -241,7 +241,7 @@ const Carousel = (props) => {
                     paddingRight: { lg: "20px", xs: "29px" },
                     marginTop: { lg: "24px", md: "24px", sm: "24px", xs: "40px" },
                     direction: "ltr",
-
+                    
                 }}
             >
                 <Grid item lg={1} md={1} sm={1} xs={3}
