@@ -101,21 +101,21 @@ const Carousel = (props) => {
     useEffect(() => {
         // Function to recalculate currentSlide based on window width
         const calculateCurrentSlide = () => {
-            const newCurrentSlide = 0
+            const newCurrentSlide = sliderRef.current ? sliderRef.current.innerSlider.state.currentSlide : 0;
             setCurrentSlide(newCurrentSlide);
         };
-
+    
         // Initial calculation when the component mounts
         calculateCurrentSlide();
-
+    
         // Add event listener for window resize
         window.addEventListener('resize', calculateCurrentSlide);
-
+    
         // Remove event listener when the component unmounts
         return () => {
-            // window.removeEventListener('resize', calculateCurrentSlide);
+            window.removeEventListener('resize', calculateCurrentSlide);
         };
-    }, []);
+    }, [sliderRef]);
 
 
     return (
@@ -265,10 +265,10 @@ const Carousel = (props) => {
                                             transition: "width 0.5s ease-in-out",
                                 width:
                                 {
-                                    lg: `${((currentSlide + 4) / settings.slidesToShow) * 100}%`,
-                                    md: `${((currentSlide + 3) / settings.slidesToShow) * 100}%`,
-                                    sm: `${((currentSlide + 2) / settings.slidesToShow) * 100}%`,
-                                    xs: `${((currentSlide + 1) / settings.slidesToShow) * 100}%`
+                                    lg: `${Math.min(((currentSlide + 4) / settings.slidesToShow) * 100, 100)}%`,
+                                    md: `${Math.min(((currentSlide + 3) / settings.slidesToShow) * 100, 100)}%`,
+                                    sm: `${Math.min(((currentSlide + 2) / settings.slidesToShow) * 100, 100)}%`,
+                                    xs: `${Math.min(((currentSlide + 1) / settings.slidesToShow) * 100, 100)}%`
                                 }
                             }}
                         />
