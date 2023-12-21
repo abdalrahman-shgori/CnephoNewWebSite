@@ -102,7 +102,7 @@ function OurSolution() {
                                         fontFamily: "var(--English-font)",
                                         fontSize: { lg: "48px", md: "48px", sm: "26px", xs: "26px" },
                                         fontWeight: "700",
-                                        fontVariant: "small-caps",
+                                        fontVariant: "all-small-caps",
                                         letterSpacing: selectedLanguage === "en" && { lg: "1.6px", md: "1.6px", xs: "1.04px" },
                                         padding: "0 0"
                                     }}

@@ -14,6 +14,7 @@ import ui from "../../assets/images/ui.svg"
 
 
 const Carousel = (props) => {
+    const [progressBarWidth, setProgressBarWidth] = useState(0);
 
     const { t, i18n } = useTranslation();
 
@@ -24,12 +25,8 @@ const Carousel = (props) => {
         { id: "3", name: "business planning", img: greenShape, desc: "our customers get solutions and businesses opportunities instead of just project" }
     ];
     const [currentSlide, setCurrentSlide] = useState(0);
-    const [forceRerender, setForceRerender] = useState(false);
+    const [dynamicSlide, setDynamicSlide] = useState(0);
 
-    const calculateCurrentSlide = () => {
-        const newCurrentSlide = 0;
-        setCurrentSlide(newCurrentSlide);
-    };
     const selectedLanguage = i18n.language;
 
     const settings = {
@@ -104,22 +101,31 @@ const Carousel = (props) => {
         }
     };
     useEffect(() => {
-        const handleResize = () => {
-            // Trigger a re-render by updating a state variable
-            setForceRerender(prev => !prev);
+        const calculateCurrentSlide = () => {
+          let newDynamicSlide;
+    
+          if (window.innerWidth >= 1380) {
+            newDynamicSlide = setCurrentSlide(0);
+          } else if (window.innerWidth >= 890) {
+            newDynamicSlide = Math.floor(settings.responsive[1].settings.slidesToShow + 1);
+          } else if (window.innerWidth >= 560) {
+            newDynamicSlide = Math.floor(settings.responsive[1].settings.slidesToShow );
+          } else {
+            newDynamicSlide = Math.floor(settings.responsive[2].settings.slidesToShow / 1);
+          }
+    
+          setDynamicSlide(newDynamicSlide);
         };
     
-        // Initial calculation when the component mounts
         calculateCurrentSlide();
     
-        // Add event listener for window resize
-        window.addEventListener('resize', handleResize);
+        window.addEventListener('resize', calculateCurrentSlide);
     
-        // Remove event listener when the component unmounts
         return () => {
-            window.removeEventListener('resize', handleResize);
+          window.removeEventListener('resize', calculateCurrentSlide);
         };
-    }, [forceRerender]);
+      }, [currentSlide]);
+    
 
 
     return (
@@ -266,13 +272,9 @@ const Carousel = (props) => {
                         <Box
                             className="progress-bar"
                             sx={{
-                                width:
-                                {
-                                    lg: `${((currentSlide + 4) / items.length) * 100}%`,
-                                    md: `${((currentSlide + 3) / items.length) * 100}%`,
-                                    sm: `${((currentSlide + 2) / items.length) * 100}%`,
-                                    xs: `${((currentSlide + 1) / items.length) * 100}%`
-                                }
+                                width: `${
+                                    ((dynamicSlide + currentSlide) / items.length) * 100
+                                  }%`,
                             }}
                         />
                     </Box>
