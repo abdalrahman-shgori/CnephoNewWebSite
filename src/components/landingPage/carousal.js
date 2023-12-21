@@ -101,7 +101,7 @@ const Carousel = (props) => {
     useEffect(() => {
         // Function to recalculate currentSlide based on window width
         const calculateCurrentSlide = () => {
-            const newCurrentSlide = currentSlide
+            const newCurrentSlide = 0
             setCurrentSlide(newCurrentSlide);
         };
 
@@ -112,9 +112,9 @@ const Carousel = (props) => {
         window.addEventListener('resize', calculateCurrentSlide);
 
         // Remove event listener when the component unmounts
-        // return () => {
-        //     window.removeEventListener('resize', calculateCurrentSlide);
-        // };
+        return () => {
+            // window.removeEventListener('resize', calculateCurrentSlide);
+        };
     }, []);
 
 
