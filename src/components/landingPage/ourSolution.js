@@ -16,7 +16,7 @@ function OurSolution() {
                 sx={{
                     position: "relative",
                     bottom: { lg: "80px", md: "0px", sm: "0px", xs: "0px" },
-                    top: { lg: "-65px", md: "20px", sm: "20px", xs: "0px" },
+                    top: { lg: "-65px", md: "20px", sm: "20px", xs: "65px" },
                     marginBottom: "40px"
                 }}
             >
@@ -36,7 +36,7 @@ function OurSolution() {
                             fontFamily: "var(--English-font)",
                             fontSize: { lg: "40px", md: "40px", sm: "26px", xs: "26px" },
                             fontWeight: "600",
-                            fontVariant: "small-caps",
+                            fontVariant: "all-small-caps",
                             letterSpacing: selectedLanguage === "en" && { lg: "1.6px", md: "1.6px", xs: "1.04px" },
                             padding: 0,
                         }}
@@ -49,7 +49,7 @@ function OurSolution() {
                             fontFamily: "var(--English-font)",
                             fontSize: { lg: "48px", md: "48px", sm: "26px", xs: "26px" },
                             fontWeight: "700",
-                            fontVariant: "small-caps",
+                            fontVariant: "all-small-caps",
                             letterSpacing: selectedLanguage === "en" && { lg: "1.92px", md: "1.92px", xs: "1.04px" },
                             padding: "0 0"
                         }}
@@ -89,7 +89,7 @@ function OurSolution() {
                                         fontFamily: "var(--English-font)",
                                         fontSize: { lg: "40px", md: "40px", sm: "26px", xs: "26px" },
                                         fontWeight: "600",
-                                        fontVariant: "small-caps",
+                                        fontVariant: "all-small-caps",
                                         letterSpacing: selectedLanguage === "en" && { lg: "1.6px", md: "1.6px", xs: "1.04px" },
                                         padding: 0,
                                     }}

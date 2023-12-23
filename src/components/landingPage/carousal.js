@@ -103,12 +103,12 @@ const Carousel = (props) => {
         let prevWindowWidth = window.innerWidth;
         const handleResize = () => {
             const currentWindowWidth = window.innerWidth;
-    
+
             // Check if the window width has changed
             if (currentWindowWidth !== prevWindowWidth) {
                 // Force a re-render to recalculate the current slide
                 setForceRerender(prev => !prev);
-    
+
                 // Update the previous window width
                 prevWindowWidth = currentWindowWidth;
             }
