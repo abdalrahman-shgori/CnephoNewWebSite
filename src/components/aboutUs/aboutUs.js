@@ -11,21 +11,43 @@ import arrowRight from "../../assets/images/arrowRight.svg"
 import WhyChoose from "./whyChooseUs";
 
 function AboutUs() {
-    const [imageLoaded, setImageLoaded] = useState(false);
-    const [loading, setLoading] = useState(true);
+   
+    const [pageLoaded, setPageLoaded] = useState(false);
+    const images = [aboutUsBg, aboutUsBgSm, group];
 
     useEffect(() => {
-        const handleImageLoad = () => {
-          setLoading(false);
-          setImageLoaded(true);
+        const checkPageLoaded = async () => {
+          console.log("checking ...");
+          try {
+            const areImagesLoaded = await Promise.all(images.map((src) => {
+              return new Promise((resolve, reject) => {
+                const image = new Image();
+                image.onload = () => resolve(true);
+                image.onerror = () => reject(false);
+                image.src = src;
+              });
+            }));
+      
+            if (areImagesLoaded.every((loaded) => loaded)) {
+              setPageLoaded(true);
+            }
+          } catch (error) {
+            console.error("Error loading images:", error);
+          }
         };
-    
-        const image = new Image();
-        image.src = group; // Replace with your actual image URL
-        image.onload = handleImageLoad;
-        image.onerror = handleImageLoad;
+      
+        // Call the function initially
+        checkPageLoaded();
+      
+        // Add an event listener for further checks, if needed
+        window.addEventListener("load", checkPageLoaded);
+      
+        return () => {
+          window.removeEventListener("load", checkPageLoaded);
+        };
       }, []);
-
+      
+      
     const { t, i18n } = useTranslation();
     const selectLanguage = i18n.language;
 
@@ -33,7 +55,7 @@ function AboutUs() {
         // Navigate to the contact us page
         window.location.href = '/Contact-Us';
     };
-    if (loading) {
+    if (!pageLoaded) {
         return (
           <Box display="flex" justifyContent="center" alignItems="center" height="100vh">
             <CircularProgress />
@@ -43,48 +65,52 @@ function AboutUs() {
     
     return (
         <>
-            <Header
-                bgImg={aboutUsBg}
-                bgImgSm={aboutUsBgSm}
-                title={
-                    <Typography
-                    sx={{
-                        textAlign: "center",
-                        color: "var(--white-color)",
-                        fontSize: { lg:"48px",md:"48px",sm:"48px",xs:"24px" },
-                        fontWeight:"700",
-                        lineHeight: {lg:"48px",md:"48px",sm:"48px",xs:"36px"},
-                        fontVariant: "all-small-caps",
-                        fontFamily: "var(--English-font)",
-                        width:"100%",
-                        maxWidth:{lg:"780px",md:"780px",sm:"780px",xs:"300px"},
-                        margin:"0 auto"
 
-                    }}
-                >
-                    {/* {t("contactUs.ContactUs")} */}
-                    our team provide creative solutions for your creative ideas
-                </Typography>
-                }
-                desc={
-                    <Typography
-                    sx={{
-                        textAlign: "center",
-                        fontStyle:"normal",
-                        color: "var(--white-color)",
-                        fontSize: { lg: "24px", md: "24px", sm: "24px", xs: "16px" },
-                        fontWeight: "400",
-                        lineHeight: { lg: "36px", md: "36px", sm: "36px", xs: "30px" },
-                        fontFamily: "var(--English-font)",
-                        fontVariant:"small-caps"
-                    }}
-                    >
-                    Lorem ipsum dolor sit amet consectetur. Rhoncus tincidunt vitae viverra donec. In urna massa lacinia ut. Amet lorem facilisi tristique eget urna ac elementum sit aliquet.
+<Header
+bgImg={aboutUsBg}
+bgImgSm={aboutUsBgSm}
+title={
+    <Typography
+    sx={{
+        textAlign: "center",
+        color: "var(--white-color)",
+        fontSize: { lg:"48px",md:"48px",sm:"48px",xs:"24px" },
+        fontWeight:"700",
+        lineHeight: {lg:"48px",md:"48px",sm:"48px",xs:"36px"},
+        fontVariant: "all-small-caps",
+        fontFamily: "var(--English-font)",
+        width:"100%",
+        maxWidth:{lg:"780px",md:"780px",sm:"780px",xs:"300px"},
+        margin:"0 auto"
 
-                    </Typography>
-                
-                }
-            />
+    }}
+    
+>
+    {/* {t("contactUs.ContactUs")} */}
+    our team provide creative solutions for your creative ideas
+</Typography>
+}
+desc={
+    <Typography
+    sx={{
+        textAlign: "center",
+        fontStyle:"normal",
+        color: "var(--white-color)",
+        fontSize: { lg: "24px", md: "24px", sm: "24px", xs: "16px" },
+        fontWeight: "400",
+        lineHeight: { lg: "36px", md: "36px", sm: "36px", xs: "30px" },
+        fontFamily: "var(--English-font)",
+        fontVariant:"small-caps"
+    }}
+    >
+    Lorem ipsum dolor sit amet consectetur. Rhoncus tincidunt vitae viverra donec. In urna massa lacinia ut. Amet lorem facilisi tristique eget urna ac elementum sit aliquet.
+
+    </Typography>
+
+}
+/>
+        
+         
 
             <Grid
                 sx={{
@@ -167,8 +193,8 @@ function AboutUs() {
   alt="group of people"
   style={{ height: "100%", zIndex: "2", position: "relative" }}
   src={group}
-  onLoad={() => setImageLoaded(true)}
-  onError={() => setImageLoaded(true)} 
+//   onLoad={() => setImageLoaded(true)}
+//   onError={() => setImageLoaded(true)} 
   // For simplicity, mark as loaded even on error
 />
                                     <Box

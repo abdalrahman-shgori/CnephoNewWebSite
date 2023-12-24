@@ -17,6 +17,7 @@ function Header({bgImg,bgImgSm,title,desc}){
                     backgroundSize:"cover",
 
                 }}
+                
                 >
                     <NavBar/>
 
