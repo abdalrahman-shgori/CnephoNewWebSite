@@ -95,7 +95,7 @@ function WhyChoose(){
       Lorem ipsum dolor sit amet consectetur. Rhoncus proin eget parturient habitasse vel congue at etiam iaculis. Enim cras aliquet quis et fringilla pharetra amet morbi sit. A praesent nibh sagittis augue. Eget proin at pretium et. Suspendisse accumsan sed at risus non. Amet volutpat parturient amet morbi. Senectus et tincidunt rutrum mi sed in neque. aliquet quis et fringilla pharetra amet morbi sit. A praesent nibh sagittis augue. Rhoncus proin eget parturient habitasse vel congue at etiam iaculis.
     </Typography>
   </Grid>
-  <Grid xs={12}>
+  <Grid item xs={12}>
 
   <Typography
       sx={{

@@ -13,7 +13,7 @@ import WhyChoose from "./whyChooseUs";
 function AboutUs() {
    
     const [pageLoaded, setPageLoaded] = useState(false);
-    const images = [aboutUsBg, aboutUsBgSm, group,Vector];
+    const images = [aboutUsBg, aboutUsBgSm, group];
 
     useEffect(() => {
         const checkPageLoaded = async () => {

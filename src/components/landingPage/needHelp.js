@@ -134,7 +134,7 @@ function Help() {
            
 
               {items.map((item,index) => (
-                <>
+                
                   <Grid
                   key={index}
                     sx={{
@@ -263,7 +263,7 @@ function Help() {
 
                     </Box>
                   </Grid>
-                </>
+                
               ))}
 
             </Slider>
