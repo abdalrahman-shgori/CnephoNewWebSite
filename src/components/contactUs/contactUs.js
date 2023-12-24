@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import NavBar from "../navbar/navbar";
 import Footer from "../footer/footer";
 import './contactUs.css'
-import { Box, Grid, Typography, TextField, Button } from "@mui/material";
+import { Box, Grid, Typography, TextField, Button, CircularProgress } from "@mui/material";
 import phone from "../../assets/images/phoneUS.svg"
 import location from "../../assets/images/locationUs.svg"
 import emailImg from "../../assets/images/emailUs.svg"
@@ -18,6 +18,7 @@ import Header from "../multiUseComponents/header";
 
 
 function ContactUs() {
+    const [pageLoaded, setPageLoaded] = useState(false);
     const [description,setDescription]=useState("")
     const [budget,setBudget]=useState("")
     const [name,setName]=useState("")
@@ -137,8 +138,48 @@ function ContactUs() {
        
 
       };
+
+      const images = [contactBg, contactBgSM, contactImg];
+
+    useEffect(() => {
+        const checkPageLoaded = async () => {
+          try {
+            const areImagesLoaded = await Promise.all(images.map((src) => {
+              return new Promise((resolve, reject) => {
+                const image = new Image();
+                image.onload = () => resolve(true);
+                image.onerror = () => reject(false);
+                image.src = src;
+              });
+            }));
+      
+            if (areImagesLoaded.every((loaded) => loaded)) {
+              setPageLoaded(true);
+            }
+          } catch (error) {
+            console.error("Error loading images:", error);
+          }
+        };
+      
+        // Call the function initially
+        checkPageLoaded();
+      
+        // Add an event listener for further checks, if needed
+        window.addEventListener("load", checkPageLoaded);
+      
+        return () => {
+          window.removeEventListener("load", checkPageLoaded);
+        };
+      }, []);
       
 
+      if (!pageLoaded) {
+        return (
+          <Box display="flex" justifyContent="center" alignItems="center" height="100vh">
+            <CircularProgress />
+          </Box>
+        );
+      }
     return (
 
         <>
