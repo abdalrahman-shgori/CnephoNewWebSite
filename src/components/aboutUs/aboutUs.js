@@ -159,7 +159,7 @@ function AboutUs() {
                                             sx={{
                                                 textAlign: "right",
                                                 width: "100%",
-                                                maxWidth: "103px",
+                                                maxWidth: "104px",
                                                 color: "var(--btn-text-color)",
                                                 fontSize: "32px",
                                                 fontWeight: "900",
@@ -186,7 +186,7 @@ function AboutUs() {
                                                 textAlign: "center",
                                                 fontFamily: "var(--English-font)",
                                                 position: "relative",
-                                                left: "20px"
+                                                left: "24px"
 
 
                                             }}

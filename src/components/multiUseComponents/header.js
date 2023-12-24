@@ -43,7 +43,7 @@ function Header({bgImg,bgImgSm,title,desc}){
                                     color: "var(--white-color)",
                                     fontSize: { lg: "48px", md: "48px", sm: "48px", xs: "24px" },
                                     fontWeight: "700",
-                                    lineHeight: {lg:"48px",md:"48px",sm:"48px",xs:"36px"},
+                                    lineHeight: {lg:"48px",md:"48px",sm:"48px",xs:"48px"},
                                     fontVariant: "all-small-caps",
                                     fontFamily: "var(--English-font)",
                                     textTransform: "capitalize",
