@@ -13,7 +13,7 @@ import WhyChoose from "./whyChooseUs";
 function AboutUs() {
    
     const [pageLoaded, setPageLoaded] = useState(false);
-    const images = [aboutUsBg, aboutUsBgSm, group];
+    const images = [aboutUsBg, aboutUsBgSm, group,Vector];
 
     useEffect(() => {
         const checkPageLoaded = async () => {
@@ -120,7 +120,7 @@ desc={
                         sm:`url(${Vector})`,
                         xs:`url(${Vector})`,// Use proper template literals and url function
                     },
-                    backgroundPosition: { lg: "0 -600px", xl: "0 -700px", md: "0 -360px",sm:"0 -10px",xs:"0 -10px" },
+                    backgroundPosition: { lg: "0 -600px", xl: "0 -700px", md: "0 -360px",sm:"0 -10px",xs:"0 -20px" },
                     backgroundRepeat: "no-repeat",
                     backgroundSize: "cover",
                     paddingTop: { lg: "60px", md: "60px", sm: "50px", xs: "50px" }
