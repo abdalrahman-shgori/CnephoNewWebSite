@@ -1,0 +1,24 @@
+/* .progress-bar-container {
+    width: 100%;
+    border: 1px solid #ccc;
+    position: relative;
+    height: 30px;
+    overflow: hidden;
+  } */
+  
+  /* .progress-bar {
+    height: 100%;
+    background-color: var(--header-color);
+    width: 0;
+  } */
+  
+  /* .animate {
+    animation: fillProgressBar 2s ease-in-out forwards;
+  }
+  
+  @keyframes fillProgressBar {
+    to {
+      width: 75%;
+    }
+  } */
+  

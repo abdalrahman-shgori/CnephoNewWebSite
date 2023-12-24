@@ -12,6 +12,9 @@ import contactImg from "../../assets/images/contactUsImg.svg"
 import Arrow from "../../assets/images/BlueArrow.svg"
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import contactBg from "../../assets/images/contactUsBg.svg"
+import contactBgSM from "../../assets/images/contactUsBgSm.svg"
+import Header from "../multiUseComponents/header";
 
 
 function ContactUs() {
@@ -148,57 +151,13 @@ function ContactUs() {
             }}
             >
           
-                <Grid className="contactUsBg">
-                    <NavBar />
-
-                    <Grid
-                        sx={{
-                            paddingLeft: { lg: "120px", md: "16px", sm: "16px", xs: "11px" },
-                            paddingRight: { lg: "120px", md: "16px", sm: "16px", xs: "11px" },
-                            paddingBottom: { lg: "121px", md: "121px", sm: "121px", xs: "100px" },
-                            marginTop: { lg: "105px", md: "105px", sm: "105px", xs: "67px" }
-                        }}
-                    >
-                        <Box
-                            sx={{
-                                display: "flex",
-                                flexDirection: "column",
-                                gap: { lg: "40px", md: "40px", sm: "40px", xs: "24px" }
-                            }}
-                        >
-                            <Typography
-                                sx={{
-                                    textAlign: "center",
-                                    color: "var(--white-color)",
-                                    fontSize: { lg: "48px", md: "48px", sm: "48px", xs: "24px" },
-                                    fontWeight: "700",
-                                    lineHeight: "48px",
-                                    fontVariant: "small-caps",
-                                    fontFamily: "var(--English-font)",
-                                    textTransform: "capitalize"
-
-                                }}
-                            >
-                                {t("contactUs.ContactUs")}
-                            </Typography>
-                            <Typography
-                                sx={{
-                                    textAlign: "center",
-                                    color: "var(--white-color)",
-                                    fontSize: { lg: "24px", md: "24px", sm: "24px", xs: "15px" },
-                                    fontWeight: "400",
-                                    lineHeight: { lg: "36px", md: "36px", sm: "36px", xs: "28px" },
-                                    textTransform: "capitalize",
-                                    fontFamily: "var(--English-font)",
-
-                                }}
-                            >
-                                {t("contactUs.contactDesc")}
-                            </Typography>
-                        </Box>
-
-                    </Grid>
-                </Grid>
+               <Header 
+               bgImg={contactBg}
+               bgImgSm={contactBgSM}
+               title={t("contactUs.ContactUs")}
+               desc={t("contactUs.contactDesc")}
+               
+               />
 
                 <Grid className="VectorBg"
                     sx={{
@@ -470,7 +429,7 @@ function ContactUs() {
                                     fontSize: { lg: "48px", md: "48px", sm: "48px", xs: "24px" },
                                     lineHeight: "normal",
                                     fontWeight: "700",
-                                    letterSpacing: selectLanguage === "en" && { lg: "1.92pxpx", md: "1.92px", sm: "1.92px", xs: "0.96px" },
+                                    letterSpacing: selectLanguage === "en" && { lg: "1.92px", md: "1.92px", sm: "1.92px", xs: "0.96px" },
                                     fontFamily: "var(--English-font)",
 
                                 }}

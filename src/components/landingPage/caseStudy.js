@@ -30,7 +30,7 @@ function CaseStudy() {
                     paddingLeft: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
                     paddingRight: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
                     backgroundPosition: { lg: " 0 -260px", md: " 0 -260px", sm: "0 -160px" },
-                    paddingBottom: "100px",
+                    paddingBottom: {lg:"73px",md:"73px",sm:"87px",xs:"87px"},
                     marginTop: { lg: "0px", md: "0px", sm: "20px", xs: "70px" }
                 }}
             >

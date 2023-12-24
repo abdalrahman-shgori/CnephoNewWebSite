@@ -24,7 +24,7 @@ function NavBar(props) {
     const { t, i18n } = useTranslation();
     const navItems = [
         { title: t("navBar.Home"), path: "/" },
-        { title: t("navBar.ABOUTUS"), path: "/About_us" },
+        { title: t("navBar.ABOUTUS"), path: "/AboutUs" },
         { title: t("navBar.SERVICES"), path: "/services" },
         { title: t("navBar.PORTFOLIO"), path: "/portfolio" },
         { title: t("navBar.BLOG"), path: "/blog" },
@@ -176,7 +176,7 @@ function NavBar(props) {
                                     to={items.path}
                                     sx={{
                                         display: "flex",
-                                        color: index === selectedLink ? '#21D6D6' : '#fff',
+                                        color: items.path === location.pathname ? '#21D6D6' : '#fff',
                                         transition: 'color 0.3s ease',
                                         marginRight: '8px',
                                         width: "115px",
