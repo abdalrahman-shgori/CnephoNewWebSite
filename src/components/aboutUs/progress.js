@@ -1,8 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import LinearProgress from '@mui/material/LinearProgress';
 import { Box, Grid, Typography } from '@mui/material';
+import { useTranslation } from "react-i18next";
 
 const CustomProgressBar = () => {
+  const { i18n, t } = useTranslation();
+  const selectLanguage = i18n.language
+
   const [progress, setProgress] = useState(0);
   const [progress2, setProgress2] = useState(0);
   const [progress3, setProgress3] = useState(0);
@@ -104,9 +108,13 @@ const CustomProgressBar = () => {
                 backgroundColor: '#fff',
                 borderRadius: '8px',
                 height: '24px',
+                transform: selectLanguage === "ar" && 'rotateY(180deg)',
+
                 '& .MuiLinearProgress-bar': {
                   backgroundColor: 'var(--header-color)',
                   borderRadius: '8px',
+                  transform: selectLanguage === "ar" && 'rotateY(180deg)',
+
                 },
               }}
               ref={progressBarRef}

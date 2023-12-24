@@ -251,9 +251,9 @@ desc={
                                     >
                                         <Typography
                                             sx={{
-                                                textAlign: "right",
+                                                textAlign: selectLanguage === "en" ? "right" : "left",
                                                 width: "100%",
-                                                maxWidth: "104px",
+                                                maxWidth:selectLanguage === "en" ?  "104px" : "56px",
                                                 color: "var(--btn-text-color)",
                                                 fontSize: "32px",
                                                 fontWeight: "900",
@@ -396,9 +396,9 @@ desc={
                                 >
                                     <Typography
                                         sx={{
-                                            textAlign: "right",
+                                            textAlign:selectLanguage === "en" ?  "right" : "left",
                                             width: "100%",
-                                            maxWidth: "120px",
+                                            maxWidth:selectLanguage === "en" ?  "120px" : "80px",
                                             color: "var(--btn-text-color)",
                                             fontSize: "64px",
                                             fontWeight: "900",

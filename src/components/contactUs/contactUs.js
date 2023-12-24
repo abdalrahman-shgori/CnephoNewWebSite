@@ -19,11 +19,11 @@ import Header from "../multiUseComponents/header";
 
 function ContactUs() {
     const [pageLoaded, setPageLoaded] = useState(false);
-    const [description,setDescription]=useState("")
-    const [budget,setBudget]=useState("")
-    const [name,setName]=useState("")
-    const [email,setEmail]=useState("")
-    const [phoneNum,setPhoneNum]=useState("")
+    const [description, setDescription] = useState("")
+    const [budget, setBudget] = useState("")
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [phoneNum, setPhoneNum] = useState("")
 
     const { i18n, t } = useTranslation();
     const selectLanguage = i18n.language
@@ -88,42 +88,42 @@ function ContactUs() {
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
-            progressStyle: { background:"#21D6D6" }, // Use progressStyle to customize the progress bar color
+            progressStyle: { background: "#21D6D6" }, // Use progressStyle to customize the progress bar color
             theme: 'light',
         });
-      };
+    };
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log("des",description,"budget",budget,"name",name,"email",email,"phone",phoneNum);
+        console.log("des", description, "budget", budget, "name", name, "email", email, "phone", phoneNum);
         setEmail("");
         setDescription("");
         setBudget("1000");
         setName("");
         setPhoneNum("");
-       showToast()
+        showToast()
         // Add your form submission logic here
     };
 
     const handleDescriptionChange = (event) => {
         setDescription(event.target.value);
-      };
-      const handleBudgetChange = (event) => {
+    };
+    const handleBudgetChange = (event) => {
         setBudget(event.target.value);
-      };
-      const handleNameChange = (event) => {
+    };
+    const handleNameChange = (event) => {
         setName(event.target.value);
-      };
-      const handleEmailChange = (event) => {
+    };
+    const handleEmailChange = (event) => {
         setEmail(event.target.value);
-      };
-      const handlePhoneChange = (event) => {
+    };
+    const handlePhoneChange = (event) => {
         const inputValue = event.target.value;
-        
+
         const validInput = /^[0-9+]*$/.test(inputValue);
         if (validInput || inputValue === "") {
             setPhoneNum(inputValue);
         }
-        if(!validInput){
+        if (!validInput) {
             toast.warn('This Field Only Can Include Numbers And + Symbol', {
                 position: 'bottom-right',
                 autoClose: 2000,
@@ -131,116 +131,116 @@ function ContactUs() {
                 closeOnClick: true,
                 pauseOnHover: true,
                 draggable: true,
-                progressStyle: { background:"#21D6D6" }, // Use progressStyle to customize the progress bar color
+                progressStyle: { background: "#21D6D6" }, // Use progressStyle to customize the progress bar color
                 theme: 'light',
             });
         }
-       
 
-      };
 
-      const images = [contactBg, contactBgSM, contactImg];
+    };
+
+    const images = [contactBg, contactBgSM, contactImg];
 
     useEffect(() => {
         const checkPageLoaded = async () => {
-          try {
-            const areImagesLoaded = await Promise.all(images.map((src) => {
-              return new Promise((resolve, reject) => {
-                const image = new Image();
-                image.onload = () => resolve(true);
-                image.onerror = () => reject(false);
-                image.src = src;
-              });
-            }));
-      
-            if (areImagesLoaded.every((loaded) => loaded)) {
-              setPageLoaded(true);
+            try {
+                const areImagesLoaded = await Promise.all(images.map((src) => {
+                    return new Promise((resolve, reject) => {
+                        const image = new Image();
+                        image.onload = () => resolve(true);
+                        image.onerror = () => reject(false);
+                        image.src = src;
+                    });
+                }));
+
+                if (areImagesLoaded.every((loaded) => loaded)) {
+                    setPageLoaded(true);
+                }
+            } catch (error) {
+                console.error("Error loading images:", error);
             }
-          } catch (error) {
-            console.error("Error loading images:", error);
-          }
         };
-      
+
         // Call the function initially
         checkPageLoaded();
-      
+
         // Add an event listener for further checks, if needed
         window.addEventListener("load", checkPageLoaded);
-      
-        return () => {
-          window.removeEventListener("load", checkPageLoaded);
-        };
-      }, []);
-      
 
-      if (!pageLoaded) {
+        return () => {
+            window.removeEventListener("load", checkPageLoaded);
+        };
+    }, []);
+
+
+    if (!pageLoaded) {
         return (
-          <Box display="flex" justifyContent="center" alignItems="center" height="100vh">
-            <CircularProgress />
-          </Box>
+            <Box display="flex" justifyContent="center" alignItems="center" height="100vh">
+                <CircularProgress />
+            </Box>
         );
-      }
+    }
     return (
 
         <>
-                <div>
-      <ToastContainer />
-    </div>
+            <div>
+                <ToastContainer />
+            </div>
 
             <Grid className="root-container"
-            sx={{
-            }}
-            >
-          
-               <Header 
-               bgImg={contactBg}
-               bgImgSm={contactBgSM}
-               title={
-                <Typography
                 sx={{
-                    textAlign: "center",
-                    color: "var(--white-color)",
-                    fontSize: { lg:"48px",md:"48px",sm:"48px",xs:"24px" },
-                    fontWeight:"700",
-                    lineHeight: {lg:"48px",md:"48px",sm:"48px",xs:"48px"},
-                    fontVariant: "small-caps",
-                    fontFamily: "var(--English-font)",
+                }}
+            >
 
-                }}
-            >
-                {/* {t("contactUs.ContactUs")} */}
-                {t("contactUs.ContactUs")}         
-                   </Typography>
-               }
-               desc={
-                <Typography
-                sx={{
-                    textAlign: "center",
-                    fontStyle:"normal",
-                    color: "var(--white-color)",
-                    fontSize: { lg: "24px", md: "24px", sm: "24px", xs: "15px" },
-                    fontWeight: "400",
-                    lineHeight: { lg: "36px", md: "36px", sm: "36px", xs: "28px" },
-                    fontFamily: "var(--English-font)",
-                    textTransform:"capitalize",
-                }}
-            >
-             {t("contactUs.contactDesc")}
-            </Typography>
-               }
-               
-               />
+                <Header
+                    bgImg={contactBg}
+                    bgImgSm={contactBgSM}
+                    title={
+                        <Typography
+                            sx={{
+                                textAlign: "center",
+                                color: "var(--white-color)",
+                                fontSize: { lg: "48px", md: "48px", sm: "48px", xs: "24px" },
+                                fontWeight: "700",
+                                lineHeight: { lg: "48px", md: "48px", sm: "48px", xs: "48px" },
+                                fontVariant: "small-caps",
+                                fontFamily: "var(--English-font)",
+
+                            }}
+                        >
+                            {/* {t("contactUs.ContactUs")} */}
+                            {t("contactUs.ContactUs")}
+                        </Typography>
+                    }
+                    desc={
+                        <Typography
+                            sx={{
+                                textAlign: "center",
+                                fontStyle: "normal",
+                                color: "var(--white-color)",
+                                fontSize: { lg: "24px", md: "24px", sm: "24px", xs: "15px" },
+                                fontWeight: "400",
+                                lineHeight: { lg: "36px", md: "36px", sm: "36px", xs: "28px" },
+                                fontFamily: "var(--English-font)",
+                                textTransform: "capitalize",
+                            }}
+                        >
+                            {t("contactUs.contactDesc")}
+                        </Typography>
+                    }
+
+                />
 
                 <Grid className="VectorBg"
                     sx={{
-                            backgroundPosition:{lg:"0 -360px",xl:"0 -700px",md:"0 -360px"},
-                        paddingTop: {lg:"80px",md:"80px",sm:"60px",xs:"60px"},
+                        backgroundPosition: { lg: "0 -360px", xl: "0 -700px", md: "0 -360px" },
+                        paddingTop: { lg: "80px", md: "80px", sm: "60px", xs: "60px" },
                         paddingLeft: { lg: "112px", md: "16px", sm: "16px", xs: "16px" },
                         paddingRight: { lg: "128px", md: "32px", sm: "32px", xs: "32px" },
 
                     }}
                 >
-                    
+
 
                     <Grid className="detailsBg"
                         sx={{
@@ -250,42 +250,42 @@ function ContactUs() {
                             border: "1px solid #fff",
                             borderRadius: "28px",
                             display: { lg: "block", md: "block", sm: "none", xs: "none" },
-                            zIndex:"2",
-                            position:"relative"
+                            zIndex: "2",
+                            position: "relative"
                         }}
                     >
-                    
-                    <Box
-                    sx={{
-                        boxShadow:" 2px 2px 2px 0px rgba(255, 255, 255, 0.16)",
-                        background:"transparent",
-                        width:"100.4%",
-                        height:"100.4%",
-                        borderRadius:"28px",
-                        position:"absolute",
-                        left:"2px",
-                        top:"6px",
-                        zIndex:"1",
+
+                        <Box
+                            sx={{
+                                boxShadow: " 2px 2px 2px 0px rgba(255, 255, 255, 0.16)",
+                                background: "transparent",
+                                width: "100.4%",
+                                height: "100.4%",
+                                borderRadius: "28px",
+                                position: "absolute",
+                                left: "2px",
+                                top: "6px",
+                                zIndex: "1",
 
 
-                    }}
-                    >
-<Box
-                    sx={{
-                        boxShadow:" 2px 2px 2px 0px rgba(255, 255, 255, 0.16)",
-                        background:"transparent",
-                        width:"100%",
-                        height:"100%",
-                        borderRadius:"28px",
-                        position:"absolute",
-                        left:"8px",
-                        top:"8px",
-                        zIndex:"0"
+                            }}
+                        >
+                            <Box
+                                sx={{
+                                    boxShadow: " 2px 2px 2px 0px rgba(255, 255, 255, 0.16)",
+                                    background: "transparent",
+                                    width: "100%",
+                                    height: "100%",
+                                    borderRadius: "28px",
+                                    position: "absolute",
+                                    left: "8px",
+                                    top: "8px",
+                                    zIndex: "0"
 
 
-                    }}
-                    ></Box>
-                    </Box>
+                                }}
+                            ></Box>
+                        </Box>
 
 
                         <Grid className="" container justifyContent="center"
@@ -380,42 +380,42 @@ function ContactUs() {
                                         border: "1px solid #fff",
                                         borderRadius: "28px",
                                         width: "100%",
-                                        position:"relative"
+                                        position: "relative"
                                     }}
                                 >
-                                      
-                    <Box
-                    sx={{
-                        boxShadow:" 2px 2px 2px 0px rgba(255, 255, 255, 0.16)",
-                        background:"transparent",
-                        width:"100.4%",
-                        height:"100.4%",
-                        borderRadius:"28px",
-                        position:"absolute",
-                        left:"6px",
-                        top:"6px",
-                        zIndex:"1",
+
+                                    <Box
+                                        sx={{
+                                            boxShadow: " 2px 2px 2px 0px rgba(255, 255, 255, 0.16)",
+                                            background: "transparent",
+                                            width: "100.4%",
+                                            height: "100.4%",
+                                            borderRadius: "28px",
+                                            position: "absolute",
+                                            left: "6px",
+                                            top: "6px",
+                                            zIndex: "1",
 
 
-                    }}
-                    >
-<Box
-                    sx={{
-                        boxShadow:" 2px 2px 2px 0px rgba(255, 255, 255, 0.16)",
-                        background:"transparent",
-                        width:"100%",
-                        height:"100%",
-                        borderRadius:"28px",
-                        position:"absolute",
-                        left:"8px",
-                        top:"8px",
-                        zIndex:"0"
+                                        }}
+                                    >
+                                        <Box
+                                            sx={{
+                                                boxShadow: " 2px 2px 2px 0px rgba(255, 255, 255, 0.16)",
+                                                background: "transparent",
+                                                width: "100%",
+                                                height: "100%",
+                                                borderRadius: "28px",
+                                                position: "absolute",
+                                                left: "8px",
+                                                top: "8px",
+                                                zIndex: "0"
 
 
-                    }}
-                    ></Box>
-                    </Box>
-                                    
+                                            }}
+                                        ></Box>
+                                    </Box>
+
                                     <Box
                                         sx={{
                                             display: "flex",
@@ -423,7 +423,7 @@ function ContactUs() {
                                             gap: "14px"
                                         }}
                                     >
-                                        
+
                                         <Box
                                             sx={{
                                                 display: "flex",
@@ -471,7 +471,7 @@ function ContactUs() {
                         sx={{
                             paddingLeft: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
                             paddingRight: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
-                                marginBottom:{lg:"128px",md:"128px",sm:"60px",xs:"60px"}
+                            marginBottom: { lg: "128px", md: "128px", sm: "60px", xs: "60px" }
                         }}
                     >
                         <Box
@@ -510,17 +510,17 @@ function ContactUs() {
                             </Typography>
                         </Box>
 
-                        <Grid item container 
+                        <Grid item container
                             sx={{
                                 marginTop: { lg: "50px", md: "50px", sm: "50px", xs: "22px" },
                             }}
                         >
                             <Grid item lg={6.6} md={6.6} sm={6.6} xs={12}
-                            sx={{
-                                paddingRight:selectLanguage === "en" && {lg:"38.5px",md:"19px",sm:"10px",xs:"0px"},
-                                paddingLeft:selectLanguage === "ar" && {lg:"38.5px",md:"19px",sm:"10px",xs:"0px"}
+                                sx={{
+                                    paddingRight: selectLanguage === "en" && { lg: "38.5px", md: "19px", sm: "10px", xs: "0px" },
+                                    paddingLeft: selectLanguage === "ar" && { lg: "38.5px", md: "19px", sm: "10px", xs: "0px" }
 
-                            }}
+                                }}
                             >
                                 <form onSubmit={handleSubmit}>
                                     <Box
@@ -600,8 +600,8 @@ function ContactUs() {
                                                 rows={2}
                                                 multiline
                                                 name="description"
-                                                    value={description}
-                                                    onChange={handleDescriptionChange}
+                                                value={description}
+                                                onChange={handleDescriptionChange}
                                                 required
                                             ></TextField>
 
@@ -837,7 +837,7 @@ function ContactUs() {
                                                 }}
                                             >
                                                 <TextField
-                                                type="text"
+                                                    type="text"
                                                     sx={{
                                                         backgroundColor: "var(--white-color)",
                                                         borderRadius: "16px",
@@ -865,13 +865,13 @@ function ContactUs() {
 
                                         </Box>
                                         <Box
-                                        sx={{
-                                            display: "flex",
-                                            justifyContent: selectLanguage === "en" ?
-                                                { lg: "right", md: "right", sm: "right", xs: "center" }
-                                                : { lg: "left", md: "left", sm: "left", xs: "center" },
-                                        }}
-                                        
+                                            sx={{
+                                                display: "flex",
+                                                justifyContent: selectLanguage === "en" ?
+                                                    { lg: "right", md: "right", sm: "right", xs: "center" }
+                                                    : { lg: "left", md: "left", sm: "left", xs: "center" },
+                                            }}
+
                                         >
                                             <Button type="submit"
                                                 disableRipple
@@ -881,7 +881,7 @@ function ContactUs() {
                                                         backgroundColor: 'inherit',
                                                     },
                                                 }}
-                                                
+
                                             >
                                                 <div className="frame">
                                                     <div className="text-wrapper"> {t("contactUs.SendRequest")} </div>
@@ -901,8 +901,8 @@ function ContactUs() {
                             <Grid item lg={5.4} md={5.4} sm={5.4} xs={12} justifyContent="center"
                                 sx={{
                                     marginTop: { lg: "0px", md: "0px", sm: "50px", xs: "50px" },
-                                    paddingLeft:selectLanguage === "en" && {lg:"38.5px",md:"19px",sm:"10px",xs:"0px"},
-                                    paddingRight:selectLanguage === "ar" && {lg:"38.5px",md:"19px",sm:"10px",xs:"0px"}
+                                    paddingLeft: selectLanguage === "en" && { lg: "38.5px", md: "19px", sm: "10px", xs: "0px" },
+                                    paddingRight: selectLanguage === "ar" && { lg: "38.5px", md: "19px", sm: "10px", xs: "0px" }
 
 
                                 }}
@@ -916,7 +916,7 @@ function ContactUs() {
                                 >
 
                                     <img
-                                    className="contactImg"
+                                        className="contactImg"
                                         src={contactImg}>
                                     </img>
 
@@ -937,7 +937,7 @@ function ContactUs() {
                                     </Typography>
                                     <Typography
                                         sx={{
-                                            textAlign:"justify",
+                                            textAlign: "justify",
                                             color: "var(--white-color)",
                                             fontSize: { lg: "24px", md: "24px", sm: "24px", xs: "16px" },
                                             fontWeight: "400",
