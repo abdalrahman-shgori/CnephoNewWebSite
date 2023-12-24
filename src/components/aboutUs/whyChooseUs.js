@@ -69,7 +69,7 @@ function WhyChoose(){
     <Typography
       sx={{
         color: "var(--white-color)",
-        fontSize: { lg: "48px", md: "48px", sm: "32px", xs: "22px" },
+        fontSize: { lg: "48px", md: "48px", sm: "32px", xs: "20px" },
         lineHeight: { lg: "normal", md: "normal", sm: "normal", xs: "normal" },
         fontWeight: "700",
         letterSpacing: selectLanguage === "en" && { lg: "1.92px", md: "1.92px", sm: "1.92px", xs: "0.88px" },
