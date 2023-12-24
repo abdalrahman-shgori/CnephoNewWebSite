@@ -154,8 +154,39 @@ function ContactUs() {
                <Header 
                bgImg={contactBg}
                bgImgSm={contactBgSM}
-               title={t("contactUs.ContactUs")}
-               desc={t("contactUs.contactDesc")}
+               title={
+                <Typography
+                sx={{
+                    textAlign: "center",
+                    color: "var(--white-color)",
+                    fontSize: { lg:"48px",md:"48px",sm:"48px",xs:"24px" },
+                    fontWeight:"700",
+                    lineHeight: {lg:"48px",md:"48px",sm:"48px",xs:"48px"},
+                    fontVariant: "small-caps",
+                    fontFamily: "var(--English-font)",
+
+                }}
+            >
+                {/* {t("contactUs.ContactUs")} */}
+                {t("contactUs.ContactUs")}         
+                   </Typography>
+               }
+               desc={
+                <Typography
+                sx={{
+                    textAlign: "center",
+                    fontStyle:"normal",
+                    color: "var(--white-color)",
+                    fontSize: { lg: "24px", md: "24px", sm: "24px", xs: "15px" },
+                    fontWeight: "400",
+                    lineHeight: { lg: "36px", md: "36px", sm: "36px", xs: "28px" },
+                    fontFamily: "var(--English-font)",
+                    textTransform:"capitalize",
+                }}
+            >
+             {t("contactUs.contactDesc")}
+            </Typography>
+               }
                
                />
 

@@ -23,8 +23,44 @@ function AboutUs() {
             <Header
                 bgImg={aboutUsBg}
                 bgImgSm={aboutUsBgSm}
-                title={"our team provide creative solutions for your creative ideas"}
-                desc={"Lorem ipsum dolor sit amet consectetur. Rhoncus tincidunt vitae viverra donec. In urna massa lacinia ut. Amet lorem facilisi tristique eget urna ac elementum sit aliquet."}
+                title={
+                    <Typography
+                    sx={{
+                        textAlign: "center",
+                        color: "var(--white-color)",
+                        fontSize: { lg:"48px",md:"48px",sm:"48px",xs:"24px" },
+                        fontWeight:"700",
+                        lineHeight: {lg:"48px",md:"48px",sm:"48px",xs:"36px"},
+                        fontVariant: "all-small-caps",
+                        fontFamily: "var(--English-font)",
+                        width:"100%",
+                        maxWidth:{lg:"780px",md:"780px",sm:"780px",xs:"300px"},
+                        margin:"0 auto"
+
+                    }}
+                >
+                    {/* {t("contactUs.ContactUs")} */}
+                    our team provide creative solutions for your creative ideas
+                </Typography>
+                }
+                desc={
+                    <Typography
+                    sx={{
+                        textAlign: "center",
+                        fontStyle:"normal",
+                        color: "var(--white-color)",
+                        fontSize: { lg: "24px", md: "24px", sm: "24px", xs: "16px" },
+                        fontWeight: "400",
+                        lineHeight: { lg: "36px", md: "36px", sm: "36px", xs: "30px" },
+                        fontFamily: "var(--English-font)",
+                        fontVariant:"small-caps"
+                    }}
+                    >
+                    Lorem ipsum dolor sit amet consectetur. Rhoncus tincidunt vitae viverra donec. In urna massa lacinia ut. Amet lorem facilisi tristique eget urna ac elementum sit aliquet.
+
+                    </Typography>
+                
+                }
             />
 
             <Grid

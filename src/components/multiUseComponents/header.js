@@ -34,46 +34,14 @@ function Header({bgImg,bgImgSm,title,desc}){
                             sx={{
                                 display: "flex",
                                 flexDirection: "column",
-                                gap: { lg: "40px", md: "40px", sm: "40px", xs: "24px" }
+                                gap: { lg: "40px", md: "40px", sm: "40px", xs: "13px" }
                             }}
                         >
-                            <Typography
-                                sx={{
-                                    textAlign: "center",
-                                    color: "var(--white-color)",
-                                    fontSize: { lg:"48px",md:"48px",sm:"48px",xs:"24px" },
-                                    fontWeight:"700",
-                                    lineHeight: {lg:"48px",md:"48px",sm:"48px",xs:"36px"},
-                                    fontVariant: "all-small-caps",
-                                    fontFamily: "var(--English-font)",
-                                    width:"100%",
-                                    maxWidth:{lg:"780px",md:"780px",sm:"780px",xs:"300px"},
-                                   margin:"0 auto",
-                                   
-
-                                }}
-                            >
+                           
                                 {/* {t("contactUs.ContactUs")} */}
                                 {title}
-                            </Typography>
-                            <Typography
-                                sx={{
-                                    textAlign: "center",
-                                    fontStyle:"normal",
-                                    color: "var(--white-color)",
-                                    fontSize: { lg: "24px", md: "24px", sm: "24px", xs: "16px" },
-                                    fontWeight: "400",
-                                    lineHeight: { lg: "36px", md: "36px", sm: "36px", xs: "30px" },
-                                    fontFamily: "var(--English-font)",
-                                    fontVariant:"all-small-caps",
-                                   
-                                   
-
-                                }}
-                            >
-                                {/* {t("contactUs.contactDesc")} */}
                                 {desc}
-                            </Typography>
+                           
                         </Box>
 
                     </Grid>
