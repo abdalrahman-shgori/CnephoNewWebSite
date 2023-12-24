@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Box, Grid, Typography,Button } from "@mui/material";
+import { Box, Grid, Typography,Button, CircularProgress } from "@mui/material";
 import aboutUsBg from "../../assets/images/AboutUsBg.svg"
 import aboutUsBgSm from "../../assets/images/AboutUsBgSm.svg"
 import Header from "../multiUseComponents/header";
@@ -11,6 +11,21 @@ import arrowRight from "../../assets/images/arrowRight.svg"
 import WhyChoose from "./whyChooseUs";
 
 function AboutUs() {
+    const [imageLoaded, setImageLoaded] = useState(false);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const handleImageLoad = () => {
+          setLoading(false);
+          setImageLoaded(true);
+        };
+    
+        const image = new Image();
+        image.src = group; // Replace with your actual image URL
+        image.onload = handleImageLoad;
+        image.onerror = handleImageLoad;
+      }, []);
+
     const { t, i18n } = useTranslation();
     const selectLanguage = i18n.language;
 
@@ -18,6 +33,14 @@ function AboutUs() {
         // Navigate to the contact us page
         window.location.href = '/Contact-Us';
     };
+    if (loading) {
+        return (
+          <Box display="flex" justifyContent="center" alignItems="center" height="100vh">
+            <CircularProgress />
+          </Box>
+        );
+      }
+    
     return (
         <>
             <Header
@@ -139,7 +162,15 @@ function AboutUs() {
                                     }}
                                 >
 
-                                    <img width="100%" style={{ height: "100%", zIndex: "2", position: "relative" }} src={group}></img>
+<img
+  width="100%"
+  alt="group of people"
+  style={{ height: "100%", zIndex: "2", position: "relative" }}
+  src={group}
+  onLoad={() => setImageLoaded(true)}
+  onError={() => setImageLoaded(true)} 
+  // For simplicity, mark as loaded even on error
+/>
                                     <Box
                                         sx={{
                                             position: 'absolute',

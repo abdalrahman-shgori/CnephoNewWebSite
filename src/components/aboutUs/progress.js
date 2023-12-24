@@ -67,7 +67,7 @@ const CustomProgressBar = () => {
         { id: 1, name: 'solutions', percentage: progress2 },
         { id: 2, name: 'success', percentage: progress3 },
       ].map((item) => (
-        <Grid key={item.id} sx={{ marginTop: { lg: '24px', md: '24px', sm: '24px', xs: '12px' } }}>
+        <Grid key={item.id} sx={{ marginTop: { lg: '24px', md: '24px', sm: '24px', xs: '18px' } }}>
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
               <Typography
