@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.d9139894.css",
-    "main.js": "/static/js/main.152f0600.js",
+    "main.css": "/static/css/main.d20e45db.css",
+    "main.js": "/static/js/main.dd94e575.js",
     "static/js/787.d1cde593.chunk.js": "/static/js/787.d1cde593.chunk.js",
     "static/media/bgVector.svg": "/static/media/bgVector.b4fb93b455f0d682835d9d9375a444c3.svg",
     "static/media/HelpBG.svg": "/static/media/HelpBG.bed9b10e5176529c1de3.svg",
@@ -21,6 +21,7 @@
     "static/media/aboutUsGroup.svg": "/static/media/aboutUsGroup.fd4294fe8d34740a9518f3de0dcc60be.svg",
     "static/media/RectangleAr.svg": "/static/media/RectangleAr.a38b4ad0d3f24fcdebb535a012b7c146.svg",
     "static/media/Rectangle.svg": "/static/media/Rectangle.d8cf9f2775d06ef630c3ae4ea431bf97.svg",
+    "static/media/whyChoose.svg": "/static/media/whyChoose.86ff2774dd6c2c3f36fdef022803a46f.svg",
     "static/media/EnglishFont.otf": "/static/media/EnglishFont.7a9975d8c02d6933c47d.otf",
     "static/media/SourceSansLight.otf": "/static/media/SourceSansLight.0d4a9a1bc6d71ce32780.otf",
     "static/media/AboutUsBgSm.svg": "/static/media/AboutUsBgSm.07ab06aca81e707cb3115fc8c094ba39.svg",
@@ -77,12 +78,12 @@
     "static/media/SolutionBGSM.svg": "/static/media/SolutionBGSM.07359eb6a90140234abe.svg",
     "static/media/SecSolutionBGSM.svg": "/static/media/SecSolutionBGSM.4862eb39d6205617b216.svg",
     "static/media/thirdSolutionBG.svg": "/static/media/thirdSolutionBG.d68e4176a66e2636f997.svg",
-    "main.d9139894.css.map": "/static/css/main.d9139894.css.map",
-    "main.152f0600.js.map": "/static/js/main.152f0600.js.map",
+    "main.d20e45db.css.map": "/static/css/main.d20e45db.css.map",
+    "main.dd94e575.js.map": "/static/js/main.dd94e575.js.map",
     "787.d1cde593.chunk.js.map": "/static/js/787.d1cde593.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d9139894.css",
-    "static/js/main.152f0600.js"
+    "static/css/main.d20e45db.css",
+    "static/js/main.dd94e575.js"
   ]
 }

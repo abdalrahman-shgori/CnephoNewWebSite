@@ -26,10 +26,14 @@
 
 @media screen and (max-width:860px) {
     .bgContactForm{
-        background-image: url("");
+        background-image: url("../../assets/images/BG.png");
+     
+
+
     }
     .VectorBg{
         background-image: url("");
+
 
     }
     

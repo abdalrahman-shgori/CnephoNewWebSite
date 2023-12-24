@@ -8,6 +8,7 @@ import Vector from "../../assets/images/bgVector.svg"
 import group from "../../assets/images/aboutUsGroup.svg"
 import CustomProgressBar from "./progress";
 import arrowRight from "../../assets/images/arrowRight.svg"
+import WhyChoose from "./whyChooseUs";
 
 function AboutUs() {
     const { t, i18n } = useTranslation();
@@ -31,10 +32,10 @@ function AboutUs() {
                     backgroundImage: {
                         lg: `url(${Vector})`,
                         md: `url(${Vector})`,
-                        sm:`url()`,
+                        sm:`url(${Vector})`,
                         xs:`url(${Vector})`,// Use proper template literals and url function
                     },
-                    backgroundPosition: { lg: "0 -560px", xl: "0 -700px", md: "0 -360px",sm:"0 -300px",xs:"0 -190px" },
+                    backgroundPosition: { lg: "0 -600px", xl: "0 -700px", md: "0 -360px",sm:"0 -10px",xs:"0 -10px" },
                     backgroundRepeat: "no-repeat",
                     backgroundSize: "cover",
                     paddingTop: { lg: "60px", md: "60px", sm: "50px", xs: "50px" }
@@ -59,7 +60,7 @@ function AboutUs() {
                             sx={{
                                 display: "flex",
                                 flexDirection: "column",
-                                gap: "17px"
+                                gap: {lg:"24px",md:"24px",sm:"17px",xs:"17px"}
                             }}
                         >
                             <Typography
@@ -382,7 +383,7 @@ function AboutUs() {
                                     marginLeft: selectLanguage === "en" && {lg:"0",md:"0",sm:"auto",xs:"auto"},
                                     marginRight: selectLanguage === "ar" && {lg:"0",md:"0",sm:"auto",xs:"auto"},
                                     marginTop:{lg:"40px",md:"40px",sm:"28px",xs:"28px"},
-                                    marginBottom:"43px",
+                                    marginBottom:{lg:"120px",md:"120px",sm:"42.5px",xs:"42.5px"},
                                     cursor:"pointer",
                                  
                                 }}
@@ -412,8 +413,10 @@ function AboutUs() {
                                     }}
                                 />
                             </Box>
+
                 </Grid>
 
+                <WhyChoose/>
 
             </Grid>
 
