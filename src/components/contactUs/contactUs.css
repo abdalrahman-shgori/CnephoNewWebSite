@@ -18,7 +18,7 @@
     background-image: url("../../assets/images/BG.png");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 0 160px;
+    background-position: 0 320px;
 }
 .contactImg{
    
@@ -26,7 +26,7 @@
 
 @media screen and (max-width:860px) {
     .bgContactForm{
-        background-image: url("../../assets/images/BG.png");
+        background-image: url("");
      
 
 
