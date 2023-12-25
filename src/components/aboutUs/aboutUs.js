@@ -5,6 +5,8 @@ import aboutUsBg from "../../assets/images/AboutUsBg.svg"
 import aboutUsBgSm from "../../assets/images/AboutUsBgSm.svg"
 import Header from "../multiUseComponents/header";
 import Vector from "../../assets/images/bgVector.svg"
+import Vector2 from "../../assets/images/VectorSm.png"
+
 import group from "../../assets/images/aboutUsGroup.svg"
 import CustomProgressBar from "./progress";
 import arrowRight from "../../assets/images/arrowRight.svg"
@@ -123,11 +125,11 @@ function AboutUs() {
                         lg: `url(${Vector})`,
                         md: `url(${Vector})`,
                         sm: `url(${Vector})`,
-                        xs: `url(${Vector})`,// Use proper template literals and url function
+                        xs: `url(${Vector2})`,// Use proper template literals and url function
                     },
-                    backgroundPosition: { lg: "0 -620px", xl: "0 -700px", md: "0 -420px", sm: "0 -440px", xs: "0 -340px" },
+                    backgroundPosition: { lg: "0 -620px", xl: "0 -700px", md: "0 -600px", sm: "0 -840px", xs: "0 -520px" },
                     backgroundRepeat: "no-repeat",
-                    backgroundSize: "cover",
+                    backgroundSize: {lg:"cover",md:"cover",sm:"cover",xs:"contain"},
                     paddingTop: { lg: "60px", md: "60px", sm: "50px", xs: "50px" }
 
 
@@ -516,15 +518,16 @@ function AboutUs() {
 
                 <WhyChoose />
                 <NumberAbout />
+                <MoreAbout />
 
 
 
             </Grid>
-            <MoreAbout />
-
-            <OurExperts />
+           
+               <OurExperts />
             {/* <Partner/> */}
             <Makeappointement />
+           
 
         </>
     )

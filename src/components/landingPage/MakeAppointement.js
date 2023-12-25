@@ -42,7 +42,7 @@ function  Makeappointement(){
     
     return(
         <>
-        <Grid className="make-bg">
+        <Grid className="make-bg" sx={{zIndex:"2"}}>
             <Grid className="text-content"
             sx={{
                 paddingLeft: { lg: "120px", md: "16px", sm: "16px", xs: "20px" },
