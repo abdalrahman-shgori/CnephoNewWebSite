@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Box, Grid, Typography,Button, CircularProgress } from "@mui/material";
+import { Box, Grid, Typography, Button, CircularProgress } from "@mui/material";
 import aboutUsBg from "../../assets/images/AboutUsBg.svg"
 import aboutUsBgSm from "../../assets/images/AboutUsBgSm.svg"
 import Header from "../multiUseComponents/header";
@@ -16,43 +16,43 @@ import Partner from "./partners";
 import Makeappointement from "../landingPage/MakeAppointement";
 
 function AboutUs() {
-   
+
     const [pageLoaded, setPageLoaded] = useState(false);
     const images = [aboutUsBg, aboutUsBgSm, group];
 
     useEffect(() => {
         const checkPageLoaded = async () => {
-          console.log("checking ...");
-          try {
-            const areImagesLoaded = await Promise.all(images.map((src) => {
-              return new Promise((resolve, reject) => {
-                const image = new Image();
-                image.onload = () => resolve(true);
-                image.onerror = () => reject(false);
-                image.src = src;
-              });
-            }));
-      
-            if (areImagesLoaded.every((loaded) => loaded)) {
-              setPageLoaded(true);
+            console.log("checking ...");
+            try {
+                const areImagesLoaded = await Promise.all(images.map((src) => {
+                    return new Promise((resolve, reject) => {
+                        const image = new Image();
+                        image.onload = () => resolve(true);
+                        image.onerror = () => reject(false);
+                        image.src = src;
+                    });
+                }));
+
+                if (areImagesLoaded.every((loaded) => loaded)) {
+                    setPageLoaded(true);
+                }
+            } catch (error) {
+                console.error("Error loading images:", error);
             }
-          } catch (error) {
-            console.error("Error loading images:", error);
-          }
         };
-      
+
         // Call the function initially
         checkPageLoaded();
-      
+
         // Add an event listener for further checks, if needed
         window.addEventListener("load", checkPageLoaded);
-      
+
         return () => {
-          window.removeEventListener("load", checkPageLoaded);
+            window.removeEventListener("load", checkPageLoaded);
         };
-      }, []);
-      
-      
+    }, []);
+
+
     const { t, i18n } = useTranslation();
     const selectLanguage = i18n.language;
 
@@ -62,72 +62,72 @@ function AboutUs() {
     };
     if (!pageLoaded) {
         return (
-          <Box display="flex" justifyContent="center" alignItems="center" height="100vh">
-            <CircularProgress />
-          </Box>
+            <Box display="flex" justifyContent="center" alignItems="center" height="100vh">
+                <CircularProgress />
+            </Box>
         );
-      }
-    
+    }
+
     return (
         <>
 
-<Header
-bgImg={aboutUsBg}
-bgImgSm={aboutUsBgSm}
-title={
-    <Typography
-    sx={{
-        textAlign: "center",
-        color: "var(--white-color)",
-        fontSize: { lg:"48px",md:"48px",sm:"48px",xs:"24px" },
-        fontWeight:"700",
-        lineHeight: {lg:"48px",md:"48px",sm:"48px",xs:"36px"},
-        fontVariant: "all-small-caps",
-        fontFamily: "var(--English-font)",
-        width:"100%",
-        maxWidth:{lg:"780px",md:"780px",sm:"780px",xs:"300px"},
-        margin:"0 auto"
+            <Header
+                bgImg={aboutUsBg}
+                bgImgSm={aboutUsBgSm}
+                title={
+                    <Typography
+                        sx={{
+                            textAlign: "center",
+                            color: "var(--white-color)",
+                            fontSize: { lg: "48px", md: "48px", sm: "48px", xs: "24px" },
+                            fontWeight: "700",
+                            lineHeight: { lg: "48px", md: "48px", sm: "48px", xs: "36px" },
+                            fontVariant: "all-small-caps",
+                            fontFamily: "var(--English-font)",
+                            width: "100%",
+                            maxWidth: { lg: "780px", md: "780px", sm: "780px", xs: "300px" },
+                            margin: "0 auto"
 
-    }}
-    
->
-    {/* {t("contactUs.ContactUs")} */}
-    our team provide creative solutions for your creative ideas
-</Typography>
-}
-desc={
-    <Typography
-    sx={{
-        textAlign: "center",
-        fontStyle:"normal",
-        color: "var(--white-color)",
-        fontSize: { lg: "24px", md: "24px", sm: "24px", xs: "16px" },
-        fontWeight: "400",
-        lineHeight: { lg: "36px", md: "36px", sm: "36px", xs: "30px" },
-        fontFamily: "var(--English-font)",
-        fontVariant:"small-caps"
-    }}
-    >
-    Lorem ipsum dolor sit amet consectetur. Rhoncus tincidunt vitae viverra donec. In urna massa lacinia ut. Amet lorem facilisi tristique eget urna ac elementum sit aliquet.
+                        }}
 
-    </Typography>
+                    >
+                        {/* {t("contactUs.ContactUs")} */}
+                        our team provide creative solutions for your creative ideas
+                    </Typography>
+                }
+                desc={
+                    <Typography
+                        sx={{
+                            textAlign: "center",
+                            fontStyle: "normal",
+                            color: "var(--white-color)",
+                            fontSize: { lg: "24px", md: "24px", sm: "24px", xs: "16px" },
+                            fontWeight: "400",
+                            lineHeight: { lg: "36px", md: "36px", sm: "36px", xs: "30px" },
+                            fontFamily: "var(--English-font)",
+                            fontVariant: "small-caps"
+                        }}
+                    >
+                        Lorem ipsum dolor sit amet consectetur. Rhoncus tincidunt vitae viverra donec. In urna massa lacinia ut. Amet lorem facilisi tristique eget urna ac elementum sit aliquet.
 
-}
-/>
-        
-         
+                    </Typography>
+
+                }
+            />
+
+
 
             <Grid className="root-container"
                 sx={{
                     backgroundImage: {
                         lg: `url(${Vector})`,
                         md: `url(${Vector})`,
-                        sm:`url(${Vector})`,
-                        xs:`url(${Vector})`,// Use proper template literals and url function
+                        sm: `url(${Vector})`,
+                        xs: `url(${Vector})`,// Use proper template literals and url function
                     },
-                    backgroundPosition: { lg: "0 -600px", xl: "0 -700px", md: "0 -420px",sm:"0 -300px",xs:"0 -140px" },
+                    backgroundPosition: { lg: "0 -620px", xl: "0 -700px", md: "0 -420px", sm: "0 -440px", xs: "0 -340px" },
                     backgroundRepeat: "no-repeat",
-                    backgroundSize: "contain",
+                    backgroundSize: "cover",
                     paddingTop: { lg: "60px", md: "60px", sm: "50px", xs: "50px" }
 
 
@@ -150,7 +150,7 @@ desc={
                             sx={{
                                 display: "flex",
                                 flexDirection: "column",
-                                gap: {lg:"24px",md:"24px",sm:"17px",xs:"17px"}
+                                gap: { lg: "24px", md: "24px", sm: "17px", xs: "17px" }
                             }}
                         >
                             <Typography
@@ -174,7 +174,7 @@ desc={
                                     fontWeight: "700",
                                     letterSpacing: selectLanguage === "en" && { lg: "1.92pxpx", md: "1.92px", sm: "1.92px", xs: "0.96px" },
                                     fontFamily: "var(--English-font)",
-                                    paddingBottom:{lg:"0px",md:"0px",sm:"16px",xs:"16px"}
+                                    paddingBottom: { lg: "0px", md: "0px", sm: "16px", xs: "16px" }
 
                                 }}
                             >
@@ -193,15 +193,15 @@ desc={
                                     }}
                                 >
 
-<img
-  width="100%"
-  alt="group of people"
-  style={{ height: "100%", zIndex: "2", position: "relative" }}
-  src={group}
-//   onLoad={() => setImageLoaded(true)}
-//   onError={() => setImageLoaded(true)} 
-  // For simplicity, mark as loaded even on error
-/>
+                                    <img
+                                        width="100%"
+                                        alt="group of people"
+                                        style={{ height: "100%", zIndex: "2", position: "relative" }}
+                                        src={group}
+                                    //   onLoad={() => setImageLoaded(true)}
+                                    //   onError={() => setImageLoaded(true)} 
+                                    // For simplicity, mark as loaded even on error
+                                    />
                                     <Box
                                         sx={{
                                             position: 'absolute',
@@ -258,7 +258,7 @@ desc={
                                             sx={{
                                                 textAlign: selectLanguage === "en" ? "right" : "left",
                                                 width: "100%",
-                                                maxWidth:selectLanguage === "en" ?  "104px" : "56px",
+                                                maxWidth: selectLanguage === "en" ? "104px" : "56px",
                                                 color: "var(--btn-text-color)",
                                                 fontSize: "32px",
                                                 fontWeight: "900",
@@ -320,7 +320,7 @@ desc={
 
                                 <CustomProgressBar />
                             </Box>
-                          
+
 
                         </Box>
 
@@ -357,7 +357,7 @@ desc={
                                         transform: 'rotate(45deg)',
                                         borderRadius: '24px',
                                         zIndex: '1',
-                                        display:{lg:"block",md:"none"}
+                                        display: { lg: "block", md: "none" }
                                     }}
                                 />
                                 <Box
@@ -401,9 +401,9 @@ desc={
                                 >
                                     <Typography
                                         sx={{
-                                            textAlign:selectLanguage === "en" ?  "right" : "left",
+                                            textAlign: selectLanguage === "en" ? "right" : "left",
                                             width: "100%",
-                                            maxWidth:selectLanguage === "en" ?  "120px" : "80px",
+                                            maxWidth: selectLanguage === "en" ? "120px" : "80px",
                                             color: "var(--btn-text-color)",
                                             fontSize: "64px",
                                             fontWeight: "900",
@@ -470,59 +470,61 @@ desc={
                     </Grid>
 
                     <Box
-                                sx={{
-                                    borderRadius: '36px',
-                                    border:'1px solid #FFF',
-                                    color: 'var(--white-color)',
-                                    padding: '8px 24px',
-                                    display: 'flex',
-                                    gap: "16px",
-                                    width:"auto",
-                                    marginLeft: selectLanguage === "en" && {lg:"0",md:"0",sm:"auto",xs:"auto"},
-                                    marginRight: selectLanguage === "ar" && {lg:"0",md:"0",sm:"auto",xs:"auto"},
-                                    marginTop:{lg:"40px",md:"40px",sm:"28px",xs:"28px"},
-                                    marginBottom:{lg:"120px",md:"120px",sm:"42.5px",xs:"42.5px"},
-                                    cursor:"pointer",
-                                 
-                                }}
-                                onClick={handleContactUsClick}
-                            >
+                        sx={{
+                            borderRadius: '36px',
+                            border: '1px solid #FFF',
+                            color: 'var(--white-color)',
+                            padding: '8px 24px',
+                            display: 'flex',
+                            gap: "16px",
+                            width: "auto",
+                            marginLeft: selectLanguage === "en" && { lg: "0", md: "0", sm: "auto", xs: "auto" },
+                            marginRight: selectLanguage === "ar" && { lg: "0", md: "0", sm: "auto", xs: "auto" },
+                            marginTop: { lg: "40px", md: "40px", sm: "28px", xs: "28px" },
+                            marginBottom: { lg: "120px", md: "120px", sm: "42.5px", xs: "42.5px" },
+                            cursor: "pointer",
 
-                                <Button
+                        }}
+                        onClick={handleContactUsClick}
+                    >
 
-                                    sx={{
-                                        color: "var(--white-color)",
-                                        padding: "6px 0px",
-                                        whiteSpace: "nowrap",
-                                        fontWeight: "600",
-                                        fontFamily: "var(--English-font)",
-                                        '&:hover': {
-                                            backgroundColor: 'transparent', // Set the background color to transparent or any value you want
-                                        },
-                                    }}
-                                    disableRipple
-                                >
-                                    {t("navBar.CONTACTUS")}
+                        <Button
 
-                                </Button>
-                                <img src={arrowRight} alt="Arrow"
-                                    style={{
-                                        transform: selectLanguage === "ar" ? "rotate(180deg)" : "",
-                                    }}
-                                />
-                            </Box>
+                            sx={{
+                                color: "var(--white-color)",
+                                padding: "6px 0px",
+                                whiteSpace: "nowrap",
+                                fontWeight: "600",
+                                fontFamily: "var(--English-font)",
+                                '&:hover': {
+                                    backgroundColor: 'transparent', // Set the background color to transparent or any value you want
+                                },
+                            }}
+                            disableRipple
+                        >
+                            {t("navBar.CONTACTUS")}
+
+                        </Button>
+                        <img src={arrowRight} alt="Arrow"
+                            style={{
+                                transform: selectLanguage === "ar" ? "rotate(180deg)" : "",
+                            }}
+                        />
+                    </Box>
 
                 </Grid>
 
-                <WhyChoose/>
-                <NumberAbout/>
-                <MoreAbout/>
-                <OurExperts/>
-                {/* <Partner/> */}
-                <Makeappointement/>
-                
+                <WhyChoose />
+                <NumberAbout />
+
+
 
             </Grid>
+            <MoreAbout />
+
+            <OurExperts />
+            {/* <Partner/> */}
+            <Makeappointement />
 
         </>
     )
