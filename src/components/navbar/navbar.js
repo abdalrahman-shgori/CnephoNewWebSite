@@ -10,6 +10,8 @@ import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
@@ -17,6 +19,7 @@ import Logo from "../../assets/images/Logo.svg"
 import "../../assets/styles/variables.css";
 import arrowRight from "../../assets/images/arrowRight.svg"
 import LanguageSwitcher from './LanguageSwitcher';
+
 import "./navbar.css"
 import { useEffect } from 'react';
 const drawerWidth = "100%";
@@ -32,11 +35,63 @@ function NavBar(props) {
         { title: t("navBar.CONTACTUS"), path: "/Contact-Us" },
     ];
     const [selectedLink, setSelectedLink] = useState("");
-    const [mobileOpen, setMobileOpen] = React.useState(false);
+    const [mobileOpen, setMobileOpen] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
 
     const { windowMenu } = props;
     const selectLanguage = i18n.language;
+    const BurgerIcon = ({ isOpen }) => (
+        <div
+            style={{
+                width: '24px',
+                height: '24px',
+                display: 'flex',
+                flexDirection: 'column',
+                cursor: 'pointer',
+                gap:"4px"
+            }}
+        >
+            <div
+                style={{
+                    width: '24px',
+                    height: '4px',
+                    borderRadius:"16px",
+                    backgroundColor: '#D0DEF3',
+                    transformOrigin: 'bottom',
+                    transform: mobileOpen ? 'rotate(-45deg) translate(-5px, 6px)' : 'none',
+                    transition: 'transform 0.5s ease',
+                    animation: mobileOpen ? 'rotateTopLine 0.5s ease' : 'rotateTopLineReverse 0.3s ease',
+
+                }}
+            ></div>
+            <div
+                style={{
+                    width: '24px',
+                    height: '4px',
+                    borderRadius:"16px",
+
+                    backgroundColor: '#D0DEF3',
+                    opacity: mobileOpen ? 0 : 1,
+                    transition: 'opacity 0.5s ease',
+                }}
+            ></div>
+            <div
+                style={{
+                    width: '24px',
+                    height: '4px',
+                    borderRadius:"16px",
+
+                    backgroundColor: '#D0DEF3',
+                    transformOrigin: 'top',
+                    transform: mobileOpen ? 'rotate(45deg) translate(-4px, -6px)' : 'none',
+                    transition: 'mobileOpen 0.5s ease',
+                    animation: mobileOpen ? 'rotateBottomLine 0.5s ease' : 'rotateBottomLineReverse 0.3s ease',
+
+                }}
+            ></div>
+        </div>
+    );
+
 
 
     const handleDrawerToggle = () => {
@@ -65,29 +120,14 @@ function NavBar(props) {
 
     const drawer = (
         <>
-            <Box
-                sx={{
-                    display: "flex",
-                    justifyContent: "end"
-                }}
-            >
+ 
 
-                <Button
-                    sx={{
-                        color: "var(--white-color)",
-                        fontSize: "24px",
-                        paddingLeft: selectLanguage === "en" ? "0px" : "20px",
-                        paddingRight: selectLanguage === "ar" ? "0px" : "20px",
-                        position: "relative",
-                        top: "38px",
-                    }}
-                    onClick={handleDrawerToggle}
-                >
-                    X
-                </Button>
-            </Box>
-
-            <Box sx={{ textAlign: 'center', position: "relative", top: "40px", zIndex: "2" }}>
+            <Box 
+            sx={{
+                 textAlign: 'center',
+                  position: "relative",
+                   top: "100px",
+                    zIndex: "2" }}>
                 <List sx={{}}>
                     {navItems.map((item, index) => (
                         <Box
@@ -165,7 +205,7 @@ function NavBar(props) {
                 }}>
                     <Box className="logoGap" sx={{ display: "flex", alignItems: "center" }}>
 
-                        <img style={{ cursor: "pointer" }} onClick={handleBackToHomePage} src={Logo}></img>
+                        <img style={{ cursor: "pointer",zIndex:"3",position:"relative" }} onClick={handleBackToHomePage} src={Logo}></img>
 
                         <Box sx={{ display: { lg: "flex", xs: 'none', sm: 'none' } }}>
                             {navItems.slice(1, 6).map((items, index) => (
@@ -259,12 +299,14 @@ function NavBar(props) {
                                 padding: "0px",
                                 paddingLeft: selectLanguage === "en" ? "19px" : "0px",
                                 paddingRight: selectLanguage === "ar" ? "19px" : "0px",
-                                zIndex: "0"
+                                zIndex: "3",
+                                position:"relative",
                             }}
                             disableRipple
 
                         >
-                            <MenuIcon />
+                <BurgerIcon isOpen={mobileOpen} />
+
                         </IconButton>
                     </Box>
                 </Toolbar>
@@ -282,9 +324,21 @@ function NavBar(props) {
                         },
                     }}
                     sx={{
+                        zIndex:"2",
 
                         display: { xs: 'block', sm: 'block' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, marginTop: "0px", backgroundColor: "var(--website-bg-color)", boxShadow: "none", color: "#fff", },
+                        
+                        '& .MuiDrawer-paper': {
+                             boxSizing: 'border-box', 
+                             width: "100%",
+                              marginTop: "0px", 
+                              backgroundColor: "var(--website-bg-color)", 
+                              boxShadow: "none",
+                               color: "#fff",
+                               transition: 'width 10s ease', // Add a transition for the width change
+
+                            
+                            },
                     }}
                 >
                     {drawer}

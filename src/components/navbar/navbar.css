@@ -1,7 +1,41 @@
 .logoGap{
     gap: 100px;
 }
-
+@keyframes rotateTopLine {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+  }
+  
+  @keyframes rotateBottomLine {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(45deg) translate(-4px, -6px);
+    }
+  }
+  @keyframes rotateTopLineReverse {
+    0% {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    100% {
+      transform: rotate(0);
+    }
+  }
+  
+  @keyframes rotateBottomLineReverse {
+    0% {
+      transform: rotate(45deg) translate(-4px, -6px);
+    }
+    100% {
+      transform: rotate(0);
+    }
+  }
+    
 
 @media screen and (max-width:1364px) {
     .logoGap{
