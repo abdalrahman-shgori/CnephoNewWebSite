@@ -9,6 +9,7 @@ import group from "../../assets/images/aboutUsGroup.svg"
 import CustomProgressBar from "./progress";
 import arrowRight from "../../assets/images/arrowRight.svg"
 import WhyChoose from "./whyChooseUs";
+import NumberAbout from "./numberAboutUs";
 
 function AboutUs() {
    
@@ -510,6 +511,7 @@ desc={
                 </Grid>
 
                 <WhyChoose/>
+                <NumberAbout/>
 
             </Grid>
 

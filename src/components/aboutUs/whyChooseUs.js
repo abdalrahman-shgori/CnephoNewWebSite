@@ -3,7 +3,7 @@ import React from "react";
 import whyImg from "../../assets/images/whyChoose.svg"
 import { useTranslation } from "react-i18next";
 
-function WhyChoose(){
+function  WhyChoose(){
     const { t, i18n } = useTranslation();
     const selectLanguage = i18n.language;
 
@@ -13,7 +13,7 @@ function WhyChoose(){
         sx={{
             paddingLeft: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
             paddingRight: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
-            paddingBottom:"100px"
+            paddingBottom:{lg:"88px",md:"88px",sm:"41px",xs:"41px"}
         }}
         >
            <Grid container>
