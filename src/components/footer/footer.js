@@ -85,6 +85,7 @@ const Footer = () => {
   return (
     <Grid className='root-container' sx={{
       padding: selectLanguage === "en" ? { lg: "0px 120px 0px 120px", xs: "20px 21px 0px 16px" } : { lg: "20px 120px 0px 120px", xs: "20px 16px 0px 21px" },
+      marginTop:{lg:"48px",md:"48px",sm:"40px",xs:"40px"}
 
     }}>
       <Grid container spacing={{ lg: "0px", sm: "0px" }}>

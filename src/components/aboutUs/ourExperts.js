@@ -19,7 +19,6 @@ function OurExperts() {
                     marginTop: { lg: "80px", md: "80px", sm: "75px", xs: "75px" },
                     paddingLeft: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
                     paddingRight: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
-                    backgroundColor: "#313D72",
                     paddingBottom: { lg: "134px", md: "134px", sm: "80px", xs: "80px" }
                 }}
             >
