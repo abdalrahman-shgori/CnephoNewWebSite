@@ -112,7 +112,7 @@ desc={
         
          
 
-            <Grid
+            <Grid className="root-container"
                 sx={{
                     backgroundImage: {
                         lg: `url(${Vector})`,

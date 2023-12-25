@@ -26,6 +26,7 @@ const CustomProgressBar = () => {
             setProgress3((prevProgress) => (prevProgress < 95 ? prevProgress + 1 : 95));
           };
 
+
           interval = setInterval(updateProgress, 1000);
 
           const checkCompletion = () => {

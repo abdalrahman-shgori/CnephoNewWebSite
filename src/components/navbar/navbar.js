@@ -24,6 +24,12 @@ import "./navbar.css"
 import { useEffect } from 'react';
 const drawerWidth = "100%";
 function NavBar(props) {
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        // Set isMounted to true after the component is mounted
+        setIsMounted(true);
+    }, []);
     const { t, i18n } = useTranslation();
     const navItems = [
         { title: t("navBar.Home"), path: "/" },
@@ -35,8 +41,46 @@ function NavBar(props) {
         { title: t("navBar.CONTACTUS"), path: "/Contact-Us" },
     ];
     const [selectedLink, setSelectedLink] = useState("");
-    const [mobileOpen, setMobileOpen] = useState(false);
+    const [mobileOpen, setMobileOpen] = React.useState(false);
     const [isVisible, setIsVisible] = useState(false);
+
+    const handleDrawerToggle = () => {
+        setMobileOpen((prevState) => !prevState);
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth',
+        });
+    };
+    const drawerStyles = {
+        zIndex: '2',
+        display: { xs: 'block', sm: 'block' },
+        '& .MuiDrawer-paper': {
+            boxSizing: 'border-box',
+            width: drawerWidth,
+            marginTop: '0px',
+            backgroundColor: 'var(--website-bg-color)',
+            boxShadow: 'none',
+            color: '#fff',
+            animation: mobileOpen ? 'slideIn 0.5s ease' : 'slideOut 0.5s ',
+        },
+        '@keyframes slideIn': {
+            '0%': {
+                transform: 'translateX(-100%)',
+            },
+            '100%': {
+                transform: 'translateX(0)',
+            },
+        },
+        '@keyframes slideOut': {
+            '0%': {
+                transform: 'translateX(0)',
+            },
+            '100%': {
+                transform: 'translateX(-100%)',
+            },
+        },
+    };
 
     const { windowMenu } = props;
     const selectLanguage = i18n.language;
@@ -48,30 +92,28 @@ function NavBar(props) {
                 display: 'flex',
                 flexDirection: 'column',
                 cursor: 'pointer',
-                gap:"4px"
+                gap: "4px"
             }}
         >
             <div
                 style={{
                     width: '24px',
                     height: '4px',
-                    borderRadius:"16px",
+                    borderRadius: "16px",
                     backgroundColor: '#D0DEF3',
                     transformOrigin: 'bottom',
-                    transform: mobileOpen ? 'rotate(-45deg) translate(-5px, 6px)' : 'none',
-                    transition: 'transform 0.5s ease',
-                    animation: mobileOpen ? 'rotateTopLine 0.5s ease' : 'rotateTopLineReverse 0.3s ease',
-
+                    transform: isOpen && isMounted ? 'rotate(-45deg) translate(-5px, 6px)' : 'none',
+                    animation: isOpen && isMounted ? 'rotateTopLine 0.3s ease' : 'rotateTopLineReverse 0.3s ease',
                 }}
             ></div>
             <div
                 style={{
                     width: '24px',
                     height: '4px',
-                    borderRadius:"16px",
+                    borderRadius: "16px",
 
                     backgroundColor: '#D0DEF3',
-                    opacity: mobileOpen ? 0 : 1,
+                    opacity: isOpen && isMounted ? 0 : 1,
                     transition: 'opacity 0.5s ease',
                 }}
             ></div>
@@ -79,14 +121,11 @@ function NavBar(props) {
                 style={{
                     width: '24px',
                     height: '4px',
-                    borderRadius:"16px",
-
+                    borderRadius: "16px",
                     backgroundColor: '#D0DEF3',
                     transformOrigin: 'top',
-                    transform: mobileOpen ? 'rotate(45deg) translate(-4px, -6px)' : 'none',
-                    transition: 'mobileOpen 0.5s ease',
-                    animation: mobileOpen ? 'rotateBottomLine 0.5s ease' : 'rotateBottomLineReverse 0.3s ease',
-
+                    transform: isOpen && isMounted ? 'rotate(45deg) translate(-4px, -6px)' : 'none',
+                    animation: isOpen && isMounted ? 'rotateBottomLine 0.3s ease' : 'rotateBottomLineReverse 0.3s ease',
                 }}
             ></div>
         </div>
@@ -94,14 +133,7 @@ function NavBar(props) {
 
 
 
-    const handleDrawerToggle = () => {
-        setMobileOpen((prevState) => !prevState);
-        window.scroll({
-            top: 0,
-            left: 0,
-            behavior: 'smooth',
-        });
-    };
+
 
     const handleContactUsClick = () => {
         // Navigate to the contact us page
@@ -120,14 +152,15 @@ function NavBar(props) {
 
     const drawer = (
         <>
- 
 
-            <Box 
-            sx={{
-                 textAlign: 'center',
-                  position: "relative",
-                   top: "100px",
-                    zIndex: "2" }}>
+
+            <Box
+                sx={{
+                    textAlign: 'center',
+                    position: "relative",
+                    top: "100px",
+                    zIndex: "2"
+                }}>
                 <List sx={{}}>
                     {navItems.map((item, index) => (
                         <Box
@@ -186,8 +219,8 @@ function NavBar(props) {
                 sx={{
                     overflowY: "hidden",
                     position: "static",
-                    paddingLeft: selectLanguage === "en" ? { lg: "96px", sm: "6px", xs: "6px" } : { lg: "56px", sm: "29px", xs: "29px" },
-                    paddingRight: selectLanguage === "en" ? { lg: "56px", sm: "29px", xs: "29px" } : { lg: "96px", sm: "6px", xs: "6px" },
+                    paddingLeft: selectLanguage === "en" ? { lg: "96px", sm: "6px", xs: "6px" } : { lg: "56px", sm: "26px", xs: "26px" },
+                    paddingRight: selectLanguage === "en" ? { lg: "56px", sm: "26px", xs: "26px" } : { lg: "96px", sm: "6px", xs: "6px" },
                     boxShadow: "none",
                     paddingTop: { lg: "26px", sm: "36px", xs: "36px" },
                     paddingBottom: "0px",
@@ -205,7 +238,7 @@ function NavBar(props) {
                 }}>
                     <Box className="logoGap" sx={{ display: "flex", alignItems: "center" }}>
 
-                        <img style={{ cursor: "pointer",zIndex:"3",position:"relative" }} onClick={handleBackToHomePage} src={Logo}></img>
+                        <img style={{ cursor: "pointer", zIndex: "3", position: "relative" }} onClick={handleBackToHomePage} src={Logo}></img>
 
                         <Box sx={{ display: { lg: "flex", xs: 'none', sm: 'none' } }}>
                             {navItems.slice(1, 6).map((items, index) => (
@@ -300,12 +333,12 @@ function NavBar(props) {
                                 paddingLeft: selectLanguage === "en" ? "19px" : "0px",
                                 paddingRight: selectLanguage === "ar" ? "19px" : "0px",
                                 zIndex: "3",
-                                position:"relative",
+                                position: "relative",
                             }}
                             disableRipple
 
                         >
-                <BurgerIcon isOpen={mobileOpen} />
+                            <BurgerIcon isOpen={mobileOpen} />
 
                         </IconButton>
                     </Box>
@@ -323,23 +356,8 @@ function NavBar(props) {
                             invisible: true,
                         },
                     }}
-                    sx={{
-                        zIndex:"2",
+                    sx={drawerStyles}
 
-                        display: { xs: 'block', sm: 'block' },
-                        
-                        '& .MuiDrawer-paper': {
-                             boxSizing: 'border-box', 
-                             width: "100%",
-                              marginTop: "0px", 
-                              backgroundColor: "var(--website-bg-color)", 
-                              boxShadow: "none",
-                               color: "#fff",
-                               transition: 'width 10s ease', // Add a transition for the width change
-
-                            
-                            },
-                    }}
                 >
                     {drawer}
                 </Drawer>
