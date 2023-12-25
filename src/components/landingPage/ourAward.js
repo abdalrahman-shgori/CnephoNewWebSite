@@ -1,5 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import award1 from "../../assets/images/award1.svg"
 import award2 from "../../assets/images/award2.svg"
@@ -8,7 +8,8 @@ import award4 from "../../assets/images/award4.svg"
 import award5 from "../../assets/images/award5.svg"
 import "./ourAwards.css"
 import Blog from "./blogs";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 function OurAward(){
     const { t, i18n } = useTranslation();
     const selectLanguage = i18n.language
@@ -27,9 +28,16 @@ function OurAward(){
 
     ]
 
+    useEffect(() => {
+      AOS.init({
+        disable: "phone",
+        duration: 700,
+        easing: "ease-out-cubic",
+      });
+    }, []);
 return(
     <>
-    <Grid className="bgCaseAwards"
+    <Grid  className="bgCaseAwards"
     sx={{
         paddingLeft: { lg: "120px", md: "16px", sm: "16px", xs: "11px" },
         paddingRight: { lg: "120px", md: "16px", sm: "16px", xs: "11px" },

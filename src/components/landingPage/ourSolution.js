@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Button, Grid, Typography } from "@mui/material";
 import "./OurSolution.css"
 import { useTranslation } from "react-i18next";
@@ -6,13 +6,14 @@ import CarouselComponent from "./carousal";
 import CaseStudy from "./caseStudy";
 import Footer from "../footer/footer";
 
+
 function OurSolution() {
     const { t, i18n } = useTranslation();
     const selectedLanguage = i18n.language;
-
+  
     return (
         <>
-            <Grid className="root-container"
+            <Grid  className="root-container"
                 sx={{
                     position: "relative",
                     bottom: { lg: "80px", md: "0px", sm: "0px", xs: "0px" },
@@ -20,7 +21,7 @@ function OurSolution() {
                     marginBottom: "40px"
                 }}
             >
-                <Box
+                <Box 
                     sx={{
                         textAlign: "center",
                         color: "var(--white-color)",
@@ -31,7 +32,7 @@ function OurSolution() {
                     }}
                 >
 
-                    <Typography
+                    <Typography 
                         sx={{
                             fontFamily: "var(--English-font)",
                             fontSize: { lg: "40px", md: "40px", sm: "26px", xs: "26px" },

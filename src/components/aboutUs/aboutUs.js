@@ -125,9 +125,9 @@ desc={
                         sm:`url(${Vector})`,
                         xs:`url(${Vector})`,// Use proper template literals and url function
                     },
-                    backgroundPosition: { lg: "0 -600px", xl: "0 -700px", md: "0 -360px",sm:"0 -10px",xs:"0 -20px" },
+                    backgroundPosition: { lg: "0 -600px", xl: "0 -700px", md: "0 -420px",sm:"0 -300px",xs:"0 -140px" },
                     backgroundRepeat: "no-repeat",
-                    backgroundSize: "cover",
+                    backgroundSize: "contain",
                     paddingTop: { lg: "60px", md: "60px", sm: "50px", xs: "50px" }
 
 

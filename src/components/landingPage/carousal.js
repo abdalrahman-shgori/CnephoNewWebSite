@@ -11,18 +11,25 @@ import greenShape from "../../assets/images/SolutionCard.svg";
 import ArrowRight from "../../assets/images/Group.svg"
 import ArrowLeft from "../../assets/images/arrowRightCarousal.svg"
 import ui from "../../assets/images/ui.svg"
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Carousel = (props) => {
     const [progressBarWidth, setProgressBarWidth] = useState(0);
 
     const { t, i18n } = useTranslation();
-
+    useEffect(() => {
+        AOS.init({
+          disable: "",
+          duration: 700,
+          easing: "ease-out-cubic",
+        });
+      }, []);
     const items = [
-        { id: "0", name: "UI/UX design", img: greenShape, desc: "our customers get solutions and businesses opportunities instead of just project" },
-        { id: "1", name: "Web development", img: greenShape, desc: "our customers get solutions and businesses opportunities instead of just project" },
-        { id: "2", name: "Cyber Security", img: greenShape, desc: "our customers get solutions and businesses opportunities instead of just project" },
-        { id: "3", name: "business planning", img: greenShape, desc: "our customers get solutions and businesses opportunities instead of just project" }
+        { id: 0, name: "UI/UX design", img: greenShape, desc: "our customers get solutions and businesses opportunities instead of just project" },
+        { id: 1, name: "Web development", img: greenShape, desc: "our customers get solutions and businesses opportunities instead of just project" },
+        { id: 2, name: "Cyber Security", img: greenShape, desc: "our customers get solutions and businesses opportunities instead of just project" },
+        { id: 3, name: "business planning", img: greenShape, desc: "our customers get solutions and businesses opportunities instead of just project" }
     ];
     const [currentSlide, setCurrentSlide] = useState(0);
     const selectedLanguage = i18n.language;
