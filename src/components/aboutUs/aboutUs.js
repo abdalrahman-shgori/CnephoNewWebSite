@@ -10,6 +10,10 @@ import CustomProgressBar from "./progress";
 import arrowRight from "../../assets/images/arrowRight.svg"
 import WhyChoose from "./whyChooseUs";
 import NumberAbout from "./numberAboutUs";
+import MoreAbout from "./moreAbout";
+import OurExperts from "./ourExperts";
+import Partner from "./partners";
+import Makeappointement from "../landingPage/MakeAppointement";
 
 function AboutUs() {
    
@@ -512,6 +516,11 @@ desc={
 
                 <WhyChoose/>
                 <NumberAbout/>
+                <MoreAbout/>
+                <OurExperts/>
+                {/* <Partner/> */}
+                <Makeappointement/>
+                
 
             </Grid>
 

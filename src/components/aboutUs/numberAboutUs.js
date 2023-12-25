@@ -94,7 +94,7 @@ function NumberAbout() {
 
 
                     <Grid container item>
-                        <Grid md={4} sm={7} xs={12} lg={4.5}
+                        <Grid item md={4} sm={7} xs={12} lg={4.5}
 
                         >
                             <Box
@@ -147,8 +147,8 @@ function NumberAbout() {
                             </Box>
 
                         </Grid>
-                        <Grid lg={7.5} md={8} sm={5} xs={12} container>
-                            <Grid lg={7} md={7} xs={12} sm={12}
+                        <Grid item lg={7.5} md={8} sm={5} xs={12} container>
+                            <Grid item lg={7} md={7} xs={12} sm={12}
                                 sx={{
                                     marginTop: { lg: "61px", md: "50px", sm: "30px", xs: "30px" },
                                     paddingLeft: selectLanguage === "en" && { lg: "50px", md: "20px", sm: "20px", xs: "0px" },
@@ -220,7 +220,7 @@ function NumberAbout() {
 
                                 ))}
                             </Grid>
-                            <Grid lg={5} md={5} xs={12} sm={12}
+                            <Grid item lg={5} md={5} xs={12} sm={12}
                                 sx={{
                                     marginTop: { lg: "61px", md: "50px", sm: "0px", xs: "0px" },
                                     paddingLeft: selectLanguage === "en" && { lg: "0px", md: "0px", sm: "20px", xs: "0px" },
