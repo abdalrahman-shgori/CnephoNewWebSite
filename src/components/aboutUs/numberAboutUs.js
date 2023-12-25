@@ -73,6 +73,7 @@ function NumberAbout() {
         };
     }, [isVisible, counters, numbers]);
     return (
+
         <>
             <Grid
                 ref={targetRef}
@@ -146,15 +147,16 @@ function NumberAbout() {
                             </Box>
 
                         </Grid>
-                        <Grid lg={7.5} md={7.5} sm={5} xs={12} container>
+                        <Grid lg={7.5} md={8} sm={5} xs={12} container>
                             <Grid lg={7} md={7} xs={12} sm={12}
                                 sx={{
                                     marginTop: { lg: "61px", md: "50px", sm: "30px", xs: "30px" },
-                                    paddingLeft: { lg: "50px", md: "10px", sm: "0px", xs: "0px" },
+                                    paddingLeft: selectLanguage === "en" && { lg: "50px", md: "20px", sm: "20px", xs: "0px" },
+                                    paddingRight: selectLanguage === "ar" && { lg: "50px", md: "20px", sm: "20px", xs: "0px" },
                                     display: "flex",
                                     flexDirection: "column",
                                     gap: { lg: "50px", md: "50px", sm: "12px", xs: "12px" },
-                                    marginBottom: { lg: "0px", md: "0px", sm: "0px", xs: "12px" }
+                                    marginBottom: { lg: "0px", md: "0px", sm: "12px", xs: "12px" }
 
                                 }}
                             >
@@ -221,6 +223,10 @@ function NumberAbout() {
                             <Grid lg={5} md={5} xs={12} sm={12}
                                 sx={{
                                     marginTop: { lg: "61px", md: "50px", sm: "0px", xs: "0px" },
+                                    paddingLeft: selectLanguage === "en" && { lg: "0px", md: "0px", sm: "20px", xs: "0px" },
+                                    paddingRight: selectLanguage === "ar" && { lg: "0px", md: "0px", sm: "20px", xs: "0px" },
+
+
                                     display: "flex",
                                     flexDirection: "column",
                                     gap: { lg: "50px", md: "50px", sm: "12px", xs: "12px" }
@@ -233,7 +239,7 @@ function NumberAbout() {
                                             display: "flex",
                                             alignItems: "center",
                                             gap: "8px",
-                                            height: "67px"
+                                            height: { lg: "67px", md: "67px", sm: "67px", xs: "54px" },
                                         }}
                                     >
                                         <Typography

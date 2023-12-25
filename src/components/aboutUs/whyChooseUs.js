@@ -26,21 +26,8 @@ function  WhyChoose(){
     }}
   >
     <img style={{maxWidth:"100%" }} src={whyImg} alt="Why Choose Us"></img>
-    {/* <Box
-      sx={{
-        background: "#21D6D6",
-        width: "100%",
-        maxWidth: "401px",
-        height: "100%",
-        borderRadius: "28px",
-        position: "relative",
-        left: "24px",
-        top: "24px",
-        zIndex: "2"
-      }}
-    ></Box> */}
   </Grid>
-  <Grid item lg={7} md={6} sm={7} xs={7} // Add xs={12} to take full width on small screens
+  <Grid item lg={7} md={6} sm={7} xs={7} 
     sx={{
       display: "flex",
       gap: {lg:"24px",md:"24px",sm:"6px",xs:"6px"},
