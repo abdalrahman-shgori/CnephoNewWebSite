@@ -129,8 +129,10 @@ function OurSolution() {
                             <CarouselComponent />
                         </Grid>
                     </Grid>
+
                 </Grid>
                 <CaseStudy />
+
             </Grid>
 
         </>

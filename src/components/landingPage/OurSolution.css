@@ -2,7 +2,7 @@
 
     background-image: url("../../assets/images/SolutionBG.svg");
     background-repeat: no-repeat;
-    height: 670px;
+    height: 660px;
     /* Adjust as needed */
 
 }
@@ -30,15 +30,17 @@
 @media screen and (max-width:1200px) {
     .bg1 {
         background-image: url("../../assets/images/SolutionBGSM.svg");
-        height: 450px;
+        height: 375px;
         /* Adjust as needed */
-
 
     }
 
     .bg2 {
         background-image: url("");
         visibility: visible;
+        background-size: 0;
+        height: 100%;
+
 
     }
 

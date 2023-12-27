@@ -28,13 +28,13 @@ function CaseStudy() {
                     paddingRight: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
                     backgroundPosition: { lg: " 0 -260px", md: " 0 -260px", sm: "0 -160px" },
                     paddingBottom: {lg:"73px",md:"73px",sm:"87px",xs:"87px"},
-                    marginTop: { lg: "0px", md: "0px", sm: "20px", xs: "70px" },
+                    paddingTop: { lg: "0px", md: "0px", sm: "45px", xs: "117px" },
                 }}
             >
 
                 <Grid
                     sx={{
-                        paddingTop: { lg: "79px", md: "50px" },
+                        paddingTop: { lg: "60px", md: "40px" },
                     }}
                 >
                     <Typography
