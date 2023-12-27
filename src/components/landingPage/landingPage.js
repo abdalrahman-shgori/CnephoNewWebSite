@@ -26,7 +26,6 @@ function LandingPage() {
             <Help/>
             <OurAward/>
             <Blog/>
-            <OurClients/>
             <Makeappointement/>
         </>
     )
