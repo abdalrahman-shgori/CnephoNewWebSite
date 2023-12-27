@@ -71,7 +71,7 @@ const Portfolio = () => {
     const portfolioItems = [
         { id: 1, title: 'broadnet', description: 'BroadNet is a prominent global business messaging solutions provider and a GSMA member. Broadnet offers a number of services .......', type: 'web development', img: TestImg2 },
         { id: 2, title: 'cheeze hospitality', description: 'Cheez Hospitality is building the bridge from local property owners, guides, and producers to worldwide traveleres, immersing .......', type: 'app', img: TestImg2 },
-        { id: 3, title: 'vip parking', description: 'The primary objective of VIP Parking Control was to offer viable solutions that would mitigate the unnecessary stress .........', type: 'branding', img: TestImg },
+        { id: 3, title: 'vip parking', description: 'The primary objective of VIP Parking Control was to offer viable solutions that would mitigate the unnecessary stress .......', type: 'branding', img: TestImg },
         { id: 4, title: 'sesamers', description: 'Sesamers is connecting founders & investors in better, more contextually-relevant ways based on their interest in attending upcoming Tech .....', type: 'social media', img: TestImg },
         { id: 5, title: 'fattal', description: 'Cheez Hospitality is building the bridge from local property owners, guides, and producers to worldwide traveleres, immersing .......', type: 'logo design', img: TestImg },
         // { id: 6, title: 'cheeze hospitality', description: 'Cheez Hospitality is building the bridge from local property owners, guides, and producers to worldwide traveleres, immersing .......', type: 'branding', img: TestImg },
@@ -215,19 +215,20 @@ const Portfolio = () => {
                         .filter((item) => selectedType === 'all' || item.type === selectedType)
                         .map((item, index) => (
                             <Grid 
-                            key={item.id} lg={6} md={6}
+                            key={item.id} lg={6} md={6} sm={6}
                                 sx={{
                                     display: "flex",
                                     justifyContent: item.id % 2 === 0 && index > 0 ? "end" : "start",
                                     paddingLeft: {
                                         lg: item.id % 2 === 0 && index > 0 ? selectLanguage === "en" && "45px" : "45px",
                                         md: item.id % 2 === 0 && index > 0 ? selectLanguage === "en" && "45px" : "45px",
-                                        // md: item.id % 2 === 0 ? "45px" : "",
+                                        sm: item.id % 2 === 0 && index > 0 ? selectLanguage === "en" && "20px" : "20px",
                                         xs: "unset"
                                     },
                                     paddingRight: {
                                         lg: item.id % 2 !== 0 ? selectLanguage === "en" && "45px" : "45px",
                                         md: item.id % 2 !== 0 ? selectLanguage === "en" && "45px" : "45px",
+                                        sm: item.id % 2 !== 0 ? selectLanguage === "en" && "20px" : "20px",
                                         xs: "unset"
                                     },
 
@@ -276,7 +277,7 @@ const Portfolio = () => {
                                                 overflow: 'hidden',
                                                 display: '-webkit-box',
                                                 WebkitBoxOrient: 'vertical',
-                                                WebkitLineClamp: 3, // Show only 3 lines
+                                                WebkitLineClamp: {lg:3,md:3,sm:3,xs:4}, 
                                             }}
                                         >
                                             {item.description}
