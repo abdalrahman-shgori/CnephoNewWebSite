@@ -1,0 +1,64 @@
+/* Add this to your stylesheet or in a style tag in your component */
+
+  /* .wekeweke {
+    background-image: 
+    url(../../assets/images/VectorPortfolio.svg), 
+    url(../../assets/images/Vector2Portfolio.svg),
+     url(../../assets/images/VectorPortfolio.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0 0px, center,0 2490px;
+  }
+  .PortfolioBgFirst{
+    background-image: url("../../assets/images/dots1.png");
+    background-size: contain;
+    background-position: 0 -120px;
+    background-repeat: no-repeat;
+
+  
+  }
+  .PortfolioBgSec{
+    background-image: url("../../assets/images/BG.png");
+    background-size: contain;
+    background-position: 0 900px;
+    background-repeat: repeat-y;
+  
+  }
+   */
+
+   .text-focus-in {
+	-webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+ @-webkit-keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  
+  
+  /* Media query for small screens */
+  @media (max-width: 768px) {
+   
+  }
+  

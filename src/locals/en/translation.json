@@ -112,6 +112,9 @@
             "Email":"Email",
             "PhoneNum":"Phone Number",
             "SendRequest":"SEND REQUEST"
+        },
+        "Portfolio":{
+            "headerDesc":"We follow a creative step-by-step process to transform your vision into reality by creating a digital identity that integrates diverse marketing elements to resonate with your target audience. Explore our work by clicking on a case study below."
         }
         
         
