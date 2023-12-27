@@ -93,7 +93,7 @@ const Portfolio = () => {
                     paddingLeft: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
                     paddingRight: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
                     marginTop: { lg: "48px", md: "48px", sm: "10px", xs: "10px" },
-                    marginBottom: { lg: "80px", md: "80px", sm: "51px", xs: "51px" }
+                    marginBottom: { lg: "80px", md: "80px", sm: "27px", xs: "27px" }
                 }}
             >
                 <header >
@@ -130,6 +130,7 @@ const Portfolio = () => {
                                     open={Boolean(anchorEl)}
                                     onClose={closeMenu}
                                     className="nav-list-dropdown"
+                                  
                                 >
                                     {types.map((type) => (
                                         <MenuItem
@@ -144,7 +145,8 @@ const Portfolio = () => {
                                                 fontVariant: "small-caps",
                                                 fontFamily: "var(--English-font)",
                                                 textAlign: "center",
-                                                fontStyle: "normal"
+                                                fontStyle: "normal",
+                                                
                                             }}
                                             disableRipple
                                         >
@@ -219,18 +221,45 @@ const Portfolio = () => {
                                 sx={{
                                     display: "flex",
                                     justifyContent: item.id % 2 === 0 && index > 0 ? "end" : "start",
-                                    paddingLeft: {
-                                        lg: item.id % 2 === 0 && index > 0 ? selectLanguage === "en" && "45px" : "45px",
-                                        md: item.id % 2 === 0 && index > 0 ? selectLanguage === "en" && "45px" : "45px",
-                                        sm: item.id % 2 === 0 && index > 0 ? selectLanguage === "en" && "20px" : "20px",
-                                        xs: "unset"
+                                    ...selectLanguage === "en" && {
+                                        paddingLeft: {
+                                            lg: item.id % 2 === 0 && index > 0 ? "45px" : "0px",
+                                            md: item.id % 2 === 0 && index > 0 ? "45px" : "0px",
+                                            sm: item.id % 2 === 0 && index > 0 ? "20px" : "0px",
+                                            xs: "unset"
+                                        }
                                     },
-                                    paddingRight: {
-                                        lg: item.id % 2 !== 0 ? selectLanguage === "en" && "45px" : "45px",
-                                        md: item.id % 2 !== 0 ? selectLanguage === "en" && "45px" : "45px",
-                                        sm: item.id % 2 !== 0 ? selectLanguage === "en" && "20px" : "20px",
-                                        xs: "unset"
+                                    ...selectLanguage === "en" && {
+                                        paddingRight: {
+                                            lg: item.id % 2 !== 0 ? "45px" : "0px",
+                                            md: item.id % 2 !== 0  ? "45px" : "0px",
+                                            sm: item.id % 2 !== 0  ? "20px" : "0px",
+                                            xs: "unset"
+                                        }
                                     },
+                                    ...selectLanguage === "ar" && {
+                                        paddingRight: {
+                                            lg: item.id % 2 === 0 && index > 0 ? "45px" : "0px",
+                                            md: item.id % 2 === 0 && index > 0 ? "45px" : "0px",
+                                            sm: item.id % 2 === 0 && index > 0 ? "20px" : "0px",
+                                            xs: "unset"
+                                        }
+                                    },
+                                    ...selectLanguage === "ar" && {
+                                        paddingLeft: {
+                                            lg: item.id % 2 !== 0  ? "45px" : "0px",
+                                            md: item.id % 2 !== 0  ? "45px" : "0px",
+                                            sm: item.id % 2 !== 0  ? "20px" : "0px",
+                                            xs: "unset"
+                                        }
+                                    },
+                                    
+                                    // paddingRight: {
+                                    //     lg: item.id % 2 !== 0 ? selectLanguage === "en" && "45px" : "0px",
+                                    //     md: item.id % 2 !== 0 ? selectLanguage === "en" && "45px" : "0px",
+                                    //     sm: item.id % 2 !== 0 ? selectLanguage === "en" && "20px" : "0px",
+                                    //     xs: "unset"
+                                    // },
 
                                     marginBottom: {
                                         lg: "40px",
@@ -248,12 +277,14 @@ const Portfolio = () => {
                                         gap: { lg: "24px", md: "24px", sm: "20px", xs: "20px" },
                                     }}
                                 >
-                                    <img data-aos-duration="1500"  data-aos={item.id % 2 === 0 ?  "flip-left" :  "flip-right"} style={{ maxWidth: "99.9%" }} src={item.img}></img>
+                                    <img data-aos-duration="1500"  data-aos={item.id % 2 === 0 ?  "flip-left" :  "flip-right"} style={{ maxWidth: "100%" }} src={item.img}></img>
                                     <Box data-aos-duration="1500"  data-aos={item.id % 2 === 0 ?  "fade-up" :  "fade-up"}
                                         sx={{
                                             display: "flex",
                                             flexDirection: "column",
-                                            gap: { lg: "8px", md: "8px", xs: "0px", xs: "0px", }
+                                            gap: { lg: "8px", md: "8px", xs: "0px", xs: "0px", },
+                                            paddingLeft:"2px",
+                                            paddingRight:"2px"
                                         }}
                                     >
                                         <Typography
