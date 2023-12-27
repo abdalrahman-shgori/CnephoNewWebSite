@@ -280,9 +280,12 @@ const Carousel = (props) => {
                 >
                     <Box
                         sx={{
-                            backgroundColor: "white",
+                            backgroundColor: "#D4DFFF",
                             height: "5px",
                             borderRadius: "8px",
+
+                            boxShadow:"2px 4px 8px 0px rgba(255, 255, 255, 0.16)"
+
                         }}
                     >
                         <Box

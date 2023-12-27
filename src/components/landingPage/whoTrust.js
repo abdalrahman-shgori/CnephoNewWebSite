@@ -117,10 +117,6 @@ function WhoTrust(){
                 ))}
             </Grid>
         </Grid>
-
-        <Makeappointement/>
-
-
         </>
     )
 }

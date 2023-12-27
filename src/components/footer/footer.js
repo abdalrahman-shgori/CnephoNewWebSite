@@ -62,10 +62,10 @@ const Footer = () => {
 
 
   const UsefulLink = [
-    { name: t("footer.ABOUTUS"), href: "#" },
+    { name: t("footer.ABOUTUS"), href: "/AboutUs" },
     { name: t("footer.News"), href: "#" },
-    { name: t("footer.CONTACTUS"), href: "#" },
-    { name: t("footer.CaseStudy"), href: "#" },
+    { name: t("footer.CONTACTUS"), href: "/Contact-Us" },
+    { name: t("footer.CaseStudy"), href: "/Portolios" },
     { name: t("footer.Link1"), href: "#" },
     { name: t("footer.Link2"), href: "#" },
   ]

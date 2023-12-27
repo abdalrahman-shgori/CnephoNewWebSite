@@ -24,10 +24,10 @@ function SectionOne() {
         <>
             {/* <LottieAnimation animationData={animationDataHome2} /> */}
 
-            <Grid container className="we root-container" sx={{ overflowX: "hidden" }}>
+            <Grid container className="we root-container" sx={{ overflowX: "hidden", paddingTop:{lg:"110px",md:"110px",sm:"110px",xs:"116px"},
+ }}>
                 <Grid item lg={6.1} sm={6.1} xs={12}
                     sx={{
-                        marginTop: "40px",
                         height: "100%",
 
                     }}>
@@ -51,6 +51,7 @@ function SectionOne() {
                     >
                         {selectLanguage === "en" ?
                             <>
+                            
                                 {t("landingPageSection1.BetterSolution1")}<br />
                                 {t("landingPageSection1.BetterSolution2")}<br />
                                 {t("landingPageSection1.BetterSolution3")}

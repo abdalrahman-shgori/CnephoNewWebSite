@@ -16,6 +16,7 @@ import MoreAbout from "./moreAbout";
 import OurExperts from "./ourExperts";
 import Partner from "./partners";
 import Makeappointement from "../landingPage/MakeAppointement";
+import Footer from "../footer/footer";
 
 function AboutUs() {
 
@@ -527,6 +528,7 @@ function AboutUs() {
                <OurExperts />
             {/* <Partner/> */}
             <Makeappointement />
+            {/* <Footer/> */}
            
 
         </>

@@ -19,7 +19,7 @@ function Header({bgImg,bgImgSm,title,desc}){
                 }}
                 
                 >
-                    <NavBar/>
+                    {/* <NavBar/> */}
 
                     <Grid
                         sx={{
@@ -28,7 +28,7 @@ function Header({bgImg,bgImgSm,title,desc}){
                             paddingLeft: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
                             paddingRight: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
                             paddingBottom: { lg: "121px", md: "121px", sm: "121px", xs: "100px" },
-                            marginTop: { lg: "105px", md: "105px", sm: "105px", xs: "79px" }
+                            paddingTop: { lg: "182px", md: "182px", sm: "182px", xs: "174px" }
                         }}
                     >
                         <Box

@@ -8,6 +8,9 @@ import { useTranslation } from 'react-i18next';
 import LandingPage from './components/landingPage/landingPage';
 import ContactUs from './components/contactUs/contactUs';
 import AboutUs from './components/aboutUs/aboutUs';
+import Portfolio from './components/portfolios/portfolio';
+import NavBar from './components/navbar/navbar';
+import Footer from './components/footer/footer';
 
 function App() {
    const { t, i18n } = useTranslation();
@@ -20,13 +23,14 @@ function App() {
 
     <ThemeSettings>
 <ThemeLocalization> 
+   <NavBar/>
    <Routes>
     <Route path='/' element={<LandingPage/>}/>
     <Route path='/Contact-Us' element={<ContactUs/>} />
     <Route path='/AboutUs' element={<AboutUs/>} />
-
-
+    <Route path='/Portolios' element={<Portfolio/>} />
    </Routes>
+   <Footer/>
    </ThemeLocalization>
    </ThemeSettings>
 

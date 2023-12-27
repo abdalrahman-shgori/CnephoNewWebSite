@@ -268,11 +268,8 @@ function Help() {
 
             </Slider>
           </Box>
-
-
         </Grid>
       </Grid>
-      <OurAward/>
 
     </>
   )

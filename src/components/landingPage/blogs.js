@@ -209,7 +209,6 @@ sx={{
             </Box>
 
         </Grid>
-        <WhoTrust/>
 
 
         </>

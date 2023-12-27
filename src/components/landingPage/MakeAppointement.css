@@ -1,6 +1,6 @@
 .make-bg {
     position: relative;
-    overflow: hidden; /* Ensures the overlay doesn't extend beyond the container */
+    overflow: hidden;
   }
   
   .make-bg::before {
@@ -13,9 +13,9 @@
     background-image: url("../../assets/images/Makeappointement.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: #313D72; /* Background color with reduced opacity */
-    opacity: 0.478; /* Opacity value (adjust as needed) */
-    z-index: 1; /* Place the overlay above the background image */
+    background-color: #313D72; 
+    opacity: 0.578;
+    z-index: 1; 
   }
   
   .text-content-make {

@@ -2,15 +2,12 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import "./caseStudy.css"
 import { Box, Grid, Typography, Button } from "@mui/material";
-import OurSolution from "./ourSolution";
-import Footer from "../footer/footer";
 import Arrow from "../../assets/images/BlueArrow.svg"
 import ArrowWhite from "../../assets/images/arrowRight.svg"
-
 import caseTest from "../../assets/images/caseTest.png"
 import OurClients from "./ourClients";
-import Help from "./needHelp";
-import OurAward from "./ourAward";
+import Footer from "../footer/footer";
+
 function CaseStudy() {
     const cases = [
         { id: 0, title: "Quiff: Online Salon Booking Platform Development, Optimization, and Support", desc: "Lorem ipsum dolor sit amet consectetur. Fermentum auctor tincidunt tristique et leo sed quisque et. Gravida suscipit tincidunt elit ut quis in sed. Id donec sed quam tempus metus. Vel et nunc faucibus etiam sit adipiscing.Lorem ipsum dolor sit amet consectetur. Fermentum auctor tincidunt tristique et leo sed quisque et. Gravida suscipit tincidunt elit ut quis in sed. Id donec sed quam tempus metus. Vel et nunc faucibus etiam sit adipiscing.", img: caseTest },
@@ -31,7 +28,7 @@ function CaseStudy() {
                     paddingRight: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
                     backgroundPosition: { lg: " 0 -260px", md: " 0 -260px", sm: "0 -160px" },
                     paddingBottom: {lg:"73px",md:"73px",sm:"87px",xs:"87px"},
-                    marginTop: { lg: "0px", md: "0px", sm: "20px", xs: "70px" }
+                    marginTop: { lg: "0px", md: "0px", sm: "20px", xs: "70px" },
                 }}
             >
 
@@ -281,7 +278,7 @@ function CaseStudy() {
                                 border: "1px solid var(--white-color)",
                                 borderRadius: "36px",
                                 padding: "16px 24px",
-                                height: "52px",
+                                height:{lg:"52px",md:"52px",sm:"52px",xs:"44px"},
                                 gap: "16px",
 
                             }}
@@ -301,7 +298,6 @@ function CaseStudy() {
 
 
             </Grid>
-            <OurClients />
 
         </>
     )

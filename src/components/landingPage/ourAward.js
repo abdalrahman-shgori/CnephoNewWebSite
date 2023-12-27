@@ -125,7 +125,6 @@ return(
     </Grid>
    
     </Grid>
-    <Blog/>
     </>
 )
 

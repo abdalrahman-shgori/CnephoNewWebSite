@@ -127,13 +127,12 @@ function OurSolution() {
                             </Box>
 
                             <CarouselComponent />
-                            <CaseStudy />
-
-
                         </Grid>
                     </Grid>
                 </Grid>
+                <CaseStudy />
             </Grid>
+
         </>
     )
 }

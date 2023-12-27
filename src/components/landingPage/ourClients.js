@@ -298,7 +298,6 @@ function OurClients(props) {
                 </Grid>
 
             </Grid>
-            <Help />
 
         </>
     )

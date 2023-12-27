@@ -35,7 +35,7 @@ function NavBar(props) {
         { title: t("navBar.Home"), path: "/" },
         { title: t("navBar.ABOUTUS"), path: "/AboutUs" },
         { title: t("navBar.SERVICES"), path: "/services" },
-        { title: t("navBar.PORTFOLIO"), path: "/portfolio" },
+        { title: t("navBar.PORTFOLIO"), path: "/Portolios" },
         { title: t("navBar.BLOG"), path: "/blog" },
         { title: t("navBar.CAREER"), path: "/career" },
         { title: t("navBar.CONTACTUS"), path: "/Contact-Us" },
@@ -159,7 +159,8 @@ function NavBar(props) {
                     textAlign: 'center',
                     position: "relative",
                     top: "100px",
-                    zIndex: "2"
+                    zIndex: "2",
+                    
                 }}>
                 <List sx={{}}>
                     {navItems.map((item, index) => (
@@ -218,14 +219,17 @@ function NavBar(props) {
             <AppBar component="nav"
                 sx={{
                     overflowY: "hidden",
-                    position: "static",
+                    position: "absolute",
                     paddingLeft: selectLanguage === "en" ? { lg: "96px", sm: "6px", xs: "6px" } : { lg: "56px", sm: "26px", xs: "26px" },
                     paddingRight: selectLanguage === "en" ? { lg: "56px", sm: "26px", xs: "26px" } : { lg: "96px", sm: "6px", xs: "6px" },
                     boxShadow: "none",
                     paddingTop: { lg: "26px", sm: "36px", xs: "36px" },
                     paddingBottom: "0px",
-                    backgroundColor: "transparent",
+                    backgroundColor: mobileOpen === false ? "transparent" : "var(--website-bg-color)",
                     fontFamily: "var(--English-font)",
+                    transition: mobileOpen === true ? 'background-color 0s ease-out' : 'background-color 0s ease', // Adjust the duration as needed
+                    transitionDelay: mobileOpen ? '0.5s' : '0s', // Adjust the delay as needed
+
 
                 }}
             >
@@ -250,7 +254,7 @@ function NavBar(props) {
                                     sx={{
                                         display: "flex",
                                         color: items.path === location.pathname ? '#21D6D6' : '#fff',
-                                        transition: 'color 0.3s ease',
+                                        transition: 'color 0.5s ease',
                                         marginRight: '8px',
                                         width: "115px",
                                         textAlign: "center",

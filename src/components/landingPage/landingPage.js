@@ -12,19 +12,22 @@ import CaseStudy from "./caseStudy";
 import OurClients from "./ourClients";
 import Help from "./needHelp";
 import OurAward from "./ourAward";
-
-
+import Blog from "./blogs";
+import Makeappointement from "./MakeAppointement";
 function LandingPage() {
     const { t, i18n } = useTranslation();
     const selectLanguage = i18n.language;
 
     return (
         <>
-            <NavBar />
             <SectionOne />
             <OurSolution />
-
-
+            <OurClients/>
+            <Help/>
+            <OurAward/>
+            <Blog/>
+            <OurClients/>
+            <Makeappointement/>
         </>
     )
 }
