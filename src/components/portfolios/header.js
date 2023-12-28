@@ -8,7 +8,14 @@ function HeaderPortfolio(){
 
     return(
         <>
-        <Box className="PortfolioBgFirst"/>
+                            <Box  className="root-container PortfolioBgFirst" 
+                            
+                            sx={{
+                                display:{xl:"none"}
+                                
+                            }}
+                            />
+
         <Grid
         sx={{
             paddingLeft: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },

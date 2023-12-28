@@ -71,7 +71,7 @@ const Portfolio = () => {
     const portfolioItems = [
         { id: 1, title: 'broadnet', description: 'BroadNet is a prominent global business messaging solutions provider and a GSMA member. Broadnet offers a number of services .......', type: 'web development', img: TestImg2 },
         { id: 2, title: 'cheeze hospitality', description: 'Cheez Hospitality is building the bridge from local property owners, guides, and producers to worldwide traveleres, immersing .......', type: 'app', img: TestImg2 },
-        { id: 3, title: 'vip parking', description: 'The primary objective of VIP Parking Control was to offer viable solutions that would mitigate the unnecessary stress .......', type: 'branding', img: TestImg2 },
+        { id: 3, title: 'vip parking', description: 'The primary objective of VIP Parking Control was to offer viable solutions that would mitigate the unnecessary stress .......', type: 'app', img: TestImg2 },
         { id: 4, title: 'sesamers', description: 'Sesamers is connecting founders & investors in better, more contextually-relevant ways based on their interest in attending upcoming Tech .....', type: 'social media', img: TestImg2 },
         { id: 5, title: 'fattal', description: 'Cheez Hospitality is building the bridge from local property owners, guides, and producers to worldwide traveleres, immersing .......', type: 'logo design', img: TestImg },
         // { id: 6, title: 'cheeze hospitality', description: 'Cheez Hospitality is building the bridge from local property owners, guides, and producers to worldwide traveleres, immersing .......', type: 'branding', img: TestImg },
@@ -88,6 +88,7 @@ const Portfolio = () => {
     ];
     return (
         <>
+
             <Grid
                 sx={{
                     paddingLeft: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
@@ -202,11 +203,11 @@ const Portfolio = () => {
                     </nav>
                 </header>
             </Grid>
+
             <Grid className='' 
                 sx={{
                     marginTop: { lg: "80px", md: "80px", sm: "27px", xs: "27px" },
-                    paddingLeft: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
-                    paddingRight: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
+
                     position:"relative"
                 }}
             >
@@ -219,6 +220,8 @@ const Portfolio = () => {
                 <Grid container className=''
                     sx={{
                         justifyContent: "center",
+                        paddingLeft: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
+                        paddingRight: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
                     }}
                 >
                     {portfolioItems
@@ -228,36 +231,36 @@ const Portfolio = () => {
                             key={item.id} lg={6} md={6} sm={6}
                                 sx={{
                                     display: "flex",
-                                    justifyContent: item.id % 2 === 0 && index > 0 ? "end" : "start",
+                                    justifyContent: index % 2 === 0 ? "start" : "start",
+                                    ...selectLanguage === "en" && {
+                                        paddingRight: {
+                                            lg: index % 2 === 0 ? "45px" : "0px",
+                                            md: index % 2 === 0 ? "45px" : "0px",
+                                            sm: index % 2 === 0 ? "20px" : "0px",
+                                            xs: "unset"
+                                        }
+                                    },
                                     ...selectLanguage === "en" && {
                                         paddingLeft: {
-                                            lg: item.id % 2 === 0 && index > 0 ? "45px" : "0px",
-                                            md: item.id % 2 === 0 && index > 0 ? "45px" : "0px",
-                                            sm: item.id % 2 === 0 && index > 0 ? "20px" : "0px",
-                                            xs: "unset"
-                                        }
-                                    },
-                                    ...selectLanguage === "en" && {
-                                        paddingRight: {
-                                            lg: item.id % 2 !== 0 ? "45px" : "0px",
-                                            md: item.id % 2 !== 0  ? "45px" : "0px",
-                                            sm: item.id % 2 !== 0  ? "20px" : "0px",
-                                            xs: "unset"
-                                        }
-                                    },
-                                    ...selectLanguage === "ar" && {
-                                        paddingRight: {
-                                            lg: item.id % 2 === 0 && index > 0 ? "45px" : "0px",
-                                            md: item.id % 2 === 0 && index > 0 ? "45px" : "0px",
-                                            sm: item.id % 2 === 0 && index > 0 ? "20px" : "0px",
+                                            lg: index % 2 !== 0 ? "45px" : "0px",
+                                            md: index % 2 !== 0  ? "45px" : "0px",
+                                            sm: index % 2 !== 0  ? "20px" : "0px",
                                             xs: "unset"
                                         }
                                     },
                                     ...selectLanguage === "ar" && {
                                         paddingLeft: {
-                                            lg: item.id % 2 !== 0  ? "45px" : "0px",
-                                            md: item.id % 2 !== 0  ? "45px" : "0px",
-                                            sm: item.id % 2 !== 0  ? "20px" : "0px",
+                                            lg: index % 2 === 0  ? "45px" : "0px",
+                                            md: index % 2 === 0  ? "45px" : "0px",
+                                            sm: index % 2 === 0  ? "20px" : "0px",
+                                            xs: "unset"
+                                        }
+                                    },
+                                    ...selectLanguage === "ar" && {
+                                        paddingRight: {
+                                            lg: index % 2 !== 0  ? "45px" : "0px",
+                                            md: index % 2 !== 0  ? "45px" : "0px",
+                                            sm: index % 2 !== 0  ? "20px" : "0px",
                                             xs: "unset"
                                         }
                                     },

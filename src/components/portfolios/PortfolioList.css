@@ -10,41 +10,40 @@
   
   }
    */
-   .PortfolioBgSec{
-    background-image: url("../../assets/images/BG.png");
-    background-size: contain;
-    background-repeat: repeat-y;
+  
+   .PortfolioBgFirst{
+    background-image: url("../../assets/images/dots1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
     background-position: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .PortfolioBgSec{
+    background-image: url("../../assets/images/BG.png");
+    background-size: cover;
+    background-repeat: repeat-y;
     height: 100%;
     width: 100%;
     position: absolute;
     left: 0;
     z-index: -1;
-    top:1%
+    top: 10%;
   
   }
-   .PortfolioBgFirst{
-    background-image: url("../../assets/images/dots1.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: -1;
 
-  
-  }
    .basicVector {
     background-image: 
     url(../../assets/images/VectorsPortfolio.svg);
-    background-size: contain;
+    background-size: cover;
     background-repeat: repeat-y;
-    background-position: 0 100px;
+    background-position: center 100px;
     height: 100%;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1195px;
     position: absolute;
   }
   .rightVector {
@@ -68,7 +67,7 @@
     width: 100%;
     max-width: 303px;
     position: absolute;
-    transform: translateY(26%); /* Center the element vertically */
+    transform: translateY(50%); /* Center the element vertically */
 
   }
 
@@ -107,7 +106,7 @@
   @media (max-width: 1024px) {
     .basicVector{
       /* background-image: url(""); */
-      width: 90%;
+      width: 92%;
     }
     .leftVector{
       display: none;
@@ -117,7 +116,7 @@
       display: none;
     }
     .PortfolioBgFirst{
-      top: -20%;
+      top: 30%;
     }
    
   }
@@ -138,6 +137,12 @@
     .PortfolioBgFirst{
       display: unset;
       top: -10%;
+    }
+  
+  }
+  @media screen and (max-width:600px) {
+    .basicVector{
+      background-size: contain;
     }
   }
   
