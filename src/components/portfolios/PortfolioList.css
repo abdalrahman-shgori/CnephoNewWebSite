@@ -1,22 +1,7 @@
 /* Add this to your stylesheet or in a style tag in your component */
 
-  /* .wekeweke {
-    background-image: 
-    url(../../assets/images/VectorPortfolio.svg), 
-    url(../../assets/images/Vector2Portfolio.svg),
-     url(../../assets/images/VectorPortfolio.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: 0 0px, center,0 2490px;
-  }
-  .PortfolioBgFirst{
-    background-image: url("../../assets/images/dots1.png");
-    background-size: contain;
-    background-position: 0 -120px;
-    background-repeat: no-repeat;
-
-  
-  }
+  /*
+ 
   .PortfolioBgSec{
     background-image: url("../../assets/images/BG.png");
     background-size: contain;
@@ -25,6 +10,67 @@
   
   }
    */
+   .PortfolioBgSec{
+    background-image: url("../../assets/images/BG.png");
+    background-size: contain;
+    background-repeat: repeat-y;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    top:1%
+  
+  }
+   .PortfolioBgFirst{
+    background-image: url("../../assets/images/dots1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+
+  
+  }
+   .basicVector {
+    background-image: 
+    url(../../assets/images/VectorsPortfolio.svg);
+    background-size: contain;
+    background-repeat: repeat-y;
+    background-position: 0 100px;
+    height: 100%;
+    width: 100%;
+    max-width: 1000px;
+    position: absolute;
+  }
+  .rightVector {
+    background-image:url(../../assets/images/RightVectorPortfolio.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    right: 0;
+    top:129px;
+    height: 862px;
+    width: 100%;
+    max-width: 303px;
+    position: absolute;
+  }
+  .leftVector {
+    background-image:url(../../assets/images/LeftVectorPortfolio.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    left: 0;
+    top:20.4%;
+    height: 862px;
+    width: 100%;
+    max-width: 303px;
+    position: absolute;
+    transform: translateY(-50%); /* Center the element vertically */
+
+  }
 
    .text-focus-in {
 	-webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
@@ -58,7 +104,39 @@
   
   
   /* Media query for small screens */
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
+    .basicVector{
+      /* background-image: url(""); */
+      width: 90%;
+    }
+    .leftVector{
+      display: none;
+    }
+    .rightVector{
+      display: none;
+    }
+    .PortfolioBgFirst{
+      top: -20%;
+    }
    
+  }
+
+  @media screen and (max-width:900px) {
+    .PortfolioBgFirst{
+      height: 100%;
+    }
+    .PortfolioBgSec{
+      display: none;
+    }
+   .PortfolioBgFirst{
+    display: none;
+   }
+  }
+
+  @media screen and (max-width:767px) {
+    .PortfolioBgFirst{
+      display: unset;
+      top: -10%;
+    }
   }
   

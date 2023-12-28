@@ -4,7 +4,7 @@ import NavBar from "../navbar/navbar";
 import PortfolioList from "./PortfolioList";
 import Footer from "../footer/footer";
 import Makeappointement from "../landingPage/MakeAppointement";
-import { Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import './PortfolioList.css'
 
 function Portfolio() {
@@ -12,12 +12,8 @@ function Portfolio() {
     return (
         <>
             <div className="root-container">
-                {/* <NavBar /> */}
-                <div className="PortfolioBgFirst">
                     <HeaderPortfolio />
                     <PortfolioList />
-                </div>
-
             </div>
             <Makeappointement />
             {/* <Footer /> */}

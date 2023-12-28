@@ -71,8 +71,8 @@ const Portfolio = () => {
     const portfolioItems = [
         { id: 1, title: 'broadnet', description: 'BroadNet is a prominent global business messaging solutions provider and a GSMA member. Broadnet offers a number of services .......', type: 'web development', img: TestImg2 },
         { id: 2, title: 'cheeze hospitality', description: 'Cheez Hospitality is building the bridge from local property owners, guides, and producers to worldwide traveleres, immersing .......', type: 'app', img: TestImg2 },
-        { id: 3, title: 'vip parking', description: 'The primary objective of VIP Parking Control was to offer viable solutions that would mitigate the unnecessary stress .......', type: 'branding', img: TestImg },
-        { id: 4, title: 'sesamers', description: 'Sesamers is connecting founders & investors in better, more contextually-relevant ways based on their interest in attending upcoming Tech .....', type: 'social media', img: TestImg },
+        { id: 3, title: 'vip parking', description: 'The primary objective of VIP Parking Control was to offer viable solutions that would mitigate the unnecessary stress .......', type: 'branding', img: TestImg2 },
+        { id: 4, title: 'sesamers', description: 'Sesamers is connecting founders & investors in better, more contextually-relevant ways based on their interest in attending upcoming Tech .....', type: 'social media', img: TestImg2 },
         { id: 5, title: 'fattal', description: 'Cheez Hospitality is building the bridge from local property owners, guides, and producers to worldwide traveleres, immersing .......', type: 'logo design', img: TestImg },
         // { id: 6, title: 'cheeze hospitality', description: 'Cheez Hospitality is building the bridge from local property owners, guides, and producers to worldwide traveleres, immersing .......', type: 'branding', img: TestImg },
         // { id: 7, title: 'cheeze hospitality', description: 'Cheez Hospitality is building the bridge from local property owners, guides, and producers to worldwide traveleres, immersing .......', type: 'social media', img: TestImg },
@@ -96,9 +96,11 @@ const Portfolio = () => {
                     marginBottom: { lg: "80px", md: "80px", sm: "27px", xs: "27px" }
                 }}
             >
+                
                 <header >
                     <nav>
                         <div className="nav-container ">
+                            
                             <Hidden mdUp>
                                 {/* Display button only on medium and smaller screens */}
                                 <Button className="nav-toggle" onClick={openMenu}
@@ -200,14 +202,20 @@ const Portfolio = () => {
                     </nav>
                 </header>
             </Grid>
-
-            <Grid className='PortfolioBgSec' data-aos="fade-up"
+            <Grid className='' 
                 sx={{
                     marginTop: { lg: "80px", md: "80px", sm: "27px", xs: "27px" },
                     paddingLeft: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
                     paddingRight: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
+                    position:"relative"
                 }}
             >
+                            <Box className="basicVector"/>
+                            
+            <Box className="rightVector"/>
+            <Box className="leftVector"/>
+            <Box className="PortfolioBgSec"/>
+
                 <Grid container className=''
                     sx={{
                         justifyContent: "center",
@@ -333,7 +341,7 @@ const Portfolio = () => {
                                                 border: "1px solid var(--white-color)",
                                                 borderRadius: "36px",
                                                 padding: "8px 24px",
-                                                height: { lg: "52px", md: "52px", sm: "52px", xs: "44px" },
+                                                height: { lg: "52px", md: "52px", sm: "52px", xs:"44px" },
                                                 gap: "16px",
 
                                             }}
