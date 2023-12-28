@@ -68,7 +68,7 @@
     width: 100%;
     max-width: 303px;
     position: absolute;
-    transform: translateY(-50%); /* Center the element vertically */
+    transform: translateY(26%); /* Center the element vertically */
 
   }
 
@@ -111,6 +111,7 @@
     }
     .leftVector{
       display: none;
+
     }
     .rightVector{
       display: none;

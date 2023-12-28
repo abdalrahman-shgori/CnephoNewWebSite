@@ -105,7 +105,7 @@ function MoreAbout() {
                             }}
                             >
                              <Box>
-                                <img width="100%" src={item.img}></img>
+                                <img style={{maxWidth:"100%"}} src={item.img}></img>
                             </Box>
 <Box
 sx={{
