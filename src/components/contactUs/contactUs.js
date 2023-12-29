@@ -119,7 +119,7 @@ function ContactUs() {
     const handlePhoneChange = (event) => {
         const inputValue = event.target.value;
 
-        const validInput = /^[0-9+]*$/.test(inputValue);
+        const validInput = /^[0-9\u0660-\u0669+]*$/.test(inputValue);
         if (validInput || inputValue === "") {
             setPhoneNum(inputValue);
         }
