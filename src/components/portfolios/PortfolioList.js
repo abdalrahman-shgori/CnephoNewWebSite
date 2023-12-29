@@ -91,7 +91,7 @@ const Portfolio = () => {
         // { id: 16, title: 'cheeze hospitality', description: 'Cheez Hospitality is building the bridge from local property owners, guides, and producers to worldwide traveleres, immersing .......', type: 'logo design', img: TestImg },
     ];
 
-    const images = [...portfolioItems.map((item) => (item.img)),bg2,VectorsPortfolio]
+    const images =portfolioItems.map((item) => (item.img))
     console.log(images)
     useEffect(() => {
         const checkPageLoaded = async () => {
@@ -257,9 +257,11 @@ const Portfolio = () => {
                     position: "relative"
                 }}
             >
+                
                 <Box className="basicVector" 
                   sx={{
                     backgroundImage:`url(${VectorsPortfolio})`,
+                    display:!pageLoaded ? "none" : "unset"
               }}
                 />
 
@@ -268,6 +270,8 @@ const Portfolio = () => {
                 <Box className="PortfolioBgSec" 
                 sx={{
                       backgroundImage:`url(${bg2})`,
+                      display:!pageLoaded ? "none" : "unset"
+
                 }}
                 
                 />
