@@ -97,7 +97,7 @@ function OurClients(props) {
                     }}
                 >
                     <Box>
-                        <img style={{ width: "100%" }} src={ourClients}></img>
+                        <img loading="lazy" style={{ width: "100%" }} src={ourClients}></img>
                     </Box>
                     <Box
                         sx={{
@@ -111,7 +111,7 @@ function OurClients(props) {
 
                         }}
                     >
-                        <img style={{ maxWidth: "100%" }} src={quetos}></img>
+                        <img loading="lazy" style={{ maxWidth: "100%" }} src={quetos}></img>
                     </Box>
                 </Grid>
                 <Grid item xl={6} lg={6} md={12} sm={12} xs={12}
@@ -204,7 +204,7 @@ function OurClients(props) {
                                             direction: selectLanguage === "en" ? "ltr" : "rtl"
                                         }}
                                     >
-                                        <img src={item.clientImg}></img>
+                                        <img loading="lazy" src={item.clientImg}></img>
 
                                         <Box
                                             sx={{
@@ -268,7 +268,7 @@ function OurClients(props) {
 
                             >
 
-                                <img src={selectLanguage === "en" ? ArrowLeft : ArrowLeft}></img>
+                                <img loading="lazy" src={selectLanguage === "en" ? ArrowLeft : ArrowLeft}></img>
                             </Grid>
 
 

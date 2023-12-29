@@ -105,7 +105,7 @@ function CaseStudy() {
                                     }}
                                 >
                                     {item.id === 0 || item.id % 2 === 0 ?
-                                        <img style={{ maxWidth: "100%" }} src={item.img}></img>
+                                        <img loading="lazy" style={{ maxWidth: "100%" }} src={item.img}></img>
                                         :
                                         <>
                                             <Box>
@@ -159,7 +159,7 @@ function CaseStudy() {
                                                 >
                                                     <div className="frame">
                                                         <div className="text-wrapper"> {t("caseStudy.seeCase")} </div>
-                                                        <img className="typcn-arrow-up" alt="Typcn arrow up" src={Arrow}
+                                                        <img loading="lazy" className="typcn-arrow-up" alt="Typcn arrow up" src={Arrow}
                                                             style={{
                                                                 transform: selectLanguage === "ar" ? "rotate(180deg)" : "",
 
@@ -182,7 +182,7 @@ function CaseStudy() {
                                     }}
                                 >
                                     {item.id % 2 !== 0 ?
-                                        <img style={{ maxWidth: "100%" }} src={item.img}></img>
+                                        <img loading="lazy" style={{ maxWidth: "100%" }} src={item.img}></img>
                                         :
                                         <>
                                             <Box>
@@ -238,7 +238,7 @@ function CaseStudy() {
                                                 >
                                                     <div className="frame">
                                                         <div className="text-wrapper">{t("caseStudy.seeCase")}</div>
-                                                        <img className="typcn-arrow-up" alt="Typcn arrow up" src={Arrow}
+                                                        <img loading="lazy" className="typcn-arrow-up" alt="Typcn arrow up" src={Arrow}
                                                             style={{
                                                                 transform: selectLanguage === "ar" ? "rotate(180deg)" : "",
 
@@ -284,7 +284,7 @@ function CaseStudy() {
                             }}
                         >
                             {t("caseStudy.allCases")}
-                            <img className="typcn-arrow-up" alt="Typcn arrow up" src={ArrowWhite}
+                            <img loading="lazy" className="typcn-arrow-up" alt="Typcn arrow up" src={ArrowWhite}
                                 style={{
                                     transform: selectLanguage === "ar" ? "rotate(180deg)" : "",
 

@@ -144,6 +144,7 @@ sx={{
 
 
       <img
+      loading="lazy"
         src={item.img}
         alt={`Blog ${index + 1}`}
         style={{
@@ -192,7 +193,7 @@ sx={{
                           }}
                         >
                           {t("blogs.seeAllNews")}
-                          <img className="typcn-arrow-up" alt="Typcn arrow up" src={ArrowWhite}
+                          <img loading="lazy" className="typcn-arrow-up" alt="Typcn arrow up" src={ArrowWhite}
                             style={{
                               transform: selectLanguage === "ar" ? "rotate(180deg)" : "",
                               display:"flex",

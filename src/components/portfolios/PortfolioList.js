@@ -387,7 +387,7 @@ sx={{
                                         }}
                                     >
                                         
-                                        <img data-aos-duration="1500"
+                                        <img loading="lazy" data-aos-duration="1500"
                                             data-aos={item.id % 2 === 0 ? "flip-left" : "flip-right"}
                                             style={{ maxWidth: "100%" }}
                                             src={item.img} />
@@ -453,7 +453,7 @@ sx={{
                                                 }}
                                             >
                                                 {t("caseStudy.seeCase")}
-                                                <img className="typcn-arrow-up" alt="Typcn arrow up" src={ArrowWhite}
+                                                <img loading='lazy' className="typcn-arrow-up" alt="Typcn arrow up" src={ArrowWhite}
                                                     style={{
                                                         transform: selectLanguage === "ar" ? "rotate(180deg)" : "",
     

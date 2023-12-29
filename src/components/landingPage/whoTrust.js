@@ -111,7 +111,7 @@ function WhoTrust(){
                         marginBottom:{lg:"80px",md:"80px",sm:"80px",xs:item.id === 10 ? "85px" : "58px"}
                     }}
                     >
-                                            <img width="80px" height="80px" src={item.img}></img>
+                                            <img loading="lazy" width="80px" height="80px" src={item.img}></img>
 
                         </Grid>
                 ))}

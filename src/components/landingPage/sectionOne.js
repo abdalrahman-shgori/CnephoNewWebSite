@@ -98,7 +98,7 @@ function SectionOne() {
                     >
                         <div className="frame">
                             <div className="text-wrapper">{t("footer.CONTACTUS")}</div>
-                            <img className="typcn-arrow-up" alt="Typcn arrow up" src={Arrow}
+                            <img loading="lazy" className="typcn-arrow-up" alt="Typcn arrow up" src={Arrow}
                                 style={{
                                     transform: selectLanguage === "ar" ? "rotate(180deg)" : "",
 
@@ -123,7 +123,7 @@ function SectionOne() {
                         }}
                     >
 
-                        <img className="computerImg" height="755px" src={selectLanguage === "en" ? com : comAr}></img>
+                        <img loading="lazy" className="computerImg" height="755px" src={selectLanguage === "en" ? com : comAr}></img>
                     </Box>
 
                     <Box
@@ -136,7 +136,7 @@ function SectionOne() {
                             top: { lg: "380px", md: "420px", sm: "420px", xs: "-70px" }
                         }}
                     >
-                        <img className="CImg" src={C} style={{
+                        <img loading="lazy" className="CImg" src={C} style={{
 
                         }}></img>
                     </Box>

@@ -242,7 +242,7 @@ function NavBar(props) {
                 }}>
                     <Box className="logoGap" sx={{ display: "flex", alignItems: "center" }}>
 
-                        <img style={{ cursor: "pointer", zIndex: "3", position: "relative" }} onClick={handleBackToHomePage} src={Logo}></img>
+                        <img loading="lazy" style={{ cursor: "pointer", zIndex: "3", position: "relative" }} onClick={handleBackToHomePage} src={Logo}></img>
 
                         <Box sx={{ display: { lg: "flex", xs: 'none', sm: 'none' } }}>
                             {navItems.slice(1, 6).map((items, index) => (

@@ -168,7 +168,7 @@ function Help() {
                         }}
                       >
 
-                        <img src={item.img}></img>
+                        <img loading="lazy" src={item.img}></img>
                       </Box>
 
 
@@ -250,7 +250,7 @@ function Help() {
                           }}
                         >
                           {t("needHelp.sendMail")}
-                          <img className="typcn-arrow-up" alt="Typcn arrow up" src={ArrowWhite}
+                          <img loading="lazy" className="typcn-arrow-up" alt="Typcn arrow up" src={ArrowWhite}
                             style={{
                               transform: selectLanguage === "ar" ? "rotate(180deg)" : "",
 

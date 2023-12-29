@@ -121,7 +121,7 @@ function Makeappointement() {
                 right: "0"
               }}
             >
-              <img width="100%" src={vector1}></img>
+              <img loading="lazy" width="100%" src={vector1}></img>
             </Box>
             <Box
               sx={{
@@ -130,7 +130,7 @@ function Makeappointement() {
                 bottom: "0"
               }}
             >
-              <img width="100%" src={vector2}></img>
+              <img loading="lazy" width="100%" src={vector2}></img>
             </Box>
             <Typography
               sx={{
@@ -273,7 +273,7 @@ function Makeappointement() {
                     }}
                   >
                     {t("Appointement.sendrequest")}
-                    <img className="typcn-arrow-up" alt="Typcn arrow up" src={ArrowWhite}
+                    <img loading="lazy" className="typcn-arrow-up" alt="Typcn arrow up" src={ArrowWhite}
                       style={{
                         transform: selectLanguage === "ar" ? "rotate(180deg)" : "",
 

@@ -107,7 +107,7 @@ return(
 
             }}
             >
-            <img width="100%"  src={item.img} alt={`award-${index}`} />
+            <img loading="lazy" width="100%"  src={item.img} alt={`award-${index}`} />
 
             </Box>
           </Grid>

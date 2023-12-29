@@ -181,7 +181,7 @@ const Carousel = (props) => {
                                     zIndex: 1, // Add this line
                                 }}
                             >
-                                <img src={greenShape} alt="Green Shape" />
+                                <img loading='lazy' src={greenShape} alt="Green Shape" />
 
                             </Box>
 
@@ -271,7 +271,7 @@ const Carousel = (props) => {
 
                 >
 
-                    <img src={selectedLanguage === "en" ? ArrowRight : ArrowRight}></img>
+                    <img loading='lazy' src={selectedLanguage === "en" ? ArrowRight : ArrowRight}></img>
                 </Grid>
 
 
@@ -316,7 +316,7 @@ const Carousel = (props) => {
 
 
                 >
-                    <img src={selectedLanguage === "en" ? ArrowLeft : ArrowLeft}></img>
+                    <img loading='lazy' src={selectedLanguage === "en" ? ArrowLeft : ArrowLeft}></img>
                 </Grid>
 
             </Grid>

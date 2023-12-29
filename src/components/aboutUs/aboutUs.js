@@ -203,6 +203,7 @@ function AboutUs() {
                                         alt="group of people"
                                         style={{ height: "100%", zIndex: "2", position: "relative" }}
                                         src={group}
+                                        loading="lazy"
                                     //   onLoad={() => setImageLoaded(true)}
                                     //   onError={() => setImageLoaded(true)} 
                                     // For simplicity, mark as loaded even on error
@@ -350,7 +351,7 @@ function AboutUs() {
                                 }}
                             >
 
-                                <img width="100%" style={{ height: "100%", maxHeight: "650px", zIndex: "2", position: "relative" }} src={group}></img>
+                                <img loading="lazy" width="100%" style={{ height: "100%", maxHeight: "650px", zIndex: "2", position: "relative" }} src={group}></img>
                                 <Box
                                     sx={{
                                         position: 'absolute',
@@ -510,7 +511,7 @@ function AboutUs() {
                             {t("navBar.CONTACTUS")}
 
                         </Button>
-                        <img src={arrowRight} alt="Arrow"
+                        <img loading="lazy" src={arrowRight} alt="Arrow"
                             style={{
                                 transform: selectLanguage === "ar" ? "rotate(180deg)" : "",
                             }}
