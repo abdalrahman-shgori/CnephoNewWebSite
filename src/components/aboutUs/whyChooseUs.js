@@ -9,13 +9,16 @@ function  WhyChoose(){
 
     return(
         <>
+
         <Grid
         sx={{
             paddingLeft: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
             paddingRight: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
-            paddingBottom:{lg:"88px",md:"88px",sm:"41px",xs:"41px"}
+            paddingBottom:{lg:"88px",md:"88px",sm:"41px",xs:"41px"},
+            position:"relative"
         }}
         >
+
            <Grid container>
   <Grid item lg={5} md={6} sm={5} xs={5} // Add xs={12} to take full width on small screens
     sx={{

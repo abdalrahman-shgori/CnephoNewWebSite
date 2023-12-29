@@ -16,10 +16,10 @@ function OurExperts() {
         <>
             <Grid
                 sx={{
-                    marginTop: { lg: "80px", md: "80px", sm: "75px", xs: "75px" },
+                    marginTop: { lg: "80px", md: "80px", sm: "35px", xs: "35px" },
                     paddingLeft: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
                     paddingRight: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
-                    paddingBottom: { lg: "134px", md: "134px", sm: "80px", xs: "80px" }
+                    paddingBottom: { lg: "134px", md: "134px", sm: "40px", xs: "40px" }
                 }}
             >
                 <Box
@@ -79,28 +79,29 @@ function OurExperts() {
 
                 <Box
                     sx={{
-                        marginTop: { lg: "42px", md: "42px", sm: "42px", xs: "55px" }
+                        marginTop: { lg: "42px", md: "42px", sm: "40px", xs: "40px" }
                     }}
                 >
                     <Box
                         sx={{
-                            position: "relative"
+                            position: "relative",
+                        
                         }}
                     >
 
-                        <Grid container item lg={12} md={12} sm={12} xs={9}
+                        <Grid container item 
                             sx={{
-                                justifyContent: { lg: "space-between", md: "center", sm: "center", xs: "center" },
+                                justifyContent: { lg: "space-between", md: "space-between", sm: "space-between", xs: "center" },
                                 margin: { lg: "unset", md: "unset", sm: "0 auto", xs: "0 auto" },
-                                gap: { lg: "40px", md: "40px", sm: "40px", xs: "40px" }
 
                             }}
                         >
                             {persons.map((item, index) => (
-                                <Grid
+                                <Grid lg={3.8}  md={3.8}  sm={5.8} xs={10}
                                     key={index}
                                     sx={{
                                         position: "relative",
+                                        marginBottom:{lg:"unset",md:"unset",sm:"40px",xs:"40px"}
 
                                     }}
                                 >
@@ -115,7 +116,7 @@ function OurExperts() {
                                             borderRadius: "8px",
                                             width: "100%",
                                             height: "100%",
-                                            maxHeight: { lg: "204px", md: "204px", sm: "204px", xs: "138px" },
+                                            maxHeight: { lg: "204px", md: "170px", sm: "204px", xs: "138px" },
                                             clipPath: "polygon(71% 2%, 100% 27%, 100% 100%, 50% 100%, 0 100%, 0 29%)",
                                         }}
                                     >
@@ -128,7 +129,7 @@ function OurExperts() {
                                                 borderRadius: "8px",
                                                 width: "100%",
                                                 height: "100%",
-                                                maxHeight: { lg: "195px", md: "195px", sm: "195px", xs: "132px" },
+                                                maxHeight: { lg: "195px", md: "160px", sm: "195px", xs: "132px" },
                                                 clipPath: "polygon(71% 5%, 100% 24%, 100% 100%, 50% 100%, 0 100%, 0 32%)",
                                             }}
                                         >

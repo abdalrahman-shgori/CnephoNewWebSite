@@ -157,7 +157,7 @@ const Carousel = (props) => {
 
 
                 {items.map((item, idx) => (
-                    <Grid key={idx} className=""
+                    <Grid key={idx} 
 
                     >
                         <Box
@@ -294,7 +294,10 @@ const Carousel = (props) => {
                                 transition: "width 0.5s ease-in-out",
                                 width:
                                 {
-                                    lg: `${Math.min(((currentSlide + 4) / settings.slidesToShow) * 100, 100)}%`,
+                                    lg: window.innerWidth > 1380 ?
+                                    `${Math.min(((currentSlide + 4) / settings.slidesToShow) * 100, 100)}%` : 
+                                    `${Math.min(((currentSlide + 3) / settings.slidesToShow) * 100, 100)}%`
+                                    ,
                                     md: `${Math.min(((currentSlide + 3) / settings.slidesToShow) * 100, 100)}%`,
                                     sm: `${Math.min(((currentSlide + 2) / settings.slidesToShow) * 100, 100)}%`,
                                     xs: `${Math.min(((currentSlide + 1) / settings.slidesToShow) * 100, 100)}%`

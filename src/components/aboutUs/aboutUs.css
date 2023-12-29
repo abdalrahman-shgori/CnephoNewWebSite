@@ -1,24 +1,40 @@
-/* .progress-bar-container {
+.AboutUsBgFirst{
+  background-image: url("../../assets/images/dots1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+
+.AboutUsBgSec{
+  background-image: url("../../assets/images/BG.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.AboutUsBgThird{
+  background-image: url("../../assets/images/BG.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  top: 42%;
+}
+
+@media screen and (max-width:600px) {
+  .AboutUsBgThird{
+    height: 1300px;
     width: 100%;
-    border: 1px solid #ccc;
-    position: relative;
-    height: 30px;
-    overflow: hidden;
-  } */
-  
-  /* .progress-bar {
-    height: 100%;
-    background-color: var(--header-color);
-    width: 0;
-  } */
-  
-  /* .animate {
-    animation: fillProgressBar 2s ease-in-out forwards;
+    top: 45%;
   }
-  
-  @keyframes fillProgressBar {
-    to {
-      width: 75%;
-    }
-  } */
-  
+}

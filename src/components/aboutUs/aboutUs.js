@@ -4,9 +4,6 @@ import { Box, Grid, Typography, Button, CircularProgress } from "@mui/material";
 import aboutUsBg from "../../assets/images/AboutUsBg.svg"
 import aboutUsBgSm from "../../assets/images/AboutUsBgSm.svg"
 import Header from "../multiUseComponents/header";
-import Vector from "../../assets/images/bgVector.svg"
-import Vector2 from "../../assets/images/VectorSm.png"
-
 import group from "../../assets/images/aboutUsGroup.svg"
 import CustomProgressBar from "./progress";
 import arrowRight from "../../assets/images/arrowRight.svg"
@@ -14,9 +11,8 @@ import WhyChoose from "./whyChooseUs";
 import NumberAbout from "./numberAboutUs";
 import MoreAbout from "./moreAbout";
 import OurExperts from "./ourExperts";
-import Partner from "./partners";
 import Makeappointement from "../landingPage/MakeAppointement";
-import Footer from "../footer/footer";
+import "./aboutUs.css"
 
 function AboutUs() {
 
@@ -73,6 +69,7 @@ function AboutUs() {
 
     return (
         <>
+                <Box className="AboutUsBgFirst"/>
 
             <Header
                 bgImg={aboutUsBg}
@@ -122,26 +119,30 @@ function AboutUs() {
 
             <Grid className="root-container"
                 sx={{
-                    backgroundImage: {
-                        lg: `url(${Vector})`,
-                        md: `url(${Vector})`,
-                        sm: `url(${Vector})`,
-                        xs: `url(${Vector2})`,// Use proper template literals and url function
-                    },
-                    backgroundPosition: { lg: "0 -620px", xl: "0 -700px", md: "0 -600px", sm: "0 -840px", xs: "0 -520px" },
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: {lg:"cover",md:"cover",sm:"cover",xs:"contain"},
-                    paddingTop: { lg: "60px", md: "60px", sm: "50px", xs: "50px" }
+                    // backgroundImage: {
+                    //     lg: `url(${Vector})`,
+                    //     md: `url(${Vector})`,
+                    //     sm: `url(${Vector})`,
+                    //     xs: `url(${Vector2})`,// Use proper template literals and url function
+                    // },
+                    // backgroundPosition: { lg: "0 -620px", xl: "0 -700px", md: "0 -600px", sm: "0 -840px", xs: "0 -520px" },
+                    // backgroundRepeat: "no-repeat",
+                    // backgroundSize: {lg:"cover",md:"cover",sm:"cover",xs:"contain"},
+                    paddingTop: { lg: "60px", md: "60px", sm: "50px", xs: "50px" },
+position:"relative"
 
 
                 }}
             >
+                                <Box className="AboutUsBgThird"/>
+
                 <Grid container
                     sx={{
                         paddingLeft: { lg: selectLanguage === "en" ? "120px" : "0px", md: selectLanguage === "en" ? "16px" : "0px", sm: "16px", xs: "16px" },
                         paddingRight: { lg: selectLanguage === "ar" ? "120px" : "0px", md: selectLanguage === "ar" ? "16px" : "0px", sm: "16px", xs: "16px" },
                     }}
                 >
+
                     <Grid item sm={12} xs={12} md={6.2} lg={6.2}
                         sx={{
                             paddingRight: selectLanguage === "en" && { lg: "51px", md: "51px", sm: "0px", xs: "0px" },
@@ -195,6 +196,7 @@ function AboutUs() {
                                         position: "relative",
                                     }}
                                 >
+                                    
 
                                     <img
                                         width="100%"
@@ -517,18 +519,25 @@ function AboutUs() {
 
                 </Grid>
 
+               
+
+
                 <WhyChoose />
-                <NumberAbout />
-                <MoreAbout />
-
-
 
             </Grid>
-           
-               <OurExperts />
-            {/* <Partner/> */}
+
+
+                <NumberAbout />
+                
+<Box className="AboutUsBgSec">
+<MoreAbout />
+</Box>
+<Box className="AboutUsBgSec">
+<OurExperts />
+
+</Box>
+          
             <Makeappointement />
-            {/* <Footer/> */}
            
 
         </>

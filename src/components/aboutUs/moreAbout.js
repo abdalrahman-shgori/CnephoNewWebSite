@@ -88,24 +88,24 @@ function MoreAbout() {
                         }}
                     >
 
-                      <Grid container item lg={12} md={12} sm={12} xs={9}
+                      <Grid container 
                       sx={{
-                        justifyContent:{lg:"space-between",md:"center",sm:"center",xs:"center"},
+                        justifyContent: { lg: "space-between", md: "space-between", sm: "space-between", xs: "center" },
                         margin:{lg:"unset",md:"unset",sm:"0 auto",xs:"0 auto"},
-                        gap:{lg:"40px",md:"40px",sm:"40px",xs:"40px"}
 
                       }}
                       >
                         {persons.map((item,index)=>(
-                            <Grid
+                            <Grid item lg={3.8} md={3.8} sm={5.8} xs={8}
                             key={index}
                             sx={{
                                 position:"relative",
+                                marginBottom:{lg:"unset",md:"unset",sm:"40px",xs:"40px"}
                                 
                             }}
                             >
                              <Box>
-                                <img style={{maxWidth:"100%"}} src={item.img}></img>
+                                <img width="100%" src={item.img}></img>
                             </Box>
 <Box
 sx={{
@@ -115,7 +115,7 @@ sx={{
     borderRadius:"8px",
     width:"100%",
     height:"100%",
-    maxHeight:{lg:"204px",md:"204px",sm:"204px",xs:"138px"},
+    maxHeight: { lg: "204px", md: "170px", sm: "204px", xs: "138px" },
     clipPath: "polygon(71% 2%, 100% 27%, 100% 100%, 50% 100%, 0 100%, 0 29%)",
 }}
 >
@@ -128,7 +128,7 @@ sx={{
                                 borderRadius:"8px",
                                 width:"100%",
                                 height:"100%",
-                                maxHeight:{lg:"195px",md:"195px",sm:"195px",xs:"132px"},
+                                maxHeight: { lg: "195px", md: "160px", sm: "195px", xs: "132px" },
                                 clipPath: "polygon(71% 5%, 100% 24%, 100% 100%, 50% 100%, 0 100%, 0 32%)",
                             }}
                             >
