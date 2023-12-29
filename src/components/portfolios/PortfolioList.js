@@ -10,6 +10,9 @@ import Skeleton from '@mui/material/Skeleton';
 import TestImg from "../../assets/images/PortfolioTestImg.svg"
 import TestImg2 from "../../assets/images/viprankingcontrol.svg"
 import TestImg3 from "../../assets/images/testImg3.svg"
+import bg2 from "../../assets/images/BG.png"
+import VectorsPortfolio from "../../assets/images/VectorsPortfolio.svg"
+
 import "aos/dist/aos.css";
 const titleStyle = {
     fontSize: { lg: "36px", md: "36px", sm: "28px", xs: "24px" },
@@ -88,7 +91,7 @@ const Portfolio = () => {
         // { id: 16, title: 'cheeze hospitality', description: 'Cheez Hospitality is building the bridge from local property owners, guides, and producers to worldwide traveleres, immersing .......', type: 'logo design', img: TestImg },
     ];
 
-    const images = portfolioItems.map((item) => (item.img))
+    const images = [...portfolioItems.map((item) => (item.img)),bg2,VectorsPortfolio]
     console.log(images)
     useEffect(() => {
         const checkPageLoaded = async () => {
@@ -147,7 +150,7 @@ const Portfolio = () => {
 
                             <Hidden mdUp>
                                 {/* Display button only on medium and smaller screens */}
-                                <Button className="nav-toggle" onClick={openMenu}
+                                <Button className="nav-toggle text-focus-in" onClick={openMenu}
                                     sx={{
                                         color: selectedType ? "var(--header-color)" : "var(--btn-text-color)",
                                         fontSize: "24px",
@@ -254,11 +257,20 @@ const Portfolio = () => {
                     position: "relative"
                 }}
             >
-                <Box className="basicVector" />
+                <Box className="basicVector" 
+                  sx={{
+                    backgroundImage:`url(${VectorsPortfolio})`,
+              }}
+                />
 
                 <Box className="rightVector" />
                 <Box className="leftVector" />
-                <Box className="PortfolioBgSec" />
+                <Box className="PortfolioBgSec" 
+                sx={{
+                      backgroundImage:`url(${bg2})`,
+                }}
+                
+                />
 
                 <Grid container className=''
                     sx={{

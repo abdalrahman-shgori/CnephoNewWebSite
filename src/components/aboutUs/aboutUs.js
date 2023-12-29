@@ -69,7 +69,7 @@ function AboutUs() {
 
     return (
         <>
-                <Box className="AboutUsBgFirst"/>
+            <Box className="AboutUsBgFirst" />
 
             <Header
                 bgImg={aboutUsBg}
@@ -129,12 +129,12 @@ function AboutUs() {
                     // backgroundRepeat: "no-repeat",
                     // backgroundSize: {lg:"cover",md:"cover",sm:"cover",xs:"contain"},
                     paddingTop: { lg: "60px", md: "60px", sm: "50px", xs: "50px" },
-position:"relative"
+                    position: "relative"
 
 
                 }}
             >
-                                <Box className="AboutUsBgThird"/>
+                <Box className="AboutUsBgThird" />
 
                 <Grid container
                     sx={{
@@ -196,7 +196,7 @@ position:"relative"
                                         position: "relative",
                                     }}
                                 >
-                                    
+
 
                                     <img
                                         width="100%"
@@ -519,7 +519,7 @@ position:"relative"
 
                 </Grid>
 
-               
+
 
 
                 <WhyChoose />
@@ -527,15 +527,15 @@ position:"relative"
             </Grid>
 
 
-                <NumberAbout />
-                
-<MoreAbout />
+            <NumberAbout />
 
-<OurExperts />
+            <MoreAbout />
 
-          
+            <OurExperts />
+
+
             <Makeappointement />
-           
+
 
         </>
     )
