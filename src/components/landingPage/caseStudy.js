@@ -5,21 +5,13 @@ import { Box, Grid, Typography, Button } from "@mui/material";
 import Arrow from "../../assets/images/BlueArrow.svg"
 import ArrowWhite from "../../assets/images/arrowRight.svg"
 import caseTest from "../../assets/images/caseTest.png"
-import OurClients from "./ourClients";
-import Footer from "../footer/footer";
-
 function CaseStudy() {
     const cases = [
         { id: 0, title: "Quiff: Online Salon Booking Platform Development, Optimization, and Support", desc: "Lorem ipsum dolor sit amet consectetur. Fermentum auctor tincidunt tristique et leo sed quisque et. Gravida suscipit tincidunt elit ut quis in sed. Id donec sed quam tempus metus. Vel et nunc faucibus etiam sit adipiscing.Lorem ipsum dolor sit amet consectetur. Fermentum auctor tincidunt tristique et leo sed quisque et. Gravida suscipit tincidunt elit ut quis in sed. Id donec sed quam tempus metus. Vel et nunc faucibus etiam sit adipiscing.", img: caseTest },
         { id: 1, title: "Quiff: Online Salon Booking Platform Development, Optimization, and Support", desc: "Lorem ipsum dolor sit amet consectetur. Fermentum auctor tincidunt tristique et leo sed quisque et. Gravida suscipit tincidunt elit ut quis in sed. Id donec sed quam tempus metus. Vel et nunc faucibus etiam sit adipiscing.Lorem ipsum dolor sit amet consectetur. Fermentum auctor tincidunt tristique et leo sed quisque et. Gravida suscipit tincidunt elit ut quis in sed. Id donec sed quam tempus metus. Vel et nunc faucibus etiam sit adipiscing.", img: caseTest }
     ]
-
-
     const { t, i18n } = useTranslation();
     const selectLanguage = i18n.language
-
-
-
     return (
         <>
             <Grid className="bgCase root-container"
@@ -27,7 +19,7 @@ function CaseStudy() {
                     paddingLeft: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
                     paddingRight: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
                     backgroundPosition: { lg: " 0 -260px", md: " 0 -260px", sm: "0 -160px" },
-                    paddingBottom: {lg:"73px",md:"73px",sm:"87px",xs:"87px"},
+                    paddingBottom: { lg: "73px", md: "73px", sm: "87px", xs: "87px" },
                     paddingTop: { lg: "0px", md: "0px", sm: "45px", xs: "117px" },
                 }}
             >
@@ -105,7 +97,7 @@ function CaseStudy() {
                                     }}
                                 >
                                     {item.id === 0 || item.id % 2 === 0 ?
-                                        <img loading="lazy" style={{ maxWidth: "100%" }} src={item.img}></img>
+                                        <img style={{ maxWidth: "100%" }} src={item.img}></img>
                                         :
                                         <>
                                             <Box>
@@ -159,7 +151,7 @@ function CaseStudy() {
                                                 >
                                                     <div className="frame">
                                                         <div className="text-wrapper"> {t("caseStudy.seeCase")} </div>
-                                                        <img loading="lazy" className="typcn-arrow-up" alt="Typcn arrow up" src={Arrow}
+                                                        <img className="typcn-arrow-up" alt="Typcn arrow up" src={Arrow}
                                                             style={{
                                                                 transform: selectLanguage === "ar" ? "rotate(180deg)" : "",
 
@@ -182,7 +174,7 @@ function CaseStudy() {
                                     }}
                                 >
                                     {item.id % 2 !== 0 ?
-                                        <img loading="lazy" style={{ maxWidth: "100%" }} src={item.img}></img>
+                                        <img style={{ maxWidth: "100%" }} src={item.img}></img>
                                         :
                                         <>
                                             <Box>
@@ -238,7 +230,7 @@ function CaseStudy() {
                                                 >
                                                     <div className="frame">
                                                         <div className="text-wrapper">{t("caseStudy.seeCase")}</div>
-                                                        <img loading="lazy" className="typcn-arrow-up" alt="Typcn arrow up" src={Arrow}
+                                                        <img className="typcn-arrow-up" alt="Typcn arrow up" src={Arrow}
                                                             style={{
                                                                 transform: selectLanguage === "ar" ? "rotate(180deg)" : "",
 
@@ -278,27 +270,22 @@ function CaseStudy() {
                                 border: "1px solid var(--white-color)",
                                 borderRadius: "36px",
                                 padding: "16px 24px",
-                                height:{lg:"52px",md:"52px",sm:"52px",xs:"44px"},
+                                height: { lg: "52px", md: "52px", sm: "52px", xs: "44px" },
                                 gap: "16px",
 
                             }}
                         >
                             {t("caseStudy.allCases")}
-                            <img loading="lazy" className="typcn-arrow-up" alt="Typcn arrow up" src={ArrowWhite}
+                            <img className="typcn-arrow-up" alt="Typcn arrow up" src={ArrowWhite}
                                 style={{
                                     transform: selectLanguage === "ar" ? "rotate(180deg)" : "",
 
                                 }}
                             />
                         </Button>
-
                     </Box>
-
                 </Grid>
-
-
             </Grid>
-
         </>
     )
 }

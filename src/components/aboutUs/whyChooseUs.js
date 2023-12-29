@@ -28,7 +28,7 @@ function  WhyChoose(){
 
     }}
   >
-    <img loading="lazy" style={{maxWidth:"100%" }} src={whyImg} alt="Why Choose Us"></img>
+    <img style={{maxWidth:"100%" }} src={whyImg} alt="Why Choose Us"></img>
   </Grid>
   <Grid item lg={7} md={6} sm={7} xs={7} 
     sx={{

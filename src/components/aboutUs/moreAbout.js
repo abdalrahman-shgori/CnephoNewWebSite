@@ -107,7 +107,7 @@ function MoreAbout() {
                             }}
                             >
                              <Box>
-                                <img loading="lazy" width="100%" src={item.img}></img>
+                                <img width="100%" src={item.img}></img>
                             </Box>
 <Box
 sx={{

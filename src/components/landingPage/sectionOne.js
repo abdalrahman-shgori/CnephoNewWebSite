@@ -5,13 +5,9 @@ import comAr from "../../assets/images/RectangleAr.svg";
 import C from "../../assets/images/C.svg";
 import Arrow from "../../assets/images/BlueArrow.svg"
 import { useTranslation } from "react-i18next";
-
 // import LottieAnimation from './lottie'; // Adjust the path as needed
 // import animationDataHome2 from '../../assets/images/HomePart1/HomePart1.json';
 import "./landingPage.css"
-import OurSolution from "./ourSolution";
-
-
 function SectionOne() {
     const { t, i18n } = useTranslation();
     const selectLanguage = i18n.language;
@@ -24,8 +20,9 @@ function SectionOne() {
         <>
             {/* <LottieAnimation animationData={animationDataHome2} /> */}
 
-            <Grid container className="we root-container" sx={{ overflowX: "hidden", paddingTop:{lg:"110px",md:"110px",sm:"110px",xs:"116px"},
- }}>
+            <Grid container className="we root-container" sx={{
+                overflowX: "hidden", paddingTop: { lg: "110px", md: "110px", sm: "110px", xs: "116px" },
+            }}>
                 <Grid item lg={6.1} sm={6.1} xs={12}
                     sx={{
                         height: "100%",
@@ -42,7 +39,7 @@ function SectionOne() {
                             fontWeight: "900",
                             lineHeight: { lg: "76px", md: "76px", xs: "50px" },
                             fontVariant: "all-small-caps",
-                            letterSpacing: selectLanguage === "en" && {lg:"2.56px",md:"2.56px",sm:"1.6px",xs:"1.6px"},
+                            letterSpacing: selectLanguage === "en" && { lg: "2.56px", md: "2.56px", sm: "1.6px", xs: "1.6px" },
                             fontStyle: "normal",
                             whiteSpace: "nowrap",
                             fontFamily: "var(--English-font)",
@@ -51,7 +48,7 @@ function SectionOne() {
                     >
                         {selectLanguage === "en" ?
                             <>
-                            
+
                                 {t("landingPageSection1.BetterSolution1")}<br />
                                 {t("landingPageSection1.BetterSolution2")}<br />
                                 {t("landingPageSection1.BetterSolution3")}
@@ -76,7 +73,7 @@ function SectionOne() {
                             lineHeight: { lg: "36px", md: "36px", xs: "32px" },
                             fontWeight: "400",
                             fontVariant: "small-caps",
-                            letterSpacing:"0",
+                            letterSpacing: "0",
                             marginTop: { lg: "24px", md: "24px", xs: "20px" },
                             padding: selectLanguage === "en" ? { lg: "0px 0px 0px 120px", xs: "0px 16px 0px 16px" } : { lg: "20px 120px 0px 120px", md: "0px 16px 0px 16px", xs: "0px 16px 0px 16px" },
                         }}
@@ -86,9 +83,9 @@ function SectionOne() {
                     </Typography>
 
                     <Button
-                    onClick={handleContactUsClick}
-                     disableRipple
-                     disableTouchRipple
+                        onClick={handleContactUsClick}
+                        disableRipple
+                        disableTouchRipple
                         sx={{
                             padding: selectLanguage === "en" ? { lg: "0px 0px 0px 120px", xs: "0px 16px 0px 16px" } : { lg: "20px 120px 0px 120px", md: "0px 16px 0px 16px", xs: "0px 16px 0px 16px" },
                             '&:hover': {
@@ -98,7 +95,7 @@ function SectionOne() {
                     >
                         <div className="frame">
                             <div className="text-wrapper">{t("footer.CONTACTUS")}</div>
-                            <img loading="lazy" className="typcn-arrow-up" alt="Typcn arrow up" src={Arrow}
+                            <img className="typcn-arrow-up" alt="Typcn arrow up" src={Arrow}
                                 style={{
                                     transform: selectLanguage === "ar" ? "rotate(180deg)" : "",
 
@@ -123,7 +120,7 @@ function SectionOne() {
                         }}
                     >
 
-                        <img loading="lazy" className="computerImg" height="755px" src={selectLanguage === "en" ? com : comAr}></img>
+                        <img className="computerImg" height="755px" src={selectLanguage === "en" ? com : comAr}></img>
                     </Box>
 
                     <Box
@@ -136,7 +133,7 @@ function SectionOne() {
                             top: { lg: "380px", md: "420px", sm: "420px", xs: "-70px" }
                         }}
                     >
-                        <img loading="lazy" className="CImg" src={C} style={{
+                        <img className="CImg" src={C} style={{
 
                         }}></img>
                     </Box>

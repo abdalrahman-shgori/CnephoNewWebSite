@@ -69,7 +69,14 @@ function AboutUs() {
 
     return (
         <>
-            <Box className="AboutUsBgFirst" />
+        <Box className="root-container"
+        sx={{
+            position:"relative"
+        }}
+        >
+        <Box className="AboutUsBgFirst root-container" />
+
+        </Box>
 
             <Header
                 bgImg={aboutUsBg}
@@ -203,7 +210,6 @@ function AboutUs() {
                                         alt="group of people"
                                         style={{ height: "100%", zIndex: "2", position: "relative" }}
                                         src={group}
-                                        loading="lazy"
                                     //   onLoad={() => setImageLoaded(true)}
                                     //   onError={() => setImageLoaded(true)} 
                                     // For simplicity, mark as loaded even on error
@@ -351,7 +357,7 @@ function AboutUs() {
                                 }}
                             >
 
-                                <img loading="lazy" width="100%" style={{ height: "100%", maxHeight: "650px", zIndex: "2", position: "relative" }} src={group}></img>
+                                <img width="100%" style={{ height: "100%", maxHeight: "650px", zIndex: "2", position: "relative" }} src={group}></img>
                                 <Box
                                     sx={{
                                         position: 'absolute',
@@ -511,7 +517,7 @@ function AboutUs() {
                             {t("navBar.CONTACTUS")}
 
                         </Button>
-                        <img loading="lazy" src={arrowRight} alt="Arrow"
+                        <img src={arrowRight} alt="Arrow"
                             style={{
                                 transform: selectLanguage === "ar" ? "rotate(180deg)" : "",
                             }}
@@ -527,15 +533,13 @@ function AboutUs() {
 
             </Grid>
 
-
-            <NumberAbout />
-
-            <MoreAbout />
-
-            <OurExperts />
-
-
-            <Makeappointement />
+            <div className="root-container">
+                <NumberAbout />
+                <MoreAbout />
+                <OurExperts />
+                <Makeappointement />
+            </div>
+            
 
 
         </>

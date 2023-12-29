@@ -1,16 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from "react-i18next";
-
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import './carousal.css'; // Import your custom styles
-
-import { Box, Button, Grid, Typography, button } from '@mui/material';
+import './carousal.css'; 
+import { Box, Grid, Typography, button } from '@mui/material';
 import greenShape from "../../assets/images/SolutionCard.svg";
 import ArrowRight from "../../assets/images/Group.svg"
 import ArrowLeft from "../../assets/images/arrowRightCarousal.svg"
-import ui from "../../assets/images/ui.svg"
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -20,11 +17,11 @@ const Carousel = (props) => {
     const { t, i18n } = useTranslation();
     useEffect(() => {
         AOS.init({
-          disable: "",
-          duration: 700,
-          easing: "ease-out-cubic",
+            disable: "",
+            duration: 700,
+            easing: "ease-out-cubic",
         });
-      }, []);
+    }, []);
     const items = [
         { id: 0, name: "UI/UX design", img: greenShape, desc: "our customers get solutions and businesses opportunities instead of just project" },
         { id: 1, name: "Web development", img: greenShape, desc: "our customers get solutions and businesses opportunities instead of just project" },
@@ -157,7 +154,7 @@ const Carousel = (props) => {
 
 
                 {items.map((item, idx) => (
-                    <Grid key={idx} 
+                    <Grid key={idx}
 
                     >
                         <Box
@@ -181,7 +178,7 @@ const Carousel = (props) => {
                                     zIndex: 1, // Add this line
                                 }}
                             >
-                                <img loading='lazy' src={greenShape} alt="Green Shape" />
+                                <img src={greenShape} alt="Green Shape" />
 
                             </Box>
 
@@ -271,7 +268,7 @@ const Carousel = (props) => {
 
                 >
 
-                    <img loading='lazy' src={selectedLanguage === "en" ? ArrowRight : ArrowRight}></img>
+                    <img src={selectedLanguage === "en" ? ArrowRight : ArrowRight}></img>
                 </Grid>
 
 
@@ -284,7 +281,7 @@ const Carousel = (props) => {
                             height: "5px",
                             borderRadius: "8px",
 
-                            boxShadow:"2px 4px 8px 0px rgba(255, 255, 255, 0.16)"
+                            boxShadow: "2px 4px 8px 0px rgba(255, 255, 255, 0.16)"
 
                         }}
                     >
@@ -295,8 +292,8 @@ const Carousel = (props) => {
                                 width:
                                 {
                                     lg: window.innerWidth > 1380 ?
-                                    `${Math.min(((currentSlide + 4) / settings.slidesToShow) * 100, 100)}%` : 
-                                    `${Math.min(((currentSlide + 3) / settings.slidesToShow) * 100, 100)}%`
+                                        `${Math.min(((currentSlide + 4) / settings.slidesToShow) * 100, 100)}%` :
+                                        `${Math.min(((currentSlide + 3) / settings.slidesToShow) * 100, 100)}%`
                                     ,
                                     md: `${Math.min(((currentSlide + 3) / settings.slidesToShow) * 100, 100)}%`,
                                     sm: `${Math.min(((currentSlide + 2) / settings.slidesToShow) * 100, 100)}%`,
@@ -316,7 +313,7 @@ const Carousel = (props) => {
 
 
                 >
-                    <img loading='lazy' src={selectedLanguage === "en" ? ArrowLeft : ArrowLeft}></img>
+                    <img src={selectedLanguage === "en" ? ArrowLeft : ArrowLeft}></img>
                 </Grid>
 
             </Grid>
@@ -325,12 +322,4 @@ const Carousel = (props) => {
         </Grid>
     );
 };
-
-// const Card = ({ title, content }) => (
-//     <div style={{ border: '1px solid #ccc', padding: '20px', borderRadius: '8px', textAlign: 'center' }}>
-//         <h3>{title}</h3>
-//         <p>{content}</p>
-//     </div>
-// );
-
 export default Carousel;

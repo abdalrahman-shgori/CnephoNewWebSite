@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Footer from "../footer/footer";
 import "./MakeAppointement.css"
 import { Box, Grid, InputLabel, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
@@ -7,11 +6,7 @@ import vector1 from "../../assets/images/FormVector.svg"
 import vector2 from "../../assets/images/FormVector2.svg"
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
 import ArrowWhite from "../../assets/images/arrowRight.svg"
-
-
-
 function Makeappointement() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -121,7 +116,7 @@ function Makeappointement() {
                 right: "0"
               }}
             >
-              <img loading="lazy" width="100%" src={vector1}></img>
+              <img width="100%" src={vector1}></img>
             </Box>
             <Box
               sx={{
@@ -130,7 +125,7 @@ function Makeappointement() {
                 bottom: "0"
               }}
             >
-              <img loading="lazy" width="100%" src={vector2}></img>
+              <img width="100%" src={vector2}></img>
             </Box>
             <Typography
               sx={{
@@ -273,7 +268,7 @@ function Makeappointement() {
                     }}
                   >
                     {t("Appointement.sendrequest")}
-                    <img loading="lazy" className="typcn-arrow-up" alt="Typcn arrow up" src={ArrowWhite}
+                    <img className="typcn-arrow-up" alt="Typcn arrow up" src={ArrowWhite}
                       style={{
                         transform: selectLanguage === "ar" ? "rotate(180deg)" : "",
 

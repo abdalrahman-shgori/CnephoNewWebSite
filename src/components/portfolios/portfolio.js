@@ -12,11 +12,10 @@ function Portfolio() {
     return (
         <>
             <div className="root-container">
-                    <HeaderPortfolio />
-                    <PortfolioList />
+                <HeaderPortfolio />
+                <PortfolioList />
             </div>
             <Makeappointement />
-            {/* <Footer /> */}
         </>
 
 

@@ -97,7 +97,7 @@ const Footer = () => {
 
             }}
           >
-            <img loading='lazy' className='footerLogo' src={Logo}
+            <img className='footerLogo' src={Logo}
             ></img>
           </Box>
 
@@ -192,7 +192,7 @@ const Footer = () => {
               }}
             >
 
-              <img loading='lazy' style={{ marginTop: "8px" }} src={item.img}></img>
+              <img  style={{ marginTop: "8px" }} src={item.img}></img>
               <Typography
                 sx={{
                   ...FooterTexts,
@@ -214,7 +214,7 @@ const Footer = () => {
             }}
           >
             {socialMedia.map((item, index) => (
-              <img loading='lazy' key={index} src={item.img}></img>
+              <img key={index} src={item.img}></img>
             ))}
           </Box>
         </Grid>

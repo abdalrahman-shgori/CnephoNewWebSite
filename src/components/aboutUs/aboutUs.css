@@ -2,8 +2,8 @@
   background-image: url("../../assets/images/dots1.png");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top;
-  height: 100%;
+  background-position: bottom;
+  height: 900px;
   width: 100%;
   position: absolute;
   z-index: -1;

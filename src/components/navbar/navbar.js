@@ -9,9 +9,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
-
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
@@ -19,7 +16,6 @@ import Logo from "../../assets/images/Logo.svg"
 import "../../assets/styles/variables.css";
 import arrowRight from "../../assets/images/arrowRight.svg"
 import LanguageSwitcher from './LanguageSwitcher';
-
 import "./navbar.css"
 import { useEffect } from 'react';
 const drawerWidth = "100%";
@@ -160,7 +156,7 @@ function NavBar(props) {
                     position: "relative",
                     top: "100px",
                     zIndex: "2",
-                    
+
                 }}>
                 <List sx={{}}>
                     {navItems.map((item, index) => (
@@ -242,7 +238,7 @@ function NavBar(props) {
                 }}>
                     <Box className="logoGap" sx={{ display: "flex", alignItems: "center" }}>
 
-                        <img loading="lazy" style={{ cursor: "pointer", zIndex: "3", position: "relative" }} onClick={handleBackToHomePage} src={Logo}></img>
+                        <img style={{ cursor: "pointer", zIndex: "3", position: "relative" }} onClick={handleBackToHomePage} src={Logo}></img>
 
                         <Box sx={{ display: { lg: "flex", xs: 'none', sm: 'none' } }}>
                             {navItems.slice(1, 6).map((items, index) => (
@@ -374,7 +370,6 @@ function NavBar(props) {
         </Box>
     );
 }
-
 NavBar.propTypes = {
     windowMenu: PropTypes.func,
 };

@@ -6,12 +6,9 @@ import img1 from "../../assets/images/needHelpImg1.svg";
 import img2 from "../../assets/images/needHelpImg2.svg";
 import img3 from "../../assets/images/needHelpImge3.svg";
 import ArrowWhite from "../../assets/images/BlueArrow.svg"
-
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import OurAward from "./ourAward";
-
 function Help() {
   const { t, i18n } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -128,25 +125,22 @@ function Help() {
           >
 
             <Slider ref={sliderRef} {...settings}
-            
+
 
             >
-           
 
-              {items.map((item,index) => (
+
+              {items.map((item, index) => (
                 <>
                   <Grid
-                  key={index}
+                    key={index}
                     sx={{
                       marginRight: { lg: "10px", md: "10px", sm: "10px", xs: "10px" },
                       marginLeft: { lg: "10px", md: "10px", sm: "10px", xs: "10px" },
-                      display:"flex",
-                      flexDirection:"column",
-                      justifyContent:"center",
-                      alignItems:"center"
-                   
-
-
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center"
                     }}
                   >
                     <Box
@@ -154,7 +148,7 @@ function Help() {
                         backgroundColor: item.id === 1 ? "var(--btn-text-color)" : "var(--header-color)",
                         height: "97px",
                         width: "100%",
-                        maxWidth:"386px",
+                        maxWidth: "386px",
                         position: "relative",
                         borderRadius: "16px 16px 0px 0px",
                       }}
@@ -168,7 +162,7 @@ function Help() {
                         }}
                       >
 
-                        <img loading="lazy" src={item.img}></img>
+                        <img src={item.img}></img>
                       </Box>
 
 
@@ -178,7 +172,7 @@ function Help() {
                         backgroundColor: "var(--white-color)",
                         height: "100%",
                         width: "100%",
-                        maxWidth:"386px",
+                        maxWidth: "386px",
 
                         borderRadius: "0px 0px 16px 16px",
                         paddingLeft: "24px",
@@ -198,7 +192,7 @@ function Help() {
                           lineHeight: "normal",
                           letterSpacing: selectLanguage === "en" && "0.96px",
                           fontFamily: "var(--English-font)",
-                          direction:selectLanguage === "en" ? "ltr" : "rtl"
+                          direction: selectLanguage === "en" ? "ltr" : "rtl"
 
 
                         }}
@@ -214,9 +208,6 @@ function Help() {
                           textAlign: "justify",
                           lineHeight: "normal",
                           fontWeight: "400"
-
-
-
                         }}
                       >
                         {item.desc}
@@ -225,8 +216,8 @@ function Help() {
                         sx={{
                           paddingBottom: "24px",
                           width: "auto",
-                          display:"flex",
-                          direction:selectLanguage === "en" ? "ltr" : "rtl"
+                          display: "flex",
+                          direction: selectLanguage === "en" ? "ltr" : "rtl"
 
                         }}
                       >
@@ -250,7 +241,7 @@ function Help() {
                           }}
                         >
                           {t("needHelp.sendMail")}
-                          <img loading="lazy" className="typcn-arrow-up" alt="Typcn arrow up" src={ArrowWhite}
+                          <img className="typcn-arrow-up" alt="Typcn arrow up" src={ArrowWhite}
                             style={{
                               transform: selectLanguage === "ar" ? "rotate(180deg)" : "",
 
@@ -258,9 +249,6 @@ function Help() {
                           />
                         </Button>
                       </Box>
-
-
-
                     </Box>
                   </Grid>
                 </>
@@ -270,7 +258,6 @@ function Help() {
           </Box>
         </Grid>
       </Grid>
-
     </>
   )
 }

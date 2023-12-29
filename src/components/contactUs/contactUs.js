@@ -318,7 +318,7 @@ function ContactUs() {
                                             }}
                                         >
 
-                                            <img loading="lazy" src={item.img}></img>
+                                            <img src={item.img}></img>
                                         </Box>
 
                                         <Typography
@@ -885,7 +885,7 @@ function ContactUs() {
                                             >
                                                 <div className="frame">
                                                     <div className="text-wrapper"> {t("contactUs.SendRequest")} </div>
-                                                    <img loading="lazy" className="typcn-arrow-up" alt="Typcn arrow up" src={Arrow}
+                                                    <img className="typcn-arrow-up" alt="Typcn arrow up" src={Arrow}
                                                         style={{
                                                             transform: selectLanguage === "ar" ? "rotate(180deg)" : "",
 
@@ -915,7 +915,7 @@ function ContactUs() {
                                     }}
                                 >
 
-                                    <img loading="lazy"
+                                    <img
                                         className="contactImg"
                                         src={contactImg}>
                                     </img>

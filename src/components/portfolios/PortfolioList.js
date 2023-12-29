@@ -8,11 +8,9 @@ import './PortfolioList.css';
 import AOS from "aos";
 import Skeleton from '@mui/material/Skeleton';
 import TestImg from "../../assets/images/PortfolioTestImg.svg"
-import TestImg2 from "../../assets/images/viprankingcontrol.svg"
 import TestImg3 from "../../assets/images/testImg3.svg"
 import bg2 from "../../assets/images/BG.png"
 import VectorsPortfolio from "../../assets/images/VectorsPortfolio.svg"
-
 import "aos/dist/aos.css";
 const titleStyle = {
     fontSize: { lg: "36px", md: "36px", sm: "28px", xs: "24px" },
@@ -91,7 +89,7 @@ const Portfolio = () => {
         // { id: 16, title: 'cheeze hospitality', description: 'Cheez Hospitality is building the bridge from local property owners, guides, and producers to worldwide traveleres, immersing .......', type: 'logo design', img: TestImg },
     ];
 
-    const images =portfolioItems.map((item) => (item.img))
+    const images = portfolioItems.map((item) => (item.img))
     console.log(images)
     useEffect(() => {
         const checkPageLoaded = async () => {
@@ -124,17 +122,8 @@ const Portfolio = () => {
             window.removeEventListener("load", checkPageLoaded);
         };
     }, []);
-
-    // if (!pageLoaded) {
-    //     return (
-    //         <Box display="flex" justifyContent="center" alignItems="center" height="100vh">
-    //             <CircularProgress />
-    //         </Box>
-    //     );
-    // }
     return (
         <>
-
             <Grid
                 sx={{
                     paddingLeft: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
@@ -143,7 +132,6 @@ const Portfolio = () => {
                     marginBottom: { lg: "80px", md: "80px", sm: "27px", xs: "27px" }
                 }}
             >
-
                 <header >
                     <nav>
                         <div className="nav-container ">
@@ -257,23 +245,23 @@ const Portfolio = () => {
                     position: "relative"
                 }}
             >
-                
-                <Box className="basicVector" 
-                  sx={{
-                    backgroundImage:`url(${VectorsPortfolio})`,
-                    display:!pageLoaded ? "none" : "unset"
-              }}
+
+                <Box className="basicVector"
+                    sx={{
+                        backgroundImage: `url(${VectorsPortfolio})`,
+                        display: !pageLoaded ? "none" : "unset"
+                    }}
                 />
 
                 <Box className="rightVector" />
                 <Box className="leftVector" />
-                <Box className="PortfolioBgSec" 
-                sx={{
-                      backgroundImage:`url(${bg2})`,
-                      display:!pageLoaded ? "none" : "unset"
+                <Box className="PortfolioBgSec"
+                    sx={{
+                        backgroundImage: `url(${bg2})`,
+                        display: !pageLoaded ? "none" : "unset"
 
-                }}
-                
+                    }}
+
                 />
 
                 <Grid container className=''
@@ -284,191 +272,191 @@ const Portfolio = () => {
                     }}
                 >
                     {!pageLoaded ? (
-<>
-<Grid container 
-sx={{
-    display:"flex",
-    justifyContent:{lg:"space-between",md:"space-between",sm:"space-between",xs:"center"},
-    paddingBottom:"100px"
-   
-}}
->
-{Array.from({ length: 2 }, (_, index) => (
-    <Grid item lg={6} md={6} sm={6} xs={12} >
-      <Box
-        key={index}
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "6px",
-          width:{lg:"97%",md:"97%",sm:"97%",xs:"100%"},
-          marginBottom:index === 0 && {lg:"0px",md:"0px",sm:"40px",xs:"40px"}
-        }}
-      >
-        <Skeleton variant="rectangular" width="100%" height={218} sx={{borderRadius:"16px"}} />
-        <Skeleton width={100}  />
-        <Skeleton width={160} />
-        <Skeleton  height={100}/>
-      </Box>
-      </Grid>
+                        <>
+                            <Grid container
+                                sx={{
+                                    display: "flex",
+                                    justifyContent: { lg: "space-between", md: "space-between", sm: "space-between", xs: "center" },
+                                    paddingBottom: "100px"
 
-    ))}
-</Grid>
-
-
-</>
-                    ):
-                    (
-                        portfolioItems
-                            .filter((item) => selectedType === 'all' || item.type === selectedType)
-                            .map((item, index) => (
-                                <Grid item
-                                    key={item.id} lg={6} md={6} sm={6}
-                                    sx={{
-                                        display: "flex",
-                                        justifyContent: index % 2 === 0 ? "start" : "start",
-                                        ...selectLanguage === "en" && {
-                                            paddingRight: {
-                                                lg: index % 2 === 0 ? "45px" : "0px",
-                                                md: index % 2 === 0 ? "45px" : "0px",
-                                                sm: index % 2 === 0 ? "20px" : "0px",
-                                                xs: "unset"
-                                            }
-                                        },
-                                        ...selectLanguage === "en" && {
-                                            paddingLeft: {
-                                                lg: index % 2 !== 0 ? "45px" : "0px",
-                                                md: index % 2 !== 0 ? "45px" : "0px",
-                                                sm: index % 2 !== 0 ? "20px" : "0px",
-                                                xs: "unset"
-                                            }
-                                        },
-                                        ...selectLanguage === "ar" && {
-                                            paddingLeft: {
-                                                lg: index % 2 === 0 ? "45px" : "0px",
-                                                md: index % 2 === 0 ? "45px" : "0px",
-                                                sm: index % 2 === 0 ? "20px" : "0px",
-                                                xs: "unset"
-                                            }
-                                        },
-                                        ...selectLanguage === "ar" && {
-                                            paddingRight: {
-                                                lg: index % 2 !== 0 ? "45px" : "0px",
-                                                md: index % 2 !== 0 ? "45px" : "0px",
-                                                sm: index % 2 !== 0 ? "20px" : "0px",
-                                                xs: "unset"
-                                            }
-                                        },
-    
-                                        // paddingRight: {
-                                        //     lg: item.id % 2 !== 0 ? selectLanguage === "en" && "45px" : "0px",
-                                        //     md: item.id % 2 !== 0 ? selectLanguage === "en" && "45px" : "0px",
-                                        //     sm: item.id % 2 !== 0 ? selectLanguage === "en" && "20px" : "0px",
-                                        //     xs: "unset"
-                                        // },
-    
-                                        marginBottom: {
-                                            lg: "40px",
-                                            md: "40px",
-                                            sm: "50px",
-                                            xs: "50px"
-                                        },
-                                        animation: `${fadeIn} 1.5s ease-out 0s forwards`,
-                                    }}
-                                >
-    
-    
-    
-                                    <Box
-                                        sx={{
-                                            display: "flex",
-                                            flexDirection: "column",
-                                            gap: { lg: "24px", md: "24px", sm: "20px", xs: "20px" },
-                                        }}
-                                    >
-                                        
-                                        <img loading="lazy" data-aos-duration="1500"
-                                            data-aos={item.id % 2 === 0 ? "flip-left" : "flip-right"}
-                                            style={{ maxWidth: "100%" }}
-                                            src={item.img} />
-    
-                                        <Box data-aos-duration="1500" data-aos={item.id % 2 === 0 ? "fade-up" : "fade-up"}
+                                }}
+                            >
+                                {Array.from({ length: 2 }, (_, index) => (
+                                    <Grid item lg={6} md={6} sm={6} xs={12} >
+                                        <Box
+                                            key={index}
                                             sx={{
                                                 display: "flex",
                                                 flexDirection: "column",
-                                                gap: { lg: "8px", md: "8px", xs: "0px", xs: "0px", },
-                                                paddingLeft: "2px",
-                                                paddingRight: "2px"
+                                                gap: "6px",
+                                                width: { lg: "97%", md: "97%", sm: "97%", xs: "100%" },
+                                                marginBottom: index === 0 && { lg: "0px", md: "0px", sm: "40px", xs: "40px" }
                                             }}
                                         >
-                                            <Typography
-                                                sx={{
-                                                    ...titleStyle
-                                                }}
-                                            >
-                                                {item.title}
-                                            </Typography>
-                                            <Typography
-                                                sx={{
-                                                    ...typeStyle,
-                                                    paddingBottom: "8px"
-                                                }}
-                                            >
-                                                {item.type}
-                                            </Typography>
-                                            <Typography
-                                                sx={{
-                                                    ...descriptionStyle,
-                                                    overflow: 'hidden',
-                                                    display: '-webkit-box',
-                                                    WebkitBoxOrient: 'vertical',
-                                                    WebkitLineClamp: { lg: 3, md: 3, sm: 3, xs: 4 },
-                                                }}
-                                            >
-                                                {item.description}
-    
-                                            </Typography>
+                                            <Skeleton variant="rectangular" width="100%" height={218} sx={{ borderRadius: "16px" }} />
+                                            <Skeleton width={100} />
+                                            <Skeleton width={160} />
+                                            <Skeleton height={100} />
                                         </Box>
+                                    </Grid>
+
+                                ))}
+                            </Grid>
+
+
+                        </>
+                    ) :
+                        (
+                            portfolioItems
+                                .filter((item) => selectedType === 'all' || item.type === selectedType)
+                                .map((item, index) => (
+                                    <Grid item
+                                        key={item.id} lg={6} md={6} sm={6}
+                                        sx={{
+                                            display: "flex",
+                                            justifyContent: index % 2 === 0 ? "start" : "start",
+                                            ...selectLanguage === "en" && {
+                                                paddingRight: {
+                                                    lg: index % 2 === 0 ? "45px" : "0px",
+                                                    md: index % 2 === 0 ? "45px" : "0px",
+                                                    sm: index % 2 === 0 ? "20px" : "0px",
+                                                    xs: "unset"
+                                                }
+                                            },
+                                            ...selectLanguage === "en" && {
+                                                paddingLeft: {
+                                                    lg: index % 2 !== 0 ? "45px" : "0px",
+                                                    md: index % 2 !== 0 ? "45px" : "0px",
+                                                    sm: index % 2 !== 0 ? "20px" : "0px",
+                                                    xs: "unset"
+                                                }
+                                            },
+                                            ...selectLanguage === "ar" && {
+                                                paddingLeft: {
+                                                    lg: index % 2 === 0 ? "45px" : "0px",
+                                                    md: index % 2 === 0 ? "45px" : "0px",
+                                                    sm: index % 2 === 0 ? "20px" : "0px",
+                                                    xs: "unset"
+                                                }
+                                            },
+                                            ...selectLanguage === "ar" && {
+                                                paddingRight: {
+                                                    lg: index % 2 !== 0 ? "45px" : "0px",
+                                                    md: index % 2 !== 0 ? "45px" : "0px",
+                                                    sm: index % 2 !== 0 ? "20px" : "0px",
+                                                    xs: "unset"
+                                                }
+                                            },
+
+                                            // paddingRight: {
+                                            //     lg: item.id % 2 !== 0 ? selectLanguage === "en" && "45px" : "0px",
+                                            //     md: item.id % 2 !== 0 ? selectLanguage === "en" && "45px" : "0px",
+                                            //     sm: item.id % 2 !== 0 ? selectLanguage === "en" && "20px" : "0px",
+                                            //     xs: "unset"
+                                            // },
+
+                                            marginBottom: {
+                                                lg: "40px",
+                                                md: "40px",
+                                                sm: "50px",
+                                                xs: "50px"
+                                            },
+                                            animation: `${fadeIn} 1.5s ease-out 0s forwards`,
+                                        }}
+                                    >
+
+
+
                                         <Box
                                             sx={{
                                                 display: "flex",
-                                                justifyContent: selectLanguage === "en" ? "right" : "left",
+                                                flexDirection: "column",
+                                                gap: { lg: "24px", md: "24px", sm: "20px", xs: "20px" },
                                             }}
                                         >
-                                            <Button
+
+                                            <img data-aos-duration="1500"
+                                                data-aos={item.id % 2 === 0 ? "flip-left" : "flip-right"}
+                                                style={{ maxWidth: "100%" }}
+                                                src={item.img} />
+
+                                            <Box data-aos-duration="1500" data-aos={item.id % 2 === 0 ? "fade-up" : "fade-up"}
                                                 sx={{
-                                                    backgroundColor: "transparent",
-                                                    color: "var(--white-color)",
-                                                    fontSize: { lg: "24px", md: "24px", sm: "16px", xs: "16px" },
-                                                    lineHeight: "36px",
-                                                    fontVariant: "small-caps",
-                                                    fontWeight: "600",
-                                                    fontFamily: "var(--English-font)",
-                                                    border: "1px solid var(--white-color)",
-                                                    borderRadius: "36px",
-                                                    padding: "8px 24px",
-                                                    height: { lg: "52px", md: "52px", sm: "52px", xs: "44px" },
-                                                    gap: "16px",
-    
+                                                    display: "flex",
+                                                    flexDirection: "column",
+                                                    gap: { lg: "8px", md: "8px", xs: "0px", xs: "0px", },
+                                                    paddingLeft: "2px",
+                                                    paddingRight: "2px"
                                                 }}
                                             >
-                                                {t("caseStudy.seeCase")}
-                                                <img loading='lazy' className="typcn-arrow-up" alt="Typcn arrow up" src={ArrowWhite}
-                                                    style={{
-                                                        transform: selectLanguage === "ar" ? "rotate(180deg)" : "",
-    
+                                                <Typography
+                                                    sx={{
+                                                        ...titleStyle
                                                     }}
-                                                />
-                                            </Button>
+                                                >
+                                                    {item.title}
+                                                </Typography>
+                                                <Typography
+                                                    sx={{
+                                                        ...typeStyle,
+                                                        paddingBottom: "8px"
+                                                    }}
+                                                >
+                                                    {item.type}
+                                                </Typography>
+                                                <Typography
+                                                    sx={{
+                                                        ...descriptionStyle,
+                                                        overflow: 'hidden',
+                                                        display: '-webkit-box',
+                                                        WebkitBoxOrient: 'vertical',
+                                                        WebkitLineClamp: { lg: 3, md: 3, sm: 3, xs: 4 },
+                                                    }}
+                                                >
+                                                    {item.description}
+
+                                                </Typography>
+                                            </Box>
+                                            <Box
+                                                sx={{
+                                                    display: "flex",
+                                                    justifyContent: selectLanguage === "en" ? "right" : "left",
+                                                }}
+                                            >
+                                                <Button
+                                                    sx={{
+                                                        backgroundColor: "transparent",
+                                                        color: "var(--white-color)",
+                                                        fontSize: { lg: "24px", md: "24px", sm: "16px", xs: "16px" },
+                                                        lineHeight: "36px",
+                                                        fontVariant: "small-caps",
+                                                        fontWeight: "600",
+                                                        fontFamily: "var(--English-font)",
+                                                        border: "1px solid var(--white-color)",
+                                                        borderRadius: "36px",
+                                                        padding: "8px 24px",
+                                                        height: { lg: "52px", md: "52px", sm: "52px", xs: "44px" },
+                                                        gap: "16px",
+
+                                                    }}
+                                                >
+                                                    {t("caseStudy.seeCase")}
+                                                    <img className="typcn-arrow-up" alt="Typcn arrow up" src={ArrowWhite}
+                                                        style={{
+                                                            transform: selectLanguage === "ar" ? "rotate(180deg)" : "",
+
+                                                        }}
+                                                    />
+                                                </Button>
+                                            </Box>
                                         </Box>
-                                    </Box>
-    
-    
-                                </Grid>
-    
-                            ))
-                    )}
-                    
+
+
+                                    </Grid>
+
+                                ))
+                        )}
+
                 </Grid>
             </Grid>
         </>

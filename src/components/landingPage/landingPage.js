@@ -16,17 +16,18 @@ import Blog from "./blogs";
 import Makeappointement from "./MakeAppointement";
 function LandingPage() {
     const { t, i18n } = useTranslation();
-    const selectLanguage = i18n.language;
-
     return (
         <>
-            <SectionOne />
+        <div className="root-container">
+        <SectionOne />
             <OurSolution />
             <OurClients/>
             <Help/>
             <OurAward/>
             <Blog/>
             <Makeappointement/>
+        </div>
+            
         </>
     )
 }

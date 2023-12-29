@@ -10,13 +10,11 @@ import "./ourClient.css";
 import ArrowRight from "../../assets/images/ArrowRightBlue.svg"
 import ArrowLeft from "../../assets/images/ArrowLeftBlue.svg"
 import quetos from "../../assets/images/quetos.svg"
-import Help from "./needHelp";
-
 function OurClients(props) {
     const { t, i18n } = useTranslation();
     const selectLanguage = i18n.language;
     const [currentSlide, setCurrentSlide] = useState(0);
-
+    const sliderRef = useRef(null);
     const Clients = [
         {
             id: 0,
@@ -40,7 +38,6 @@ function OurClients(props) {
             clientImg: ClientImg
         }
     ]
-
     const settings = {
         dots: true,
         customPaging: (i) => (
@@ -64,8 +61,6 @@ function OurClients(props) {
 
     };
 
-    const sliderRef = useRef(null);
-
     const handleNext = () => {
         if (sliderRef.current) {
             sliderRef.current.slickNext();
@@ -74,13 +69,11 @@ function OurClients(props) {
             }
         }
     };
-
     const handlePrev = () => {
         if (sliderRef.current) {
             sliderRef.current.slickPrev();
         }
     };
-
 
     return (
         <>
@@ -97,13 +90,13 @@ function OurClients(props) {
                     }}
                 >
                     <Box>
-                        <img loading="lazy" style={{ width: "100%" }} src={ourClients}></img>
+                        <img style={{ width: "100%" }} src={ourClients}></img>
                     </Box>
                     <Box
                         sx={{
                             position: "absolute",
                             top: { lg: "50%", md: "99%", sm: "99%", xs: "97%" },
-                            left:selectLanguage === "en" ?  { lg: "99.4%", md: "50%", sm: "50%", xs: "50%" } :{ lg: "-1%", md: "50%", sm: "50%", xs: "50%" } ,
+                            left: selectLanguage === "en" ? { lg: "99.4%", md: "50%", sm: "50%", xs: "50%" } : { lg: "-1%", md: "50%", sm: "50%", xs: "50%" },
                             transform: "translate(-44%, -50%)",
                             textAlign: "center",
                             width: { lg: "68px", md: "68px", sm: "68px", xs: "44px" },
@@ -111,7 +104,7 @@ function OurClients(props) {
 
                         }}
                     >
-                        <img loading="lazy" style={{ maxWidth: "100%" }} src={quetos}></img>
+                        <img style={{ maxWidth: "100%" }} src={quetos}></img>
                     </Box>
                 </Grid>
                 <Grid item xl={6} lg={6} md={12} sm={12} xs={12}
@@ -204,7 +197,7 @@ function OurClients(props) {
                                             direction: selectLanguage === "en" ? "ltr" : "rtl"
                                         }}
                                     >
-                                        <img loading="lazy" src={item.clientImg}></img>
+                                        <img src={item.clientImg}></img>
 
                                         <Box
                                             sx={{
@@ -268,7 +261,7 @@ function OurClients(props) {
 
                             >
 
-                                <img loading="lazy" src={selectLanguage === "en" ? ArrowLeft : ArrowLeft}></img>
+                                <img src={selectLanguage === "en" ? ArrowLeft : ArrowLeft}></img>
                             </Grid>
 
 
@@ -291,14 +284,10 @@ function OurClients(props) {
                                     <img src={selectLanguage === "en" ? ArrowRight : ArrowRight}></img>
                                 </Button>
                             </Grid>
-
                         </Grid>
                     </Box>
-
                 </Grid>
-
             </Grid>
-
         </>
     )
 }

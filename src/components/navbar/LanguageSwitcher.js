@@ -3,11 +3,9 @@ import { useTranslation } from "react-i18next";
 import '../navbar/LanguageSwitcher.css'
 import { Box } from "@mui/material";
 import Button from '@mui/material/Button';
-
 import arrowDown from "../../assets/images/navArrow.svg"
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-
 const LanguageSwitcher = () => {
     const { t, i18n } = useTranslation();
     const [anchorEl, setAnchorEl] = useState(null);
@@ -59,12 +57,12 @@ const LanguageSwitcher = () => {
                             color: "#FFFFFF",
                             padding: "6px 0px",
                             display: { lg: "block", sm: "none", xs: "none" },
-                            fontFamily:"var(--English-font)",
-                            fontWeight:"600",
+                            fontFamily: "var(--English-font)",
+                            fontWeight: "600",
 
                             '&:hover': {
                                 backgroundColor: 'transparent',
-                              },
+                            },
                         }}
                         disableRipple
                     >
@@ -79,7 +77,7 @@ const LanguageSwitcher = () => {
                             minWidth: "40px",
                             height: { lg: "", xs: "0px" },
                             textTransform: "unset",
-                            fontFamily:"var(--English-font)",
+                            fontFamily: "var(--English-font)",
 
 
                         }}
@@ -113,27 +111,29 @@ const LanguageSwitcher = () => {
                             vertical: 'bottom',
                             horizontal: 'center',
                         }}
-                       
+
 
                     >
                         {selectLanguage === "en" ?
-                            <MenuItem sx={{ minHeight: "0px",fontFamily:"var(--English-font)",
-                            '&.Mui-focusVisible': {
-                              backgroundColor: 'transparent', // Specify focus background color
-                            },
-                        }} onClick={() => handleMenuItemClick('ar')}
-                        disableRipple
+                            <MenuItem sx={{
+                                minHeight: "0px", fontFamily: "var(--English-font)",
+                                '&.Mui-focusVisible': {
+                                    backgroundColor: 'transparent', // Specify focus background color
+                                },
+                            }} onClick={() => handleMenuItemClick('ar')}
+                                disableRipple
 
-                        >AR</MenuItem>
+                            >AR</MenuItem>
                             :
-                            <MenuItem sx={{ minHeight: "0px",fontFamily:"var(--English-font)",
-                            '&.Mui-focusVisible': {
-                              backgroundColor: 'transparent', // Specify focus background color
-                            },
-                        }} onClick={() => handleMenuItemClick('en')}
-                        disableRipple
+                            <MenuItem sx={{
+                                minHeight: "0px", fontFamily: "var(--English-font)",
+                                '&.Mui-focusVisible': {
+                                    backgroundColor: 'transparent', // Specify focus background color
+                                },
+                            }} onClick={() => handleMenuItemClick('en')}
+                                disableRipple
 
-                        >EN</MenuItem>
+                            >EN</MenuItem>
                         }
                     </Menu>
                 </Box>
