@@ -21,8 +21,10 @@ function MoreAbout() {
                     marginTop: { lg: "80px", md: "80px", sm: "46px", xs: "46px" },
                     paddingLeft: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
                     paddingRight: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
+                    position:"relative"
                 }}
             >
+                <Box className="AboutUsBgSec"></Box>
                 <Box
                     sx={{
                         display: "flex",
@@ -96,7 +98,7 @@ function MoreAbout() {
                       }}
                       >
                         {persons.map((item,index)=>(
-                            <Grid item lg={3.8} md={3.8} sm={5.8} xs={8}
+                            <Grid item lg={3.8} md={3.8} sm={5.8} xs={9.5}
                             key={index}
                             sx={{
                                 position:"relative",

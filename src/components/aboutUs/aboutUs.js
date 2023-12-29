@@ -529,13 +529,10 @@ position:"relative"
 
                 <NumberAbout />
                 
-<Box className="AboutUsBgSec">
 <MoreAbout />
-</Box>
-<Box className="AboutUsBgSec">
+
 <OurExperts />
 
-</Box>
           
             <Makeappointement />
            
