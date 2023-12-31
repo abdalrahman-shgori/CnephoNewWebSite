@@ -9,6 +9,7 @@ import LottieAnimation from './lottie'; // Adjust the path as needed
 import animationDataHome2 from '../../assets/HomePart1/HomePart1.json';
 import animationDataHome3 from '../../assets/HomePart1/HomePart2.json';
 import {motion} from 'framer-motion'
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 
 
 import "./landingPage.css"
@@ -97,7 +98,7 @@ function SectionOne() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
             >
-
+<ScrollLink to='steps' ref={elementRef} spy={true} smooth={true} offset={-50}>
             <Grid container className="we root-container" sx={{
                  paddingTop: { lg: "110px", md: "110px", sm: "110px", xs: "116px" },
                 position:"relative",
@@ -241,6 +242,7 @@ function SectionOne() {
                 </Grid>
          
             </Grid>
+            </ScrollLink>
             </motion.div>
             <motion.div
         initial={{ opacity: 0, y: 50 }}
