@@ -10,6 +10,7 @@ import ArrowRight from "../../assets/images/Group.svg"
 import ArrowLeft from "../../assets/images/arrowRightCarousal.svg"
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { motion } from 'framer-motion'
 
 const Carousel = (props) => {
     const [progressBarWidth, setProgressBarWidth] = useState(0);
@@ -147,6 +148,7 @@ const Carousel = (props) => {
 
             }}
         >
+             
             <Slider ref={sliderRef} {...settings} key={forceRerender}
                 centerPadding="0px" // Adjust the value for the desired gap
 
@@ -157,6 +159,8 @@ const Carousel = (props) => {
                     <Grid key={idx}
 
                     >
+                       
+
                         <Box
                             sx={{
                                 backgroundColor: "#FFFFFF",
@@ -244,6 +248,7 @@ const Carousel = (props) => {
                         </Box>
                     </Grid>
                 ))}
+                
                 {/* Add more cards as needed */}
             </Slider>
             <Grid item container spacing={0}
