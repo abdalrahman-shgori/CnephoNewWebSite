@@ -1,0 +1,52 @@
+@keyframes drawPath {
+    
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Apply animation to the first path with class 'cls-2' */
+  .cls-2 {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: drawPath 2s ease-in-out forwards;
+  }
+  
+  /* Apply animation to the second path with class 'cls-3' */
+  .cls-3 {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: drawPath 2s ease-in-out forwards;
+    animation-delay: 1s; /* Delay the animation to start after the first path */
+  }
+  
+  /* Apply animation to the circle with class 'cls-3' */
+  .cls-3 circle {
+    transform: scale(0);
+    animation: fadeIn 1s ease-in-out forwards, scaleCircle 1s ease-in-out forwards;
+    animation-delay: 3s; /* Delay the animation to start after both paths */
+  }
+  
+  @keyframes scaleCircle {
+    to {
+      transform: scale(1);
+    }
+  }
+   @keyframes changeFillColor {
+    0% {
+      fill: #303c73;
+    }
+    100% {
+      fill: #fff;
+    }
+  }
+

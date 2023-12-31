@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import React, { useState, useEffect } from "react";
 import Navbar from './components/navbar/navbar';
 
@@ -11,28 +11,72 @@ import AboutUs from './components/aboutUs/aboutUs';
 import Portfolio from './components/portfolios/portfolio';
 import NavBar from './components/navbar/navbar';
 import Footer from './components/footer/footer';
+import { Box } from '@mui/material';
+import logo from "./assets/images/logo-white.svg"
+import Abdooo from './components/logoSvg';
+import { motion, AnimatePresence } from 'framer-motion';
 
 function App() {
+   const [landingPageLoaded, setLandingPageLoaded] = useState(false);
+   const navigate = useNavigate();
    const { t, i18n } = useTranslation();
-  // moment().locale("en_us");
-  // window.document.body.style.zoom = 1;
   document.body.dir = i18n.dir();
+  
+  useEffect(() => {
+   const handleScrollToTop = () => {
+     window.scrollTo({
+       top: 0,
+       behavior: "smooth",
+     });
+   };
+   handleScrollToTop();
+   const simulateLandingPageLoading = () => {
+     setTimeout(() => {
+       setLandingPageLoaded(true);
+     }, 2000);
+   };
+   if (window.location.pathname === '/') {
+     simulateLandingPageLoading();
+   }
+   return () => {
+     window.removeEventListener("scroll", handleScrollToTop);
+   };
+ }, [navigate]);
 
   return (
    <>
 
-    <ThemeSettings>
-<ThemeLocalization> 
-   <NavBar/>
-   <Routes>
-    <Route path='/' element={<LandingPage/>}/>
-    <Route path='/Contact-Us' element={<ContactUs/>} />
-    <Route path='/AboutUs' element={<AboutUs/>} />
-    <Route path='/Portolios' element={<Portfolio/>} />
-   </Routes>
-   <Footer/>
-   </ThemeLocalization>
-   </ThemeSettings>
+{window.location.pathname === '/' && !landingPageLoaded ? (
+        <Box
+        sx={{
+         display:"flex",
+         justifyContent:"center",
+         alignItems:"center",
+         height:"100vh",
+         width:"20%",
+         marginLeft:"auto",
+         marginRight:"auto",
+        }}
+        >
+       <Abdooo/>
+        </Box>
+      ) : (
+        <ThemeSettings>
+          <ThemeLocalization>
+            <NavBar />
+            <AnimatePresence mode='wait'>
+  <Routes>
+    <Route key="landing" path='/' element={<LandingPage />} />
+    <Route key="contact" path='/Contact-Us' element={<ContactUs />} />
+    <Route key="about" path='/AboutUs' element={<AboutUs />} />
+    <Route key="portfolio" path='/Portolios' element={<Portfolio />} />
+  </Routes>
+</AnimatePresence>
+            <Footer />
+          </ThemeLocalization>
+        </ThemeSettings>
+     
+      )}
 
 
 

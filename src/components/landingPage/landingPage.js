@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "../navbar/navbar";
 import Footer from "../footer/footer";
 import { Box, Button, Grid, Typography } from "@mui/material";
@@ -16,11 +16,37 @@ import Blog from "./blogs";
 import Makeappointement from "./MakeAppointement";
 function LandingPage() {
     const { t, i18n } = useTranslation();
+    const [componentsLoaded, setComponentsLoaded] = useState(false);
+
+    useEffect(() => {
+        const handleScrollToTop = () => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        };
+    
+        handleScrollToTop();
+    
+        // Simulate an asynchronous operation (e.g., fetching data, loading images)
+        // Replace the setTimeout with your actual loading logic
+        const simulateLoading = () => {
+          setTimeout(() => {
+            setComponentsLoaded(true);
+          }, 2000); // Adjust the duration as needed
+        };
+    
+        simulateLoading();
+    
+        // Clean up the event listener on component unmount
+        return () => {
+          window.removeEventListener("scroll", handleScrollToTop);
+        };
+      }, []);
     return (
         <>
         <div className="root-container">
         <SectionOne />
-            <OurSolution />
             <OurClients/>
             <Help/>
             <OurAward/>

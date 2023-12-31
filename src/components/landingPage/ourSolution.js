@@ -17,7 +17,7 @@ function OurSolution() {
                 sx={{
                     position: "relative",
                     bottom: { lg: "80px", md: "0px", sm: "0px", xs: "0px" },
-                    top: { lg: "-65px", md: "20px", sm: "20px", xs: "65px" },
+                    top: { lg: "65px", md: "20px", sm: "20px", xs: "65px" },
                     marginBottom: "40px"
                 }}
             >

@@ -1,33 +1,114 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from 'react';
 import { Box, Button, Grid, Typography } from "@mui/material";
 import com from "../../assets/images/Rectangle.svg";
 import comAr from "../../assets/images/RectangleAr.svg";
 import C from "../../assets/images/C.svg";
 import Arrow from "../../assets/images/BlueArrow.svg"
 import { useTranslation } from "react-i18next";
-// import LottieAnimation from './lottie'; // Adjust the path as needed
-// import animationDataHome2 from '../../assets/images/HomePart1/HomePart1.json';
+import LottieAnimation from './lottie'; // Adjust the path as needed
+import animationDataHome2 from '../../assets/HomePart1/HomePart1.json';
+import animationDataHome3 from '../../assets/HomePart1/HomePart2.json';
+import {motion} from 'framer-motion'
+
+
 import "./landingPage.css"
+import Lottie from "react-lottie";
+import OurSolution from './ourSolution';
 function SectionOne() {
+    const [isFirstScroll, setIsFirstScroll] = useState(true);
+    const [animationRun, setAnimationRun] = useState(true);
+    const [showSteps, setShowSteps] = useState(false);
+    const elementRef = useRef(null);
+    const scrollToSteps = () => {
+        const element = elementRef.current;
+        const targetOffset = element.offsetTop;
+        const duration = 1000;
+        const startingY = window.pageYOffset;
+        const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+    
+        const linearEase = (time, start, change, duration) => {
+          return (change * time) / duration + start;
+        };
+
+        const animateScroll = (currentTime) => {
+            const elapsedTime = currentTime - startTime;
+            window.scrollTo(0, linearEase(elapsedTime, startingY, targetOffset - startingY, duration));
+      
+            if (elapsedTime < duration) {
+              requestAnimationFrame(animateScroll);
+              setAnimationRun(false);
+            } else {
+              window.scrollTo(0, targetOffset);
+              setIsFirstScroll(false);
+            }
+          };
+      
+          requestAnimationFrame(animateScroll);
+        };
+        const handleScroll = () => {
+            const scrollTop = window.scrollY;
+            const scrollDirection = scrollTop >= 0 ? 'down' : 'up';
+            const threshold = 20;
+        
+            if (isFirstScroll && scrollDirection === 'down' && scrollTop <= threshold) {
+              scrollToSteps();
+            }
+        
+            // Check if the user has scrolled past the "steps" section
+            const stepsElement = elementRef.current;
+            const stepsOffset = stepsElement.offsetTop;
+        
+            if (scrollTop >= stepsOffset) {
+              setShowSteps(true);
+            } else {
+              setShowSteps(false);
+            }
+          };
+          useEffect(() => {
+            window.addEventListener('scroll', handleScroll);
+        
+            return () => {
+              window.removeEventListener('scroll', handleScroll);
+            };
+          }, [isFirstScroll]);
+    const defaultOptions = {
+        loop: false,
+        autoplay: false,
+        animationData: animationDataHome3,
+      };
     const { t, i18n } = useTranslation();
     const selectLanguage = i18n.language;
     const handleContactUsClick = () => {
         // Navigate to the contact us page
         window.location.href = '/Contact-Us';
     };
+    console.log(animationDataHome2)
 
+    const seke = ()=>{
+        setIsFirstScroll(false)
+    }
+    
     return (
+
         <>
-            {/* <LottieAnimation animationData={animationDataHome2} /> */}
+
+            <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            >
 
             <Grid container className="we root-container" sx={{
-                overflowX: "hidden", paddingTop: { lg: "110px", md: "110px", sm: "110px", xs: "116px" },
+                 paddingTop: { lg: "110px", md: "110px", sm: "110px", xs: "116px" },
+                position:"relative",
+                paddingBottom:{lg:"122px",md:"122px",sm:"60px",xs:"60px"},
             }}>
-                <Grid item lg={6.1} sm={6.1} xs={12}
+                <Grid item lg={5.6} sm={5.6} xs={12}
                     sx={{
                         height: "100%",
 
                     }}>
+                        
                     <Typography
                         className="BetterSolutionText"
                         sx={{
@@ -81,7 +162,7 @@ function SectionOne() {
                         {t("landingPageSection1.WeHaveMission")}
 
                     </Typography>
-
+                          
                     <Button
                         onClick={handleContactUsClick}
                         disableRipple
@@ -104,25 +185,44 @@ function SectionOne() {
                         </div>
                     </Button>
                 </Grid>
-                <Grid item lg={5.9} sm={5.9} xs={12}
+                <Grid item lg={6} sm={6.4} xs={12}
                     sx={{
                         display: "flex",
                         justifyContent: { lg: "start", md: "center", xs: "center" },
                         position: "relative",
                         bottom: { lg: "60px", md: "0px" },
+                        
+                     
                     }}
                 >
-                    <Box
-                        sx={{
-                            marginLeft: selectLanguage === "en" && { lg: "-36px", md: "36px", sm: "200px" },
-                            marginRight: selectLanguage === "ar" && { lg: "-36px", md: "36px", sm: "200px" }
+                    <Box>
+<div style={{
+  display: "flex",
+  position: "relative",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent:"center",
+  width: "100%", // Make sure the container takes up the full width
+}}>
+  <LottieAnimation animationData={animationDataHome2} />
+  <Lottie
+  
+    width="100%" // Use a percentage to make it responsive
+    isStopped={animationRun}
+    options={defaultOptions}
+    style={{
+      position: "absolute",
+      top: "100%",
+      left: "0",
+      transform: "translate(-44.9%, -2.2%)",
+      overflowY: "hidden",
+    
+    }}
+  />
+</div>
 
-                        }}
-                    >
-
-                        <img className="computerImg" height="755px" src={selectLanguage === "en" ? com : comAr}></img>
                     </Box>
-
+           
                     <Box
                         sx={{
                             position: "absolute",
@@ -137,13 +237,24 @@ function SectionOne() {
 
                         }}></img>
                     </Box>
-
+                 
                 </Grid>
+         
             </Grid>
-
+            </motion.div>
+            <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={isFirstScroll === false ? { opacity: 1, y: 0 } : {}}
+        exit={isFirstScroll === false ? { opacity: 0, y: -50 } : {}}
+        id="steps"
+        ref={elementRef}
+      >
+        <OurSolution />
+      </motion.div>
 
 
         </>
+
     )
 }
 export default SectionOne;
