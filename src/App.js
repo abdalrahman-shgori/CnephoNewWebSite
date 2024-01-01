@@ -56,6 +56,7 @@ function App() {
          width:"20%",
          marginLeft:"auto",
          marginRight:"auto",
+         overflow:"hidden"
         }}
         >
        <Abdooo/>
