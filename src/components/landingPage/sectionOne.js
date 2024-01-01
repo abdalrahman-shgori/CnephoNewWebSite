@@ -15,14 +15,17 @@ import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 import "./landingPage.css"
 import Lottie from "react-lottie";
 import OurSolution from './ourSolution';
+
+
 function SectionOne() {
+    
     const [isFirstScroll, setIsFirstScroll] = useState(true);
     const [animationRun, setAnimationRun] = useState(true);
     const [showSteps, setShowSteps] = useState(false);
     const elementRef = useRef(null);
     const scrollToSteps = () => {
         const element = elementRef.current;
-        const targetOffset = element.offsetTop;
+        const targetOffset = window.innerWidth > 600 ? element.offsetTop - 150 : element.offsetTop - 100;
         const duration = 1000;
         const startingY = window.pageYOffset;
         const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
@@ -65,7 +68,16 @@ function SectionOne() {
             setShowSteps(false);
         }
     };
+
+    // const disableScrolling = () => {
+    //     document.body.style.overflow = 'hidden';
+    //     setTimeout(() => {
+    //         document.body.style.overflow = '';
+    //     }, 1500);
+    // };
+    
     useEffect(() => {
+        
         window.addEventListener('scroll', handleScroll);
 
         return () => {
@@ -99,11 +111,10 @@ function SectionOne() {
                 exit={{ opacity: 0, y: -50 }}
                 
             >
-                <ScrollLink step={10} to='steps' ref={elementRef} spy={true} smooth={true} offset={-50}>
                     <Grid container className="we root-container" sx={{
                         paddingTop: { lg: "110px", md: "110px", sm: "110px", xs: "116px" },
                         position: "relative",
-                        paddingBottom: { lg: "122px", md: "122px", sm: "60px", xs: "60px" },
+                        paddingBottom: { lg: "292px", md: "80px", sm: "40px", xs: "140px" },
                     }}>
                         <Grid item lg={5.6} sm={5.6} xs={12}
                             sx={{
@@ -192,7 +203,7 @@ function SectionOne() {
                                 display: "flex",
                                 justifyContent: { lg: "start", md: "center", xs: "center" },
                                 position: "relative",
-                                bottom: { lg: "60px", md: "0px" },
+                                bottom: { lg: "50px", md: "50px",sm:"50px" },
 
 
                             }}
@@ -225,7 +236,7 @@ function SectionOne() {
 
                             </Box>
 
-                            <Box
+                            {/* <Box
                                 sx={{
                                     position: "absolute",
                                     right: selectLanguage === "en" && "0",
@@ -238,12 +249,11 @@ function SectionOne() {
                                 <img className="CImg" src={C} style={{
 
                                 }}></img>
-                            </Box>
+                            </Box> */}
 
                         </Grid>
 
                     </Grid>
-                </ScrollLink>
             </motion.div>
             <motion.div
                 initial={{ opacity: 0, y: 50 }}

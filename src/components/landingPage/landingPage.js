@@ -19,14 +19,12 @@ function LandingPage() {
     const [componentsLoaded, setComponentsLoaded] = useState(false);
 
     useEffect(() => {
-        const handleScrollToTop = () => {
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-          });
+        const disableScrolling = () => {
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => {
+                document.body.style.overflow = '';
+            }, 1500);
         };
-    
-        handleScrollToTop();
     
         // Simulate an asynchronous operation (e.g., fetching data, loading images)
         // Replace the setTimeout with your actual loading logic
@@ -36,11 +34,11 @@ function LandingPage() {
           }, 2000); // Adjust the duration as needed
         };
     
-        simulateLoading();
+        disableScrolling();
     
         // Clean up the event listener on component unmount
         return () => {
-          window.removeEventListener("scroll", handleScrollToTop);
+          window.removeEventListener("scroll", disableScrolling);
         };
       }, []);
     return (
