@@ -25,9 +25,9 @@ function SectionOne() {
     const elementRef = useRef(null);
     const scrollToSteps = () => {
         const element = elementRef.current;
-        const targetOffset = element.offsetTop - 150;
+        const targetOffset = window.innerHeight > 600 ? element.offsetTop - 150 : element.offsetTop;
         const duration = 1000;
-        const startingY = window.pageYOffset;
+        const startingY = window.scrollY;
         const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
 
         const linearEase = (time, start, change, duration) => {
@@ -36,7 +36,7 @@ function SectionOne() {
 
         const animateScroll = (currentTime) => {
             const elapsedTime = currentTime - startTime;
-            window.scrollTo(0, linearEase(elapsedTime, startingY, targetOffset - startingY, duration));
+            window.scrollTo(0, linearEase(elapsedTime, startingY, targetOffset - startingY + 150, duration));
 
             if (elapsedTime < duration) {
                 requestAnimationFrame(animateScroll);
