@@ -10,8 +10,6 @@ import animationDataHome2 from '../../assets/HomePart1/HomePart1.json';
 import animationDataHome3 from '../../assets/HomePart1/HomePart2.json';
 import { motion } from 'framer-motion'
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
-
-
 import "./landingPage.css"
 import Lottie from "react-lottie";
 import OurSolution from './ourSolution';
@@ -25,7 +23,7 @@ function SectionOne() {
     const elementRef = useRef(null);
     const scrollToSteps = () => {
         const element = elementRef.current;
-        const targetOffset = window.innerHeight > 600 ? element.offsetTop - 150 : element.offsetTop;
+        const targetOffset =element.offsetTop - 150
         const duration = 1000;
         const startingY = window.scrollY;
         const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
@@ -36,7 +34,7 @@ function SectionOne() {
 
         const animateScroll = (currentTime) => {
             const elapsedTime = currentTime - startTime;
-            window.scrollTo(0, linearEase(elapsedTime, startingY, targetOffset - startingY + 150, duration));
+            window.scrollTo(0,linearEase(elapsedTime, startingY, targetOffset - startingY, duration));
 
             if (elapsedTime < duration) {
                 requestAnimationFrame(animateScroll);
@@ -68,14 +66,6 @@ function SectionOne() {
             setShowSteps(false);
         }
     };
-
-    // const disableScrolling = () => {
-    //     document.body.style.overflow = 'hidden';
-    //     setTimeout(() => {
-    //         document.body.style.overflow = '';
-    //     }, 1500);
-    // };
-    
     useEffect(() => {
         
         window.addEventListener('scroll', handleScroll);
