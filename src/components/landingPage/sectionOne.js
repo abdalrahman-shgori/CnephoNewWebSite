@@ -43,7 +43,7 @@ function SectionOne() {
     const scrollToSteps = () => {
         const stepsElement = document.getElementById('steps');
         if (stepsElement) {
-            const offset = window.innerWidth > 600 ? -120 : -100; // Adjust this value to your desired offset when scrolling
+            const offset = window.innerWidth > 600 ? -120 : -80; // Adjust this value to your desired offset when scrolling
             const targetPosition = stepsElement.getBoundingClientRect().top + window.scrollY + offset;
             const startPosition = window.scrollY;
             const startTime = performance.now();
