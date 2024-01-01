@@ -17,7 +17,8 @@ import OurSolution from './ourSolution';
 
 function SectionOne() {
     const [scrolled, setScrolled] = useState(false);
-    const [animatedRun,setAnimatedRund]=useState(true)
+    const [animatedRun,setAnimatedRund]=useState(true);
+    const [showSection,setShowSection]=useState(false)
     const sectionRef = useRef(null);
 
     useEffect(() => {
@@ -26,9 +27,11 @@ function SectionOne() {
             if (window.scrollY > 10) {
                 setScrolled(true);
                 setAnimatedRund(false)
+                setShowSection(true)
             } else {
                 setScrolled(false);
                 setAnimatedRund(true)
+                setShowSection(true)
             }
         };
 
@@ -43,7 +46,7 @@ function SectionOne() {
     const scrollToSteps = () => {
         const stepsElement = document.getElementById('steps');
         if (stepsElement) {
-            const offset = window.innerWidth > 600 ? -120 : -80; // Adjust this value to your desired offset when scrolling
+            const offset = window.innerWidth > 600 ? -120 : -40; // Adjust this value to your desired offset when scrolling
             const targetPosition = stepsElement.getBoundingClientRect().top + window.scrollY + offset;
             const startPosition = window.scrollY;
             const startTime = performance.now();
@@ -242,9 +245,10 @@ function SectionOne() {
 
             <Element  id='steps'>
                 <motion.div
-                    initial={{ opacity: 0, y: scrolled ? 0 : 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: scrolled ? -50 : 0 }}
+                      initial={{ opacity: 0, y: 50 }}
+                      animate={showSection === true ? { opacity: 1, y: 0 } : {}}
+                      exit={showSection === true ? { opacity: 0, y: -50 } : {}}
+                      transition={{ duration: 1 }} // Adjust this value to your desired duration in seconds
                  >
                     <OurSolution />
                 </motion.div>
