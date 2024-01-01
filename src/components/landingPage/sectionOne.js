@@ -9,71 +9,67 @@ import LottieAnimation from './lottie'; // Adjust the path as needed
 import animationDataHome2 from '../../assets/HomePart1/HomePart1.json';
 import animationDataHome3 from '../../assets/HomePart1/HomePart2.json';
 import { motion } from 'framer-motion'
-import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
+import { Link as ScrollLink, Element, scroller } from 'react-scroll';
 import "./landingPage.css"
 import Lottie from "react-lottie";
 import OurSolution from './ourSolution';
 
 
 function SectionOne() {
-    
-    const [isFirstScroll, setIsFirstScroll] = useState(true);
-    const [animationRun, setAnimationRun] = useState(true);
-    const [showSteps, setShowSteps] = useState(false);
-    const elementRef = useRef(null);
-    const scrollToSteps = () => {
-        const element = elementRef.current;
-        const targetOffset =element.offsetTop - 150
-        const duration = 1000;
-        const startingY = window.scrollY;
-        const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+    const [scrolled, setScrolled] = useState(false);
+    const [animatedRun,setAnimatedRund]=useState(true)
+    const sectionRef = useRef(null);
 
-        const linearEase = (time, start, change, duration) => {
-            return (change * time) / duration + start;
-        };
-
-        const animateScroll = (currentTime) => {
-            const elapsedTime = currentTime - startTime;
-            window.scrollTo(0,linearEase(elapsedTime, startingY, targetOffset - startingY, duration));
-
-            if (elapsedTime < duration) {
-                requestAnimationFrame(animateScroll);
-                setAnimationRun(false);
+    useEffect(() => {
+        const handleScroll = () => {
+            // Set scrolled to true when the user has scrolled down
+            if (window.scrollY > 10) {
+                setScrolled(true);
+                setAnimatedRund(false)
             } else {
-                window.scrollTo(0, targetOffset);
-                setIsFirstScroll(false);
+                setScrolled(false);
+                setAnimatedRund(true)
             }
         };
 
-        requestAnimationFrame(animateScroll);
-    };
-    const handleScroll = () => {
-        const scrollTop = window.scrollY;
-        const scrollDirection = scrollTop >= 0 ? 'down' : 'up';
-        const threshold = 20;
-
-        if (isFirstScroll && scrollDirection === 'down' && scrollTop < threshold) {
-            scrollToSteps();
-        }
-
-        // Check if the user has scrolled past the "steps" section
-        const stepsElement = elementRef.current;
-        const stepsOffset = stepsElement.offsetTop;
-
-        if (scrollTop >= stepsOffset) {
-            setShowSteps(true);
-        } else {
-            setShowSteps(false);
-        }
-    };
-    useEffect(() => {
-        
+        // Attach the event listener
         window.addEventListener('scroll', handleScroll);
 
+        // Cleanup the event listener on component unmount
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [isFirstScroll]);
+    }, []);
+    const scrollToSteps = () => {
+        const stepsElement = document.getElementById('steps');
+        if (stepsElement) {
+            const offset = -120; // Adjust this value to your desired offset when scrolling
+            const targetPosition = stepsElement.getBoundingClientRect().top + window.scrollY + offset;
+            const startPosition = window.scrollY;
+            const startTime = performance.now();
+
+            const scroll = (currentTime) => {
+                const timeElapsed = currentTime - startTime;
+                const progress = Math.min(timeElapsed / 1000, 1); // 500 milliseconds duration
+                const newPosition = startPosition + progress * (targetPosition - startPosition);
+
+                window.scrollTo(0, newPosition);
+
+                if (progress < 1) {
+                    requestAnimationFrame(scroll);
+                }
+            };
+
+            requestAnimationFrame(scroll);
+        }
+    };
+
+    useEffect(() => {
+        // Scroll to the "steps" section when the component mounts and the user has scrolled down
+        if (scrolled) {
+            scrollToSteps();
+        }
+    }, [scrolled]);
     const defaultOptions = {
         loop: false,
         autoplay: false,
@@ -86,19 +82,16 @@ function SectionOne() {
         window.location.href = '/Contact-Us';
     };
     console.log(animationDataHome2)
-
-    const seke = () => {
-        setIsFirstScroll(false)
-    }
-
     return (
 
         <>
+            <Element name="sectionOne">
 
             <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -50 }}
+               initial={{ opacity: 0, y: scrolled ? 0 : 50 }}
+               animate={{ opacity: 1, y: 0 }}
+               exit={{ opacity: 0, y: scrolled ? -50 : 0 }}
+               id="sectionOne"
                 
             >
                     <Grid container className="we root-container" sx={{
@@ -211,7 +204,7 @@ function SectionOne() {
                                     <Lottie
 
                                         width="100%" // Use a percentage to make it responsive
-                                        isStopped={animationRun}
+                                        isStopped={animatedRun}
                                         options={defaultOptions}
                                         style={{
                                             position: "absolute",
@@ -245,15 +238,17 @@ function SectionOne() {
 
                     </Grid>
             </motion.div>
-            <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={isFirstScroll === false ? { opacity: 1, y: 0 } : {}}
-                exit={isFirstScroll === false ? { opacity: 0, y: -50 } : {}}
-                id="steps"
-                ref={elementRef}
-            >
-                <OurSolution />
-            </motion.div>
+            </Element>
+
+            <Element  id='steps'>
+                <motion.div
+                    initial={{ opacity: 0, y: scrolled ? 0 : 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: scrolled ? -50 : 0 }}
+                 >
+                    <OurSolution />
+                </motion.div>
+            </Element>
 
 
         </>
