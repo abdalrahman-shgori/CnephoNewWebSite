@@ -25,7 +25,7 @@ function SectionOne() {
     const elementRef = useRef(null);
     const scrollToSteps = () => {
         const element = elementRef.current;
-        const targetOffset = window.innerWidth > 600 ? element.offsetTop - 150 : element.offsetTop - 100;
+        const targetOffset = element.offsetTop - 150;
         const duration = 1000;
         const startingY = window.pageYOffset;
         const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
