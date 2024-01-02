@@ -261,7 +261,11 @@ function NavBar(props) {
                                         fontFamily: "var(--English-font)",
                                         cursor: "pointer",
                                         textTransform: "uppercase",
-                                        textDecoration: "none"
+                                        textDecoration: "none",
+                                        ":hover":{
+                                            color:"var(--header-color)"
+
+                                        }
 
                                     }}
                                     onClick={() => handleLinkClick(index)}

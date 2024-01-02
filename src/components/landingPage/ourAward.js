@@ -33,7 +33,14 @@ function OurAward() {
   }, []);
   return (
     <>
-      <Grid className="bgCaseAwards"
+    <Grid
+    sx={{
+      position:"relative"
+    }}
+    >
+<Box className="bgCaseAwards"/>
+    
+      <Grid className=""
         sx={{
           paddingLeft: { lg: "120px", md: "16px", sm: "16px", xs: "11px" },
           paddingRight: { lg: "120px", md: "16px", sm: "16px", xs: "11px" },
@@ -105,6 +112,7 @@ function OurAward() {
             ))}
           </Grid>
         </Grid>
+      </Grid>
       </Grid>
     </>
   )

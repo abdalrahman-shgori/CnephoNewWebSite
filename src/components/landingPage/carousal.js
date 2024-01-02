@@ -340,7 +340,8 @@ console.log(currentSlide)
                                 width:
                                 {
                                     lg: window.innerWidth > 1380 ?
-                                        `${Math.min(((currentSlide + 4) / settings.slidesToShow) * 100, 100)}%` :
+                                        `${Math.min(((currentSlide + 4) / settings.slidesToShow) * 100, 100)}%`
+                                         :
                                         `${Math.min(((currentSlide + 3) / settings.slidesToShow) * 100, 100)}%`
                                     ,
                                     md: `${Math.min(((currentSlide + 3) / settings.slidesToShow) * 100, 100)}%`,

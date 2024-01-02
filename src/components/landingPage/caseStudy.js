@@ -14,19 +14,28 @@ function CaseStudy() {
     const selectLanguage = i18n.language
     return (
         <>
-            <Grid className="bgCase root-container"
+        <Grid
+        sx={{
+            position:"relative"
+        }}
+        >
+
+        <Box className="bgCase"/>
+
+            <Grid className=" root-container"
                 sx={{
                     paddingLeft: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
                     paddingRight: { lg: "120px", md: "16px", sm: "16px", xs: "16px" },
-                    backgroundPosition: { lg: " 0 -260px", md: " 0 -260px", sm: "0 -160px" },
                     paddingBottom: { lg: "73px", md: "73px", sm: "87px", xs: "87px" },
-                    paddingTop: { lg: "0px", md: "0px", sm: "45px", xs: "117px" },
+                    paddingTop: { lg: "0px", md: "0px", sm: "0px", xs: "0px" },
+                    position:"relative"
                 }}
             >
 
+
                 <Grid
                     sx={{
-                        paddingTop: { lg: "60px", md: "40px" },
+                        paddingTop: { lg: "160px", md: "160px",sm:"64px",xs:"64px" },
                     }}
                 >
                     <Typography
@@ -286,6 +295,7 @@ function CaseStudy() {
                     </Box>
                 </Grid>
             </Grid>
+             </Grid>
         </>
     )
 }

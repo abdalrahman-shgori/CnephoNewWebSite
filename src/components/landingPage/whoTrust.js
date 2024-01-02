@@ -31,7 +31,7 @@ function WhoTrust() {
     ]
     return (
         <>
-            <Grid className="bgTrust"
+            <Grid className=""
                 sx={{
                     paddingTop: { lg: "60px", md: "60px", sm: "60px", xs: "45px" }
                 }}

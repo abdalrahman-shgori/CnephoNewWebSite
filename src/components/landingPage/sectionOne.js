@@ -16,10 +16,12 @@ import OurSolution from './ourSolution';
 
 
 function SectionOne() {
+
     const [scrolled, setScrolled] = useState(false);
-    const [animatedRun,setAnimatedRund]=useState(true);
-    const [showSection,setShowSection]=useState(false)
+    const [animatedRun, setAnimatedRund] = useState(true);
+    const [showSection, setShowSection] = useState(false)
     const sectionRef = useRef(null);
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -90,14 +92,15 @@ function SectionOne() {
         <>
             <Element name="sectionOne">
 
-            <motion.div
-               initial={{ opacity: 0, y: scrolled ? 0 : 50 }}
-               animate={{ opacity: 1, y: 0 }}
-               exit={{ opacity: 0, y: scrolled ? -50 : 0 }}
-               id="sectionOne"
-                
-            >
-                    <Grid container className="we root-container" sx={{
+                <motion.div
+                    initial={{ opacity: 0, y: scrolled ? 0 : 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: scrolled ? -50 : 0 }}
+                    id="sectionOne"
+
+                >
+                    <Box className="we" />
+                    <Grid container className="root-container" sx={{
                         paddingTop: { lg: "110px", md: "110px", sm: "110px", xs: "116px" },
                         position: "relative",
                         paddingBottom: { lg: "292px", md: "80px", sm: "40px", xs: "140px" },
@@ -109,10 +112,9 @@ function SectionOne() {
                             }}>
 
                             <Typography
-                                className="BetterSolutionText"
+                                className="typing-animation"
                                 sx={{
                                     padding: selectLanguage === "en" ? { lg: "0px 0px 0px 120px", xs: "20px 49px 0px 16px" } : { lg: "20px 120px 0px 120px", md: "20px 16px 0px 49px", xs: "20px 16px 0px 49px" },
-
                                     color: "var(--white-color)",
                                     fontSize: { lg: "64px", md: "64px", sm: "40px", xs: "40px", xxs: "10px" },
                                     textTransform: "uppercase",
@@ -123,7 +125,7 @@ function SectionOne() {
                                     fontStyle: "normal",
                                     whiteSpace: "nowrap",
                                     fontFamily: "var(--English-font)",
-                                    width: selectLanguage === "en" ? { lg: "521px", md: "521px", xs: "325px" } : { lg: "464px", md: "464px", xs: "225px" }
+                                    width: selectLanguage === "en" ? { lg: "100%", md: "521px", xs: "325px" } : { lg: "464px", md: "464px", xs: "225px" }
                                 }}
                             >
                                 {selectLanguage === "en" ?
@@ -162,7 +164,7 @@ function SectionOne() {
 
                             </Typography>
 
-                            <Button
+                            {/* <Button
                                 onClick={handleContactUsClick}
                                 disableRipple
                                 disableTouchRipple
@@ -182,19 +184,25 @@ function SectionOne() {
                                         }}
                                     />
                                 </div>
-                            </Button>
+                            </Button> */}
                         </Grid>
                         <Grid item lg={6} sm={6.4} xs={12}
                             sx={{
                                 display: "flex",
                                 justifyContent: { lg: "start", md: "center", xs: "center" },
                                 position: "relative",
-                                bottom: { lg: "50px", md: "50px",sm:"50px" },
+                                
+                                bottom: { lg: "50px", md: "50px", sm: "50px" },
+
 
 
                             }}
                         >
-                            <Box>
+                            <Box
+                                sx={{
+                                    transform: selectLanguage === "ar" && "scaleX(-1)"
+                                }}
+                            >
                                 <div style={{
                                     display: "flex",
                                     position: "relative",
@@ -240,16 +248,16 @@ function SectionOne() {
                         </Grid>
 
                     </Grid>
-            </motion.div>
+                </motion.div>
             </Element>
 
-            <Element  id='steps'>
+            <Element id='steps'>
                 <motion.div
-                      initial={{ opacity: 0, y: 50 }}
-                      animate={showSection === true ? { opacity: 1, y: 0 } : {}}
-                      exit={showSection === true ? { opacity: 0, y: -50 } : {}}
-                      transition={{ duration: 1 }} // Adjust this value to your desired duration in seconds
-                 >
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={showSection === true ? { opacity: 1, y: 0 } : {}}
+                    exit={showSection === true ? { opacity: 0, y: -50 } : {}}
+                    transition={{ duration: 1 }} // Adjust this value to your desired duration in seconds
+                >
                     <OurSolution />
                 </motion.div>
             </Element>

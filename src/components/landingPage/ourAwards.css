@@ -1,12 +1,15 @@
 .bgCaseAwards{
     background-image: url("../../assets/images/BG.png");
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 0 -1400px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  height: 900px;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
 }
 @media screen and (max-width:800px) {
     .bgCaseAwards{
-        background-image: url("");
 
     }
 }

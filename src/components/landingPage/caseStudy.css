@@ -2,10 +2,34 @@
     background-image: url("../../assets/images/BG.png");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+    height: 1200px;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    top:0px
 }
+@media screen and (max-width:1300px) {
+    .bgCase{
+        height: 1000px;
+        top: 0;
 
+
+    }
+}
+@media screen and (max-width:1000px) {
+    .bgCase{
+        height: 1000px;
+        top: -10%;
+
+
+    }
+}
 @media screen and (max-width:600px) {
     .bgCase{
-        background-image: url("");
+        height: 1000px;
+        top: -8%;
+
+
     }
 }
