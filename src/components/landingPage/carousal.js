@@ -3,16 +3,26 @@ import { useTranslation } from "react-i18next";
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import './carousal.css'; 
+import './carousal.css';
 import { Box, Grid, Typography, button } from '@mui/material';
 import greenShape from "../../assets/images/SolutionCard.svg";
+import uiux from "../../assets/images/UiUx.svg"
 import ArrowRight from "../../assets/images/Group.svg"
 import ArrowLeft from "../../assets/images/arrowRightCarousal.svg"
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { motion } from 'framer-motion'
+import UiUx from './UiUxSvg';
+import WebSvg from './webDevelopmentSvg';
+import CyperSecuritySvg from './cyperSecuritySvg';
+import CalendarSvg from './CalendarSvg';
+import { Slideshow } from '@mui/icons-material';
 
 const Carousel = (props) => {
+
+
+
+
     const [progressBarWidth, setProgressBarWidth] = useState(0);
 
     const { t, i18n } = useTranslation();
@@ -23,13 +33,17 @@ const Carousel = (props) => {
             easing: "ease-out-cubic",
         });
     }, []);
+
+
+
     const items = [
-        { id: 0, name: "UI/UX design", img: greenShape, desc: "our customers get solutions and businesses opportunities instead of just project" },
-        { id: 1, name: "Web development", img: greenShape, desc: "our customers get solutions and businesses opportunities instead of just project" },
-        { id: 2, name: "Cyber Security", img: greenShape, desc: "our customers get solutions and businesses opportunities instead of just project" },
-        { id: 3, name: "business planning", img: greenShape, desc: "our customers get solutions and businesses opportunities instead of just project" }
+        { id: 0, name: "UI/UX design", img: <UiUx />, desc: "our customers get solutions and businesses opportunities instead of just project" },
+        { id: 1, name: "Web development", img: <WebSvg />, desc: "our customers get solutions and businesses opportunities instead of just project" },
+        { id: 2, name: "Cyber Security", img: <CyperSecuritySvg />, desc: "our customers get solutions and businesses opportunities instead of just project" },
+        { id: 3, name: "business planning", img: <CalendarSvg />, desc: "our customers get solutions and businesses opportunities instead of just project" }
     ];
     const [currentSlide, setCurrentSlide] = useState(0);
+    
     const selectedLanguage = i18n.language;
     const [forceRerender, setForceRerender] = useState(false);
 
@@ -89,19 +103,49 @@ const Carousel = (props) => {
 
 
     const sliderRef = useRef(null);
-
+console.log(currentSlide)
     const handleNext = () => {
         if (sliderRef.current) {
             sliderRef.current.slickNext();
+
             if (sliderRef.current === 3) {
                 sliderRef.current.slickPrev()
             }
         }
+        console.log(sliderRef.current.state.breakpoint,"wke")
+        if(window.innerWidth < 1381 && currentSlide < 1){
+            props.onNextClick();
+
+        }
+        else if (window.innerWidth < 890 && currentSlide < 2){
+            props.onNextClick();
+
+        }
+
+        else if (window.innerWidth < 560 && currentSlide < 3){
+            props.onNextClick();
+
+        }
+       
+       
     };
 
     const handlePrev = () => {
         if (sliderRef.current) {
             sliderRef.current.slickPrev();
+        }
+        if(window.innerWidth < 1381 && currentSlide < 1){
+            props.onNextClick();
+
+        }
+        else if (window.innerWidth < 890 && currentSlide < 2){
+            props.onNextClick();
+
+        }
+
+        else if (window.innerWidth < 560 && currentSlide < 3){
+            props.onNextClick();
+
         }
     };
     useEffect(() => {
@@ -148,8 +192,8 @@ const Carousel = (props) => {
 
             }}
         >
-             
-            <Slider ref={sliderRef} {...settings} key={forceRerender}
+
+            <Slider onSwipe={props.onNextClick} ref={sliderRef} {...settings} key={forceRerender}
                 centerPadding="0px" // Adjust the value for the desired gap
 
             >
@@ -159,7 +203,7 @@ const Carousel = (props) => {
                     <Grid key={idx}
 
                     >
-                       
+
 
                         <Box
                             sx={{
@@ -182,7 +226,8 @@ const Carousel = (props) => {
                                     zIndex: 1, // Add this line
                                 }}
                             >
-                                <img src={greenShape} alt="Green Shape" />
+                                {/* <img src={item.img} alt="Green Shape" /> */}
+                                {item.img}
 
                             </Box>
 
@@ -248,7 +293,7 @@ const Carousel = (props) => {
                         </Box>
                     </Grid>
                 ))}
-                
+
                 {/* Add more cards as needed */}
             </Slider>
             <Grid item container spacing={0}

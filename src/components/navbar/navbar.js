@@ -12,7 +12,7 @@ import List from '@mui/material/List';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import Logo from "../../assets/images/Logo.svg"
+import Logo from "../../assets/images/logo-white.svg"
 import "../../assets/styles/variables.css";
 import arrowRight from "../../assets/images/arrowRight.svg"
 import LanguageSwitcher from './LanguageSwitcher';
@@ -238,7 +238,7 @@ function NavBar(props) {
                 }}>
                     <Box className="logoGap" sx={{ display: "flex", alignItems: "center" }}>
 
-                        <img style={{ cursor: "pointer", zIndex: "3", position: "relative" }} onClick={handleBackToHomePage} src={Logo}></img>
+                        <img style={{ cursor: "pointer", zIndex: "3", position: "relative",width:"103px",height:"57px" }} onClick={handleBackToHomePage} src={Logo}></img>
 
                         <Box sx={{ display: { lg: "flex", xs: 'none', sm: 'none' } }}>
                             {navItems.slice(1, 6).map((items, index) => (

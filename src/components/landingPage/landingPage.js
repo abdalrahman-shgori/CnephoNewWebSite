@@ -16,31 +16,8 @@ import Blog from "./blogs";
 import Makeappointement from "./MakeAppointement";
 function LandingPage() {
     const { t, i18n } = useTranslation();
-    const [componentsLoaded, setComponentsLoaded] = useState(false);
 
-    // useEffect(() => {
-    //     const disableScrolling = () => {
-    //         document.body.style.overflow = 'hidden';
-    //         setTimeout(() => {
-    //             document.body.style.overflow = '';
-    //         }, 1500);
-    //     };
-    
-    //     // Simulate an asynchronous operation (e.g., fetching data, loading images)
-    //     // Replace the setTimeout with your actual loading logic
-    //     const simulateLoading = () => {
-    //       setTimeout(() => {
-    //         setComponentsLoaded(true);
-    //       }, 2000); // Adjust the duration as needed
-    //     };
-    
-    //     disableScrolling();
-    
-    //     // Clean up the event listener on component unmount
-    //     return () => {
-    //       window.removeEventListener("scroll", disableScrolling);
-    //     };
-    //   }, []);
+  
     return (
         <>
         <div className="root-container">

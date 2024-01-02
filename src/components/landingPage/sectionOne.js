@@ -53,7 +53,7 @@ function SectionOne() {
 
             const scroll = (currentTime) => {
                 const timeElapsed = currentTime - startTime;
-                const progress = Math.min(timeElapsed / 1000, 1); // 500 milliseconds duration
+                const progress = Math.min(timeElapsed / 900, 1); // 500 milliseconds duration
                 const newPosition = startPosition + progress * (targetPosition - startPosition);
 
                 window.scrollTo(0, newPosition);

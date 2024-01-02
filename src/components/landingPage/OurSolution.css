@@ -1,10 +1,179 @@
+@keyframes drawPath {
+    
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Apply animation to the first path with class 'cls-2' */
+  .uiux-2 {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: drawPath 5s ease-in-out forwards;
+  }
+  
+  /* Apply animation to the second path with class 'cls-3' */
+  .uiux {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    transform-origin: center;
+    transform-box: fill-box;
+
+}
+
+  @keyframes drawPathUiUx {
+    0% {
+        stroke-dashoffset: 1000;
+      }
+      50%{
+        stroke-dashoffset: 500;
+      }
+      100% {
+        stroke-dashoffset: 0;
+      }
+  }
+  .webtriangle{
+    /* animation: move 4s infinite; */
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+ 
+  @keyframes move {
+    0%{
+        transform: translateY(0px) rotate(190deg);
+      
+
+    }
+    25%{
+        transform: translateY(10px) translateX(-4px) rotate(90deg);
+      
+
+    }
+    50%{
+        transform: translateX(-18px) translateY(10px) rotate(90deg);
+      
+
+    }
+    75%{
+        transform: translateX(-20px) translateY(6px) ;
+
+    }
+    100%{
+        transform: translateX(0px) translateY(0px) rotate(-90deg);
+
+    }
+    
+    
+  }
+  .computer{
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    /* animation: drawPathComputer 5s  forwards; */
+
+  }
+  @keyframes drawPathComputer {
+    0% {
+        stroke-dashoffset: 1000;
+      }
+      50%{
+        stroke-dashoffset: 500;
+
+      }
+      100% {
+        stroke-dashoffset: 0;
+
+      }
+  }
+
+  .Cyper{
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    /* animation: drawPathCyper 5s  forwards; */
+  }
+  @keyframes drawPathCyper {
+    0% {
+        stroke-dashoffset: 1000;
+      }
+      50%{
+        stroke-dashoffset: 500;
+
+      }
+      100% {
+        stroke-dashoffset: 0;
+
+      }
+  }
+
+  
+  .calendar{
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    /* animation: drawPathCyper 5s  forwards; */
+  }
+  @keyframes drawPathCalendar {
+    0% {
+        stroke-dashoffset: 1000;
+      }
+      50%{
+        stroke-dashoffset: 500;
+
+      }
+      100% {
+        stroke-dashoffset: 0;
+
+      }
+  }
+
+  
+  /* Apply animation to the circle with class 'cls-3' */
+ 
+  
+  @keyframes scaleCircle {
+    to {
+      transform: scale(1);
+    }
+  }
+   @keyframes changeFillColor {
+    0% {
+      fill: #303c73;
+    }
+    100% {
+      fill: #fff;
+    }
+  }
+
+
+
+
+
 .bg1 {
 
     background-image: url("../../assets/images/SolutionBG.svg");
     background-repeat: no-repeat;
     height: 660px;
+    width: 100%;
+    position:absolute;
+    /* animation: anim 2s linear infinite; */
+
     /* Adjust as needed */
 
+}
+@keyframes anim {
+    from{
+        transform: translateX(-100px);
+    }
+    to{
+        transform: translateX(0px);
+    }
 }
 
 .bg2 {
@@ -12,22 +181,38 @@
     background-image: url("../../assets/images/SecSolutionBG.svg");
     background-repeat: no-repeat;
     background-position: 200px;
-    height: 670px;
+    height: 673px;
+    width: 100%;
+    position:absolute
+
     /* Adjust as needed */
 
 
 }
 
+body{
+    overflow-x: hidden;
+}
+html{
+    overflow-x: hidden;
+}
 .bg3 {
     background-image: url("../../assets/images/thirdSolutionBG.svg");
     background-repeat: no-repeat;
     background-position: right bottom;
     height: 670px;
+    width: 100%;
+    right: 0;
+    position:absolute
+
     /* Adjust as needed */
 
 }
 
-@media screen and (max-width:1200px) {
+
+  
+
+@media screen and (max-width:1201px) {
     .bg1 {
         background-image: url("../../assets/images/SolutionBGSM.svg");
         height: 375px;
@@ -48,10 +233,9 @@
         background-image: url("../../assets/images/SecSolutionBGSM.svg");
         background-position: right -22px;
         /* Adjust as needed */
-        height: 100%;
         width: 100%;
         float: right;
-        position: relative;
+        position: absolute;
 
     }
 }
@@ -62,10 +246,9 @@
         background-image: url("../../assets/images/SecSolutionBGSM.svg");
         background-position: right 24px;
         /* Adjust as needed */
-        height: 100%;
         width: 100%;
-        float: right;
-        position: relative;
+        position: absolute;
+        right: 0;
 
     }
 }
