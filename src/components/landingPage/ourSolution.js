@@ -120,6 +120,9 @@ function OurSolution() {
                     style={{
                         position:"relative"
                     }}
+                    transition={{
+                        duration:2
+                    }}
                 // Exit animation (optional)
                 >
                     <Grid className="bg3">

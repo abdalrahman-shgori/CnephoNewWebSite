@@ -134,16 +134,14 @@ console.log(currentSlide)
         if (sliderRef.current) {
             sliderRef.current.slickPrev();
         }
-        if(window.innerWidth < 1381 && currentSlide < 1){
+        if(window.innerWidth < 1381 && currentSlide <= 1 && currentSlide > 0){
+            props.onNextClick();
+        }
+        else if (window.innerWidth < 890 && currentSlide <= 2 && currentSlide > 0){
             props.onNextClick();
 
         }
-        else if (window.innerWidth < 890 && currentSlide < 2){
-            props.onNextClick();
-
-        }
-
-        else if (window.innerWidth < 560 && currentSlide < 3){
+        else if (window.innerWidth < 560 && currentSlide <= 3 && currentSlide > 0){
             props.onNextClick();
 
         }
