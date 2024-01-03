@@ -16,7 +16,6 @@ import Blog from "./blogs";
 import Makeappointement from "./MakeAppointement";
 function LandingPage() {
     const { t, i18n } = useTranslation();
-    const [componentsLoaded, setComponentsLoaded] = useState(false);
 
     // useEffect(() => {
     //     const disableScrolling = () => {

@@ -14,7 +14,7 @@ import Footer from './components/footer/footer';
 import { Box } from '@mui/material';
 import logo from "./assets/images/logo-white.svg"
 import { motion, AnimatePresence } from 'framer-motion';
-import FadingLogo from './components/logoSvg';
+import FadingLogo from './logoSvg';
 
 function App() {
   const [landingPageLoaded, setLandingPageLoaded] = useState(false);
