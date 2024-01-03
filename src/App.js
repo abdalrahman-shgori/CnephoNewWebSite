@@ -47,16 +47,7 @@ function App() {
     <>
       {window.location.pathname === '/' && !landingPageLoaded ? (
         <Box
-          sx={{
-            display: "flex",
-            width:"20%",
-           justifyContent:"center",
-           alignItems:"center",
-           height:"100vh",
-           marginLeft:"auto",
-           marginRight:"auto"
          
-          }}
         >
           <SvgComponent/>
         </Box>
