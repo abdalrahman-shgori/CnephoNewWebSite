@@ -33,7 +33,7 @@ function App() {
    const simulateLandingPageLoading = () => {
      setTimeout(() => {
        setLandingPageLoaded(true);
-     }, 2000);
+     }, 2500);
    };
    if (window.location.pathname === '/') {
      simulateLandingPageLoading();
@@ -53,10 +53,10 @@ function App() {
          justifyContent:"center",
          alignItems:"center",
          height:"100vh",
-         width:"20%",
+         width:{lg:"20%",md:"20%",sm:"20%",xs:"30%"},
          marginLeft:"auto",
          marginRight:"auto",
-         overflow:"hidden"
+         overflowY:"hidden"
         }}
         >
        <Abdooo/>

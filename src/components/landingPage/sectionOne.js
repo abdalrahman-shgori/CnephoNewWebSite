@@ -93,9 +93,12 @@ function SectionOne() {
             <Element name="sectionOne">
 
                 <motion.div
-                    initial={{ opacity: 0, y: scrolled ? 0 : 50 }}
+                    initial={{ opacity: 0, y: scrolled ? 0 : 150 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: scrolled ? -50 : 0 }}
+                    transition={{
+                        duration:1.5
+                    }}
                     id="sectionOne"
 
                 >
@@ -108,6 +111,7 @@ function SectionOne() {
                         <Grid item lg={5.6} sm={5.6} xs={12}
                             sx={{
                                 height: "100%",
+                                marginTop:{lg:"60px",md:"60px",sm:"0px",xs:"0px"}
 
                             }}>
 

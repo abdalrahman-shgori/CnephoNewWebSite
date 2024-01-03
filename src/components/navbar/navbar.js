@@ -18,6 +18,13 @@ import arrowRight from "../../assets/images/arrowRight.svg"
 import LanguageSwitcher from './LanguageSwitcher';
 import "./navbar.css"
 import { useEffect } from 'react';
+import LogoNav from '../landingPage/logoNav';
+import AOS from "aos";
+import {motion,AnimatePresence} from 'framer-motion'
+
+
+AOS.init();
+
 const drawerWidth = "100%";
 function NavBar(props) {
     const [isMounted, setIsMounted] = useState(false);
@@ -151,6 +158,7 @@ function NavBar(props) {
 
 
             <Box
+            
                 sx={{
                     textAlign: 'center',
                     position: "relative",
@@ -210,17 +218,24 @@ function NavBar(props) {
     };
     const container = windowMenu !== undefined ? () => window().document.body : undefined;
     return (
-        <Box>
+        <motion.Box
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{
+            duration:2
+        }}
+        >
             <CssBaseline />
             <AppBar component="nav"
                 sx={{
                     overflowY: "hidden",
                     position: "absolute",
-                    paddingLeft: selectLanguage === "en" ? { lg: "96px", sm: "6px", xs: "6px" } : { lg: "56px", sm: "26px", xs: "26px" },
+                    paddingLeft: selectLanguage === "en" ? { lg: "96px", sm: "6px", xs: "26px" } : { lg: "56px", sm: "26px", xs: "26px" },
                     paddingRight: selectLanguage === "en" ? { lg: "56px", sm: "26px", xs: "26px" } : { lg: "96px", sm: "6px", xs: "6px" },
                     boxShadow: "none",
                     paddingTop: { lg: "26px", sm: "36px", xs: "36px" },
-                    paddingBottom: "0px",
+                    paddingBottom: "20px",
                     backgroundColor: mobileOpen === false ? "transparent" : "var(--website-bg-color)",
                     fontFamily: "var(--English-font)",
                     transition: mobileOpen === true ? 'background-color 0s ease-out' : 'background-color 0s ease', // Adjust the duration as needed
@@ -238,7 +253,9 @@ function NavBar(props) {
                 }}>
                     <Box className="logoGap" sx={{ display: "flex", alignItems: "center" }}>
 
-                        <img style={{ cursor: "pointer", zIndex: "3", position: "relative",width:"103px",height:"57px" }} onClick={handleBackToHomePage} src={Logo}></img>
+                        <Box style={{ cursor: "pointer", zIndex: "3", position: "relative",width:"103px",height:"57px" }} onClick={handleBackToHomePage}>
+                            <LogoNav/>
+                        </Box>
 
                         <Box sx={{ display: { lg: "flex", xs: 'none', sm: 'none' } }}>
                             {navItems.slice(1, 6).map((items, index) => (
@@ -371,7 +388,7 @@ function NavBar(props) {
                 <Toolbar />
             </Box>
 
-        </Box>
+        </motion.Box>
     );
 }
 NavBar.propTypes = {
