@@ -31,7 +31,7 @@ function App() {
     const simulateLandingPageLoading = () => {
       setTimeout(() => {
         setLandingPageLoaded(true);
-      }, 2500);
+      }, 3000);
     };
     if (window.location.pathname === '/') {
       simulateLandingPageLoading();

@@ -1,7 +1,7 @@
 .cls-2{
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  animation: animationLogo 5s  forwards;
+  animation: animationLogo 6s  forwards;
 
 }
 @keyframes  animationLogo {
@@ -21,7 +21,7 @@
 .cls-3{
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  animation: animationLogo2 2s 1s  forwards;
+  animation: animationLogo2 8s 1s  forwards;
 
 }
 @keyframes  animationLogo2 {
@@ -60,7 +60,7 @@
 }
 
 .logoOpacity{
-  animation: opacityFade 1s 2s linear;
+  animation: opacityFade 1.5s 2s linear forwards;
 }
 @keyframes opacityFade {
   from{
