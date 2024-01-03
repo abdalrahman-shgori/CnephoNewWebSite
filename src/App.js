@@ -45,15 +45,8 @@ function App() {
     <>
       {window.location.pathname === '/' && !landingPageLoaded ? (
         <>
-          <Grid
-          sx={{
-            width:"30%",
-          
          
-          }}
-        >
           <SvgComponent/>
-        </Grid>
         </>
       
       ) : (

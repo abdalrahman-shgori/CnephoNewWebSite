@@ -17,6 +17,17 @@ const draw = {
     }
   };
 const SvgComponent = (props) => (
+    <div
+    style={{
+        display:"flex",
+        justifyContent:"center",
+        height:"100vh",
+        alignItems:"center",
+        width:"30%",
+        marginLeft:"auto",
+        marginRight:"auto"
+    }}
+    >
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 79.5 64.341" {...props}>
     <defs>
       <style>{".cls-2,.cls-3{fill:#303c73}.cls-2{fill-rule:evenodd}"}</style>
@@ -133,5 +144,7 @@ const SvgComponent = (props) => (
       </motion.g>
     </g>
   </svg>
+    </div>
+
 )
 export default SvgComponent
