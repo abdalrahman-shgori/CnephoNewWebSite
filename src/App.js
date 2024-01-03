@@ -15,6 +15,7 @@ import { Box } from '@mui/material';
 import logo from "./assets/images/logo-white.svg"
 import { motion, AnimatePresence } from 'framer-motion';
 import FadingLogo from './FadingLogo';
+import LogoNav from './components/landingPage/logoNav';
 
 function App() {
   const [landingPageLoaded, setLandingPageLoaded] = useState(false);
@@ -57,7 +58,7 @@ function App() {
          
           }}
         >
-          <FadingLogo/>
+          <LogoNav/>
         </Box>
       ) : (
         <ThemeSettings>
