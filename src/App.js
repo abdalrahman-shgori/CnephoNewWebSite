@@ -11,8 +11,7 @@ import NavBar from './components/navbar/navbar';
 import Footer from './components/footer/footer';
 import { Box } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
-import UiUx from './components/landingPage/UiUxSvg';
-import FadingLogo from './FadingLogo';
+import FadeLogoSvg from './FadeLogoSvg';
 
 function App() {
   const [landingPageLoaded, setLandingPageLoaded] = useState(false);
@@ -55,8 +54,7 @@ function App() {
          
           }}
         >
-          <FadingLogo/>
-          <UiUx/>
+          <FadeLogoSvg/>
         </Box>
       ) : (
         <ThemeSettings>
