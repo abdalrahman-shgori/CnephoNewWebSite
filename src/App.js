@@ -47,12 +47,8 @@ function App() {
         <>
           <Grid
           sx={{
-            display: "flex",
             width:"30%",
-           justifyContent:"center",
-           alignItems:"center",
-           height:"100vh",
-           overflowY:"hidden",
+          
          
           }}
         >
