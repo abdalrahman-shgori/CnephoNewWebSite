@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.76e381a0.css",
-    "main.js": "/static/js/main.f89e34a7.js",
+    "main.js": "/static/js/main.90f75ede.js",
     "static/js/787.d1cde593.chunk.js": "/static/js/787.d1cde593.chunk.js",
     "static/media/bgVector.svg": "/static/media/bgVector.b4fb93b455f0d682835d.svg",
     "static/media/HelpBG.svg": "/static/media/HelpBG.bed9b10e5176529c1de3.svg",
@@ -39,7 +39,7 @@
     "static/media/FormVector2.svg": "/static/media/FormVector2.179b9f6e515f444d36674ce9f7e09633.svg",
     "static/media/FormVector.svg": "/static/media/FormVector.e57ef3e89ec4052d5c94b358d58f3a39.svg",
     "static/media/award4.svg": "/static/media/award4.1a5482193be98a4efb71c95e37b679e8.svg",
-    "static/media/logo-white.svg": "/static/media/logo-white.4420763251c8bd68d543f67fc179c48f.svg",
+    "static/media/logo-white.svg": "/static/media/logo-white.e267a3cae6069da11fd165de4039c2b7.svg",
     "static/media/award2.svg": "/static/media/award2.fa56e22a98a17498a2f002eb20df8a13.svg",
     "static/media/Blogbg.svg": "/static/media/Blogbg.1abd8ea68775dc48cb8d.svg",
     "static/media/UiUx.svg": "/static/media/UiUx.861f21cc1c35eccd307f4bf21dece007.svg",
@@ -78,11 +78,11 @@
     "static/media/SecSolutionBGSM.svg": "/static/media/SecSolutionBGSM.4862eb39d6205617b216.svg",
     "static/media/thirdSolutionBG.svg": "/static/media/thirdSolutionBG.d68e4176a66e2636f997.svg",
     "main.76e381a0.css.map": "/static/css/main.76e381a0.css.map",
-    "main.f89e34a7.js.map": "/static/js/main.f89e34a7.js.map",
+    "main.90f75ede.js.map": "/static/js/main.90f75ede.js.map",
     "787.d1cde593.chunk.js.map": "/static/js/787.d1cde593.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.76e381a0.css",
-    "static/js/main.f89e34a7.js"
+    "static/js/main.90f75ede.js"
   ]
 }

@@ -14,7 +14,7 @@ import Footer from './components/footer/footer';
 import { Box } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
 import Abdooo from './components/FadingLogo';
-
+import logo from "./assets/images/logo-white.svg"
 function App() {
   const [landingPageLoaded, setLandingPageLoaded] = useState(false);
   const navigate = useNavigate();
@@ -55,7 +55,8 @@ function App() {
             transform: "translate(-50%, -50%)"
           }}
         >
-          <Abdooo/>
+          <img src={logo}></img>
+          
 
         </Box>
       ) : (
