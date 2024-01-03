@@ -19,11 +19,11 @@ const draw = {
 const SvgComponent = (props) => (
     <div
     style={{
-        height:"100vh",
-        display:"grid",
-        placeItems:"center",
-        width:"30%",
-        margin:"auto"
+        position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: "30%",
         
     }}
     >

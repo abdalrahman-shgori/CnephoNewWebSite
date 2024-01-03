@@ -60,7 +60,7 @@
 }
 
 .logoOpacity{
-  animation: opacityFade 1.5s 2s linear forwards;
+  animation: opacityFade 1s 2s linear forwards;
 }
 @keyframes opacityFade {
   from{
