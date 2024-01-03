@@ -16,8 +16,24 @@ import Blog from "./blogs";
 import Makeappointement from "./MakeAppointement";
 function LandingPage() {
     const { t, i18n } = useTranslation();
+    const [componentsLoaded, setComponentsLoaded] = useState(false);
 
-  
+    // useEffect(() => {
+    //     const disableScrolling = () => {
+    //         document.body.style.overflow= 'hidden';
+    //         setTimeout(() => {
+    //             document.body.style.overflow = '';
+    //         },4000);
+    //     };
+    
+     
+    
+    //     disableScrolling();
+    
+    //     return () => {
+    //       window.removeEventListener("scroll", disableScrolling);
+    //     };
+    //   }, []);
     return (
         <>
         <div className="root-container">

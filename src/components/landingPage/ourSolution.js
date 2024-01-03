@@ -46,6 +46,7 @@ function OurSolution() {
                 sx={{
                     position: "relative",
                     // marginBottom: { lg: "-20px", md: "0px", sm: "0px", xs: "0px" },
+                    overflowX:"hidden"
                 }}
             >
                 <Box

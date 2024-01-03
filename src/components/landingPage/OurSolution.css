@@ -190,12 +190,12 @@
 
 }
 
-body{
+/* body{
     overflow-x: hidden;
 }
 html{
     overflow-x: hidden;
-}
+} */
 .bg3 {
     background-image: url("../../assets/images/thirdSolutionBG.svg");
     background-repeat: no-repeat;

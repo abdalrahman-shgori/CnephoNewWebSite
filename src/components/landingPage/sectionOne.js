@@ -20,6 +20,7 @@ function SectionOne() {
     const [scrolled, setScrolled] = useState(false);
     const [animatedRun, setAnimatedRund] = useState(true);
     const [showSection, setShowSection] = useState(false)
+    const [scrollBarEnable,setScrollBarEnabel]=useState(true)
     const sectionRef = useRef(null);
 
 
@@ -29,16 +30,21 @@ function SectionOne() {
             if (window.scrollY > 10) {
                 setScrolled(true);
                 setAnimatedRund(false)
-                setShowSection(true)
+                setShowSection(true);
             } else {
                 setScrolled(false);
                 setAnimatedRund(true)
-                setShowSection(true)
+                setShowSection(true);
+
             }
+           
+
+           
         };
 
         // Attach the event listener
         window.addEventListener('scroll', handleScroll);
+        
 
         // Cleanup the event listener on component unmount
         return () => {
@@ -47,12 +53,14 @@ function SectionOne() {
     }, []);
     const scrollToSteps = () => {
         const stepsElement = document.getElementById('steps');
+        
         if (stepsElement) {
             // const offset =
             //     window.innerWidth > 600 ? 0 : -40; 
             const targetPosition = stepsElement.getBoundingClientRect().top + window.scrollY - 20;
             const startPosition = window.scrollY;
             const startTime = performance.now();
+
 
             const scroll = (currentTime) => {
                 const timeElapsed = currentTime - startTime;
@@ -63,7 +71,14 @@ function SectionOne() {
 
                 if (progress < 1) {
                     requestAnimationFrame(scroll);
+                    document.body.style.overflow= 'hidden';
+
                 }
+                else{
+                    document.body.style.overflow= '';
+
+                }
+               
             };
 
             requestAnimationFrame(scroll);
@@ -72,9 +87,13 @@ function SectionOne() {
 
     useEffect(() => {
         if (scrolled) {
+            
             scrollToSteps();
+
         }
     }, [scrolled]);
+
+     
     const defaultOptions = {
         loop: false,
         autoplay: false,
@@ -90,7 +109,7 @@ function SectionOne() {
     return (
 
         <>
-            <Element name="sectionOne ">
+            <Element name="sectionOne "   >
 
                 <motion.div
                     initial={{ opacity: 0, y: scrolled ? 0 : 150 }}
@@ -100,15 +119,14 @@ function SectionOne() {
                         duration: 1.5
                     }}
                     id="sectionOne"
-
                 >
                     <Box className="we root-container" />
                     <Grid container className="root-container" sx={{
                         paddingTop: { lg: "110px", md: "110px", sm: "110px", xs: "116px" },
                         position: "relative",
-                        paddingBottom: {xl:"200px", lg: "126px", md: "60px", sm: "60px", xs: "100px" },
+                        paddingBottom: {xl:"200px", lg: "136px", md: "70px", sm: "60px", xs: "100px" },
                     }}>
-                        <Grid item lg={5.6} md={5.8} sm={5.6} xs={12}
+                        <Grid item lg={5.6} md={5.6} sm={5.6} xs={12}
                             sx={{
                                 height: "100%",
                                 marginTop: { lg: "60px", md: "0px", sm: "0px", xs: "0px" }
@@ -190,16 +208,12 @@ function SectionOne() {
                                 </div>
                             </Button> */}
                         </Grid>
-                        <Grid item lg={6} md={6} sm={6.4} xs={12}
+                        <Grid item lg={6.4} md={6.4} sm={6.4} xs={12}
                             sx={{
                                 display: "flex",
                                 justifyContent: { lg: "start", md: "center", xs: "center" },
                                 position: "relative",
-
                                 bottom: { lg: "50px", md: "50px", sm: "50px" },
-
-
-
                             }}
                         >
                             <Box
@@ -213,10 +227,11 @@ function SectionOne() {
                                     flexDirection: "column",
                                     alignItems: "center",
                                     justifyContent: "center",
-                                    width: "100%", // Make sure the container takes up the full width
+                                    width: "100%", 
                                 }}>
                                     <LottieAnimation animationData={animationDataHome2} />
                                     <Lottie
+                                    
 
                                         width="100%" // Use a percentage to make it responsive
                                         isStopped={animatedRun}
@@ -257,10 +272,10 @@ function SectionOne() {
 
             <Element id='steps'>
                 <motion.div
-                    initial={{ opacity: 0, y: 50 }}
+                    initial={{ opacity: 0, y: 150 }}
                     animate={showSection === true ? { opacity: 1, y: 0 } : {}}
                     exit={showSection === true ? { opacity: 0, y: -50 } : {}}
-                    transition={{ duration: 1 }} // Adjust this value to your desired duration in seconds
+                    transition={{ duration: 2  }} // Adjust this value to your desired duration in seconds
                 >
                     <OurSolution />
                 </motion.div>
