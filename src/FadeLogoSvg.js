@@ -1,8 +1,11 @@
 import * as React from "react"
 const FadeLogoSvg = (props) => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 79.998 64.665"
+  xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 79.998 64.665"
+  width={144}
+  height={144}
+  fill="none"
     {...props}
   >
     <defs>
