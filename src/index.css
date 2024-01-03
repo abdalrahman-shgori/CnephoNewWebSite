@@ -11,9 +11,9 @@ body {
 
 
 }
-body{
+/* body{
     overflow-x: hidden;
-}
+} */
 .root-container{
   margin: auto;
   max-width: 2200px;
