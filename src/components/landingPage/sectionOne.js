@@ -68,16 +68,18 @@ function SectionOne() {
                 const newPosition = startPosition + progress * (targetPosition - startPosition);
 
                 window.scrollTo(0, newPosition);
-
+                
+                function prevent(e){
+                    e.preventDefault();
+                }
                 if (progress < 1) {
                     requestAnimationFrame(scroll);
+                    document.body.addEventListener('touchmove',prevent,{passive:false});
                     document.body.classList.add('no-scroll');
-
                 }
                 else{
-                    
                     document.body.classList.remove('no-scroll');
-
+                    document.body.removeEventListener('touchmove',prevent);
 
                 }
                
