@@ -71,19 +71,12 @@ function SectionOne() {
 
                 if (progress < 1) {
                     requestAnimationFrame(scroll);
-                    document.body.style.touchAction = 'none';
-                    document.body.style.msTouchAction = 'none';
-                    document.body.style.overflowY="hidden";
-                    document.documentElement.style.overflowY="hidden"
-                    
+                    document.body.classList.add('no-scroll');
 
                 }
                 else{
-                    document.body.style.touchAction = '';
-                    document.body.style.msTouchAction = '';
-                    document.body.style.overflowY="";
-                    document.documentElement.style.overflowY=""
-
+                    
+                    document.body.classList.remove('no-scroll');
 
 
                 }

@@ -31,6 +31,8 @@
 }
 .no-scroll {
   overflow: hidden;
+  touch-action: none;
+  -ms-touch-action: none;
 }
 
 .frame .text-wrapper {
