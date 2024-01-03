@@ -4,7 +4,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './carousal.css';
-import { Box, Grid, Typography, button } from '@mui/material';
+import { Box, Button, Grid, Typography, button } from '@mui/material';
 import greenShape from "../../assets/images/SolutionCard.svg";
 import uiux from "../../assets/images/UiUx.svg"
 import ArrowRight from "../../assets/images/Group.svg"
@@ -43,7 +43,7 @@ const Carousel = (props) => {
         { id: 3, name: "business planning", img: <CalendarSvg />, desc: "our customers get solutions and businesses opportunities instead of just project" }
     ];
     const [currentSlide, setCurrentSlide] = useState(0);
-    
+
     const selectedLanguage = i18n.language;
     const [forceRerender, setForceRerender] = useState(false);
 
@@ -103,45 +103,49 @@ const Carousel = (props) => {
 
 
     const sliderRef = useRef(null);
-console.log(currentSlide)
+    console.log(currentSlide)
     const handleNext = () => {
-        if (sliderRef.current) {
+        if (window.innerWidth < 1381 && currentSlide < 1) {
+            sliderRef.current.slickNext();
+        }
+        else if (window.innerWidth < 890 && currentSlide < 2) {
             sliderRef.current.slickNext();
 
-            if (sliderRef.current === 3) {
-                sliderRef.current.slickPrev()
-            }
         }
-        console.log(sliderRef.current.state.breakpoint,"wke")
-        if(window.innerWidth < 1381 && currentSlide < 1){
+        else if (window.innerWidth < 560 && currentSlide < 3) {
+            sliderRef.current.slickNext();
+
+        }
+        console.log(sliderRef.current.state.breakpoint, "wke")
+        if (window.innerWidth < 1381 && currentSlide < 1) {
             props.onNextClick();
 
         }
-        else if (window.innerWidth < 890 && currentSlide < 2){
+        else if (window.innerWidth < 890 && currentSlide < 2) {
             props.onNextClick();
 
         }
 
-        else if (window.innerWidth < 560 && currentSlide < 3){
+        else if (window.innerWidth < 560 && currentSlide < 3) {
             props.onNextClick();
 
         }
-       
-       
+
+
     };
 
     const handlePrev = () => {
         if (sliderRef.current) {
             sliderRef.current.slickPrev();
         }
-        if(window.innerWidth < 1381 && currentSlide <= 1 && currentSlide > 0){
+        if (window.innerWidth < 1381 && currentSlide <= 1 && currentSlide > 0) {
             props.onNextClick();
         }
-        else if (window.innerWidth < 890 && currentSlide <= 2 && currentSlide > 0){
+        else if (window.innerWidth < 890 && currentSlide <= 2 && currentSlide > 0) {
             props.onNextClick();
 
         }
-        else if (window.innerWidth < 560 && currentSlide <= 3 && currentSlide > 0){
+        else if (window.innerWidth < 560 && currentSlide <= 3 && currentSlide > 0) {
             props.onNextClick();
 
         }
@@ -341,7 +345,7 @@ console.log(currentSlide)
                                 {
                                     lg: window.innerWidth > 1380 ?
                                         `${Math.min(((currentSlide + 4) / settings.slidesToShow) * 100, 100)}%`
-                                         :
+                                        :
                                         `${Math.min(((currentSlide + 3) / settings.slidesToShow) * 100, 100)}%`
                                     ,
                                     md: `${Math.min(((currentSlide + 3) / settings.slidesToShow) * 100, 100)}%`,
@@ -352,17 +356,28 @@ console.log(currentSlide)
                         />
                     </Box>
                 </Grid>
-
                 <Grid item lg={1} md={1} sm={1} xs={3}
                     sx={{
                         textAlign: "right",
-                        cursor: { lg: "pointer", md: "pointer", sm: "unset", xs: "unset" }
+                        cursor: { lg: "pointer", md: "pointer", sm: "unset", xs: "unset" },
+                        textDecoration: "none"
                     }}
-                    onClick={handleNext}
+
 
 
                 >
-                    <img src={selectedLanguage === "en" ? ArrowLeft : ArrowLeft}></img>
+                    <Button
+                        onClick={handleNext}
+                        disableRipple
+                        disableTouchRipple
+                        sx={{ backgroundColor: "transparent", '&:hover': { backgroundColor: "transparent" } }}
+
+
+                    >
+
+                        <img src={selectedLanguage === "en" ? ArrowLeft : ArrowLeft}></img>
+                    </Button>
+
                 </Grid>
 
             </Grid>

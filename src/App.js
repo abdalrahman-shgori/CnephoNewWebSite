@@ -53,7 +53,7 @@ function App() {
             justifyContent: "center",
             alignItems: "center",
             height: "100vh",
-            width: "20%",
+            width: {lg:"30%",md:"30%",sm:"30%",xs:"50%"},
             marginLeft: "auto",
             marginRight: "auto",
           }}

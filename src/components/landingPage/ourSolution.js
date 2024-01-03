@@ -17,18 +17,18 @@ function OurSolution() {
     const selectedLanguage = i18n.language;
     const animateBg1 = () => {
         bg1AnimationControls.start({
-            x: [-200, 0], // Final x-axis position
+            x: [0,-200,0], // Final x-axis position
             transition: {
-                duration: 1, // Animation duration in seconds
+                duration: 0.5, // Animation duration in seconds
                 ease: 'easeInOut', // Easing function (optional)
             },
         });
     };
     const animateBg3 = () => {
         bg3AnimationControls.start({
-            x: [400, 0], // Final x-axis position
+            x: [0,400,0], // Final x-axis position
             transition: {
-                duration: 1, // Animation duration in seconds
+                duration: 0.5, // Animation duration in seconds
             },
         });
     };
