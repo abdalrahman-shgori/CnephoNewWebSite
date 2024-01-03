@@ -48,7 +48,8 @@ function SectionOne() {
     const scrollToSteps = () => {
         const stepsElement = document.getElementById('steps');
         if (stepsElement) {
-            const offset = window.innerWidth > 600 ? -120 : -40; // Adjust this value to your desired offset when scrolling
+            const offset =
+             window.innerWidth > 600 ? -120 : -40; // Adjust this value to your desired offset when scrolling
             const targetPosition = stepsElement.getBoundingClientRect().top + window.scrollY + offset;
             const startPosition = window.scrollY;
             const startTime = performance.now();
@@ -70,7 +71,6 @@ function SectionOne() {
     };
 
     useEffect(() => {
-        // Scroll to the "steps" section when the component mounts and the user has scrolled down
         if (scrolled) {
             scrollToSteps();
         }
@@ -90,7 +90,7 @@ function SectionOne() {
     return (
 
         <>
-            <Element name="sectionOne">
+            <Element name="sectionOne ">
 
                 <motion.div
                     initial={{ opacity: 0, y: scrolled ? 0 : 150 }}
@@ -102,16 +102,16 @@ function SectionOne() {
                     id="sectionOne"
 
                 >
-                    <Box className="we" />
+                    <Box className="we root-container" />
                     <Grid container className="root-container" sx={{
                         paddingTop: { lg: "110px", md: "110px", sm: "110px", xs: "116px" },
                         position: "relative",
-                        paddingBottom: { lg: "292px", md: "80px", sm: "40px", xs: "140px" },
+                        paddingBottom: { lg: "292px", md: "120px", sm: "80px", xs: "140px" },
                     }}>
-                        <Grid item lg={5.6} sm={5.6} xs={12}
+                        <Grid item lg={5.6} md={5.8} sm={5.6} xs={12}
                             sx={{
                                 height: "100%",
-                                marginTop:{lg:"60px",md:"60px",sm:"0px",xs:"0px"}
+                                marginTop:{lg:"60px",md:"0px",sm:"0px",xs:"0px"}
 
                             }}>
 
@@ -190,7 +190,7 @@ function SectionOne() {
                                 </div>
                             </Button> */}
                         </Grid>
-                        <Grid item lg={6} sm={6.4} xs={12}
+                        <Grid item lg={6} md={6} sm={6.4} xs={12}
                             sx={{
                                 display: "flex",
                                 justifyContent: { lg: "start", md: "center", xs: "center" },
