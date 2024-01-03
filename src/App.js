@@ -14,7 +14,7 @@ import Footer from './components/footer/footer';
 import { Box } from '@mui/material';
 import logo from "./assets/images/logo-white.svg"
 import { motion, AnimatePresence } from 'framer-motion';
-import FadingLogo from './components/logoSvg';
+import SvgComponent from './components/logoSvg';
 
 function App() {
   const [landingPageLoaded, setLandingPageLoaded] = useState(false);
@@ -49,7 +49,7 @@ function App() {
         <Box
           sx={{
             display: "flex",
-            width: {lg:"30%",md:"30%",sm:"30%",xs:"50%"},
+            width:"20%",
            justifyContent:"center",
            alignItems:"center",
            height:"100vh",
@@ -58,7 +58,7 @@ function App() {
          
           }}
         >
-          <FadingLogo/>
+          <SvgComponent/>
         </Box>
       ) : (
         <ThemeSettings>
