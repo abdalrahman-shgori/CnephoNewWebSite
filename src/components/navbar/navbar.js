@@ -21,6 +21,7 @@ import { useEffect } from 'react';
 import LogoNav from '../landingPage/logoNav';
 import AOS from "aos";
 import {motion,AnimatePresence} from 'framer-motion'
+import { Grid } from '@mui/material';
 
 
 AOS.init();
@@ -155,10 +156,7 @@ function NavBar(props) {
 
     const drawer = (
         <>
-
-
             <Box
-            
                 sx={{
                     textAlign: 'center',
                     position: "relative",
@@ -218,7 +216,9 @@ function NavBar(props) {
     };
     const container = windowMenu !== undefined ? () => window().document.body : undefined;
     return (
-        <motion.Box
+        <>
+        <Grid>
+        <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -388,7 +388,11 @@ function NavBar(props) {
                 <Toolbar />
             </Box>
 
-        </motion.Box>
+        </motion.div>
+        </Grid>
+         
+        </>
+     
     );
 }
 NavBar.propTypes = {

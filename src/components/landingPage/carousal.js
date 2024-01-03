@@ -195,7 +195,7 @@ const Carousel = (props) => {
             }}
         >
 
-            <Slider onSwipe={props.onNextClick} ref={sliderRef} {...settings} key={forceRerender}
+            <Slider  onSwipe={props.onNextClick} ref={sliderRef} {...settings} key={forceRerender}
                 centerPadding="0px" // Adjust the value for the desired gap
 
             >

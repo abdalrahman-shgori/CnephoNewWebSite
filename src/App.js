@@ -58,7 +58,7 @@ function App() {
             marginRight: "auto",
           }}
         >
-          <LogoAnimation />
+          <LogoAnimation/>
         </Box>
       ) : (
         <ThemeSettings>

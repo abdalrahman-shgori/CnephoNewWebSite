@@ -17,7 +17,7 @@ const draw = {
   }
 };
 
-const Abdooo = (props) => (
+const LogoAnimation = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 79.5 64.341" {...props}>
   <defs>
     <style>{".cls-2,.cls-3{fill:#303c73}.cls-2{fill-rule:evenodd}"}</style>
@@ -143,6 +143,6 @@ const Abdooo = (props) => (
   </g>
 </svg>
 )
-export default Abdooo
+export default LogoAnimation
 
 
