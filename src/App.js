@@ -13,8 +13,8 @@ import NavBar from './components/navbar/navbar';
 import Footer from './components/footer/footer';
 import { Box } from '@mui/material';
 import logo from "./assets/images/logo-white.svg"
-import LogoAnimation from './components/logoSvg';
 import { motion, AnimatePresence } from 'framer-motion';
+import FadingLogo from './components/logoSvg';
 
 function App() {
   const [landingPageLoaded, setLandingPageLoaded] = useState(false);
@@ -45,22 +45,25 @@ function App() {
 
   return (
     <>
+    
 
-      {/* {window.location.pathname === '/' && !landingPageLoaded ? (
+      {window.location.pathname === '/' && !landingPageLoaded ? (
         <Box
           sx={{
             display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "100vh",
             width: {lg:"30%",md:"30%",sm:"30%",xs:"50%"},
-            marginLeft: "auto",
-            marginRight: "auto",
+            position:"absolute",
+            left:"50%",
+            top:"50%",
+            transform: "translate(-50%, -50%)"
+         
           }}
         >
-          <LogoAnimation/>
+          
+          <FadingLogo/>
+
         </Box>
-      ) : ( */}
+      ) : (
         <ThemeSettings>
           <ThemeLocalization>
             <NavBar />
@@ -76,7 +79,7 @@ function App() {
           </ThemeLocalization>
         </ThemeSettings>
 
-      {/* )} */}
+      )}
 
 
 

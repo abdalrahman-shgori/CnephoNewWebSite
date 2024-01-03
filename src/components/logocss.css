@@ -15,14 +15,14 @@
   }
   
   /* Apply animation to the first path with class 'cls-2' */
-  .cls-2 {
+  .logoDraw {
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
     animation: drawPath 2s ease-in-out forwards;
   }
   
   /* Apply animation to the second path with class 'cls-3' */
-  .cls-3 {
+  .logoDraw2 {
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
     animation: drawPath 2s ease-in-out forwards;
@@ -30,7 +30,7 @@
   }
   
   /* Apply animation to the circle with class 'cls-3' */
-  .cls-3 circle {
+  .logoDraw2 circle {
     transform: scale(0);
     animation: fadeIn 1s ease-in-out forwards, scaleCircle 1s ease-in-out forwards;
     animation-delay: 3s; /* Delay the animation to start after both paths */
@@ -42,7 +42,7 @@
     }
   }
 
-#Group_583{
+#Group_Logo{
 animation: ana 1.5s 2s forwards linear;
 }
 
@@ -55,7 +55,7 @@ animation: ana 1.5s 2s forwards linear;
   }
 }
 
-#Group_584{
+#Group_Logo2{
   animation: ana 1.5s 2s forwards linear;
   }
   
