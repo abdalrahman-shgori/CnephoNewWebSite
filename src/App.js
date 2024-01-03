@@ -53,10 +53,9 @@ function App() {
          justifyContent:"center",
          alignItems:"center",
          height:"100vh",
-         width:{lg:"20%",md:"20%",sm:"20%",xs:"30%"},
+         width:"20%",
          marginLeft:"auto",
          marginRight:"auto",
-         overflowY:"hidden"
         }}
         >
        <Abdooo/>
