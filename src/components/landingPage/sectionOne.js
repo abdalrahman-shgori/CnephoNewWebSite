@@ -64,7 +64,7 @@ function SectionOne() {
 
             const scroll = (currentTime) => {
                 const timeElapsed = currentTime - startTime;
-                const progress = Math.min(timeElapsed / 900, 1); // 500 milliseconds duration
+                const progress = Math.min(timeElapsed / 1500, 1); // 500 milliseconds duration
                 const newPosition = startPosition + progress * (targetPosition - startPosition);
                 window.scrollTo(0, newPosition);
                 if (progress < 1) {
@@ -227,21 +227,24 @@ function SectionOne() {
                                     width: "100%", 
                                 }}>
                                     <LottieAnimation animationData={animationDataHome2} />
+                                    <ScrollLink to='steps' duration={1500} smooth={true}>
                                     <Lottie
                                     
 
-                                        width="100%" // Use a percentage to make it responsive
-                                        isStopped={animatedRun}
-                                        options={defaultOptions}
-                                        style={{
-                                            position: "absolute",
-                                            top: "100%",
-                                            left: "0",
-                                            transform: "translate(-44.9%, -2.2%)",
-                                            overflowY: "hidden",
+                                    width="100%" // Use a percentage to make it responsive
+                                    isStopped={animatedRun}
+                                    options={defaultOptions}
+                                    style={{
+                                        position: "absolute",
+                                        top: "100%",
+                                        left: "0",
+                                        transform: "translate(-44.9%, -2.2%)",
+                                        overflowY: "hidden",
 
-                                        }}
-                                    />
+                                    }}
+                                />
+                                    </ScrollLink>
+                                   
                                 </div>
 
                             </Box>
