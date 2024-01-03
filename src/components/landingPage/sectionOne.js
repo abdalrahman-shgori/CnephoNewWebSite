@@ -53,37 +53,31 @@ function SectionOne() {
     }, []);
     const scrollToSteps = () => {
         const stepsElement = document.getElementById('steps');
-        
+    
         if (stepsElement) {
-            // const offset =
-            //     window.innerWidth > 600 ? 0 : -40; 
             const targetPosition = stepsElement.getBoundingClientRect().top + window.scrollY - 20;
             const startPosition = window.scrollY;
             const startTime = performance.now();
-
-
+    
             const scroll = (currentTime) => {
                 const timeElapsed = currentTime - startTime;
-                const progress = Math.min(timeElapsed / 900, 1); // 500 milliseconds duration
+                const progress = Math.min(timeElapsed / 900, 1); // 900 milliseconds duration
                 const newPosition = startPosition + progress * (targetPosition - startPosition);
-
+    
                 window.scrollTo(0, newPosition);
-
+    
                 if (progress < 1) {
                     requestAnimationFrame(scroll);
-                    document.body.style.overflow= 'hidden';
-
+                    document.body.classList.add('no-scroll');
+                } else {
+                    document.body.classList.remove('no-scroll');
                 }
-                else{
-                    document.body.style.overflow= '';
-
-                }
-               
             };
-
+    
             requestAnimationFrame(scroll);
         }
     };
+    
 
     useEffect(() => {
         if (scrolled) {
