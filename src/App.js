@@ -57,8 +57,7 @@ function App() {
          
           }}
         >
-          {/* <FadingLogo/> */}
-          abd 
+          <FadingLogo/>
         </Box>
       ) : (
         <ThemeSettings>
