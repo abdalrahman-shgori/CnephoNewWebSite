@@ -48,9 +48,9 @@ function SectionOne() {
     const scrollToSteps = () => {
         const stepsElement = document.getElementById('steps');
         if (stepsElement) {
-            const offset =
-                window.innerWidth > 600 ? -120 : -40; // Adjust this value to your desired offset when scrolling
-            const targetPosition = stepsElement.getBoundingClientRect().top + window.scrollY + offset;
+            // const offset =
+            //     window.innerWidth > 600 ? 0 : -40; 
+            const targetPosition = stepsElement.getBoundingClientRect().top + window.scrollY - 20;
             const startPosition = window.scrollY;
             const startTime = performance.now();
 
@@ -106,7 +106,7 @@ function SectionOne() {
                     <Grid container className="root-container" sx={{
                         paddingTop: { lg: "110px", md: "110px", sm: "110px", xs: "116px" },
                         position: "relative",
-                        paddingBottom: { lg: "292px", md: "120px", sm: "80px", xs: "140px" },
+                        paddingBottom: {xl:"200px", lg: "126px", md: "60px", sm: "60px", xs: "100px" },
                     }}>
                         <Grid item lg={5.6} md={5.8} sm={5.6} xs={12}
                             sx={{

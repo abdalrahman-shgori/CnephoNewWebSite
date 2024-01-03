@@ -43,8 +43,7 @@ function OurSolution() {
             <Grid className="root-container"
                 sx={{
                     position: "relative",
-                    bottom: { lg: "80px", md: "0px", sm: "0px", xs: "0px" },
-                    marginBottom: "40px"
+                    // marginBottom: { lg: "-20px", md: "0px", sm: "0px", xs: "0px" },
                 }}
             >
                 <Box
