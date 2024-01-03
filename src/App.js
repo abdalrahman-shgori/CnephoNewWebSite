@@ -46,7 +46,7 @@ function App() {
   return (
     <>
 
-      {window.location.pathname === '/' && !landingPageLoaded ? (
+      {/* {window.location.pathname === '/' && !landingPageLoaded ? (
         <Box
           sx={{
             display: "flex",
@@ -60,7 +60,7 @@ function App() {
         >
           <LogoAnimation/>
         </Box>
-      ) : (
+      ) : ( */}
         <ThemeSettings>
           <ThemeLocalization>
             <NavBar />
@@ -76,7 +76,7 @@ function App() {
           </ThemeLocalization>
         </ThemeSettings>
 
-      )}
+      {/* )} */}
 
 
 
