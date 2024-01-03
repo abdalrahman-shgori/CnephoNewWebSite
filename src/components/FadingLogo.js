@@ -17,7 +17,7 @@ const draw = {
   }
 };
 
-const Abdoo = (props) => (
+const Abdooo = (props) => (
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 79.5 64.341" {...props}>
     <defs>
@@ -144,6 +144,6 @@ const Abdoo = (props) => (
     </g>
   </svg>
 )
-export default Abdoo;
+export default Abdooo;
 
 

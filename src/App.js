@@ -13,7 +13,7 @@ import NavBar from './components/navbar/navbar';
 import Footer from './components/footer/footer';
 import { Box } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
-import Abdoo from './FadingLogo';
+import Abdooo from './components/FadingLogo';
 
 function App() {
   const [landingPageLoaded, setLandingPageLoaded] = useState(false);
@@ -55,7 +55,7 @@ function App() {
             transform: "translate(-50%, -50%)"
           }}
         >
-          <Abdoo/>
+          <Abdooo/>
 
         </Box>
       ) : (
