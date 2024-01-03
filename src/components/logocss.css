@@ -58,3 +58,16 @@
 
     }
 }
+
+.logoOpacity{
+  animation: opacityFade 1s 2s linear;
+}
+@keyframes opacityFade {
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0
+    ;
+  }
+}
