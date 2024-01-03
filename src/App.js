@@ -1,6 +1,5 @@
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import React, { useState, useEffect } from "react";
-import Navbar from './components/navbar/navbar';
 
 import ThemeSettings from './pagedirection/ThemeSettings';
 import ThemeLocalization from './locals/ThemeLocalization';
@@ -11,9 +10,8 @@ import AboutUs from './components/aboutUs/aboutUs';
 import Portfolio from './components/portfolios/portfolio';
 import NavBar from './components/navbar/navbar';
 import Footer from './components/footer/footer';
-import { Box, Grid } from '@mui/material';
-import logo from "./assets/images/logo-white.svg"
-import { motion, AnimatePresence } from 'framer-motion';
+import {Grid } from '@mui/material';
+import {AnimatePresence } from 'framer-motion';
 import SvgComponent from './components/logoSvg';
 
 function App() {
@@ -50,7 +48,7 @@ function App() {
           <Grid
           sx={{
             display: "flex",
-            width:"30%",
+            width:"100%",
            justifyContent:"center",
            alignItems:"center",
            height:"100vh",
