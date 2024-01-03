@@ -118,18 +118,20 @@ const SvgComponent = (props) => {
                 />
               </g>
             </g>
-            <g
+            <motion.g
+             cx="100"
+                  cy="500"
+                  r="80"
+                  stroke="#fff"
+                  variants={draw}
+                  custom={3}
+                            className="Text"
+
               id="Group_540"
               data-name="Group 540"
               transform="translate(3.819 45.268)"
             >
-              <motion.path
-               cx="100"
-               cy="500"
-               r="80"
-               stroke="#fff"
-               variants={draw}
-               custom={3}
+              <path
                 id="Path_462"
                 d="M210.94 4360.221a2.791 2.791 0 0 0-2.915-2.212c-1.909 0-3.216 1.608-3.216 4.12 0 2.613 1.307 4.12 3.317 4.12a2.66 2.66 0 0 0 2.814-2.109h1.809a4.533 4.533 0 0 1-4.724 3.818c-3.116 0-5.126-2.211-5.126-5.829 0-3.517 2.01-5.828 5.126-5.828a4.412 4.412 0 0 1 4.724 3.92Z"
                 className="cls-3"
@@ -171,7 +173,7 @@ const SvgComponent = (props) => {
                 data-name="Path 467"
                 transform="translate(-202.591 -4352.179)"
               />
-            </g>
+            </motion.g>
           </g>
         </g>
       </svg>

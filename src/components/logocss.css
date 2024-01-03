@@ -37,3 +37,24 @@
 
     }
 }
+
+.Text{
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: animationLogo3 2s 1s  forwards;
+
+}
+
+@keyframes  animationLogo3 {
+  0% {
+      stroke-dashoffset: 1000;
+    }
+    50%{
+      stroke-dashoffset: 500;
+
+    }
+    100% {
+      stroke-dashoffset: 0;
+
+    }
+}
