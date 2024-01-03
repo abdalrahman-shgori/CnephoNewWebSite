@@ -1,5 +1,7 @@
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import React, { useState, useEffect } from "react";
+import Navbar from './components/navbar/navbar';
+
 import ThemeSettings from './pagedirection/ThemeSettings';
 import ThemeLocalization from './locals/ThemeLocalization';
 import { useTranslation } from 'react-i18next';
@@ -11,7 +13,7 @@ import NavBar from './components/navbar/navbar';
 import Footer from './components/footer/footer';
 import { Box } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
-import FadeLogoSvg from './FadeLogoSvg';
+import Abdoo from './FadingLogo';
 
 function App() {
   const [landingPageLoaded, setLandingPageLoaded] = useState(false);
@@ -51,10 +53,10 @@ function App() {
             left:"50%",
             top:"50%",
             transform: "translate(-50%, -50%)"
-         
           }}
         >
-          <FadeLogoSvg/>
+          <Abdoo/>
+
         </Box>
       ) : (
         <ThemeSettings>
