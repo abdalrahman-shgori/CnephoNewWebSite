@@ -49,7 +49,7 @@ function SectionOne() {
         const stepsElement = document.getElementById('steps');
         if (stepsElement) {
             const offset =
-             window.innerWidth > 600 ? -120 : -40; // Adjust this value to your desired offset when scrolling
+                window.innerWidth > 600 ? -120 : -40; // Adjust this value to your desired offset when scrolling
             const targetPosition = stepsElement.getBoundingClientRect().top + window.scrollY + offset;
             const startPosition = window.scrollY;
             const startTime = performance.now();
@@ -97,7 +97,7 @@ function SectionOne() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: scrolled ? -50 : 0 }}
                     transition={{
-                        duration:1.5
+                        duration: 1.5
                     }}
                     id="sectionOne"
 
@@ -111,7 +111,7 @@ function SectionOne() {
                         <Grid item lg={5.6} md={5.8} sm={5.6} xs={12}
                             sx={{
                                 height: "100%",
-                                marginTop:{lg:"60px",md:"0px",sm:"0px",xs:"0px"}
+                                marginTop: { lg: "60px", md: "0px", sm: "0px", xs: "0px" }
 
                             }}>
 
@@ -195,7 +195,7 @@ function SectionOne() {
                                 display: "flex",
                                 justifyContent: { lg: "start", md: "center", xs: "center" },
                                 position: "relative",
-                                
+
                                 bottom: { lg: "50px", md: "50px", sm: "50px" },
 
 

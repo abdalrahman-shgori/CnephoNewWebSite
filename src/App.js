@@ -13,74 +13,74 @@ import NavBar from './components/navbar/navbar';
 import Footer from './components/footer/footer';
 import { Box } from '@mui/material';
 import logo from "./assets/images/logo-white.svg"
-import Abdooo from './components/logoSvg';
+import LogoAnimation from './components/logoSvg';
 import { motion, AnimatePresence } from 'framer-motion';
 
 function App() {
-   const [landingPageLoaded, setLandingPageLoaded] = useState(false);
-   const navigate = useNavigate();
-   const { t, i18n } = useTranslation();
+  const [landingPageLoaded, setLandingPageLoaded] = useState(false);
+  const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
   document.body.dir = i18n.dir();
-  
+
   useEffect(() => {
-   const handleScrollToTop = () => {
-     window.scrollTo({
-       top: 0,
-       behavior: "smooth",
-     });
-   };
-   handleScrollToTop();
-   const simulateLandingPageLoading = () => {
-     setTimeout(() => {
-       setLandingPageLoaded(true);
-     }, 2500);
-   };
-   if (window.location.pathname === '/') {
-     simulateLandingPageLoading();
-   }
-   return () => {
-     window.removeEventListener("scroll", handleScrollToTop);
-   };
- }, [navigate]);
+    const handleScrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    };
+    handleScrollToTop();
+    const simulateLandingPageLoading = () => {
+      setTimeout(() => {
+        setLandingPageLoaded(true);
+      }, 2500);
+    };
+    if (window.location.pathname === '/') {
+      simulateLandingPageLoading();
+    }
+    return () => {
+      window.removeEventListener("scroll", handleScrollToTop);
+    };
+  }, [navigate]);
 
   return (
-   <>
+    <>
 
-{window.location.pathname === '/' && !landingPageLoaded ? (
+      {window.location.pathname === '/' && !landingPageLoaded ? (
         <Box
-        sx={{
-         display:"flex",
-         justifyContent:"center",
-         alignItems:"center",
-         height:"100vh",
-         width:"20%",
-         marginLeft:"auto",
-         marginRight:"auto",
-        }}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh",
+            width: "20%",
+            marginLeft: "auto",
+            marginRight: "auto",
+          }}
         >
-       <Abdooo/>
+          <LogoAnimation />
         </Box>
       ) : (
         <ThemeSettings>
           <ThemeLocalization>
             <NavBar />
             <AnimatePresence mode='wait'>
-  <Routes>
-    <Route key="landing" path='/' element={<LandingPage />} />
-    <Route key="contact" path='/Contact-Us' element={<ContactUs />} />
-    <Route key="about" path='/AboutUs' element={<AboutUs />} />
-    <Route key="portfolio" path='/Portolios' element={<Portfolio />} />
-  </Routes>
-</AnimatePresence>
+              <Routes>
+                <Route key="landing" path='/' element={<LandingPage />} />
+                <Route key="contact" path='/Contact-Us' element={<ContactUs />} />
+                <Route key="about" path='/AboutUs' element={<AboutUs />} />
+                <Route key="portfolio" path='/Portolios' element={<Portfolio />} />
+              </Routes>
+            </AnimatePresence>
             <Footer />
           </ThemeLocalization>
         </ThemeSettings>
-     
+
       )}
 
 
 
-   </>
+    </>
   );
 }
 
