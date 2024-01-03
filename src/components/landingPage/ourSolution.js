@@ -33,6 +33,7 @@ function OurSolution() {
 
             },
         });
+        document.documentElement.style.overflowX="hidden"
     };
     const handleNextClick = () => {
         animateBg1();
@@ -46,7 +47,6 @@ function OurSolution() {
                 sx={{
                     position: "relative",
                     // marginBottom: { lg: "-20px", md: "0px", sm: "0px", xs: "0px" },
-                    overflowX:"hidden"
                 }}
             >
                 <Box
@@ -120,7 +120,8 @@ function OurSolution() {
                     animate={bg3AnimationControls}
                     exit={{ x: 0 }}
                     style={{
-                        position:"relative"
+                        position:"relative",
+
                     }}
                     transition={{
                         duration:2

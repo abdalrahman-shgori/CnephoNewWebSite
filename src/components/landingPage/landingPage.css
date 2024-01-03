@@ -31,7 +31,6 @@
 }
 .no-scroll {
   overflow: hidden;
-overscroll-behavior: none;
 }
 
 .frame .text-wrapper {
