@@ -11,7 +11,7 @@ import AboutUs from './components/aboutUs/aboutUs';
 import Portfolio from './components/portfolios/portfolio';
 import NavBar from './components/navbar/navbar';
 import Footer from './components/footer/footer';
-import { Box } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 import logo from "./assets/images/logo-white.svg"
 import { motion, AnimatePresence } from 'framer-motion';
 import SvgComponent from './components/logoSvg';
@@ -46,11 +46,23 @@ function App() {
   return (
     <>
       {window.location.pathname === '/' && !landingPageLoaded ? (
-        <Box
-         
+        <>
+          <Grid
+          sx={{
+            display: "flex",
+            width:"30%",
+           justifyContent:"center",
+           alignItems:"center",
+           height:"100vh",
+           overflowY:"hidden",
+           marginLeft:"auto",
+           marginRight:"auto",
+          }}
         >
           <SvgComponent/>
-        </Box>
+        </Grid>
+        </>
+      
       ) : (
         <ThemeSettings>
           <ThemeLocalization>
