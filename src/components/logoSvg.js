@@ -19,13 +19,12 @@ const draw = {
 const SvgComponent = (props) => (
     <div
     style={{
-        display:"flex",
-        justifyContent:"center",
         height:"100vh",
-        alignItems:"center",
+        display:"grid",
+        placeItems:"center",
         width:"30%",
-        marginLeft:"auto",
-        marginRight:"auto"
+        margin:"auto"
+        
     }}
     >
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 79.5 64.341" {...props}>
