@@ -45,8 +45,6 @@ function App() {
 
   return (
     <>
-    
-
       {window.location.pathname === '/' && !landingPageLoaded ? (
         <Box
           sx={{
@@ -59,9 +57,8 @@ function App() {
          
           }}
         >
-          
-          <FadingLogo/>
-
+          {/* <FadingLogo/> */}
+          abd 
         </Box>
       ) : (
         <ThemeSettings>
