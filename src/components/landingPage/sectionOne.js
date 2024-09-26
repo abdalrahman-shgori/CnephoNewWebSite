@@ -106,7 +106,7 @@ function SectionOne() {
     return (
 
         <>
-            <Element name="sectionOne "   >
+            <Element name="sectionOne ">
 
                 <motion.div
                     initial={{ opacity: 0, y: scrolled ? 0 : 150 }}
