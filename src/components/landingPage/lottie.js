@@ -1,28 +1,21 @@
-import React, { Component } from 'react';
-import Lottie from 'react-lottie';
+import React from 'react';
+import Lottie from 'lottie-react';
 
-class LottieAnimation extends Component {
-  componentDidUpdate(prevProps) {
-    // Perform data fetching or side effects here based on props or state changes
-    // You can use this.props and this.state to access current props and state
-    // and prevProps and prevState to access previous props and state
+const LottieAnimation = ({ animationData, loop = true, autoplay = true }) => {
+  // Check if animation data is provided
+  if (!animationData) {
+    console.error("Animation data is not provided.");
+    return <div>Error: Animation data is required.</div>;
   }
 
-  render() {
-    const { animationData, loop = true, autoplay = true } = this.props;
-
-    const defaultOptions = {
-      loop,
-      autoplay,
-      animationData,
-    };
-
-    return (
-      <>
-        <Lottie options={defaultOptions} width="100%" />
-      </>
-    );
-  }
-}
+  return (
+    <Lottie 
+      animationData={animationData} 
+      loop={loop} 
+      autoplay={autoplay} 
+      style={{ width: '100%' }} // Style can be adjusted as needed
+    />
+  );
+};
 
 export default LottieAnimation;

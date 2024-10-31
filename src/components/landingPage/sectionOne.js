@@ -67,7 +67,7 @@ function SectionOne() {
      
     const defaultOptions = {
         loop: false,
-        autoplay: false,
+        autoplay: true,
         animationData: animationDataHome3,
     };
     const { t, i18n } = useTranslation();
@@ -203,8 +203,6 @@ function SectionOne() {
                                     <LottieAnimation animationData={animationDataHome2} />
                                     <ScrollLink to='steps' duration={1500} smooth={true}>
                                     <Lottie
-                                    
-
                                     width="100%" // Use a percentage to make it responsive
                                     isStopped={animatedRun}
                                     options={defaultOptions}
@@ -216,6 +214,7 @@ function SectionOne() {
                                         overflowY: "hidden",
 
                                     }}
+                                    
                                 />
                                     </ScrollLink>
                                    
@@ -244,17 +243,17 @@ function SectionOne() {
                 </motion.div>
             </Element>
 
-            <Element id='steps'>
+            {/* <Element id='steps'>
                 <motion.div
                     initial={{ opacity: 0, y: 150 }}
                     animate={showSection === true ? { opacity: 1, y: 0 } : {}}
                     exit={showSection === true ? { opacity: 0, y: -50 } : {}}
                     transition={{ duration: 2  }} // Adjust this value to your desired duration in seconds
                 >
-                    <OurSolution />
+                   
                 </motion.div>
-            </Element>
-
+            </Element> */}
+            <OurSolution />
 
         </>
 
