@@ -24,33 +24,7 @@ function SectionOne() {
     const sectionRef = useRef(null);
 
 
-    useEffect(() => {
-        const handleScroll = () => {
-            // Set scrolled to true when the user has scrolled down
-            if (window.scrollY > 10) {
-                setScrolled(true);
-                setAnimatedRund(false)
-                setShowSection(true);
-            } else {
-                setScrolled(false);
-                setAnimatedRund(true)
-                setShowSection(true);
-
-            }
-           
-
-           
-        };
-
-        // Attach the event listener
-        window.addEventListener('scroll', handleScroll);
-        
-
-        // Cleanup the event listener on component unmount
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+    
     const scrollToSteps = () => {
         const stepsElement = document.getElementById('steps');
         

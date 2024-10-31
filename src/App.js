@@ -43,6 +43,8 @@ function App() {
 
   return (
     <>
+            <ThemeSettings>
+
       {window.location.pathname === '/' && !landingPageLoaded ? (
         <>
          
@@ -50,7 +52,6 @@ function App() {
         </>
       
       ) : (
-        <ThemeSettings>
           <ThemeLocalization>
             <NavBar />
             <AnimatePresence mode='wait'>
@@ -63,10 +64,10 @@ function App() {
             </AnimatePresence>
             <Footer />
           </ThemeLocalization>
-        </ThemeSettings>
 
       )}
 
+</ThemeSettings>
 
 
     </>
